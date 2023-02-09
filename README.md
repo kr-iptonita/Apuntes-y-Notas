@@ -1,2 +1,0 @@
-# Apuntes-y-Notas
-Apuntes
