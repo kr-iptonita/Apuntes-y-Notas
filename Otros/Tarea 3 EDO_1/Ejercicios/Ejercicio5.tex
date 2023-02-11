@@ -1,0 +1,50 @@
+\section{La ecuación diferencial
+$$ t^{2}y'' + ty' + (t^{2} - \frac{1}{2})y = 0 $$
+tiene como solución a 
+$$y_{1}(t)=t^{\frac{1}{2}}\sin{(t)} $$
+utilizando el método de reducción de orden, calcule una segunda solución de la ecuación y escriba la solución general.}
+
+Para obtener una ecuación de la forma $$ y'' + p(t)y' + q(t)y = 0$$ dividimos nuestra ecuación entre $t^{2}$ 
+
+\begin{equation*}
+\begin{split}
+     \Rightarrow y'' + \frac{t}{t^{2}}y' + \frac{(t^{2} - \frac{1}{2})}{t^{2}}y &=0 \\
+     y'' + \frac{1}{t}y' + \frac{(t^{2} - \frac{1}{2})}{t^{2}}y &=0 \\
+\end{split}
+\end{equation*}
+Identificamos que $p(t)=\frac{1}{t}$, entonces la solución $y_{2}$ va estar dada como
+\begin{equation*}
+    \begin{split}
+        y_{2}(t)=uy_{1} \\
+        u=\int \frac{e^{-\int p dt}}{y_{1}^{2}}dt 
+    \end{split}
+\end{equation*}
+Obtenemos que
+\begin{equation*}
+        \int \frac{1}{t}dt =  In(t) + k_{1}
+\end{equation*}
+\begin{equation*}
+    \begin{split}
+       \Rightarrow  & \int \frac{e^{  In(t)}}{(t^{\frac{1}{2}}\sin{(t)})^{2}}dt \\
+       &= \int \frac{t}{t\sin^{2}{(t)}}dt \\
+       &= \int \frac{1}{\sin^{2}{(t)}}dt \\
+       &= \int \csc^{2} (t) dt \\
+       &= -\cot{(t)} + k_{2}
+    \end{split}
+\end{equation*}
+para $t\neq n\pi$, $n\in \mathbb Z $
+
+Entonces, la solución $y_{2}$ es igual a
+\begin{equation*}
+\begin{split}
+    &y_{2}(t)=(-\cot{(t)})(t^{\frac{1}{2}}\sin{(t)}) \\
+    &= (-\frac{\cos{(t)}}{\sin{(t)}})(t^{\frac{1}{2}}\sin{(t)}) \\
+    &= -t^{\frac{1}{2}}\cos{(t)}\\
+\end{split}
+\end{equation*}
+para $t\in \mathbb R$.
+
+Por lo tanto, la solución general es 
+ \begin{equation*}
+     y = c_{1}y_{1}+c_{2}y_{2}= c_{1}t^{\frac{1}{2}}\sin{(t)} - c_{2} t^{\frac{1}{2}}\cos{(t)}
+ \end{equation*}

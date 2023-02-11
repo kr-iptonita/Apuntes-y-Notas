@@ -1,0 +1,95 @@
+\section{Considere la ecuación de segundo orden lineal no homogénea
+\begin{equation}
+y'' +p(t)y' + q(t)y = g(t)
+\label{eq:def}
+\end{equation}
+}
+\textbf{Principio de superposición:} Si en la ecuación \ref{eq:def}, la función $g(t)$ se descompone como la suma de $n$ funciones, es decir, si $g(t)= \sum_{i=1}^{n}g_{k}(t)$ y $y_{k}$ es solución de la ecuación 
+\begin{equation*}
+    y'' +p(t)y' + q(t)y = g_{k}(t)
+\end{equation*}
+Con $k=1,..., n$ en el intervalo $I$, entonces la suma  $\sum_{i=1}^{n}y_{k}(t)$ es solución de la ecuación 
+\begin{equation}
+    y'' +p(t)y' + q(t)y = \sum_{i=1}^{n}g_{k}(t)
+\label{eq:super}    
+\end{equation}
+en dicho intervalo I.
+
+Demuestre el principio de superposición y úselo para determinar la solución general de 
+\begin{equation}
+    y'' + \lambda^{2}y = \sum_{k=1}^{n} \left[ a_{k}\sin{(k\pi x) + b_{k}\cos{(k\pi x)}} \right]
+\label{eq:ejer11}    
+\end{equation}
+donde $\lambda>0$ y $\lambda \neq k \pi$ para $k=1,2, \ldots . n$.\\
+
+\textbf{Demostración}
+
+Tomemos $Y=\sum_{i=1}^{n}y_{k}(t)$, si  $Y$ es solución a la ecuación \ref{eq:super} entonces $L[Y]=\sum_{i=1}^{n}g_{k}(t)$. Además tenemos que $L[y_{k}]= g_{k}$. Observamos que por linealidad del operador L tenemos que
+\begin{equation*}
+\centering
+    \begin{split}
+        L[Y]&= L[\sum_{i=1}^{n}y_{k}(t)] 
+        =L[y_{1}(t)]+L[y_{2}(t)]+\ldots+L[y_{n}(t)] \\
+        &=g_{1}(t) + g_{2}(t) + \ldots + g_{n}(t) 
+        = \sum_{i=1}^{n}g_{k}(t)
+    \end{split}
+\end{equation*}
+Por lo tanto Y es solución.
+
+$\hfill \blacksquare$
+
+\textbf{Solución ecuación \ref{eq:ejer11}} \\
+Observamos que la ecuación homogénea asociada es la ecuación del oscilador armónico, por lo tanto, la solución es 
+$$
+y_{h}(t)=c_{1} \cos (\lambda t)+c_{2} \sin (\lambda t)
+$$\\
+
+Sea $g_{k}(x)=a_{k} \sin (k \pi t) + b_{k}\cos{(k\pi x)}$, para $k=1, \ldots, n$. Ahora, encontramos una solución particular para cada $k$. Como $\lambda \neq k \pi$, podemos suponer que:\\
+
+\begin{equation}
+ y_{k}=A_{k} \sin (k \pi t)+B_{k} \cos (k \pi t)
+\label{eq:sol} 
+\end{equation}
+
+
+
+Derivando \ref{eq:sol}, se tiene que:\\
+
+\begin{center}
+   $y_{k}^{\prime}=k \pi A_{k} \cos (k \pi t)-k \pi B_{k} \sin (k \pi t)$ \\
+    
+    $y_{k}^{\prime \prime}=-k^{2} \pi^{2} A_{k} \sin (k \pi t)-k^{2} \pi^{2} B_{k} \cos (k \pi t)$
+\end{center}
+
+Sustituyendo en la ecuación, tenemos que:\\
+
+$-k^{2} \pi^{2} A_{k} \sin (k \pi t)-k^{2} \pi^{2} B_{k} \cos (k \pi t)+\lambda^{2}\left(A_{k} \sin (k \pi t)+B_{k} \cos (k \pi t)\right)=a_{k} \sin (k \pi +  t)+ b_{k} \cos (k \pi t)$\\
+
+Así, obtenemos el siguiente sistema de ecuaciones:\\
+$$
+\left\{\begin{array}{ll}
+-k^{2} \pi^{2} A_{k}+\lambda^{2} A_{k} & =a_{k} \\
+-k^{2} \pi^{2} B_{k}+\lambda^{2} B_{k} & =b_{k}
+\end{array}\right.
+$$\\
+
+Ahora, como $\lambda \neq m \pi \Rightarrow \lambda^{2} \neq m^{2} \pi^{2}$, entonces:
+
+\begin{center}
+
+$A_{k}=\frac{a_{k}}{\lambda^{2}-k^{2} \pi^{2}} ; \quad B_{k}=\frac{b_{k}}{\lambda^{2}-k^{2} \pi^{2}}$
+
+\end{center}
+
+para todo $k=1, \ldots, n$. Por lo tanto la solución particular es:\\
+
+\begin{center}
+
+$y_{k}=\frac{a_{k}}{\lambda^{2}-k^{2} \pi^{2}} \sin (k \pi t) + \frac{b_{k}}{\lambda^{2}-k^{2} \pi^{2}} \cos (k \pi t)$
+
+\end{center}
+
+Ahora, al sumar cada una de las $n$ soluciones particulares por el principio de superposición, tenemos que la solución general de la ecuación es:\\
+$$
+y(t)= y_{h} + Y = c_{1} \cos (\lambda t)+c_{2} \sin (\lambda t)+\sum_{i=1}^{n} \frac{a_{k}}{\lambda^{2}-k^{2} \pi^{2}} \sin (k \pi t) + \frac{b_{k}}{\lambda^{2}-k^{2} \pi^{2}} \cos (k \pi t)
+$$

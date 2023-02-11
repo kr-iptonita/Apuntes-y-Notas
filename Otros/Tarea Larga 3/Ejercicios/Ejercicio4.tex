@@ -1,0 +1,92 @@
+\section{Considere el siguietnte P.P.L.}
+    \begin{tabular}{|l|l|}
+    \hline
+    Min & x_1-5x_2+6x_3 \\ \hline
+        ~ & $2x_1+4x_3\geq 50$ \\ \hline
+        ~ & $x_1+2x_2\geq 30$ \\ \hline
+        ~ & $x_3\geq 10$ \\ \hline
+        ~ & $x_1,x_2,x_3$ no restringidas \\ \hline
+    \end{tabular}
+    \begin{itemize}
+        \item Muestre utilizando el problema dual que el problema no es acotado
+    \end{itemize}
+    
+    Convirtiendo en problema Dual:
+    
+    \begin{tabular}{ll}
+Max & 50w_1+30_2+10w_3                 \\
+    & 2w_1+w_2+1                        \\
+    & 2w_1=-5                            \\
+    & 4w_1+w_3=6                        \\
+    & w_1,w_2,w_3\geq 0
+\end{tabular}
+
+de donde resolviendo el sistema de ecuaciones tenemos:
+
+\begin{align}
+    w_2=-\frac{5}{2}\\
+    w_1=\frac{7}{4}\\
+    w_3=-1
+\end{align}
+
+\begin{tabular}{lllllll}
+                       & z                      & w_1                      & w_2                      & w_3                      &                         &     \\
+                       & 1                      & -50                    & -30                    & -10                    & 0                       &     \\ \cline{2-6}
+\multicolumn{1}{l|}{w_1} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FE0000}2} &
+  \multicolumn{1}{l|}{1} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{1} &
+  1 \\ \cline{2-6}
+\multicolumn{1}{l|}{w_2} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-5} &     \\ \cline{2-6}
+\multicolumn{1}{l|}{w_3} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{6}  & 1.5 \\ \cline{2-6}
+                       &                        & 50                     & 25                     & 0                      & 25                      &     \\
+                       &                        & -4                     & -2                     & 0                      & -2                      &    
+\end{tabular}
+
+\begin{tabular}{lllllll}
+                       & z                      & w_1                      & w_2                       & w_3                      &                         &  \\
+                       & 1                      & 0                      & -5                       & -10                    & 0                       &  \\ \cline{2-6}
+\multicolumn{1}{l|}{w_1} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0.5} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1}  &  \\ \cline{2-6}
+\multicolumn{1}{l|}{w_2} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{2}   & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-5} &  \\ \cline{2-6}
+\multicolumn{1}{l|}{w_3} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{-2} &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FE0000}1} &
+  \multicolumn{1}{l|}{6} &
+  4 \\ \cline{2-6}
+                       &                        & 0                      & -20                      & 10                     & 40                      & 
+\end{tabular}
+
+\begin{tabular}{lllllll}
+                          & z                      & w\_1                   & w\_2                    & w\_3                   &                         &      \\
+                          & 1                      & 0                      & -25                     & 0                      & 6.5                     &      \\ \cline{2-6}
+\multicolumn{1}{l|}{w\_1} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{1} &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FE0000}0.5} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{0.5} &
+  1 \\ \cline{2-6}
+\multicolumn{1}{l|}{w\_2} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{2}  & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-5} & -2.5 \\ \cline{2-6}
+\multicolumn{1}{l|}{w\_3} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-2} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{4}  & -2   \\ \cline{2-6}
+                          &                        & 50                     & 25                      & 0                      & 25                      &      \\
+                          &                        & -4                     & -2                      & 0                      & -2                      &      \\
+                          &                        & 4                      & 2                       & 0                      & 2                       &     
+\end{tabular}
+
+\begin{tabular}{llllll}
+                          & z                      & w\_1                    & w\_2                   & w\_3                   &                         \\
+                          & 1                      & 50                      & 0                      & 0                      & 90                      \\ \cline{2-6} 
+\multicolumn{1}{l|}{w\_1} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{2} &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FE0000}1} &
+  \multicolumn{1}{l|}{0} &
+  \multicolumn{1}{l|}{1} \\ \cline{2-6} 
+\multicolumn{1}{l|}{w\_2} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-4} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{-7} \\ \cline{2-6} 
+\multicolumn{1}{l|}{w\_3} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{4}  & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{6}  \\ \cline{2-6} 
+                          &                        & 50                      & 25                     & 0                      & 25                     
+\end{tabular}

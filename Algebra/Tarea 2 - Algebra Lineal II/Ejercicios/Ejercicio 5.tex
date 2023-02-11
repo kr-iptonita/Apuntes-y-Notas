@@ -1,0 +1,35 @@
+\section{Sea $T:V \longrightarrow V$ lineal. Prueba que:}
+\begin{enumerate}
+\item[$a)$]El escalar 0 es un autovalor de $T$ si y sólo si $T$ es singular.\\
+\textbf{Demostración 5.a:}
+\begin{itemize}
+    \item $\Longrightarrow$\\
+    Sea $\lambda = 0$ un valor propio de $T:V\longrightarrow V$. Entonces, por definición, existe un vector no nulo $v \in V$ tal que:
+\[T(v)=\lambda v = 0 v = 0\]
+Así
+\[ T(v) = 0\]
+    \item $\Longleftarrow$\\
+    An\'alogamente, si tenemos que $T:V\longrightarrow V$ es no singular, $T$ es no invertible y por lo tanto no inyectiva, lo que equivale a que $\text{Nuc}(T)\neq \{0\}$, por lo que existe $v\in V$, con $v\neq 0$, tal que:
+    \[ T(v) = 0\]
+    Si damos un autovalor $\lambda$ de $T$, tal que por definici\'on:
+    \[T(v)=\lambda v =0\]
+    Pero como $v\neq0$, entonces $\lambda = 0$, por lo que $\lambda =0$ es autovalor de $T$.
+\end{itemize}
+
+Note que en ésta demostración trabajamos con equivalencias. Por lo tanto, podemos concluir que el escalar 0 es un autovalor de $T$ si y sólo si $T$ es singular.\qed
+
+\item[$b)$]Si $\lambda \in K$ es un valor propio de $T$, con $T$ invertible, entonces $\lambda^{-1}$ es un valor propio de $T^{-1}$.\\
+\textbf{Demostración 5.b:}\\
+Recordemos que dado $Q:V \longrightarrow V$ una transformación lineal invertible, existe la transformación inversa $Q^{-1}$ la cual está definida como $Q^{-1}:V \longrightarrow V$ de donde para $w,v \in V$ tenemos que:
+\[Q^{-1}(w) = v ~~\Longleftrightarrow~~ Q(v)=w. \]
+Ahora, como $T$ es un operador lineal, está definido sobre el espacio vectorial $V$ a $V$ y además, $\lambda \in K$ es un valor propio de $T$ ($k\neq0$, pues $T$ es no singular, por ser invertible), entonces existe un vector no nulo $v \in V$ tal que por definici\'on:
+\[ T(v)= \lambda v=w\]
+Entonces tenemos que al aplicar $T^{-1}$ a la ecuaci\'on, tenemos:
+\[T^{-1}(w)=T^{-1}(T(v))=T^{-1}(\lambda v)=v\]
+\[\therefore T^{-1}(\lambda v)=v\]
+Pero sabemos que al ser $T^{-1}$ tambi\'en una transformaci\'on lineal, podemos sacar escalares, de modo que:
+\[T^{-1}(\lambda v)=\lambda T^{-1}( v)=v\]
+entonces, para la inversa de $T$ (como $\lambda\neq 0$) tenemos que:
+\[ T^{-1}(v)=\lambda^{-1}v \]
+pues $T$ es un operador lineal que va de $V$ a $V$. Así, por definición, tenemos que $\lambda^{-1}$ es un valor propio de $T^{-1}$.\qed
+\end{enumerate}

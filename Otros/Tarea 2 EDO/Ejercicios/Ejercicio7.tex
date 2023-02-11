@@ -1,0 +1,30 @@
+\section{Encuentre el valor de $b$ para el cual la ecuación es exacta y resuélvala para ese valor de $b$.}
+
+\begin{equation*}
+    (x y^{2}+b x^{2}y) dx +(x+y) x^{2} dy= 0
+\end{equation*}\\
+
+\textbf{Solución:} Sea $M=x y^{2}+b x^{2} y$ y $N=(x+y) x^{2}$. Las derivadas parciales deben ser iguales:
+$$
+\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x} \Rightarrow 2 x y+b x^{2}=3 x^{2}+2 x y
+$$
+De donde:
+$$
+b x^{2}=3 x^{2} \Rightarrow b=3
+$$
+Tenemos que
+$$
+\frac{\partial F}{\partial x}=x y^{2}+3 x^{2} y \quad(*) ; \quad \frac{\partial F}{\partial y}=x^{3}+x^{2} y \quad(* *)
+$$
+Integrando la ecuación $\left({ }^{*}\right)$ respecto a $x$, tenemos:
+$$
+F=y^{2} \frac{x^{2}}{2}+y x^{3}+h(y)
+$$
+Luego, al derivar respecto a $y$ la función $F$ e igualando a $N$ :
+$$
+\frac{\partial F}{\partial y}=y x^{2}+x^{3}+h^{\prime}(y)=x^{3}+x^{2} y
+$$
+Como $h^{\prime}(y)=0$, entonces $h$ es constante. La solución es entonces:
+$$
+F(x, y)=\frac{x^{2} y^{2}}{2}+y x^{3}+C
+$$

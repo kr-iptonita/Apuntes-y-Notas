@@ -1,0 +1,57 @@
+\section{Considere la ecuación}
+$$ ty'' + 2y' + ty = 0 $$
+donde $y_1(t)=\frac{\sin(t)}{t}$ es una solución, utilice el método de reducción de orden para encontrar una segunda solución linealmente independiente y así obtenga la solución general.
+
+
+
+Así tenemos lo siguiente:\\
+
+    $$y_2=uy_1(t)$$
+    $$y_2'=u'y_1(t)+uy_1(t)'$$
+    $$y_2''=u''y_1(t)+u'y_1(t)'+u'y_1(t)'+uy_1(t)''$$
+Sustituyendo tenemos:
+    $$y_2=u\left(\frac{sin(t)}{t}\right)$$
+    $$y_2'=u'\left(\frac{sin(t)}{t}\right)+u\left(\frac{sin(t)}{t}\right)'$$
+    $$y_2''=u''\left(\frac{sin(t)}{t}\right)+2\left[u'\left(\frac{sin(t)}{t}\right)'\right]+u\left(\frac{sin(t)}{t}\right)''$$
+Y queda como:
+    $$y_2=u\left(\frac{sin(t)}{t}\right)$$
+    $$y_2'=u'\left(\frac{sin(t)}{t}\right)+u\left(\frac{t\cos \:\left(t\right)-\sin \:\left(t\right)}{t^2}\right)$$
+    $$y_2''=u''\left(\frac{sin(t)}{t}\right)+2\left[u'\left(\frac{t\cos \:\left(t\right)-\sin \:\left(t\right)}{t^2}\right)\right]+u\left(-\frac{t^2\sin \:\:\left(t\right)+2\left(t\cos \:\:\left(t\right)-\sin \:\:\left(t\right)\right)}{t^3}\right)$$
+
+Sustituyendo en la ecuación principal:
+
+    $$t\left( u''\left(\frac{sin(t)}{t}\right)+2\left[u'\left(\frac{t\cos \:\left(t\right)-\sin \:\left(t\right)}{t^2}\right)\right]+u\left(-\frac{t^2\sin \:\:\left(t\right)+2\left(t\cos \:\:\left(t\right)-\sin \:\:\left(t\right)\right)}{t^3}\right) \right)$$
+    $$+ 2\left( u'\left(\frac{sin(t)}{t}\right)+u\left(\frac{t\cos \:\left(t\right)-\sin \:\left(t\right)}{t^2}\right) \right) + t \left(u\left(\frac{sin(t)}{t}\right)\right)=0 $$
+    
+Ahora reduciendo la ecuación tenemos:
+    
+    $$u''\sin \left(t\right)+\frac{2u'\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t}-\frac{u\left(t^2\sin \left(t\right)+2\left(t\cos \left(t\right)-\sin \left(t\right)\right)\right)}{t^2}+2\left(\frac{u'\sin \left(t\right)}{t}+\frac{u\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t^2}\right)+t\frac{u\sin \left(t\right)}{t}$$
+    $$+\frac{2u''\sin \left(t\right)}{t}+\frac{2u\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t^2}+t\frac{u \sin(t)}{t}$$
+    factorizando: $\frac{2u'\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t}+\frac{2u'\sin(t)}{t}$
+    
+    $$u''\sin \left(t\right)+2u'\cos \left(t\right)-\frac{u\left(t^2\sin \left(t\right)+2\left(t\cos \left(t\right)-\sin \left(t\right)\right)\right)}{t^2}+\frac{2u\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t^2}+u\sin \left(t\right)$$
+    
+    y finalmente factorizando: $-\frac{u\left(t^2\sin \left(t\right)+2\left(t\cos \left(t\right)-\sin \left(t\right)\right)\right)}{t^2}+\frac{2u\left(t\cos \left(t\right)-\sin \left(t\right)\right)}{t^2}$
+    
+    $$u''\sin \left(t\right)+2u'\cos \left(t\right)-u\sin \left(t\right)+u\sin \left(t\right)=0$$
+    $$u''\sin \left(t\right)+2u'\cos \left(t\right)=0$$
+    Así tenemos una ecuación más simple
+    $$u''\:=-\frac{2\cos \left(t\right)u'\:}{\sin \left(t\right)}$$
+    $\Rightarrow$
+    $$v'\:=-\frac{2\cos \left(t\right)v}{\sin \left(t\right)}$$
+    $$\frac{1}{v}v'\:=-2\cot \left(t\right)$$
+    $$\int \frac{1}{v}dv=\int \:-2\cot \left(t\right)dt$$
+    $$\ln \left(v\right)=-2\ln \left(\sin \left(t\right)\right)+c_1$$
+    $$v=\frac{e^{c_1}}{\sin ^2\left(t\right)}$$
+    Pero $e^{c_1}$ es una constante en si misma por lo tanto
+    $$v=\frac{c_1}{\sin ^2\left(t\right)}$$
+    entonces queda la ecuación principal:
+    $$u'\:=\frac{c_1}{\sin ^2\left(t\right)}$$
+    $$u=\int \frac{c_1}{\sin ^2\left(t\right)}dt$$
+    $$u=-c_1\cot \left(t\right)+c_2$$
+    Finalmente queda:
+    $$y_2=\left(c_1\cot \left(t\right)+c_2 \right)\frac{\sin(t)}{t}$$
+    Pero como $c_1$ y $c_2$ se pueden cumplir para la general de las soluciones entonces:
+    
+    $$y=\left(C_1\cot \left(t\right)+C_2 \right)\frac{\sin(t)}{t}$$
+    

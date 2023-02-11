@@ -1,0 +1,64 @@
+\section{Determinar si las siguientes matrices son normales.}    
+\begin{itemize}
+    \item [$a)$] $A=\begin{pmatrix}
+	1 & i \\
+	0 & 1 \end{pmatrix}$\\\\
+	Recordemos que por definición, una matriz es normal si conmuta con su adjunto, esto es $AA^*=A^*A$. Así que para probar que $A$ es normal, obtengamos su adjunta, la cual ya sabemos que se trata de la traspuesta de la matriz de cofactores, es decir, su matriz de cofactores es:\[\begin{pmatrix}
+	(-1)^{1+1}|A_{1\hspace{0.5mm}1}| & (-1)^{1+2}|A_{1\hspace{0.5mm}2}| \\
+	(-1)^{2+1}|A_{2\hspace{0.5mm}1}| & (-1)^{2+2}|A_{2\hspace{0.5mm}2}|\end{pmatrix}=\begin{pmatrix}
+	1 & 0 \\
+	-i & 1 \end{pmatrix}\]
+\[\therefore A^*=\begin{pmatrix}
+	1 & -i \\
+	0 & 1 \end{pmatrix}\]
+	Ahora sí, probemos que la matriz $A$ conmuta con su adjunta.
+	\[AA^*=\begin{pmatrix}
+	1 & i \\
+	0 & 1 \end{pmatrix}\begin{pmatrix}
+	1 & -i \\
+	0 & 1 \end{pmatrix} = \begin{pmatrix}
+	1 & -i+i \\
+	0 & 1 \end{pmatrix}=\begin{pmatrix}
+	1 & 0 \\
+	0 & 1 \end{pmatrix}\]
+	\[A^*A=\begin{pmatrix}
+	1 & -i \\
+	0 & 1 \end{pmatrix}\begin{pmatrix}
+	1 & i \\
+	0 & 1 \end{pmatrix} = \begin{pmatrix}
+	1 & i-i \\
+	0 & 1 \end{pmatrix}=\begin{pmatrix}
+	1 & 0 \\
+	0 & 1 \end{pmatrix}\]
+	\[\therefore AA^*=A^*A\]\[\therefore A ~~~\text{es normal}~~~\]
+    \item [$b)$] $B=\begin{pmatrix}
+	1 & i \\
+	1 & 2+i \end{pmatrix}$\\\\Procediendo de la misma manera, tenemos que su matriz de cofactores es:\[\begin{pmatrix}
+	(-1)^{1+1}|B_{1\hspace{0.5mm}1}| & (-1)^{1+2}|B_{1\hspace{0.5mm}2}| \\
+	(-1)^{2+1}|B_{2\hspace{0.5mm}1}| & (-1)^{2+2}|B_{2\hspace{0.5mm}2}|\end{pmatrix}=\begin{pmatrix}
+	2+i & -1 \\
+	-i & 1 \end{pmatrix}\]\[\therefore B^*=\begin{pmatrix}
+	2+i & -i \\
+	-1 & 1 \end{pmatrix}\]
+	Ahora probemos que la matriz $B$ conmuta con su adjunta.
+	\[BB^*=\begin{pmatrix}
+	1 & i \\
+	1 & 2+i \end{pmatrix}\begin{pmatrix}
+	2+i & -i \\
+	-1 & 1 \end{pmatrix}=\begin{pmatrix}
+	2+i-i & -i+i \\
+	2+i-2-i & -i+2+i \end{pmatrix}=\begin{pmatrix}
+	2 & 0 \\
+	0 & 2 \end{pmatrix} \]
+	\[B^*B=\begin{pmatrix}
+	2+i & -i \\
+	-1 & 1 \end{pmatrix}\begin{pmatrix}
+	1 & i \\
+	1 & 2+i \end{pmatrix}=\begin{pmatrix}
+	2+i-i & 2i-1-2i+1 \\
+	-1+1 & -i+2+i \end{pmatrix}=\begin{pmatrix}
+	2 & 0 \\
+	0 & 2 \end{pmatrix} \]
+	\[\therefore BB^*=B^*B\]\[\therefore B ~~~\text{es normal}~~~\]
+	
+\end{itemize}

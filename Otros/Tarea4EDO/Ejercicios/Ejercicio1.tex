@@ -1,0 +1,33 @@
+\textcolor{blue}{Ejercicio 1.} Verifique que la matriz
+$$\Phi=\begin{pmatrix}t&t^3\\ 1&3t^2\end{pmatrix},\:t>0$$
+es una matriz fundamental del sistema $y'=A(t)y$, con 
+$$A\left(t\right)=\frac{1}{t^2}\begin{pmatrix}0&t^2\\ -3&3t\end{pmatrix},\:t>0$$
+
+    \textsc{Primeramente $A(t)=\begin{pmatrix}0&1\\ -\frac{3}{t^2}&\frac{3}{t}\end{pmatrix}$}
+
+Si $\Phi$ es una matriz fundamental entonces para cada columna tenemos:
+\begin{enumerate}
+    \item  $$\begin{pmatrix}0&1\\ \:-\frac{3}{t^2}&\frac{3}{t}\end{pmatrix}\begin{pmatrix}t\\ 1\end{pmatrix}=\begin{pmatrix}t\\ \:1\end{pmatrix}'$$
+    \item  $$\begin{pmatrix}0&1\\ \:-\frac{3}{t^2}&\frac{3}{t}\end{pmatrix}\begin{pmatrix}t^3\\ 3t^2\end{pmatrix}=\begin{pmatrix}t^3\\ \:3t^2\end{pmatrix}'$$
+\end{enumerate}
+
+Verificando 1:
+    $$\begin{pmatrix}0&1\\ \:-\frac{3}{t^2}&\frac{3}{t}\end{pmatrix}\begin{pmatrix}t^3\\ 3t^2\end{pmatrix}=\begin{pmatrix}t^3\\ \:3t^2\end{pmatrix}'$$
+    $$\begin{pmatrix}0\cdot \:t+1\cdot \:1\\ \left(-\frac{3}{t^2}\right)t+\frac{3}{t}\cdot \:1\end{pmatrix}$$
+    $$\begin{pmatrix}1\\ 0\end{pmatrix}$$
+    y por otro lado
+    $$\begin{pmatrix}t^3\\ \:3t^2\end{pmatrix}'=\begin{pmatrix}1\\ 0\end{pmatrix}$$
+\textsc{Se Cumple}
+
+Verificando a 2:
+    $$\begin{pmatrix}0&1\\ -\frac{3}{t^2}&\frac{3}{t}\end{pmatrix}\begin{pmatrix}t^3\\ 3t^2\end{pmatrix}$$
+    $$\begin{pmatrix}0\cdot \:t^3+1\cdot \:3t^2\\ \left(-\frac{3}{t^2}\right)t^3+\frac{3}{t}\cdot \:3t^2\end{pmatrix}$$
+    $$\begin{pmatrix}3t^2\\ 6t\end{pmatrix}$$
+    y por otro lado
+    $$\begin{pmatrix}t^3\\ 3t^2\end{pmatrix}'=\begin{pmatrix}3t^2\\ 6t\end{pmatrix}$$
+\textsc{Se Cumple}
+
+Por lo tanto $\Phi(t)$ si es una matriz fundamental para el sistema descrito
+
+
+    

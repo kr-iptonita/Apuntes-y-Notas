@@ -1,0 +1,214 @@
+\section{Sea \textbf{$T: \mathbb{R}_2[x] \longrightarrow \matbb{R}_2[x]$} el endomorfismo dado por:
+\[T(p(x)) = p(x+1)+(x+1)p'(x+1)\]}
+\begin{itemize}
+    \item[$a)$] Hallar la matriz $A$ de $T$ respecto de la can\'onica.\\\\
+    \textbf{Soluci\'on 6.a:}\\
+    Sabemos que para calcular la matriz $A$ asociada a $T$, lo primero que debemos hacer es plantear una base can\'onica para nuestro espacio vectorial $\mathbb{R}$, la cual podemos definir de acuerdo a las matrices can\'onicas como $\mathcal{C}=\left\{f_1=1, f_2=x, f_3=x^2\right\}$ Ahora, sabemos que para determinar $A$ debemos definir cada columna como el vector coordenada de la matriz aplicada a cada elemento de la base (con la numeraci\'on correspodiente), respecto a la base $\mathcal{C}$, es decir:
+    \[A=\begin{pmatrix} [T(f_1)]_{\mathcal{C}} & [T(f_2)]_{\mathcal{C}} &[T(f_3)]_{\mathcal{C}}\end{pmatrix}\]
+    Por lo tanto, encontrando cada vector coordenada, tenemos:
+    \begin{itemize}
+        \item \[T(1)=1+(x+1)(1)'=1+(x+1)(0)=1=f_1=1f_1+0f_2+0f_3\]
+    \[\therefore [T(f_1)]_{\mathcal{C}}=\begin{pmatrix} 1 & 0 & 0\end{pmatrix}\]
+    
+    \item \[T(f_2)=(x+1)+(x+1)(x+1)'=(x+1)+(x+1)(1)=2(x+1)=2x+2=2f_2+2f_1=2f_1+2f_1+0f_3\]
+    \[\therefore [T(f_2)]_{\mathcal{C}}=\begin{pmatrix} 2 & 2 & 0\end{pmatrix}\]
+    
+    \item \[T(f_3)=(x+1)^2+(x+1)((x+1)^2)'=(x+1)^2+(x+1)(2(x+1)=(x+1)^2(1+2)\]\[=3(x+1)^2=3(x^2+2x+1)=3x^2+6x+3=3f_1+6f_2+3f_3\]
+    \[\therefore [T(f_3)]_{\mathcal{C}}=\begin{pmatrix} 3 & 6 & 3\end{pmatrix}\]
+    
+    \end{itemize}De modo que finalmente coloc\'andolos como columna en la matriz obtenemos:
+    \[A= \begin{pmatrix} [T(f_1)]_{\mathcal{C}} & [T(f_2)]_{\mathcal{C}} &[T(f_3)]_{\mathcal{C}}\end{pmatrix}=\begin{pmatrix}
+    1 & 2 & 3\\
+    0 & 2 & 6\\
+    0 & 0 & 3\end{pmatrix}\]
+    
+\item[$b)$]Prueba que $T$ es diagonalizable.\\\\
+\textbf{Demostraci\'on 5.b:}\\
+Para esta prueba, utilizaremos el \textbf{Corolario 15} visto en clase, el cual nos dice que como $\text{dim}(\mathbb{R}_2[x]) = 3$ y como $T$ definido anteriormente es un endomorfismo, debemos probar que admite $3$ valores propios distintos para probar que $T$ es
+diagonalizable.\\
+Entonces debemos primeramente encontrar su polinomio caracter\'istico para encontrar sus valores propios, es decir igualar $|A-\lambda I|=0$, por lo tanto:
+\[0=\det(A-\lambda I)=\left|\begin{pmatrix}
+    1 & 2 & 3\\
+    0 & 2 & 6\\
+    0 & 0 & 3\end{pmatrix}-\lambda \begin{pmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1\end{pmatrix}\right|=\begin{vmatrix}
+    1-\lambda & 2 & 3\\
+    0 & 2-\lambda & 6\\
+    0 & 0 & 3-\lambda\end{vmatrix}\]
+    Pero al ser una matriz triangular superior entonces su determinante es el producto de los elementos de su diagonal principal y por ende sus ra\'ices, por tanto:
+    \[=(1-\lambda)(2-\lambda)(3-\lambda)=(1-\lambda)(6-5\lambda+\lambda^2)=6-5\lambda+\lambda^2-6\lambda+5\lambda^2-\lambda^3=-\lambda^3+6\lambda^2-11\lambda+6=0\]
+    Por lo que tenemos que $\lambda_1=1$, $\lambda_2=2$ y $\lambda_3=3$, por lo que tiene $3$ ra\'ices diferentes y por el \textbf{Corolario 15} tenemos que entonces $T$ es diagonalizable.\qed
+
+
+
+\item[$c)$] Hallar una base de $\mathbb{R}_2[x]$ 
+que diagonalice a $T$, y la matriz $D$.\\\\
+\textbf{Soluci\'on 5.c:}\\
+Como $T$ es diagonizable, por definici\'on existe una base $\mathcal{C}'$, tal que la matriz de $T$ respecto a esta nueva base es una matriz diagonal y entonces por el \textbf{Teorema 14} visto en clase, tenemos que $\mathcal{C}'$ es una base de $\mathbb{R}_2[x]$ formada por los vectores
+propios de $T$, $v_1,v_2,v_3$ asociados a los valores propios $\lambda_1,\lambda_2,\lambda_3$, de modo que habr\'a que encontrarlos para obtener la base:
+\begin{itemize}
+ \item Para $\lambda_1=1$, sustituyendo en la ecuaci\'on $(A-\lambda I)\vec{v}=(0)$, con $\vec{v}=(x,y,z)$, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{3})\vec{v}=\begin{pmatrix}
+    1-1 & 2 & 3\\
+    0 & 2-1 & 6\\
+    0 & 0 & 3-1\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}
+    0 & 2 & 3\\
+    0 & 1 & 6\\
+    0 & 0 & 2\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}0(x)+2(y)+3(z)\\0(x)+1(y)+6(z)\\0(x)+0(y)+2(z)\end{pmatrix}=\begin{pmatrix}2y+3z\\y+6z\\2z\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\end{pmatrix}=\begin{pmatrix}2y+3z\\y+6z\\2z\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+2y+3z&=&0\\y+6z&=&0\\2z&=&0\end{eqnarray*}
+De la tercera ecuaci\'on tenemos que $z=0$, por lo que sustityendo en la segunda, nos queda que $y=0$, pero para $x$ no hay restricci\'on alguna, por lo que podemos tratarla como variable libre, de modo que sus subespacio propio para $\lambda_1=1$ es:
+\[E(1)=\{(\alpha,0,0)~|~\alpha\in \mathbb{R}\}=\{\alpha(1,0,0)~|~\alpha\in \mathbb{R}\}\]
+Por lo que $\langle(1,0,0)\rangle=E(1)$, por lo que si lo fijamos como $\alpha=1$, tenemos al vector propio
+\[v_1=\begin{pmatrix}1\\0\\0\end{pmatrix}\]
+
+
+\item Para $\lambda_2=2$, sustituyendo en la ecuaci\'on $(A-\lambda I)\vec{v}=(0)$, con $\vec{v}=(x,y,z)$, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{3})\vec{v}=\begin{pmatrix}
+    1-2 & 2 & 3\\
+    0 & 2-2 & 6\\
+    0 & 0 & 3-2\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}
+    -1 & 2 & 3\\
+    0 & 0 & 6\\
+    0 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}\]\[=\begin{pmatrix}-1(x)+2(y)+3(z)\\0(x)+0(y)+6(z)\\0(x)+0(y)+1(z)\end{pmatrix}=\begin{pmatrix}-x+2y+3z\\6z\\z\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\end{pmatrix}=\begin{pmatrix}-x+2y+3z\\6z\\z\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-x+2y+3z&=&0\\6z&=&0\\z&=&0\end{eqnarray*}
+De la segunda y tercera ecuaci\'on tenemos que $z=0$, por lo que sustityendo en la primera, nos queda que $-x+2y=0$, por lo que $x=2y$, pero para $y$ no hay restricci\'on alguna, por lo que podemos tratarla como variable libre, de modo que sus subespacio propio para $\lambda_2=2$ es:
+\[E(2)=\{(2\alpha,\alpha,0)~|~\alpha\in \mathbb{R}\}=\{\alpha(2,1,0)~|~\alpha\in \mathbb{R}\}\]
+Por lo que $\langle(2,1,0)\rangle=E(2)$, por lo que si lo fijamos como $\alpha=1$, tenemos al vector propio
+\[v_2=\begin{pmatrix}2\\1\\0\end{pmatrix}\]
+
+\item Para $\lambda_3=3$, sustituyendo en la ecuaci\'on $(A-\lambda I)\vec{v}=(0)$, con $\vec{v}=(x,y,z)$, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{3})\vec{v}=\begin{pmatrix}
+    1-3 & 2 & 3\\
+    0 & 2-3 & 6\\
+    0 & 0 & 3-3\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}
+    -2 & 2 & 3\\
+    0 & -1 & 6\\
+    0 & 0 & 0\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}-2(x)+2(y)+3(z)\\0(x)-1(y)+6(z)\\0(x)+0(y)+0(z)\end{pmatrix}\]\[=\begin{pmatrix}-2x+2y+3z\\-y+6z\\0\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\end{pmatrix}=\begin{pmatrix}-2x+2y+3z\\-y+6z\\0\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-2x+2y+3z&=&0\\-y+6z&=&0\end{eqnarray*}
+De la segunda ecuaci\'on tenemos que $y=6z$, por lo que sustituyendo en la primera, nos queda que $-2x+2(6z)+3z=-2x+12z+3z=0$, por lo que $x=\frac{15}{2}z$, pero para $z$ no hay restricci\'on alguna, por lo que podemos tratarla como variable libre, de modo que sus subespacio propio para $\lambda_3=3$ es:
+\[E(3)=\{(\frac{15}{2}\alpha,6\alpha,\alpha)~|~\alpha\in \mathbb{R}\}=\{\alpha\left(\frac{15}{2},6,1\right)~|~\alpha\in \mathbb{R}\}\]
+Por lo que $\left\langle\left(\frac{15}{2},6,1\right)\right\rangle=E(3)$, por lo que si lo fijamos como $\alpha=2$, tenemos al vector propio
+\[v_3=\begin{pmatrix}15\\12\\2\end{pmatrix}\]
+\end{itemize}
+Pero cada uno de los vectores propios es un vector coordenada de la nueva base $\mathcal{C}'=\{f'_1,f'_2,f'_3\}$ escrita en la base can\'onica $\mathcal{C}=\{f_1,f_2,f_3\}$, por lo que hab\' que escribir la combinaci\'on lineal:
+\begin{itemize}
+    \item Para $v_1=(1,0,0)$, tenemos:
+    \[f'_1=1f_1+0f_2+0f_3=f_1=1\]
+    \item Para $v_2=(2,1,0)$, tenemos:
+    \[f'_2=2f_1+1f_2+0f_3=2f_1+f_1=2(1)+x=x+2\]
+    \item Para $v_3=(15,12,2)$, tenemos:
+    \[f'_3=15f_1+12f_2+2f_3=15(1)+12x+2x^2=2x^2+12x+15\]
+\end{itemize}
+Por lo que la base $\mathcal{C}'=\{1,x+2,2x^2+12x+15\}$ es la que diagonaliza a $T$.\\
+Entonces la matriz de $T$ respecto a la nueva base $\mathcal{C}$ es la matriz diagonal cuyas entradas son los valores propios en el orden correspondiente, es decir:
+\[D=\begin{pmatrix}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{pmatrix}=\begin{pmatrix}1&0&0\\0&2&0\\0&0&3\end{pmatrix}\]
+
+
+\item[$d)$] Encontrar una matriz invertible $P$ tal que $D = P^{-1} AP$.\\\\
+\textbf{Soluci\'on 5.d:}\\ 
+Como ya se menciono anteriormente, al ya tener $A$ y $D$, podemos definir a la matriz de paso aquella cuyas columnas son los vectores propios en el orden correspondiente, es decir:
+\[P=\begin{pmatrix}v_1&v_2&v_3\end{pmatrix}=\begin{pmatrix}1&2&15\\0&1&12\\0&0&2\end{pmatrix}\]
+Para comprobar que $D=P^{-1}AP$ primero encontraremos $P^{-1}$ usando operaciones elementales por renglones (filas) para encontrar $P^{-1}$:
+\[(P|I_{3\times 3})=\left.\left(\begin{matrix}
+ 1&2&15\\0&1&12\\0&0&2\end{matrix}\right\rvert\begin{matrix}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1  \end{matrix}\right)\begin{tabular}{c}
+$\thicksim$          \\
+$r_1=r_1-r_2$
+\end{tabular}\left.\left(\begin{matrix}
+1&1&3\\0&1&12\\0&0&2\end{matrix}\right\rvert\begin{matrix}
+1 & -1 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1  \end{matrix}\right)\begin{tabular}{c}
+$\thicksim$          \\
+$r_2=r_2-6r_3$
+\end{tabular}\left.\left(\begin{matrix}
+1&1&3\\0&1&0\\0&0&2\end{matrix}\right\rvert\begin{matrix}
+1 & -1 & 0 \\ 
+0 & 1 & -6 \\ 
+0 & 0 & 1  \end{matrix}\right)\]\[\begin{tabular}{c}
+$\thicksim$          \\
+$r_3=\frac{1}{2}r_3$
+\end{tabular}\left.\left(\begin{matrix}
+1&1&3\\0&1&0\\0&0&1\end{matrix}\right\rvert\begin{matrix}
+1 & -1 & 0 \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{matrix}\right)\begin{tabular}{c}
+$\thicksim$          \\
+$r_1=r_1-r_2$
+\end{tabular}\left.\left(\begin{matrix}
+1&0&3\\0&1&0\\0&0&1\end{matrix}\right\rvert\begin{matrix}
+1 & -2 & 6 \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{matrix}\right)\]\[\begin{tabular}{c}
+$\thicksim$          \\
+$r_1=r_1-3r_3$
+\end{tabular}\left.\left(\begin{matrix}
+1&0&0\\0&1&0\\0&0&1\end{matrix}\right\rvert\begin{matrix}
+1 & -2 & \frac{9}{2} \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{matrix}\right)=(I_{3\times 3}|P^{-1})\]
+\[\therefore P^{-1}=\begin{pmatrix}
+1 & -2 & \frac{9}{2} \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{pmatrix}\]
+Por lo que s\'olo faltar\'ia verificar:
+\[P^{-1}AP=P^{-1}(AP)=\begin{pmatrix}
+1 & -2 & \frac{9}{2} \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{pmatrix}\left[\begin{pmatrix}
+    1 & 2 & 3\\
+    0 & 2 & 6\\
+    0 & 0 & 3\end{pmatrix}\begin{pmatrix}1&2&15\\0&1&12\\0&0&2\end{pmatrix}\right]\]\[=\begin{pmatrix}
+1 & -2 & \frac{9}{2} \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{pmatrix}\begin{pmatrix}
+    1(1)+2(0)+3(0) & 1(2)+2(1)+3(0) & 1(15)+2(12)+3(2)\\
+    0(1)+2(0)+6(0) & 0(2)+2(1)+6(0) & 0(15)+2(12)+6(2)\\
+    0(1)+0(0)+3(0) & 0(2)+0(1)+3(0) & 0(15)+0(12)+3(2)
+    \end{pmatrix}=\begin{pmatrix}
+1 & -2 & \frac{9}{2} \\ 
+0 & 1 & -6 \\ 
+0 & 0 & \frac{1}{2} \end{pmatrix}\begin{pmatrix}
+    1 & 4 & 45\\
+    0 & 2 & 36\\
+    0 & 0 & 6
+    \end{pmatrix}\]\[=\begin{pmatrix}
+1(1)+(-2)(0)+\frac{9}{2}(0) & 1(4)+(-2)(2)+\frac{9}{2}(0) & 1(45)+(-2)(36)+\frac{9}{2}(6)\\
+0(1)+1(0)+(-6)(0) & 0(4)+1(2)+(-6)(0) & 0(45)+1(36)+(-6)(6)\\
+0(1)+0(0)+\frac{1}{2}(0) & 0(4)+0(2)+\frac{1}{2}(0) & 0(45)+0(36)+\frac{1}{2}(6)\\
+\end{pmatrix}=\begin{pmatrix}
+    1 & 0 & 0\\
+    0 & 2 & 0\\
+    0 & 0 & 3
+    \end{pmatrix}=D\]
+\[\therefore P^{-1}AP=D\]
+\end{itemize}
+
+
+%\textbf{Soluci\'on:}\\$a)$ Hallar la matriz A de T respecto de la can\'onica.\\\[{1,x,x^2}e_1 T(1)=(2,1+1(0)=1\]\[{0,1,2x}e_2 T(x)=x+1+x+1(1)=2x+2\]\[e_3 T(x)=(x+1)^2+(x+1)(2(x+1))=...\]\[T(e_1=1)=1=2/1)=1e \Longrightarrow (2,0,0) \]\[T(e_2=x)=2x+2=2e_1+2e_2 \Longrightarrow (2,2,0)\]\[T(e_3=x^2) =2x^3+x^2+2x+1=3x^2+6x+3=3e_2+6e_2+3e_3 \Longrightarrow (3,6,3)\]\begin{equation}\begin{pmatrix}1 & 2 & 3\\0 & 2 & 6\\0 & 0 & 3\end{pmatrix}\end{equation}
+

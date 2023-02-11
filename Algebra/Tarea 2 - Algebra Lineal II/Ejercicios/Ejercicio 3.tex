@@ -1,0 +1,12 @@
+\section{Demuestra que cualquier matriz A tiene el mismo polinomio caracter\'istico que $A^t$.\\}
+\textbf{Demostraci\'on 3:}\\
+
+Sea $A$ una matriz, sabemos que una matriz y su transpuesta tienen el mismo determinante. Además, de que al momento de que hacemos la traspuesta de una matriz lo que estamos haciendo es una transformaci\'on lineal, es decir que $\text{det}(M)=\text{det}(M^T)$. A partir de la  definici\'on dada en clase del polinomio característico, cambiaremos la 't' por $\lambda$, esto para evitar confusiones con la 't' que se utilizará para referirnos a la traspuesta de la matriz. De modo que:\\
+
+\[p_\lambda(A) = \text{det}(A-\lambda I_n)\]
+\[=\text{det}((A-\lambda I_n)^T)\]
+\[=\text{det}(A^T-(\lambda I_n)^T)\]
+\[=\text{det}(A^T-\lambda I_n)\]
+\[=p_\lambda(A^T)\]
+
+Para esta demostraci\'on tambien usamos que la matriz identidad $I_n=I_n^T$, as\'i como que se pueden sacar escalares de una matriz transpuesta, asi como tambi\'en se abre a sumas. De manera que nos ser\'a f\'acil ver que efectivamente, cualquier matriz $A$ tiene el mismo polinomio caracter\'istico que $A^T$.\qed 

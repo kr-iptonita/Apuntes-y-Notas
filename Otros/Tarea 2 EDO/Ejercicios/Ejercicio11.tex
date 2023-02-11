@@ -1,0 +1,54 @@
+\section{Ejercicio 11}
+La ecuación de un Oscilador Armónico Simple está dada por 
+\begin{equation*}
+\frac{d^{2}s}{dt^{2}} + w^{2}s=0
+\end{equation*}
+
+\begin{itemize}
+\item Encuentre la solución general de la forma s(t)=$C_{1} s_{1} + C_{2} s_{2}$
+\end{itemize}
+
+Se propone la solución $x(t)=e^{rt}$, evaluando en $L[x(t)]$ se tiene que:
+
+\begin{equation*}
+  r^{2} e^{rt} + w^{2} e^{rt}=0 \rightarrow  (e^{rt}( r^{2}+ w^{2}) =0 \\
+
+\rightarrow r^{2}= - w^{2} \rightarrow r= \plusminus iw \\  
+\end{equation*}
+
+
+Por la ecuación de Euler $(e^{i\theta}=\cos(\theta)+i\sin(\theta))$, setiene que  el conjunto fundamental de soluciones es \\
+\begin{equation*}
+\{ e^{iwt}, e^{-iwt}\}
+\end{equation*}
+Entonces se tiene que:
+\begin{equation*}
+Y_{1}(t)= e^{iwt}=\cos(wt)+i\sin(wt)
+\end{equation*}
+\begin{equation*}
+Y_{2}(t)= e^{iwt}=\cos(-wt)+i\sin(-wt)=\cos(wt)-i\sin(wt)
+\end{equation*}
+Tomando la parte real e imaginaria de cada $Y Y_{1}$ y $Y_{2}$ se obtiene que
+\begin{equation*}
+gen(Y_{1}) =gen(Y_{2})=\{\cos(wt),\sen(wt)\}
+\end{equation*}
+Por lo que la solución general es \\
+\begin{equation}
+x(t)=C_{1} \cos(wt),+ C_{2}\sen(wt)
+\label{eq:oscila}
+\end{equation}
+
+\begin{itemize}
+\item Muestre que al hacer $C_{1}=A\sin(\delta)$ y $ C_{2}=A\cos(\delta)$ la solución se reduce a 
+\end{itemize}
+\begin{equation*}
+S(t)=A\sin(wt+\delta)
+\end{equation*}
+\\
+Hacemos la sustitución en la ecuación \ref{eq:oscila} recordando que $\sin(a+b)=\sin(a)\cos(b)+\cos(a)\sin(b)$ y se tiene que:
+\begin{equation*}
+C_{1} \cos(wt),+ C_{2}\sen(wt)= A\sin(\delta)  \cos(wt),+ A\cos(\delta)\sin(wt)
+\end{equation*}
+\begin{equation*}
+= A(\sin(\delta)\cos(wt)+ \cos(\delta)\sin(wt))=A\sin(wt + \delta)
+\end{equation*}

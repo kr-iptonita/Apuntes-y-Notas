@@ -1,0 +1,84 @@
+\section{}El economista británico A. W. Phillips presentó en 1958 un estudio
+empírico según el cual existiría entre la tasa de crecimiento del salario monetario y la tasa de
+desempleo, una relación inversa. A partir de estos estudios, más adelante, se construyó una
+función según la cual también existe una relación inversa entre la tasa de inflación y la de
+desempleo. El modelo de Phillips permite, averiguar la trayectoria temporal de la inlación,
+es decir, cómo evoluciona la tasa de inflación a lo largo del tiempo, a través de la siguiente
+ecuación diferencial
+$$\frac{d^{2}\pi (t)}{dt^{2}} + a_{1}\frac{d\pi (t)}{dt} + a_{0}\pi (t) = bg(t)$$
+donde $\pi=\pi(t)$ es la tasa de inflación esperada, $a_{1},a_{0},b$ son constantes y $g(t)$ es la tasa de crecimiento monetaria, resuelva la ecuación considerando; $a_{1}=a_{0}=4,b=5$
+\begin{itemize}
+    \item g(t)= C constante.
+\end{itemize}
+
+Reescribimos la ecuación con los valores dados de forma que tenemos
+\begin{equation}
+    \pi'' + 4\pi' + 4\pi = 5C
+\end{equation}
+Observamos que tenemos una ecuación no homogénea, entonces buscamos la soluciones de la ecuación homogénea asociada de forma que:
+\begin{equation*}
+    \pi'' + 4\pi' + 4\pi = 0
+\end{equation*}
+Proponemos $\pi=e^{rt}$, entonces se tiene que
+\begin{equation*}
+\centering
+\begin{split}
+    (r^{2} + 4r + 4)e^{rt} &= 0 \\   
+    r^{2} + 4r + 4 &= 0 \\
+    (r + 2)^{2} &= 0 \\
+    \Rightarrow r_{1}=r_{2} &=-2 \\
+    \Rightarrow y_{1} = e^{-2t}
+    y_{2}
+\end{split}
+\end{equation*}
+Entonces la solución de la ecuación homogénea asociada es
+\begin{equation}
+     y_{h} = c_{1}e^{r_{1}t} +c_{2}te^{r_{1}t} = c_{1}e^{-2t} +c_{2}te^{-2t}
+\label{eq:homogenea}
+\end{equation}
+Ahora buscamos la solución particular $Y(t)$, por lo que calculamos $W(y_{1},y_{2})$
+
+$$ W = \left|
+\begin{array}{cc}
+  e^{-2t}   &  te^{-2t}\\
+   -2e^{-2t} & (1-2t)e^{-2t}
+\end{array}
+\right| = e^{-4t}
+$$
+\smallskip
+\begin{equation*}
+\begin{split}
+     Y(t)=&-y_{1}(t) \int \frac{y_{2}(t)g(t)}{W(y_{1},y_{2})(t)} dt + y_{2}(t) \int \frac{y_{1}(t)g(t)}{W(y_{1},y_{2})(t)} dt \\
+    =& -e^{-2t} \int \frac{te^{-2t}(5C)}{e^{-4t}} dt + te^{-2t} \int \frac{e^{-2t}(5C)}{e^{-4t}} dt\\
+    =& -5C e^{-2t} \int te^{2t}dt + 5C te^{-2t} \int e^{2t} dt\\
+    =& -5C e^{-2t} (\frac{1}{4}e^{2t}(2t -1)) + 5C te^{-2t} (\frac{1}{2}e^{2t}) \\
+    =& -\frac{5}{2}Ct -\frac{5}{4}C  + \frac{5}{2}Ct = \frac{5}{4}C
+\end{split}
+\end{equation*}
+Por lo tanto la solución general es de la forma 
+\begin{equation*}
+    y(t)= y_{h} + Y(t) = c_{1}e^{-2t} + c_{2}te^{-2t} + \frac{5}{4}C
+\end{equation*}
+\begin{itemize}
+    \item g(t)= m + nt  (m y n constantes) 
+\end{itemize}
+
+Reescribimos la ecuación con los valores dados de forma que tenemos
+\begin{equation}
+    \pi'' + 4\pi' + 4\pi = m + nt
+\end{equation}
+Observamos que tenemos la misma ecuación homogénea asociada, por lo tanto $y_{1}, y_{2}$ (\ref{eq:homogenea}) son los mismas así como $W(y_{1},y_{2})$, entonces calculamos $Y(t)$
+\begin{equation*}
+    \begin{split}
+        Y(t)=&-y_{1}(t) \int \frac{y_{2}(t)g(t)}{W(y_{1},y_{2})(t)} dt + y_{2}(t) \int \frac{y_{1}(t)g(t)}{W(y_{1},y_{2})(t)} dt \\
+    =& -e^{-2t} \int \frac{te^{-2t}(m + nt)}{e^{-4t}} dt + te^{-2t} \int \frac{e^{-2t}(m + nt)}{e^{-4t}} dt\\
+    =& -e^{-2t} ( m\int te^{2t}dt + n\int t^{2} e^{2t}dt )+  te^{-2t} (m\int e^{2t} dt + n\int te^{2t}dt) \\
+    =& -e^{-2t} (\frac{m}{4}e^{2t}(2t -1) + \frac{n}{4}e^{2t}(2t^{2}- 2t +1)) + te^{-2t} (\frac{m}{2}e^{2t} + \frac{n}{4}e^{2t}(2t -1) )  \\
+    =& -\frac{m}{2}t + \frac{m}{4} - \frac{n}{2}t^{2} + \frac{n}{2}t - \frac{n}{4} + \frac{m}{2}t + \frac{n}{2}t^{2} - \frac{n}{4}t \\
+    =& \frac{n}{4}t + \frac{m+ 2n}{4}
+    \end{split}
+\end{equation*}
+Por lo tanto la solución general es de la forma 
+\begin{equation*}
+    y(t)= y_{h} + Y(t) = c_{1}e^{-2t} + c_{2}te^{-2t} + \frac{n}{4}t + \frac{m+ 2n}{4}
+\end{equation*}

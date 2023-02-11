@@ -1,0 +1,195 @@
+\textcolor{blue}{Ejercicio 2.} Pruebe que:
+
+
+$$\Phi= \begin{pmatrix}
+e^{-2t}cos(t) & -sin(t)\\
+e^{-2t}sin(t) & cos(t)
+\end{pmatrix}$$
+
+es una matriz fundamental del sistema lineal homogéneo, no autónomo $y'= A(t)y$ donde: 
+
+
+$$A(t)= \begin{pmatrix}
+-2 cos^2(t) & 1-sin(2t)\\
+1-sin(2t) & -2sin^2(t) \end{pmatrix}$$
+
+Encuentre la inversa $\Phi(t)$ y use el método de variación de parámetros para resolver el sistema no homogéneo $y'= A(t)y +f(t)$ donde 
+
+$$f(t)=\begin{pmatrix}
+1\\
+e^{-2t}
+\end{pmatrix}$$
+
+Con condición inicial $y(0)= (1, 0)^T \in \mathbb{R}^2$\\
+
+$\mathbf{Sol:}$ Veamos que $\Phi(t)$ es fundamental, con ayuda de las identidades trigonométricas reescribiremos a A como sigue:
+
+
+$$A(t)= \begin{pmatrix}
+-cos(2t)-1 & -sin(2t)\\
+1-sin(2t) & cos(2t)-1
+\end{pmatrix}$$
+
+Para el primer vector columna se tiene:
+
+$$y'= \begin{pmatrix}
+-e^{-2t} sin(t) -2e^{-2t} cos(t)\\
+e^{-2t}cos(t)- 2e^{-2t} sin(t)
+\end{pmatrix} = e^{-2t}
+\begin{pmatrix} -sin(t)- 2cos(t)\\
+cos(t)- 2sin(t)
+\end{pmatrix}$$
+    
+Para la multiplicación $A(t)y$ y recordando que cos(2t)= $2cos^2(t)-1$ y $sin(2t)= 2sin(t)cos(t)$, obtenemos:
+
+$$A(t)y= \begin{pmatrix}
+-cos(2t)-1 & -sin(2t)\\
+1-sin(2t) & cos(2t)-1
+\end{pmatrix}
+\begin{pmatrix}
+e^{-2t}cos(t)\\
+e^{-2t}sin(t)
+\end{pmatrix}$$
+    
+$$=e^{-2t}\begin{pmatrix}
+-cos(t)cos(2t)-cos(t)-sin(2t)sin(t)\\
+cos(t)-cos(t)sin(2t)+sin(t)cos(2t)-sin(t)
+\end{pmatrix}$$
+    
+$$=e^{-2t} \begin{pmatrix}
+2cos(t) cos^2(t) -2sin^2(t) cos(t)- 2cos(t)
+\end{pmatrix}$$
+
+$$=e^{-2t} \begin{pmatrix}
+2cos(t)(cos^2(t)- sin^2(t)) -2cos(t)
+\end{pmatrix}$$
+
+Ahora para el segundo vector columna se tiene que:
+
+$$y'\begin{pmatrix}
+-cos(t)\\
+-sin(t)
+\end{pmatrix}$$
+
+Mientras que la multiplicación $A(t)y$, nos da: 
+
+$$A(t)y= \begin{pmatrix}
+-cos(2t)-1 & -sin(2t)\\
+1-sin(2t) & cos(2t)-1 
+\end{pmatrix}
+\begin{pmatrix}
+-cos(t)\\
+-sin(t)
+\end{pmatrix}$$
+
+
+$$\begin{pmatrix}
+cos(t)cos(2t)+ cos(t)+ sin(t)sin(2t)\\
+-cos(t)+ cos(t)sin(2t)+ sin(t)- sin(t)cos(2t)
+\end{pmatrix}$$\\
+
+Notemos que $det(\Phi)= e^{-2t}cos^2(t)+ e^{-2t}sin^2(t)= e^{-2t}$. Luego la inversa está dada por: 
+
+$$\Phi^{-1}(t)= e^{2t} \begin{pmatrix}
+cos(t) & sin(t)\\
+-e^{-2t}sin(t) & e^{-2t}cos(t)
+\end{pmatrix}= 
+\begin{pmatrix}
+e^{2t}cos(t) & e^{2t}sin(t)\\
+-sin(t)  & cos(t)
+\end{pmatrix}$$
+
+Entonces, $\Phi^{-1}(t) f(t)$ es: 
+
+$$\Phi^{-1}(t) f(t)= \begin{pmatrix}
+e^{2t}cos(t) & e^{2t}sin(t)\\
+-sin(t)  & cos(t)
+\end{pmatrix}
+\begin{pmatrix}
+1\\
+e^{-2t}
+\end{pmatrix}=
+\begin{pmatrix}
+e^{2t}cos(t)+ sin(t)\\
+e^{-2t}cos(t)- sin(t)
+\end{pmatrix}$$
+
+La integral entonces es: 
+
+$$ \int^{t}_{0} \Phi^{-1}(s)f(s) ds \begin{pmatrix}
+\int^{t}_{0} e^{2s} cos(s) ds + \int^{t}_{0} sin(s) ds\\
+\int^{t}_{0} e^{-2s} cos(s) ds - \int^{t}_{0} sin(s) ds
+\end{pmatrix}= 
+\begin{pmatrix}
+\frac{e^{2t} sin(t)+ (2e^{2t}-5) cos(t)+3}{5}\\
+\frac{e^{-2t}(sin(t)+ (5e^{2t}-2)cos(t))-3}{5}
+\end{pmatrix}$$
+
+Siguiendo los cálculos obtenemos $\Phi(t) \int^{t}_{0} \Phi^{-1}(s) f(s) ds$: 
+
+$$ \Phi(t) \int^{t}_{0} \Phi^{-1}(s) f(s) ds= \begin{pmatrix}
+e^{-2t}cos(t) & -sin(t)\\
+e^{-2t}sin(t) & cos(t)
+\end{pmatrix}
+\begin{pmatrix}
+\frac{e^{2t}sin(t)+ (2e^{2t}-5)cos(t)+3}{5}\\
+\frac{e^{-2t}(sin(t)+(5e^{2t}-2)cos(t))-3)}{5}
+\end{pmatrix}$$
+
+$$=\begin{pmatrix}
+\frac{e^{-2t}(3cos(t)-2cos(2t)+sin(2t)-3)+cos(2t)+3sin(t)-2sin(2t)+1}{5}\\
+\frac{e^{-2t}(3sin(t)-cos(2t)-2sin(2t)-1)-3cos(t)+2cos(2t)+sin(2t)+3}{5}
+\end{pmatrix}$$
+
+Ahora para calcular la primer parte de la fórmula, la evaluación $\Phi^{-1}(0)$ está dada por: 
+
+$$\begin{pmatrix}
+e^{2t}cos(t) & e^{2t}sin(t)\\
+-sin(t) & cos(t)
+\end{pmatrix}(0)=
+\begin{pmatrix}
+e^{0}cos(0) & e^{0}sin(0)\\
+-sin(0) & cos(0)
+\end{pmatrix}=
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}$$
+
+Entonces, tenemos que: 
+
+$$\Phi(t) \Phi^{-1}(0) x^0 =\begin{pmatrix}
+e^{-2t}cos(t) & -sin(t)\\
+e^{-2t}sin(t) & cos(t)
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix}=
+\begin{pmatrix}
+e^{-2t}cos(t)\\
+e^{-2t}sin(t)
+\end{pmatrix}$$
+
+Así la solución al problema del valor inicial es: 
+
+$$x= \Phi(t) \Phi^{-1}(0)x^{0}+ \Phi(t) \int^{t}_{0} \Phi^{-1}(s)f(s) ds$$
+
+$$x=
+\begin{pmatrix}
+e^{-2t}cos(t)\\
+e^{-2t}sin(t)
+\end{pmatrix}+
+\begin{pmatrix}
+\frac{e^{-2t}(3cos(t)-2cos(2t)+sin(2t)-3)+cos(2t)+3sin(t)-2sin(2t)+1}{5}\\
+\frac{e^{-2t}(3sin(t)-cos(2t)-2sin(2t)-1)-3cos(t)+2cos(2t)+sin(2t)+3}{5}
+\end{pmatrix}$$
+
+$$x= \begin{pmatrix}
+\frac{e^{-2t}(8cos(t)-2cos(2t)+sin(2t)-3)+cos(2t)+3sin(t)-2sin(2t)+1}{5}\\
+\frac{e^{-2t}(8sin(t)-cos(2t)-2sin(2t)-1)-3cos(t)+2cos(2t)+sin(2t)+3}{5}
+\end{pmatrix}$$

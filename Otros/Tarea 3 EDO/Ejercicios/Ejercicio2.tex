@@ -1,0 +1,94 @@
+\textcolor{blue}{Ejercicio 2.} Encuentre una solución en serie de potencias de $x$ alrededor de $x=0$, para la ecuación de Airy 
+
+\begin{center}
+    $y''-xy=0$
+\end{center}
+
+$- \infty < x < \infty $\\
+
+\textbf{Sol:} Como $x$ es un punto ordinario, entonces supongamos que la solución es de la siguiente forma: 
+
+\begin{equation*}
+    y= \sum_{n=0}^{\infty} a_n x^n
+\end{equation*}
+
+De donde $y''= \displaystyle\sum_{n=2}^{\infty} n(n-1) a_n x^{n-2}$, haciendo un cambio de variable puede escribirse cómo:
+
+\begin{equation*}
+    y''= \displaystyle\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2} x^{n}
+\end{equation*}
+
+Sustituyendo en la ecuación se tiene que:
+
+\begin{equation*}
+    \displaystyle\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2} x^n - \displaystyle\sum_{n=0}^{\infty} a_n x^{n+1}=0
+\end{equation*}
+
+Por otro lado, la segunda suma puede reescribirse como: 
+
+\begin{equation*}
+    \displaystyle\sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2} x^{n}- \displaystyle\sum_{n=1}^{\infty} a_{n+1} x^n =0
+\end{equation*}
+
+Sacando el primer término de la primera suma tenemos: 
+
+\begin{equation*}
+    2a_2 \displaystyle\sum_{n=1}^{\infty} (n+2)(n+1) a_{n+2} x^n - \displaystyle\sum_{n=1}^{\infty} a_{n-1} x^n=0
+\end{equation*}
+
+Igualando a cero los términos se debe tener que: 
+
+\begin{equation*}
+    2a_2=0 \Rightarrow a_2=0
+\end{equation*}
+
+\begin{equation*}
+    a_{n+2}=\frac{a_{n-1}}{(n+2)(n+1)}
+\end{equation*}
+
+Notemos que se tienen pasos de a tres en la sucesión de los términos. Para $n=1, 4, 7$, se tiene que: 
+
+\begin{equation*}
+    a_3= \frac{a_0}{2 \cdot 3}
+\end{equation*}
+
+\begin{equation*}
+    a_6= \frac{a_3}{5 \cdot 6}= \frac{a_0}{2 \cdot 3 \cdot 5 \cdot 6}
+\end{equation*}
+
+\begin{equation*}
+    a_9= \frac{a_6}{8 \cdot 9}= \frac{a_0}{2 \cdot 3 \cdot 5 \cdot 6 \cdot 8 \cdot 9}
+\end{equation*}
+    
+Así la primer sucesión está dada por la fórmula: 
+
+\begin{equation*}
+    a_{3n}= \frac{\displaystyle\prod_{k=0}^{n-1}[4+3(k-1)]a_0}{(3n)!}, n=1, 2, \cdots 
+\end{equation*}
+
+Para $n=2, 5, 8$, se tiene que:
+
+\begin{equation*}
+    a_4= \frac{a_1}{4 \cdot 3};
+\end{equation*}
+
+\begin{equation*}
+    a_7= \frac{a_4}{7 \cdot 6}= \frac{a_1}{3 \cdot 4 \cdot 6 \cdot 7 };
+\end{equation*}
+
+\begin{equation*}
+    a_{10}= \frac{a_7}{9 \cdot 10}= \frac{a_1}{3 \cdot 4 \cdot 6 \cdot 7 \cdot 9 \cdot 10}
+\end{equation*}
+
+Entonces, estos términos están dados por: 
+
+\begin{equation*}
+    a_{3n+1}= \frac{\displaystyle\prod_{k=0}^{n-1}[2+3k]a_1}{(3n+1)!}
+\end{equation*}
+
+Finalmente, como $a_2=0$, entonces $n=3, 6, 9, ..., $ se tiene que $a_5= a_8= a_11= ... =0$, es decir que $a_{3n+2}=0$, para toda $n$. Así la solución general de la ecuación de Airy es: 
+
+\begin{equation*}
+    y= a_0 \left[1+ \displaystyle\sum_{n=1}^{\infty} \frac{\displaystyle\prod_{k=0}^{n-1} [4+3(k-1)]}{(3n)!} \cdot x^{3n} \right] + a_1 \left[x+ \displaystyle\sum_{n=1}^{\infty} \frac{\displaystyle\prod_{k=0}^{n-1}[2+3k]}{(3n+1)!} \cdot x^{3n+1}\right]
+\end{equation*}
+    

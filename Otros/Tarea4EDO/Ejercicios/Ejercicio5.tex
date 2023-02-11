@@ -1,0 +1,119 @@
+\textcolor{blue}{Ejercicio 5.} Sea
+
+$$A= \begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}$$
+
+\begin{itemize}
+    \item Encuentre $A^2$, $A^3$ y $A^4$\\
+    
+    Usando la definición: 
+    
+    $$A^2= A \cdot A= \begin{pmatrix}
+    \lambda & 1\\
+    0 & \lambda
+    \end{pmatrix}
+    \begin{pmatrix}
+    \lambda & 1\\
+    0 & \lambda
+    \end{pmatrix}=
+    \begin{pmatrix}
+    \lambda^2 & \lambda + \lambda \\
+    0 & \lambda^2
+    \end{pmatrix}= 
+    \begin{pmatrix}
+    \lambda^2 & 2 \lambda \\
+    0 & \lambda^2
+    \end{pmatrix}$$
+    
+    $$A^3= A^2 \cdot A= \begin{pmatrix}
+    \lambda^2 & 2 \lambda \\
+    0 & \lambda^2
+    \end{pmatrix}
+    \begin{pmatrix}
+    \lambda & 1\\
+    0 & \lambda
+    \end{pmatrix}=
+    \begin{pmatrix}
+    \lambda^3 & \lambda^2 + 2 \lambda^2 \\
+    0 & \lambda^3
+    \end{pmatrix}= 
+    \begin{pmatrix}
+    \lambda^3 & 3 \lambda^2 \\
+    0 & \lambda^3
+    \end{pmatrix}$$
+    
+    $$A^4= A^3 \cdot A= \begin{pmatrix}
+    \lambda^3 & 3 \lambda^2 \\
+    0 & \lambda^3
+    \end{pmatrix}
+    \begin{pmatrix}
+    \lambda & 1\\
+    0 & \lambda
+    \end{pmatrix}=
+    \begin{pmatrix}
+    \lambda^4 & \lambda^3 + 3 \lambda^3 \\
+    0 & \lambda^4
+    \end{pmatrix}= 
+    \begin{pmatrix}
+    \lambda^4 & 4 \lambda^3 \\
+    0 & \lambda^4
+    \end{pmatrix}$$
+    
+    \item Demuestre que: 
+    
+    $$A^n\begin{pmatrix}
+    \lambda^n & n \lambda^{n-1}\\
+    0 & \lambda^n
+    \end{pmatrix}$$
+    
+    Demostraremos por inducción.\\
+    
+    Para el caso base podemos usar lo demostrado en el inciso anterior, supongamos que se cumple para $k \geq 1$, finalmente por definición y por la hipótesis inductiva tenemos que: 
+    
+    $$A^{k+1}= A^{k} \cdot A= \begin{pmatrix}
+    \lambda^{k} & k \lambda^{k-1}\\
+    0 & \lambda^{k}
+    \end{pmatrix}
+    \begin{pmatrix}
+    \lambda & 1\\
+    0 & \lambda
+    \end{pmatrix}= 
+    \begin{pmatrix}
+    \lambda^{k+1} & \lambda^{k}+k \lambda^{k}\\
+    0 & \lambda^{k}
+    \end{pmatrix}=
+    \begin{pmatrix}
+    \lambda^{k+1} & (k+1) \lambda^{k}\\
+    0 & \lambda^{k}
+    \end{pmatrix}$$
+    \item Determine $e^{At}$\\
+    
+    Por definición y el inciso anterior: 
+    
+    $$e^{At}= \displaystyle \sum_{k=0}^{\infty} A^k \frac{t^k}{k!}= \frac{t^0}{0!} \begin{pmatrix}
+    1 & 0\\
+    0 & 1
+    \end{pmatrix}+ 
+    \begin{pmatrix}
+    \displaystyle \sum_{k=1}^{\infty} \frac{\lambda^k t^k}{k!} & \displaystyle \sum_{k=1}^{\infty} \frac{ k \lambda^{k-1} t^k}{k!}\\
+    0 & \displaystyle \sum_{k=1}^{\infty} \frac{ \lambda^{k} t^{k}}{k!}
+    \end{pmatrix}$$
+    
+    $$= \begin{pmatrix}
+    \frac{(\lambda t)^0}{0!} + \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^k}{k!} & t \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^{k-1}}{(k-1)!}\\
+    0 & \frac{(\lambda t)^0}{0!}+ \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^k}{k!}
+    \end{pmatrix}$$ 
+    
+    $$= \begin{pmatrix}
+    \displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!} & t \displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!}\\
+    0 & \displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!}
+    \end{pmatrix}$$
+    
+    $$e^{At}= \begin{pmatrix}
+    e^{\lambda t} & t e^{\lambda t}\\
+    0 & e^{\lambda t}
+    \end{pmatrix}$$
+    
+\end{itemize}

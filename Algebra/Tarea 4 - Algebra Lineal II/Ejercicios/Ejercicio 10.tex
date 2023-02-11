@@ -1,0 +1,310 @@
+\section{Calcular la descomposición espectral de las siguientes matrices}
+\begin{itemize}
+    \item $A=\begin{pmatrix}1&2\\ \:2&-2\end{pmatrix}$\\\\
+    \textbf{Soluci\'on 10.a:}\\
+    Calculando los valores propios:
+    $$\det\left(\begin{pmatrix}1&2\\ \:2&-2\end{pmatrix}-\lambda \begin{pmatrix}1-&0\\ 0&1\end{pmatrix}  \right)=\begin{vmatrix}1-\lambda&2\\ \:2&-2-\Lambda\end{vmatrix}$$
+    de donde obtenemos:
+    $$=(1-\lambda)(-2-\lambda)-2(2)=\lambda^2+\lambda-2-4=\lambda^2+\lambda-6\Rightarrow \lambda_1=2~~~;~~ \lambda_2=-3$$
+    Calculando los subespacios propios:
+    \begin{itemize}
+        \item Para $\lambda_1=2$\\
+        Sustituyendo en la matriz:
+        \[A-2I=\begin{pmatrix}1&2\\ \:2&-2\end{pmatrix}+ \begin{pmatrix}-2&0\\ 0&-2\end{pmatrix}=\begin{pmatrix}-1&2\\ 2&-4\end{pmatrix}\]
+        De este modo para encontrar $(A-2I)\Vec{v}=0$, damos $\vec{v}=(x,y)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\end{pmatrix}=\begin{pmatrix}-1&2\\ 2&-4\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}-x+2y\\2x-4y\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        -x+2y&=&0\\
+        2x-4y&=&0
+        \end{eqnarray*}
+        Vemos que ambas ecuaciones son multiplos uno de la otra, entonces si despejamos la primera llegamos a que $x=2y$, de modo que si $y$ es nuestra variable libre tenemos que $\vec{v}=(x,y)=(2y,y)=y(2,1)$. Por tanto:
+        \[E(2)=<(2,1)>\]
+        y $\text{dim}(E(2))=1=\text{ma}(2)$. 
+        Normalizando el vector:
+        \[v_1=\frac{1}{\Vert v_1\Vert}v'_1=\frac{1}{\sqrt{2^2+1^2}}(2,1)=\frac{1}{\sqrt{5}}(2,1)\]
+        
+        
+        \item Para $\lambda_2=-3$\\
+        Sustituyendo en la matriz:
+        \[A-(-3)I=\begin{pmatrix}1&2\\ \:2&-2\end{pmatrix}+ \begin{pmatrix}3&0\\ 0&3\end{pmatrix}=\begin{pmatrix}4&2\\ 2&1\end{pmatrix}\]
+        De este modo para encontrar $(A+3I)\Vec{v}=0$, damos $\vec{v}=(x,y)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\end{pmatrix}=\begin{pmatrix}4&2\\ 2&1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}4x+2y\\22x+y\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        4x+2y&=&0\\
+        2x+y&=&0
+        \end{eqnarray*}
+        Vemos que ambas ecuaciones son multiplos uno de la otra, entonces si despejamos la segunda llegamos a que $y=-2x$, de modo que si $x$ es nuestra variable libre tenemos que $\vec{v}=(x,y)=(x,-2x)=x(1,-2)$. Por tanto:
+        \[E(-3)=<(1,-2)>\]
+        y $\text{dim}(E(-3))=1=\text{ma}(-3)$. 
+        Normalizando el vector:
+        \[v_2=\frac{1}{\Vert v_2\Vert}v'_2=\frac{1}{\sqrt{1^2+(-2)^2}}(1,-2)=\frac{1}{\sqrt{5}}(1,-2)\]
+        
+        
+    \end{itemize}
+    Como para todo valor propio $\text{dim}(E(\lambda))=\text{ma}(\lambda)$, llegamos a que la matriz es diagonalizable y por lo tanto tiene descomoposici\'on espectral, de modo que podamos escibir a $A$ como:
+    \[A=\lambda_1A_1+\lambda_2A_2\]
+    Donde $A_i=\vec{v_i}\vec{v_i}^T$, de este modo calculandolos:
+    \begin{itemize}
+        \item \[A_1=\left(\frac{1}{\sqrt{5}}\right)^2\begin{pmatrix}2\\1\end{pmatrix}\begin{pmatrix}2&1\end{pmatrix}=\frac{1}{5}\begin{pmatrix}4&2\\2&1\end{pmatrix}\]
+        \item \[A_2=\left(\frac{1}{\sqrt{5}}\right)^2\begin{pmatrix}1\\-2\end{pmatrix}\begin{pmatrix}1&-2\end{pmatrix}=\frac{1}{5}\begin{pmatrix}1&-2\\-2&4\end{pmatrix}\]
+    \end{itemize}
+    Entonces la descomposición queda:
+    \[A=\lambda_1A_1+\lambda_2A_2=2\left(\frac{1}{5}\right)\begin{pmatrix}4&2\\2&1\end{pmatrix}+(-3)\left(\frac{1}{5}\right)\begin{pmatrix}1&-2\\-2&4\end{pmatrix}=\frac{1}{5}\begin{pmatrix}8&4\\4&2\end{pmatrix}+\frac{1}{5}\begin{pmatrix}-3&6\\6&-12\end{pmatrix}=\frac{1}{5}\begin{pmatrix}5&10\\10&-10\end{pmatrix}=\begin{pmatrix}1&2\\ \:2&-2\end{pmatrix}\]
+
+    
+    \item $B=\begin{pmatrix}4&3i\\ \:\:\:3i&4\end{pmatrix}$  \\\\
+    \textbf{Soluci\'on 10.b:}\\
+    Calculando determinante:
+    $$\det\left(\:\begin{pmatrix}4&3i\\ \:\:\:3i&4\end{pmatrix}-\lambda \:\begin{pmatrix}1&0\\0&1\end{pmatrix}\right)=\begin{pmatrix}4-\lambda&3i\\3i&4-\lambda\end{pmatrix}=(4-\lambda)(4-\lambda)-(3i)(3i)=\lambda^2-8\lambda+16+9=\lambda^2-8\lambda+25$$
+    Resolviendo por formula general:
+    \[\lambda = \frac{-(-8)\pm\sqrt{(-8)^2-4(1)(25)}}{2(1)}=\frac{8\pm\sqrt{64-100}}{2}=\frac{8\pm\sqrt{-36}}{6}=\frac{8\pm6i}{2}\]
+    de donde obtenemos:
+    $$\lambda_1=4+3i, \lambda_2= 4-3i$$
+    Calculando los subespacios propios:
+    \begin{itemize}
+        \item Para $\lambda_1=4+3i$\\
+        Sustituyendo en la matriz:
+        \[B-(4+3i)I=\begin{pmatrix}4&3i\\ \:\:\:3i&4\end{pmatrix}-(4+3i) \:\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}-3i&3i\\ \:\:\:3i&-3i\end{pmatrix}\]
+        De este modo para encontrar $(B-(4+3i)I)\Vec{v}=0$, damos $\vec{v}=(x,y)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\end{pmatrix}=\begin{pmatrix}-3i&3i\\ \:\:\:3i&-3i\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}-3ix+3iy\\3ix-3iy\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        -3ix+3iy&=&0\\
+        3ix-3iy&=&0
+        \end{eqnarray*}
+        Vemos que ambas ecuaciones son multiplos uno de la otra, entonces si despejamos la primera llegamos a que $3ix=3iy~~\Longrightarrow~~x=y$, de modo que si $x$ es nuestra variable libre tenemos que $\vec{v}=(x,y)=(x,x)=x(1,1)$. Por tanto:
+        \[E(4+3i)=<(1,1)>\]
+        y $\text{dim}(E(4+3i))=1=\text{ma}(4+3i)$. 
+        Normalizando el vector:
+        \[v_1=\frac{1}{\Vert v_1\Vert}v'_1=\frac{1}{\sqrt{1^2+1^2}}(1,1)=\frac{1}{\sqrt{2}}(1,1)\]
+        
+        \item Para $\lambda_2=4-3i$\\
+        Sustituyendo en la matriz:
+        \[B-(4-3i)I=\begin{pmatrix}4&3i\\ \:3i&4\end{pmatrix}- \begin{pmatrix}4-3i&0\\ 0&4-3i\end{pmatrix}=\begin{pmatrix}3i&3i\\ 3i&3i\end{pmatrix}\]
+        De este modo para encontrar $(B+(4-3i)I)\Vec{v}=0$, damos $\vec{v}=(x,y)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\end{pmatrix}=\begin{pmatrix}3i&3i\\ 3i&3i\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}3ix+3iy\\3ix+3iy\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        3ix+3iy&=&0
+        \end{eqnarray*}
+        Vemos que ambas ecuaciones son multiplos uno de la otra, entonces si despejamos la segunda llegamos a que $3ix=-3iy~~\Longrightarrow~~-x=y$, de modo que si $x$ es nuestra variable libre tenemos que $\vec{v}=(x,y)=(x,-x)=x(1,-1)$. Por tanto:
+        \[E(4-3i)=<(1,-1)>\]
+        y $\text{dim}(E(4-3i))=1=\text{ma}(4-3i)$. 
+        Normalizando el vector:
+        \[v_2=\frac{1}{\Vert v_2\Vert}v'_2=\frac{1}{\sqrt{1^2+(-1)^2}}(1,-1)=\frac{1}{\sqrt{2}}(1,-1)\]
+        
+        
+    \end{itemize}
+    Como para todo valor propio $\text{dim}(E(\lambda))=\text{ma}(\lambda)$, llegamos a que la matriz es diagonalizable y por lo tanto tiene descomoposici\'on espectral, de modo que podamos escibir a $A$ como:
+    \[B=\lambda_1B_1+\lambda_2B_2\]
+    Donde $A_i=\vec{v_i}\vec{v_i}^T$, de este modo calculandolos:
+    \begin{itemize}
+        \item \[B_1=\left(\frac{1}{\sqrt{2}}\right)^2\begin{pmatrix}1\\1\end{pmatrix}\begin{pmatrix}1&1\end{pmatrix}=\frac{1}{2}\begin{pmatrix}1&1\\1&1\end{pmatrix}\]
+        \item \[B_2=\left(\frac{1}{\sqrt{2}}\right)^2\begin{pmatrix}1\\-1\end{pmatrix}\begin{pmatrix}1&-1\end{pmatrix}=\frac{1}{2}\begin{pmatrix}1&-1\\-1&1\end{pmatrix}\]
+    \end{itemize}
+    
+    De esta forma la descomposición espectral queda como:\
+    \[B=\lambda_1B_1+\lambda_2B_2=(4+3i)\left(\frac{1}{2}\right)\begin{pmatrix}1&1\\1&1\end{pmatrix}+(4-3i)\left(\frac{1}{2}\right)\frac{1}{2}\begin{pmatrix}1&-1\\-1&1\end{pmatrix}=\frac{1}{2}\begin{pmatrix}4+3i&4+3i\\4+3i&4+3i\end{pmatrix}+\frac{1}{2}\begin{pmatrix}4-3i&-4+3i\\-4+3i&4-3i\end{pmatrix}\]\[=\frac{1}{2}\begin{pmatrix}8&6i\\6i&8\end{pmatrix}=\begin{pmatrix}4&3i\\ \:3i&4\end{pmatrix}\]
+    
+    
+   
+   
+   
+   
+   
+    
+    \item $C=\begin{pmatrix}3&-7&-20\\ \:\:0&-5&-14\\ \:\:0&3&8\end{pmatrix} $
+    
+    Obteniendo el determinante de:
+    $$\det \begin{pmatrix}3-\lambda&-7&-20\\ \:\:0&-5-\lambda&-14\\ \:\:0&3&8-\lambda\end{pmatrix}$$
+    Realizando el procedimiento por cofactores sobre la primer columna
+    $$=(3-\lambda)\begin{vmatrix}-5-\lambda&-14\\ 3&8-\lambda\end{vmatrix}=(3-\lambda)[(-5-\lambda)(8-\lambda)-3(-14)]=(3-\lambda)[\lambda^2-3\lambda-40+42]=(3-\lambda)(\lambda^2-3\lambda+2)$$$$=-(\lambda-1)(\lambda-2)(\lambda-3)=-\lambda^3+6\lambda^2-11\lambda+6=0$$
+    donde obtenemos:
+    $$\lambda_1=1~,~\lambda_2=2~,~\lambda_3=3$$
+    Calculando los subespacios propios:
+    \begin{itemize}
+        \item Para $\lambda_1=1$\\
+        Sustituyendo en la matriz:
+        \[C-I=\begin{pmatrix}3-1&-7&-20\\ \:\:0&-5-1&-14\\ \:\:0&3&8-1\end{pmatrix}=\begin{pmatrix}2&-7&-20\\ \:\:0&-6&-14\\ \:\:0&3&7\end{pmatrix}\]
+        De este modo para encontrar $(C-I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}2&-7&-20\\ \:\:0&-6&-14\\ \:\:0&3&7\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}2x-7y-20z\\-6y-14z\\3y+7z\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        2x-7y-20z&=&0\\
+        -6y-14z&=&0\\
+        3y+7z&=&0
+        \end{eqnarray*}
+        Vemos que las ultimas dos ecuaciones son multiplos uno de la otra, entonces si despejamos la primera llegamos a que $\displaystyle 3y=-7z~~\Longrightarrow~~y=-\frac{7}{3}z$, entonces
+        sustituyendo en la primera ecuaci\'on:
+        \[0=2x-7\left(-\frac{7}{3}z\right)-20z~~\Longrightarrow~~0=2x+\frac{49-60}{3}z~~\Longrightarrow~~0=2x-\frac{11}{3}z~~\Longrightarrow~~2x=\frac{11}{3}z~~\Longrightarrow~~x=\frac{11}{6}z\], de modo que si $z$ es nuestra variable libre tenemos que $\displaystyle \vec{v}=(x,y,z)=\left(\frac{11}{6}z,-\frac{7}{3}z,z\right)=z\left(\frac{11}{6},-\frac{7}{3}z,z\right)=\frac{1}{6}z(11,-14,6)$. Por tanto:
+        \[E(1)=<(11,-14,6)>\]
+        y $\text{dim}(E(1))=1=\text{ma}(1)$. 
+        Normalizando el vector:
+        \[v_1=\frac{1}{\Vert v_1\Vert}v'_1=\frac{1}{\sqrt{11^2+(-14)^2+6^2}}(11,-14,6)=\frac{1}{\sqrt{121+196+36}}(11,-14,6)=\frac{1}{\sqrt{353}}(11,-14,6)\]
+        
+        \item Para $\lambda_2=2$\\
+        Sustituyendo en la matriz:
+        \[C-2I=\begin{pmatrix}3-2&-7&-20\\ \:\:0&-5-2&-14\\ \:\:0&3&8-2\end{pmatrix}=\begin{pmatrix}1&-7&-20\\ \:\:0&-7&-14\\ \:\:0&3&6\end{pmatrix}\]
+        De este modo para encontrar $(C-I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}1&-7&-20\\ \:\:0&-7&-14\\ \:\:0&3&6\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x-7y-20z\\-7y-14z\\3y+6z\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        x-7y-20z&=&0\\
+        -7y-14z&=&0\\
+        3y+6z&=&0
+        \end{eqnarray*}
+        Vemos que las ultimas dos ecuaciones son multiplos uno de la otra, entonces si despejamos la primera llegamos a que $\displaystyle 7y=-14z~~\Longrightarrow~~y=-2z$, entonces
+        sustituyendo en la primera ecuaci\'on:
+        \[0=x-7\left(-2z\right)-20z~~\Longrightarrow~~0=x+14z-20z~~\Longrightarrow~~0=x-6z~~\Longrightarrow~~x=6z\], de modo que si $z$ es nuestra variable libre tenemos que $\displaystyle \vec{v}=(x,y,z)=\left(6z,-2z,z,z\right)=z(6,-2,1)$. Por tanto:
+        \[E(2)=<(6,-2,1)>\]
+        y $\text{dim}(E(2))=1=\text{ma}(2)$. 
+        Normalizando el vector:
+        \[v_2=\frac{1}{\Vert v_2\Vert}v'_2=\frac{1}{\sqrt{6^2+(-2)^2+1^2}}(6,-2,1)=\frac{1}{\sqrt{36+4+1}}(6,-2,1)=\frac{1}{\sqrt{41}}(6,-2,1)\]
+        
+        
+        \item Para $\lambda_3=3$\\
+        Sustituyendo en la matriz:
+        \[C-3I=\begin{pmatrix}3-3&-7&-20\\ \:\:0&-5-3&-14\\ \:\:0&3&8-3\end{pmatrix}=\begin{pmatrix}0&-7&-20\\ \:\:0&-8&-14\\ \:\:0&3&5\end{pmatrix}\]
+        De este modo para encontrar $(C-3I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}0&-7&-20\\ \:\:0&-8&-14\\ \:\:0&3&5\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}-7y-20z\\-8y-14z\\3y+5z\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        -7y-20z&=&0\\
+        -8y-14z&=&0\\
+        3y+5z&=&0
+        \end{eqnarray*}
+        Vemos que si restamos la primera ecuaci\'on a la segunda obtenemos que $-y+6z=0$, entonces si la sumamos 3 veces con la tercera obtenemos $23z=0~~\Longrightarrow~~z=0$ y de ets aforma tambi\'en $y=0$, por lo que $x$ es la \'unica variable libre, por lo que tenemos que $\displaystyle \vec{v}=(x,y,z)=(x,0,0)=x(1,0,0)$. Por tanto:
+        \[E(3)=<(1,0,0)>\]
+        y $\text{dim}(E(3))=1=\text{ma}(3)$. 
+        Vemos que el vector ya esta normalizado, por lo que :
+        \[v_3=(1,0,0)\]
+        
+        
+    \end{itemize}
+    Como para todo valor propio $\text{dim}(E(\lambda))=\text{ma}(\lambda)$, llegamos a que la matriz es diagonalizable y por lo tanto tiene descomoposici\'on espectral, de modo que podamos escibir a $A$ como:
+    \[C=\lambda_1C_1+\lambda_2C_2+\lambda_3C_3\]
+    Donde $C_i=\vec{v_i}\vec{v_i}^T$, de este modo calculandolos:
+    \begin{itemize}
+        \item \[C_1=\left(\frac{1}{\sqrt{353}}\right)^2\begin{pmatrix}11\\-14\\6\end{pmatrix}\begin{pmatrix}11&-14&6\end{pmatrix}=\frac{1}{353}\begin{pmatrix}121&-154&66\\-154&196&-84\\66&-84&36\end{pmatrix}\]
+        \item \[C_2=\left(\frac{1}{\sqrt{41}}\right)^2\begin{pmatrix}6\\-2\\1\end{pmatrix}\begin{pmatrix}6&-2&1\end{pmatrix}=\left(\frac{1}{{41}}\right)^2\begin{pmatrix}36&-12&6\\ -12&4&-2\\ 6&-2&1\end{pmatrix}\]
+        \item \[C_3=\begin{pmatrix}1\\0\\0\end{pmatrix}\begin{pmatrix}1&0&0\end{pmatrix}=\begin{pmatrix}1&0&0\\0&0&0\\0&0&0\end{pmatrix}\]
+        
+    \end{itemize}
+    
+    De esta forma la descomposición espectral queda como:\
+    \[C=\lambda_1C_1+\lambda_2C_2+\lambda_3C_3=1\left(\frac{1}{353}\right)\begin{pmatrix}121&-154&66\\-154&196&-84\\66&-84&36\end{pmatrix}+2\left(\frac{1}{41}\right)\begin{pmatrix}36&-12&6\\-12&4&-2\\6&-2&1\end{pmatrix}+3\begin{pmatrix}1&0&0\\0&0&0\\0&0&0\end{pmatrix}\]\[=\left(\frac{1}{353}\right)\begin{pmatrix}121&-154&66\\-154&196&-84\\66&-84&36\end{pmatrix}+\left(\frac{1}{41}\right)\begin{pmatrix}72&-24&12\\-24&8&-4\\12&-4&2\end{pmatrix}+\begin{pmatrix}3&0&0\\0&0&0\\0&0&0\end{pmatrix}\]
+    \[=\begin{pmatrix}\frac{121}{353}&-\frac{154}{353}&\frac{66}{353}\\-\frac{154}{353}&\frac{196}{353}&-\frac{84}{353}\\\frac{66}{353}&-\frac{84}{353}&\frac{36}{353}\end{pmatrix}+\begin{pmatrix}\frac{72}{41}&-\frac{24}{41}&\frac{12}{41}\\-\frac{24}{41}&\frac{8}{41}&-\frac{4}{41}\\12&-\frac{4}{41}&-\frac{2}{41}\end{pmatrix}+\begin{pmatrix}3&0&0\\0&0&0\\0&0&0\end{pmatrix}=\begin{pmatrix}\frac{73796}{14473}&-\frac{14786}{14473}&\frac{6942}{14473}\\ -\frac{14786}{14473}&\frac{10860}{14473}&-\frac{4856}{14473}\\ \frac{4302}{353}&-\frac{4856}{14473}&\frac{770}{14473}\end{pmatrix}\]
+    
+    
+    
+   % por lo que la descomposición espectral queda:
+    %$$\:\begin{pmatrix}3\\ \:0\\ \:0\end{pmatrix}\begin{pmatrix}3&0&0\end{pmatrix}+2\begin{pmatrix}-7\\ \:-5\\ \:3\end{pmatrix}\begin{pmatrix}-7&-5&3\end{pmatrix}+\begin{pmatrix}-20\\ \:-14\\ \:8\end{pmatrix}\begin{pmatrix}-20&-14&8\end{pmatrix}$$
+    %$$ \begin{pmatrix}9&0&0\\ 0&0&0\\ 0&0&0\end{pmatrix}+2\begin{pmatrix}49&35&-21\\ 35&25&-15\\ -21&-15&9\end{pmatrix}+3\begin{pmatrix}400&280&-160\\ 280&196&-112\\ -160&-112&64\end{pmatrix} $$
+    %$$\begin{pmatrix}9&0&0\\ 0&0&0\\ 0&0&0\end{pmatrix}+\begin{pmatrix}98&70&-42\\ 70&50&-30\\ -42&-30&18\end{pmatrix}+\begin{pmatrix}1200&840&-480\\ 840&588&-336\\ -480&-336&192\end{pmatrix}$$
+    %$$=\begin{pmatrix}1307&910&-522\\ 910&638&-366\\ -522&-366&210\end{pmatrix}$$
+    
+    
+    
+    
+    
+    
+    
+    \item $D=\begin{pmatrix}1&1+i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}$
+    Calculando la determinante de:
+    $$\det \begin{pmatrix}1-\lambda&1+i&0\\ \:\:1-i&2-\lambda&0\\ \:\:0&0&1-\lambda\end{pmatrix}$$
+    $$(1-\lambda)(\lambda^2-3\lambda+2)-(1+i)(\lambda+1+i(-1+\lambda))+0\cdot0$$
+    $$=-\lambda^3+4\lambda^2-3\lambda=-\lambda(\lambda-1)(\lambda-3)=0$$
+    obtenemos:
+    $$\lambda_1=0, \lambda_2=1, \lambda_3=3$$
+    
+    
+    
+    
+        Calculando los subespacios propios:
+\begin{itemize}
+    \item Para $\lambda_1=0$\\
+        Sustituyendo en la matriz:
+        \[D-0I=D=\begin{pmatrix}1&1-i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}\]
+        De este modo para encontrar $(B-0I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        
+        
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}1&1+i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x+(1+i)y\\ (1-i)x+2y\\ z\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+       x+(1+i)y=0\\ 
+       (1-i)x+2y=0\\
+       1z=0
+        \end{eqnarray*}
+        
+        Tenemos automaticamente que $z=0$ y para las primeras dos ecuaciones son multiplos una de otra despejamos a $x=-y(1+i)$ por lo tanto si tomamos a $y$ como variable libre, tenemos $\vec{v}=(x,y,z)=((-1-i)y,y,0)=y(-1-i,1,0)$
+        Por lo que tenemos
+        \[E(0)=<(-1-i,1,0)>\]
+        y $\text{dim}(E(0))=1=\text{ma}(0)$. 
+        Normalizando el vector:
+        \[v_1=\frac{1}{\Vert v_1\Vert}v'_1=\frac{1}{\sqrt{1^2+1^2+1^2}}(-1-i,1,0)=\frac{1}{\sqrt{3}}(-1-i,1,0)\]
+        
+    
+    
+    
+    \item Para $\lambda_2=1$\\
+        Sustituyendo en la matriz:
+        \[D-I=\begin{pmatrix}1&1+i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}-\begin{pmatrix}1&0&0\\ \:\:0&1&0\\ \:\:0&0&1\end{pmatrix}=\begin{pmatrix}0&1+i&0\\ 1-i&1&0\\ 0&0&0\end{pmatrix}\]
+        
+        
+        De este modo para encontrar $(D-I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}0&1+i&0\\ 1-i&1&0\\ 0&0&0\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}(1+i)y\\(1-i)x+y\\ 0\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        (1+i)y&=&0\\
+        (1-i)x+y&=&0
+        \end{eqnarray*}
+        Como podemos ver ambas ecuaciones nos indican que $x=y=0$, pero como no hay restricci\'on para $z$, tenemos que $\vec{v}=(x,y,z)=(0,0,z)=z(0,0,1)$
+        
+        
+        \[E(1)=<(0,0,1)>\]
+        y $\text{dim}(E(1))=1=\text{ma}(1)$. 
+        Comoe le vector ya esta normalizado:
+        \[v_2=(0,0,1)\]
+        
+    
+    
+    
+    
+    \item Para $\lambda_3=3$\\
+        Sustituyendo en la matriz:
+        \[D-3I=\begin{pmatrix}1&1+i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}-\begin{pmatrix}3&0&0\\ \:\:0&3&0\\ \:\:0&0&3\end{pmatrix}=\begin{pmatrix}-2&1+i&0\\ 1-i&-1&0\\ 0&0&-2\end{pmatrix}\]
+        
+        
+        De este modo para encontrar $(D-3I)\Vec{v}=0$, damos $\vec{v}=(x,y,z)$ e igualamos al vector 0, es decir:
+        \[\begin{pmatrix}0\\0\\0\end{pmatrix}=\begin{pmatrix}-2&1+i&0\\ 1-i&-1&0\\ 0&0&-2\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}-2x+(1+i)y\\(1-i)x-y\\ -2z\end{pmatrix}\]
+        De esta forma tenemos el sistema:
+        \begin{eqnarray*}
+        -2x+(1+i)y&=&0\\
+        (1-i)x-y&=&0        \\
+        2z&=&0
+        \end{eqnarray*}
+        Tenemos directo que $z=0$, entonces observamos que la primer y segunda son multiplos d euna misma ecuaci\'on , por tanto despejando de la primer, tenemos $2x=(1+i)y$, por lo tanto tomamos a $y$ como variable libre, de modo que $\vec{v}=(x,y,z)=y(1+i,2,0)$.
+        
+        
+        \[E(2)=<(1+i,2,0)>\]
+        y $\text{dim}(E(1))=1=\text{ma}(1)$. 
+        Normalizando el vector:
+        \[v_3=\frac{1}{\Vert v_3\Vert}v'_3=\frac{1}{\sqrt{1^2+1^2+2^2}}(1+i,2,0)=\frac{1}{\sqrt{6}}(1+i,2,0)\]
+    
+        
+    \end{itemize}
+    Como para todo valor propio $\text{dim}(E(\lambda))=\text{ma}(\lambda)$, llegamos a que la matriz es diagonalizable y por lo tanto tiene descomoposici\'on espectral, de modo que podamos escibir a $A$ como:
+    \[D=\lambda_1D_1+\lambda_2D_2+\lambda_3D_3\]
+    Donde $D_i=\vec{v_i}\overline{\vec{v_i}}^T$, de este modo calculandolos:
+    \begin{itemize}
+        \item \[D_1=\left(\frac{1}{\sqrt{3}}\right)^2\begin{pmatrix}-1-i\\1\\0\end{pmatrix}\begin{pmatrix}-1+i&1&0\end{pmatrix}=\frac{1}{3}\begin{pmatrix}2i&-1-i&0\\-1-i&1&0\\0&0&0\end{pmatrix}\]
+        \item \[D_2=\begin{pmatrix}0\\0\\1\end{pmatrix}\begin{pmatrix}0&0&1\end{pmatrix}=\begin{pmatrix}0&0&0\\0&0&0\\0&0&1\end{pmatrix}\]
+        \item \[D_3=\left(\frac{1}{\sqrt{6}}\right)^2\begin{pmatrix}1+i\\2\\0\end{pmatrix}\begin{pmatrix}1-i&2&0\end{pmatrix}=\frac{1}{6}\begin{pmatrix}2i&2+2i&0\\2-2i&4&0\\0&0&0\end{pmatrix}\]
+        
+    \end{itemize}
+    
+    De esta forma la descomposición espectral queda como:\
+    \[D=\lambda_1D_1+\lambda_2D_2+\lambda_3D_3=0\frac{1}{3}\begin{pmatrix}2i&-1-i&0\\-1-i&1&0\\0&0&0\end{pmatrix}+\begin{pmatrix}0&0&0\\0&0&0\\0&0&1\end{pmatrix}+3\frac{1}{6}\begin{pmatrix}2i&2+2i&0\\2-2i&4&0\\0&0&0\end{pmatrix}\]\[=\begin{pmatrix}0&0&0\\0&0&0\\0&0&1\end{pmatrix}+\frac{1}{2}\begin{pmatrix}2i&2+2i&0\\2-2i&4&0\\0&0&0\end{pmatrix}=\begin{pmatrix}1&1+i&0\\ \:\:1-i&2&0\\ \:\:0&0&1\end{pmatrix}\]
+\end{itemize}

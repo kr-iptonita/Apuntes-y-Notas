@@ -1,0 +1,36 @@
+\section{Una matriz real, $A \in M_n(\mathbb{R})$, se llama matriz de Markov si y sólo si todos sus elementos $a_{ij}$ son mayores o iguales a 0, y la suma de los elementos de cada columna de $A$ es 1. Prueba que $\lambda =1$ es valor propio de toda matriz de Markov.\\}
+\textbf{Demostraci\'on 7:}\\
+Sea $A\in\mathcal{M}_n(\mathbb{R})$, tal que:
+\[A= \begin{pmatrix}
+	a_{1\hspace{0.5mm}1} & a_{1\hspace{0.5mm}2} &\cdots& a_{1\hspace{0.5mm}n} \\
+	a_{2\hspace{0.5mm}1} & a_{2\hspace{0.5mm}2} &\cdots& a_{2\hspace{0.5mm}n} \\\vdots&\vdots&\ddots&\vdots\\
+	a_{n\hspace{0.5mm}1} & a_{n\hspace{0.5mm}2} &\cdots& a_{n\hspace{0.5mm}n} \end{pmatrix}\]
+con $\displaystyle \sum_{i=1}^n a_{i\hspace{0.5mm}j}=1$, para $j\in\{1,\dots,n\}$, es decir, que la suma de los elementos de cada columna de $A$ es igual a 1.\\
+Por la \textbf{Demostraci\'on 3}, sabemos que una matriz tiene el mismo polinomio caracter\'istico que su transpuesta, loq ue significa que tienen asociadas las mismas ra\'ices (autovalores), por lo que en efecto $\lambda=1$ es autovalor de $A$, si y s\'olo si es tambi\'en autovalor de $A^T$.\\
+De este modo, si transmponemos $A$, tenemos que:
+\[A^T= \begin{pmatrix}
+	a_{1\hspace{0.5mm}1} & a_{2\hspace{0.5mm}1} &\cdots& a_{n\hspace{0.5mm}1} \\
+	a_{1\hspace{0.5mm}2} & a_{2\hspace{0.5mm}2} &\cdots& a_{n\hspace{0.5mm}2} \\\vdots&\vdots&\ddots&\vdots\\
+	a_{1\hspace{0.5mm}n} & a_{2\hspace{0.5mm}n} &\cdots& a_{n\hspace{0.5mm}n} \end{pmatrix}\]
+	
+Ahora sabemos que por definici\'on cada autovalor $\lambda\in K$ tiene un vector(es) propio(s) asociado(s), $v\in V$, tales que:
+\[Av=A^Tv=\lambda v\]
+Si nosotros mañosamente damos el vector $v_1=(1,\cdots, 1)$ con $n$ entradas (realmente puede ser un vector no nulo con todas sus entradas iguales), tenemos que al mutiplicarlo por la matriz nos resulta:
+\[Av_1=A^Tv_1= \begin{pmatrix}
+	a_{1\hspace{0.5mm}1} & a_{2\hspace{0.5mm}1} &\cdots& a_{n\hspace{0.5mm}1} \\
+	a_{1\hspace{0.5mm}2} & a_{2\hspace{0.5mm}2} &\cdots& a_{n\hspace{0.5mm}2} \\\vdots&\vdots&\ddots&\vdots\\
+	a_{1\hspace{0.5mm}n} & a_{2\hspace{0.5mm}n} &\cdots& a_{n\hspace{0.5mm}n}\end{pmatrix}\begin{pmatrix}
+	1 \\
+	\vdots\\\vdots\\1\end{pmatrix}=\begin{pmatrix}
+	a_{1\hspace{0.5mm}1}(1)+ a_{2\hspace{0.5mm}1}(1)+\cdots+ a_{n\hspace{0.5mm}1}(1) \\
+	a_{1\hspace{0.5mm}2}(1)+ a_{2\hspace{0.5mm}2}(1)+\cdots+ a_{n\hspace{0.5mm}2}(1) \\\vdots\\a_{1\hspace{0.5mm}n}(1)+ a_{2\hspace{0.5mm}n}(1)+\cdots+ a_{n\hspace{0.5mm}n}(1) \\\end{pmatrix}=\begin{pmatrix}
+	\sum_{i=1}^n a_{i\hspace{0.5mm}1}\\
+	\sum_{i=1}^n a_{i\hspace{0.5mm}2}\\\vdots\\\sum_{i=1}^n a_{i\hspace{0.5mm}n}\end{pmatrix}=\begin{pmatrix}
+	1 \\
+	\vdots\\\vdots\\1\end{pmatrix}=v_1\]
+	De este modo, hemos llegado a que:
+	\[Av_1=v_1=1v_1\]
+	Lo cual sucede si el autovector $v_1$ tiene asociado el autovalor $\lambda=1$.\\
+	Pero como nuestra matriz $A$ es una matriz de Markov cualquiera, hemos llegado a que $\lambda=1$ es valor propio para toda matriz de Markov.\qed
+	
+%\[\Longrightarrow A-1=0\]Por lo que la suma de los renglones va a ser igual al vector 0. Asimismo, notemos que los renglones son linealmente dependientes, pues hay una combinación lineal de los vectores renglón con todos los coeficientes no en 0.  Y como a su vez sabemos que cualquier matriz con renglones o columnas linealmente dependientes su determinante es igual a 0, entonces:\\\[\det(A-I)=0\]De manera que por definición $\lambda=1$ es un valor propio, es decir, tiene su valor propio es igual a 1. ¿Por qué por definici\'on? \\Por lo visto en clase sabemos que $\lambda$ es un valor propio de $A$ si $Ax=\lambda x$ para alg\'un vector $0\not=x \in K^n$, entonces:\[Ax=\lambda x\]\[\Longrightarrow Ax-\lambda x=0\]\[\Longrightarrow x(A-\lambda I)=0\]Si $A-\lambda I$ es invertible, entonces:\[x=(A-\lambda I)\]\[x=(A-\lambda I)^{-1}\]\[x=0 !\]Se genera una contradicci\'on puesto que hab\'iamos dicho que $0\not=x$.Por lo que tiene que suceder que $A-\lambda I$ no es invertible, es decir, que $det(A-\lambda I)=0$.\\\[\therefore \lambda=1\]  es un valor propio $\centerdot$

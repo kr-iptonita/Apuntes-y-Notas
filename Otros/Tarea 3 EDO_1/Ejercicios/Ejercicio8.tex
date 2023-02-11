@@ -1,0 +1,15 @@
+\section{Resuelva la siguiente ecuación lineal de segundo orden:
+$$y'' + 2\alpha y' + \alpha y = 0$$
+con $\alpha > 0$ ¿Qué pasa cuando $t \rightarrow +\infty$?}
+\\
+\\Supongamos que $y = e^{t\alpha}$,entonces no quedaría 
+$$y = e^{t\alpha}$$
+$$y' = t e^{t\alpha}$$
+$$ y'' = t^2 e^{t\alpha}$$
+\\
+\\Sustituyendo en la ecuación original tenemos
+$$t^2 e^{t\alpha} + 2\alpha te^{t\alpha} + \alpha ^2 e^{t\alpha} = 0 \implies \left (t^2 + 2\alpha t + \alpha^2 \right) e^{t\alpha} = 0$$
+\\ Por propiedades de los exponenciales, nos queda
+$$t^2 + 2\alpha t + \alpha ^2 = 0 \implies \left(t + \alpha \right)^2 = 0$$
+\\Por lo que nos queda $y_1 = e^{- \alpha t}$ y $y_2 = te^{- \alpha t}$, por tanto
+$$y = C_1 e^{- \alpha t} + C_2 te^{- \alpha t}$$

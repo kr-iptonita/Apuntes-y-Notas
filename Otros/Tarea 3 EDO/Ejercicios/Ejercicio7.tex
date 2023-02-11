@@ -1,0 +1,37 @@
+\textcolor{blue}{Ejercicio 7.}
+Resuelva la ecuación integro-diferencial
+$$y(t)=3t^2-e^{-t}-\int_0^ty(\tau)e^{t-\tau}$$
+
+Por teorema de convolución tenemos:
+
+$$y(t)=3t^2-e^{-t}-(y(t)*e^t)$$
+Aplicando la transformada de laplace.
+
+$$\mathscr{L}\{y(s)\}=\frac{6}{s^3}-\frac{1}{s+1}-\left[\mathscr{L}\{y(s)\} \frac{1}{s-1} \right]$$
+Despejando: $\mathscr{L}\{y(s)\}$
+$$\mathscr{L}\{y(s)\}+\frac{\mathscr{L}\{y(s)\}}{s-1}=\frac{6}{s^3}-\frac{1}{s+1}$$
+$$\frac{s\mathscr{L}\{y(s)\}}{s-1}=\frac{6}{s^3}-\frac{1}{s+1}$$
+$$\mathscr{L}\{y(s)\}=\frac{s-1}{s}\left[ \frac{6}{s^3}-\frac{1}{s+1} \right]$$
+Simplificando:
+$$\mathscr{L}\{y(s)\}=\frac{\left(s-1\right)\left(6s+6-s^3\right)}{s^4\left(s+1\right)}$$
+Transformando a una suma el lado derecho:
+$$\frac{\left(s-1\right)\left(6s+6-s^3\right)}{s^4\left(s+1\right)}=\frac{A}{s}+\frac{B}{s^2}+\frac{C}{s^3}+\frac{D}{s^4}+\frac{E}{s+1}$$
+de donde se obtiene:
+$$-s^4+s^3+6s^2-6=As^3(s+1)+Bs^2(s+1)+Cs(s+1)+D(s+1)+Es^4$$
+Para la raiz $0$:
+$$D=-6$$
+Para la raiz $-1$
+$$E=-2$$
+Sustituyendo:
+$$-s^4+s^3+6s^2-6=As^3(s+1)+Bs^2(s+1)+Cs(s+1)+(-6)(s+1)+(-2)s^4$$
+de donde obtenemos:
+\begin{eqnarray*}C-6=0\\ B+C=6\\ A+B=1\\ A-2=-1 \end{eqnarray*}
+
+y de allí:
+\begin{eqnarray*} A=1\\ B=0\\ C=6 \end{eqnarray*}
+
+Por lo tanto queda:
+$$\mathscr{L}\{y(s)\}=\frac{\left(s-1\right)\left(6s+6-s^3\right)}{s^4\left(s+1\right)}=\frac{1}{2}+\frac{6}{s^3}-\frac{6}{s^4}-\frac{2}{s+1}$$
+
+Aplicando la inversa de Laplace:
+$$y(t)=H(t)+3t^2-t^3-2e^{-t}$$

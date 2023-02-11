@@ -1,0 +1,262 @@
+\documentclass{homework}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{multirow}
+
+
+\author{Frank Garcia Trillo}
+\class{Teoría de Juegos}
+\date{\today}
+\title{Tarea 1}
+\address{Facultad de Ciencias.}
+
+\graphicspath{{./media/}}
+
+\begin{document} \maketitle
+
+
+\question EVALUE las siguientes afirmaciones (determine si es verdadera o falsa, bajo qué condiciones es verdadera o falsa, sea explícito y claro en su punto de vista; si lo cree necesario, incluya ejemplos)
+
+\begin{enumerate}
+    \item Todo juego en forma estratégica tiene al menos un equilibrio de Nash.
+    \item Para motivar las cooperación de los rivales en el juego del \textit{Dilema del prisionero}, basta con que en los pagos se introduzcan premios y se eliminen los castigos.
+    \item En el juego de de la batalla de los sexos, la cantidad de Equilibrio de Nash dependerá de la intensidad de la relación de los jugadores.
+    \item Si cada jugador elige la estrategia que maximiza su pago, considerando que el resto también hace lo propio, entonces el equilibrio resultante es \textit{Pareto Eficiente}.
+\end{enumerate}
+
+
+1(A) .- \textbf{Contraejemplo: El juego del peso}:
+Dos jugadores, cada uno elige sol o águila, la decision es simultanea. Si las decisiones difieren, el \textbf{jugador 1} pagaria 1 peso al \textbf{jugador 2}. En caso contrario, el \textbf{jugador 2} pagaria 1 peso al jugador 1.
+
+El juego de forma estrategica podemos verlo como:
+
+\begin{equation}
+    N = \{ J1, J2 \},  \\
+    D_i = D_j = \{ Aguila, Sol \},  \\
+    D = \{ (A,A), (A,S), (S,A), (A,A) \} 
+\end{equation}
+
+Notemos como se observa esta matriz de pagos.
+\centering
+\begin{tabular}{ll}
+\hline
+\multicolumn{2}{|c|}{J1} \\ \hline
+C & NC \\ \hline
+\hline
+    \multirow{2}{}{J2}& C\\
+    & NC\\ \hline
+
+(1,-1) & (-1,1) \\
+(1,-1)  & (1,-1) 
+\end{tabular}
+
+De este juego podemos afirmar que no existe ningun equilibrio de Nash. Por lo tanto, no todo juego puede tener un equilibrio de Nash.
+
+
+
+
+
+
+Consideremos la matriz de pagos del juego del \textit{Dilema del prisionero}, donde los pagos dependeran de la versión del juego que estemos jugando. Probemos varias combinaciones. 
+
+Observemos primero la combinación que implica solo castigos, uno reducido para quien confiesa.
+
+\centering
+\begin{tabular}{ll}
+\hline
+\multicolumn{2}{|c|}{J1} \\ \hline
+C & NC \\ \hline
+\hline
+    \multirow{2}{}{J2}& C\\
+    & NC\\ \hline
+
+(-1,-1) & (0,-3) \\
+(-3,0)  & (0,0) 
+\end{tabular}
+
+En este juego, los equilibrios de Nash, $EN = \{ (C,C) (NC, NC) \}$. Esto es logico, pues si solo tratamos de no llevarnos el peor de los castigos, ambos confesarian tratando de no verse perjudicados y entonces nos llevariamos el equilibrio de $(-1, -1)$. 
+
+Luego, en la combinación donde hay premios y castigos. Notemos como se observa esta matriz de pagos.
+\centering
+\begin{tabular}{ll}
+\hline
+\multicolumn{2}{|c|}{J1} \\ \hline
+C & NC \\ \hline
+\hline
+    \multirow{2}{|r|}{J2}& C\\
+    & NC\\ \hline
+
+(1,1) & (2,-1) \\
+(-1,2)  & (0,0) 
+\end{tabular}
+
+Veamos ahora dos combinaciones donde solo hay premios:
+\centering
+\begin{tabular}{ll}
+
+\hline
+\multicolumn{2}{|c|}{J1} \\ \hline
+C & NC \\ \hline
+\hline
+    \multirow{2}{|r|}{J2}& C\\
+    & NC\\ \hline
+
+(1,1) & (0,3) \\
+(3,0)  & (0,0) 
+\end{tabular}
+
+Y la segunda es \\
+
+\centering
+\begin{tabular}{ll}
+\hline
+\multicolumn{2}{|c|}{J1} \\ \hline
+C & NC \\ \hline
+\hline
+    \multirow{2}{|r|}{J2}& C\\
+    & NC\\ \hline
+
+(0,0) & (2,0) \\
+(0,2)  & (1,1) 
+\end{tabular}
+
+De la primera tabla, los equilibrios de Nash (EN), son $EN_{Castigo} = \{(C,C), (NC,NC)\}$. De las otras tablas, los EN son:
+
+
+\begin{equation}
+    EN_{Premios 1} = \{(C,NC), (NC, C)\} \\
+    EN_{Premios 2} = \{(C,C), (NC, C), (C, NC)\} \\
+    EN_{Premios y castigos} = \{(C,C)\}
+\end{equation}
+
+Podemos ver que:
+
+
+
+
+
+\question Considere el popular juego de “piedra (Pi), papel (Pa) o tijeras (T)”: de forma simultánea dos
+jugadores representan con su mano uno de estos tres objetos; \textit{si son diferentes los objetos
+necesariamente un jugador gana, y el otro pierde; si son iguales, se empata el juego. La matriz de
+pagos se representa en la siguiente tabla:}
+
+Determine los elementos de forma estrategica y los equilibrios de Nash.
+
+\emph{Conjunto de jugadores $N$}: $\{ J_1, J_2\}$
+
+\emph{Conjunto de estrategias}: $D_{J_1} = D_{J_2} = \{ Ti, Pi, Pa\}$
+
+$D$ = $\{ (Pi, Pi), (Pa, Pa), (Ti, Ti), (Pi, Pa), (Pi, Ti), (Pa, Pi), (Pa, Ti), (Ti, Pa), (Ti, Pi)\}$
+
+
+\emph{Funciones de pago: $\phi_i $}: 
+\begin{equation}
+\begin{bmatrix}
+(0,0) & (-1,1) & (1,-1)\\
+(1,-1) & (0,0) & (-1,1)\\
+(-1,1) & (1,-1) & (0,0)
+\end{bmatrix}
+\end{equation}
+
+
+\emph{Equilibrios de Nash $(EN)$}: $\empty$
+
+Si analizamos el metodo de eliminación de estrategias optimas, encontramos que el conjunto de equilibrios de Nash es vacio. Por como esta definido el juego de Piedra, Papel y Tijeras, podemos ver que no existe una estrategia pura optima, pues toda estrategia que deje fija una elección para un jugador, tiene una respuesta que puede hacerle empatar o perder.
+
+
+\question Considere la situación planteada en clase acerca de la problematica del país occidental ($PO$), y los migrantes dentro del pais ($M$)
+
+    $PO$ : País occidental que recibe migrantes y encuentra que éstos no se integran del todo en su cultura y sociedad.
+    $M$ : Gente que ha migrado a $PO$ y que no estan decididos del todo a integrarse a la sociedad de $PO$.
+
+Los conjuntos de estrategias de cada jugador serian: 
+
+$D_{PO}: \{ tolera (T), acosa (A)\}$
+$D_M : \{ \text{Se integra} I, \text{No se integra} NI \}$
+
+Determine dos escenarios distintos para este juego (dos matrices de pagos distintas), en donde
+prevalezca una perspectiva del conflicto: tolerante, xenofóbico, humanitario, con soluciones
+aparentes para los que están fuera del conflicto, etc., o la perspectiva que usted quiera proponer.
+Explique la perspectiva elegida y obtenga, para ambas versiones, los elementos del juego en forma
+estratégica (conjunto de jugadores, conjuntos de estrategias para cada jugador, funciones de pago)
+y los equilibrios de Nash.
+
+
+    \textbf{Escenario 1:} \emph{Inclusión}
+
+\begin{table}[]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(2,2)} & (0,2) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(0,0)} & (-1,-1) \\ \hline
+\end{tabular}
+\end{table}
+
+
+    \textbf{Escenario 2:} \emph{Hipocresía }
+
+    
+\begin{table}[]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(2,1)} & (-1,0) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(1,0)} & (-2,1) \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+    \textbf{Escenario 3:} \emph{Xenofobia}
+\begin{table}[]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(0,-1)} & (-1,1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(0,-2)} & (-3,3) \\ \hline
+\end{tabular}
+\end{table}
+
+
+    \textbf{Escenario 4:} \emph{Etnia}
+\begin{table}[]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(1,1)} & (-1,-1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(2,0)} & (-2,-2) \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\emph{Conjunto de jugadores $N$}: $\{ M, PO\}$
+
+\emph{Conjunto de estrategias}:
+\begin{equation}
+    D_M =  \{ I, NI\} \\
+    D_{PO} = \{ T, A\}
+\end{equation}
+
+$D$ = $\{ (I, T), (I, A), (NI, T), (NI, A) \}$
+
+
+\begin{equation}
+    EN_{E_1} = \{ (I,T)\} \\
+    EN_{E_2} = \{ (I,T)\}  \\
+    EN_{E_3} = \{ (I,A)\} \\
+    EN_{E_4} = \{ (NI,T)\} 
+\end{equation}
+
+
+
+% citations
+\bibliographystyle{plain}
+\bibliography{citations}
+
+\end{document}

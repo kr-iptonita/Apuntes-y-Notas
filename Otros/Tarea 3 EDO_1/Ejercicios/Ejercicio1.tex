@@ -1,0 +1,29 @@
+\section{Enuncie el Teorema de Existencia y Unicidad de Picard-Lindelöf y conteste la pregunta}
+El teorema establece cuando existe solución para una ecuación diferencial y si esta es única.\\
+Parte de mostrar a la Ecuación de la forma:\\
+$$\frac{dy}{dx}=f(x,y) \mbox{ en cualquier }(x_0,y_0) \mbox{ y verifica:}$$
+\begin{enumerate}
+    \item $ \exists f(x,y) \forall x,y$ lo que asegura la existencia
+    \item $\frac{\partial f}{\partial y}$ es continua para todo $x, y$ lo cual asegura la unicidad
+\end{enumerate}
+
+\begin{itemize}
+    \item ¿Tiene solución el PVI $x'= \ln(tx),\mbox{ con } x(0) = 2$?
+            Se tiene que la función f(x,t) es continua si se cumple que:
+            $$tx>0$$
+            Además la derivada parcial tal que:
+            $$\frac{\partial f}{\partial x}=\frac{t}{\ln(tx)}$$
+            donde también es continua tal que: $tx>0$
+            
+            ahora verificando que exista el punto dado en la intersección de las condiciones de continuidad tenemos
+            
+            $$(x,t)=(0,2)$$
+            pero al exaluar $tx$ queda $0\cdot 2=0$ y por lo tanto no existe solución
+                    
+    \item ¿Tiene solución el PVI $x'= \ln(tx), \mbox{ con } x(1) = 2$?
+            
+            Dado que la ecuación es igual al inciso anterior tenemos que evaluar solamente para verificar la condición, entonces:
+            
+            $tx=2\cdot 1=2>0$ lo cual cumple a nuestra condición y por lo tanto tenemos que si existe solución la cual es unica
+            
+\end{itemize}

@@ -1,0 +1,37 @@
+\section{Sean $V$, $W$ espacios de d\text{Im}ensión finita, con producto interno, y sea $T:V \longrightarrow W$ lineal. Demostrar que:}
+\begin{itemize}
+    \item [$a)$] $\text{Nuc}(T)^*$ = $(\text{Im}(T))^\perp $, e $\text{Im}(T)^*$ = $(\text{Nuc}(T))^\perp $.\\\\
+    \textbf{Demostraci\'on 4.a.1:}\\
+    P.D. $\text{Nuc}(T)^*$ = $(\text{Im}(T))^\perp $\\
+    Sean $w\in W$ y $v\in V$, entonces para $w\in \text{Nuc}(T)^*$ tenemos que por definición:
+    \[T^* (w)=0 \]\[\Longleftrightarrow \langle v,T^* (w)\rangle = 0\]\[\Longleftrightarrow \langle T(v),w\rangle=0\] \[~~~\text{entonces como}~~~ T(v)\in \text{Im}(T)~~~\text{y}~~~ \langle T(v),w\rangle=0\]
+    tenemos que $w \in (\text{Im}(T))^\perp$ por definición del complemento ortogonal (y por usar bicondicionales, lo que nos lleva a una doble contenci\'on), tenemos que: \[\therefore \text{Nuc}(T)^* = (\text{Im}(T))^\perp\]\qed\\
+    \textbf{Demostraci\'on 4.a.2:}\\
+    P.D. $(\text{Nuc}(T))^\perp = \text{Im}(T)^*$\\
+    Por proposición vista en la ayudantía jueves 28 de Abril, sabemos que $\text{Nuc}(T) = (\text{Im}(T^*))^\perp$ por lo que si tomamos el complemento ortogonal en ambos lados de la igualdad tenemos que: \[\text{Nuc}(T) = (\text{Im}(T^*))^\perp\] \[\Longleftrightarrow (\text{Nuc}(T))^\perp = ((\text{Im}(T^*))^\perp)^\perp\] \[\therefore (\text{Nuc}(T))^\perp =\text{Im}(T^*)\]\qed
+    \item [$b)$] $V=\text{Nuc}(T)\bigoplus \text{Im}(T^*)$, y $W=\text{Im}(T)\bigoplus \text{Nuc}(T^*$.\\\\
+    \textbf{Demostraci\'on 4.b.1:}\\
+    P.D. $V=\text{Nuc}(T)\bigoplus \text{Im}(T)^*$\\
+    Por el inciso anterior, de la \textbf{Demostración 4.a.2} tenemos que $\text{Im}(T^*)$ = $(\text{Nuc}(T))^\perp$ entonces 
+    \[\text{Nuc}(T)\oplus \text{Im}(T)^* = \text{Nuc}(T)\oplus (\text{Nuc}(T))^\perp\]
+    además sabemos que para $T:V\longrightarrow W$, el núcleo de $T$ es un subespacio de V, entonces, por el \textbf{Teorema 22} de la clase 4 de Marzo (el del complemento ortogonal) se cumple que \[V= \text{Nuc}(T)\oplus (\text{Nuc}(T))^\bot\]
+     \[\therefore V=\text{Nuc}(T)\oplus \text{Im}(T)^*\]\qed\\
+    \textbf{Demostraci\'on 4.b.2:}\\
+    P.D. $W=\text{Im}(T)\bigoplus \text{Nuc}(T)^*$\\
+    Nuevamente por el inciso anterior, de la \textbf{demostración 4.a.1} tenemos que $\text{Nuc}(T)^*$ = $(\text{Im}(T))^\perp $ entonces
+    \[\text{Im}(T)\oplus \text{Nuc}(T)^* = \text{Im}(T)\oplus (\text{Im}(T))^\perp\] 
+    y nuevamente, para $T:V\longrightarrow W$ la \text{Im}agen de $T$
+es un subespacio pero ahora de $W$, por lo que se cumple que sabemos que por ser complemento ortogonal de cualquier subespacio (dentro de $W$) se cumple que:
+\[W=\text{Im}(T)\oplus (\text{Im}(T))^\perp\] y así \[\therefore W=\text{Im}(T)\oplus \text{Nuc}(T)^*\]\qed
+    \item [$c)$] $\text{Nuc}(T^* T)=\text{Nuc}(T)$ e $\text{Im}(T^*T)=\text{Im}(T)^*$.\\\\
+     \textbf{Demostraci\'on 4.c.1:}\\
+     P.D. $\text{Nuc}(T^*T)=\text{Nuc}(T)$\\
+     Sea $v\in V$, entonces para $v \in \text{Nuc}(T^*T)$ tenemos que por definición del núcleo \[T^*T(v)=0\] \[\Longleftrightarrow \langle T^*(T(v)),v\rangle=0\]\[\Longleftrightarrow \langle T(v),T(v)\rangle=0\]\[\Longleftrightarrow T(v)=0\] esto último por las propiedades del producto punto. Así, nuevamente por definición del núcleo $v\in \text{Nuc}(T)$, entonces por usar bicondicionales y como $v$ era arbitrario, podemos llegar a la doble contenci\'on, de modo que: \[\therefore \text{Nuc}(T^*T)=\text{Nuc}(T)\]\qed
+     
+    \textbf{Demostraci\'on 4.c.2:}\\
+    P.D. $\text{Im}(T^*T)=\text{Im}(T^*)$\\
+    Primero notemos que del inciso $a)$, la \textbf{Demostración 4.a.2} y la anterior \textbf{Demostración 4.c.1}, tenemos lo siguiente:\[\text{Im}(T)^*=(\text{Nuc} T)^\perp = (\text{Nuc}(T^*T))^\perp\] es decir \[\text{Im}(T)^* = (\text{Nuc}(T^*T))^\perp \] 
+    Sea $v\in V$, entonces para $v\in \text{Nuc}(T^*T)$ tenemos que por definición\[T^*T(v)=0\] \[\Longleftrightarrow \langle v,T^*(T(v))\rangle=0\] \[\Longleftrightarrow \langle T(v),T(v)\rangle=0\] \[\Longleftrightarrow \langle T^*T(v),v\rangle=0\] \[~~~\text{entonces como}~~~T^*T(v)\in \text{Im}(T^*T)~~~\text{y}~~~\langle T^*(T(v)),v\rangle=0 \]Esto nos demuestra que $T^*T$ es auto adjunto, y adem\'as tenemos que $v\in (\text{Im}(T^*T))^\perp$ esto por definición del complemento ortogonal, por lo que entonces por bicondicionalidad, la cual implica doble contenci\'on, tenemos que:
+    \[\therefore \text{Nuc}(T^*T)=(\text{Im}(T^*T))^\perp\] Por último, tomamos el complemento ortogonal en ambos lados de la igualdad, por lo que nos queda que \[\text{Nuc}(T^*T)=(\text{Im}(T^*T))^\perp\] \[\Longleftrightarrow (\text{Nuc}(T^*T))^\bot=((\text{Im}(T^*T))^\perp)^\bot\] \[\therefore (\text{Nuc}(T^*T))^\bot=\text{Im}(T^*T) \] de esta manera obtenemos que: \[\text{Im}(T)^* = (\text{Nuc}(T)^*T)^\perp=\text{Im}(T^*T)\] \[\therefore \text{Im}(T)^* =\text{Im}(T^*T) \blacksquare\]
+    
+\end{itemize}   

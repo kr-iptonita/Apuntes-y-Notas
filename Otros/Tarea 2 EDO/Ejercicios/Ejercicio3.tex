@@ -1,0 +1,17 @@
+\section{Investigar sobre la cuantificación del error en los iterados de Picard.}
+Es un método desarrollado por Charles Émile Picard, es un metodo de caracter iterativo que se emplea para obtener una solucion a una ecuación diferencial, esto significa que se emplea un valor/condición inicial $x_0$ mediante el cual desencadenara las aproximaciones para cada iteración con $x_i$ donde $i\geq0$, entonces para el metodo iterativo de Picard se considera generalmente una ecuación diferencial como:
+$$\frac{dx}{dt}=f(x,t)$$
+
+donde $f(x,t): \|x-x_0\| \leq a\cdot \| t-t_0 \|\leq \mathcal{T}\rightarrow \mathcal{R}$
+
+De este modo la idea principal es optener un proceso que tiende a una solución del \texttt{}{PVI}.
+
+de esta forma para una función solución tal que:
+$$\int _{t_0}^t\frac{dx}{dt}=\int _{t_0}^tf\left(x\left(t'\right),t'\right)dt'$$
+si se elabora un despeje de $x(t)$
+tenemos:
+
+$$\:x\left(t\right)=x_0+\int _{t_0}^tf\left(x\left(t'\right),t'\right)dt'$$
+Aunque no se resuelve el problema se obtiene una sucesión tal que:
+
+$$x_{l+1}(t)=x_0+\int_{t_0}^t f(x_l(t'),t')dt'$$

@@ -1,0 +1,102 @@
+\section{Si $a e \neq b d$ demuestre que pueden elegirse constantes $h, k$ de modo que las sustituciones $x=U h, y=V k$ reducen la ecuación:}
+$$
+\frac{d y}{d x}=f\left(\frac{a x+b y+c}{d x+e y+f}\right)
+$$
+a una ecuación homogénea.\\
+
+Por la regla de la cadena:\\
+$$
+\frac{d y}{d x}=\frac{d y}{d V} \frac{d V}{d U} \frac{d U}{d x}
+$$
+Pero, como $d x=d U$ y $d y=d V$, entonces:
+$$
+\frac{d y}{d x}=1 \cdot \frac{d V}{d U} \cdot 1=\frac{d V}{d U}
+$$
+Sustituyendo en la función:
+$$
+\frac{d V}{d U}=f\left(\frac{a U-a h+b V-b k+c}{d U-d h+e V-e k+f}\right)
+$$
+Si tomamos tales contantes como aquellas que cumplen el sistema:
+$$
+\begin{array}{l}
+a h+b k=c \\
+d h+e k=f
+\end{array}
+$$
+Que tiene solución, pues:
+$$
+\left|\begin{array}{ll}
+a & b \\
+d & e
+\end{array}\right|=a e-b d \neq 0
+$$
+por la hipóteis.\\
+
+Luego:\\
+
+$$
+\frac{d v}{d u}=f\left(\frac{a U+b V}{d U+e V}\right)=f\left(\frac{a+b \frac{V}{U}}{d+e^{\frac{V}{U}}}\right)
+$$
+que es una ecuación homogénea.\\
+
+\textbf{Ejercicio $5 a$}\\
+
+$$
+\frac{d y}{d x}=\frac{-x+2 y+4}{x+y-1}
+$$
+Notemos que el sistema que estamos buscando es:
+$$
+\begin{array}{l}
+-h+2 k=4 \\
+h+k=-1
+\end{array}
+$$
+La solución, por la regla de Cramer, es:
+$$
+h=\frac{\left|\begin{array}{cc}
+4 & 2 \\
+-1 & 1
+\end{array}\right|}{\left|\begin{array}{cc}
+-1 & 2 \\
+1 & 1
+\end{array}\right|}=-2 ; \quad k=\frac{\left|\begin{array}{cc}
+-1 & 4 \\
+1 & -1
+\end{array}\right|}{\left|\begin{array}{cc}
+-1 & 2 \\
+1 & 1
+\end{array}\right|}=1
+$$
+La sustituación adecuada es:
+$$
+x=U+2 ; y=V-1
+$$
+De aquí que, haciendo la substitución:
+$$
+\frac{d V}{d U}=\frac{-U+2 V}{U+V}=\frac{-1+2 \frac{V}{U}}{1+\frac{V}{U}}
+$$
+Sea $z=\frac{V}{U} \Rightarrow V=z U \Rightarrow V^{\prime}=z+z^{\prime} U$ y sustituimos:
+$$
+z+z^{\prime} U=\frac{2 z-1}{z+1} \Rightarrow z^{\prime} U=\frac{2 z-1}{z+1}-z \Rightarrow z^{\prime} \frac{z+1}{-z^{2}+z-1}=\frac{1}{U}
+$$
+
+Integrando de ambos lados:
+$$
+\int \frac{z+1}{-z^{2}+z-1} d z=\int \frac{d U}{U} \Rightarrow-\frac{1}{2} \int \frac{2 z-1}{z^{2}-z+1} d z-\frac{3}{2} \int \frac{1}{x^{2}-x+1}=\ln U
+$$
+De donde:
+$$
+-\frac{1}{2} \ln \left(z^{2}-z+1\right)-\sqrt{3} \arctan \left(\frac{2 z-1}{\sqrt{3}}\right)=\ln U
+$$
+$$
+e^{-\sqrt{z^{2}-z+1}}-e^{\sqrt{3} \arctan \left(\frac{2 z-1}{\sqrt{3}}\right)}=U
+$$
+4
+$$
+e^{-\sqrt{\left(\frac{y+1}{x-2}\right)^{2}-\frac{y+1}{x-2}+1}}-e^{\sqrt{3} \arctan \left(\frac{2\left(\frac{y+1}{x-2}\right)-1}{\sqrt{3}}\right)}=x-2
+$$
+Ejercicio 5 b
+$$
+\frac{d y}{d x}=\frac{x+y+4}{x+y-6}
+$$
+Notemos que el $a e=1$ y $b d=1$ y por lo tanto, no se puede resolver por el método anterior.

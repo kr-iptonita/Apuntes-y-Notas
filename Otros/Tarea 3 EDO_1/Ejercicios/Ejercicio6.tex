@@ -1,0 +1,41 @@
+\section{En mecánica cuántica, el estudio de la ecuación de Schödinger para el
+átomo de hidrógeno conduce a considerar la ecuación de Laguerre:
+$$ty'' + (1 - t)y' + \lambda y = 0$$
+Considere  $\lambda -2$}
+\begin{itemize}
+    \item Muestre que $y_1(t) = t^2 - 4t + 2$ es solución de la ecuación.
+    Encontrando la primera y segunda derivada tenemos=
+    $$(t^2 - 4t + 2)'=2t-4$$
+    $$(t^2 - 4t + 2)''=(2t-4)'=2$$
+    Evaluando tenemos:
+    $$2t+\left(1-t\right)\left(2t-4\right)+2(t^2-4t+2)=0$$
+    $$2t-2t^2+6t-4+2\left(t^2-4t+2\right)=0$$
+    $$2t-2t^2+6t-4+2t^2-8t+4=0$$
+    $$2t+6t-8t-4+4=0$$
+    $$4-4=0$$
+    verdadero y por lo tanto su es solución
+    \item Encuentre una segunda solución $y_2(t)$ linealmente independiente.\\
+    Tengamos que:\\
+    $$ ty'' + (1 - t)y' + y = 0 \Rightarrow y''+\frac{(1-t)}{t}y'+\frac{y}{t}=0$$
+    entonces:
+    $$y_2=uy_1\Rightarrow y_2=u(t^2 - 4t + 2)$$
+    $$y_2'=u'\left(t^2-4t+2\right)+\left(2t-4\right)u$$
+    $$y_2''=u''\left(t^2-4t+2\right)+2u'\left(2t-4\right)+2u$$
+    Sustituyendo tenemos:
+    $$t(u''\left(t^2-4t+2\right)+2u'\left(2t-4\right)+2u) + (1 - t)(u'\left(t^2-4t+2\right)+\left(2t-4\right)u )+ 2(u(t^2 - 4t + 2))=0 $$
+    $$t^3u''-4t^2u''+2tu''+9t^2u'-14tu'+2u'-t^3u'=0$$
+    $$u''(t^3-4t^2+2t)+-u'(-9t^2+14t-2+t^3)=0$$
+    Sea $v=u' \Rightarrow v'=u''$ entonces:
+    $$\frac{v'}{v}\:=\frac{t^3-9t^2+14t-2}{t^3-4t^2+2t}$$
+    $$\int \frac{1}{v}dv=\int \frac{t^3-9t^2+14t-2}{t^3-4t^2+2t}dt$$
+$$\ln \left(v\right)+c_2=t-2\ln \left(t^2-4t+2\right)+\frac{5}{\sqrt{2}}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)+1\right)-\frac{5}{\sqrt{2}}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)-1\right)-$$
+    $$\frac{7}{\sqrt{2}}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)+1\right)+
+    \frac{7}{\sqrt{2}}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)-1\right)-\ln \left(t\right)+\sqrt{2}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)+1\right)$$
+    $$-\sqrt{2}\ln \left(\frac{1}{\sqrt{2}}\left(t-2\right)-1\right)+c$$
+    Pero simplificando y combinando las constantes queda:
+    $$v=\frac{e^{t+c}}{t^5-8t^4+20t^3-16t^2+4t}$$
+    $$\Rightarrow u=\int \frac{e^{t+c}}{t^5-8t^4+20t^3-16t^2+4t}$$
+    $$u=\int \frac{e^{t+c}}{t\left(\:t^2\:-\:4t\:+\:2\right)^2} dt$$
+    por lo tanto
+    $$y_2=( t^2 - 4t + 2)\int \frac{e^{t+c}}{t\left(\:t^2\:-\:4t\:+\:2\right)^2} dt$$
+\end{itemize}

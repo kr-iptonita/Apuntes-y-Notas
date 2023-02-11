@@ -1,0 +1,170 @@
+\section{Calcula el polinomio característico, valores y vectores propios de las siguientes matrices
+complejas:}
+\[a) A= \begin{pmatrix}0& -i\\
+-2i &-2\end{pmatrix}\hspace{1cm}B= \begin{pmatrix}
+0&1&0&0\\
+0& 0 &1& 0\\
+0&0&0&1\\
+1&0&0&0\end{pmatrix}\]
+\textbf{Soluci\'on 8:}\\
+Encontrar todos los valores y vectores propios correspondientes.
+    Sabemos que para encontrar un valor propio $\lambda_n$ de una matriz $A\in\mathcal{M}_{n\times n }$ que satisfaga $A\vec{v}=\lambda_n\vec{v}$, debemos tener que $\text{det}(A-\lambda_nI_{n\times n })=0$, de esta manera obtenemos su polinomio caracter\'istico, cuyas $n$ ra\'ices son sus valores propios.
+    \begin{enumerate}
+        \item[$a)$] Lo primero que se deber\'a hacer es encontrar su polinomio caracter\'istico:
+        \[0=\text{det}(A-\lambda_nI_{n\times n })=\left|\begin{pmatrix}0& -i\\
+-2i &-2\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0\\0 &1
+\end{pmatrix}\right|=\begin{vmatrix}-\lambda &-i\\
+-2i &-2-\lambda\end{vmatrix}=(-\lambda)(-2-\lambda)-(-2i)(-i)\]\[=2\lambda+\lambda^2+2=\lambda^2+2\lambda+2\]
+Por lo que su polinomio caracter\'istico es $\lambda^2+2\lambda+2=0$, de modo que sus ra\'ices (valores propios) son:
+\[\lambda= \frac{-(2)\pm\sqrt{(2)^2-4(1)(2)}}{2(1)}= \frac{-2\pm\sqrt{4-8}}{2}= \frac{-2\pm\sqrt{-4}}{2}= \frac{-2\pm\sqrt{4}\sqrt{-1}}{2}= \frac{-2\pm2i}{2}=-1\pm i\]$\lambda_1=-1-i$ y $\lambda_2=-1+i$. Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(A-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y)\in\mathbb{C}^2$):
+\begin{itemize}
+    \item Para $\lambda_1=-1-i$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}0-(-1-i) &-i\\
+-2i &-2-(-1-i)\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}1+i &-i\\
+-2i &-1+i\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}(1+i)x-iy\\
+-2ix+(-1+i)y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}(1+i)x-iy\\
+-2ix+(-1+i)y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+(1+i)x-iy&=&0\\
+-2ix+(-1+i)y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{1+i}{-i}=i(1+i)=-1+i=\frac{-2i}{-1+i}=\frac{2i}{1-i}=\frac{2i(1+i)}{2}$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $iy=(1+i)x~\Longrightarrow~~y=-i(1+i)x=(1-i)x$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(x,(1-i)x)=x(1,1-i)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=-1-i$ tiene asociado el vector propio $\vec{v_1}=(1,1-i)$.
+
+\item Para $\lambda_2=-1+i$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_2I_{n\times n })\vec{v}=\begin{pmatrix}0-(-1+i) &-i\\
+-2i &-2-(-1+i)\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}1-i &-i\\
+-2i &-1-i\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}(1-i)x-iy\\
+-2ix+(-1-i)y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}(1-i)x-iy\\
+-2ix+(-1-i)y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+(1-i)x-iy&=&0\\
+-2ix+(-1-i)y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{1-i}{-i}=i(1-i)=1+i=\frac{-2i}{-1-i}=\frac{2i}{1+i}=\frac{2i(1-i)}{2}$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $iy=(1-i)x~\Longrightarrow~~y=-i(1-i)x=(-1-i)x$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(x,(-1-i)x)=x(1,-1-i)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_2=-1-i$ tiene asociado el vector propio $\vec{v_2}=(1,-1-i)$.
+\end{itemize}
+
+
+\item[$b)$] Lo primero que se deber\'a hacer es encontrar su polinomio caracter\'istico por cofactores sobre la primera columna:
+        \[0=\text{det}(B-\lambda_nI_{n\times n })=\left|\begin{pmatrix}0&1&0&0\\
+0& 0 &1& 0\\
+0&0&0&1\\
+1&0&0&0\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0&0&0\\0 &1&0&0\\0 &0&1&0\\0 &0&0&1
+\end{pmatrix}\right|=\begin{vmatrix}-\lambda&1&0&0\\
+0& -\lambda &1& 0\\
+0&0&-\lambda&1\\
+1&0&0&-\lambda\end{vmatrix}\]Ahora de la primera lo haremos por cofactores de la primer columna, mientras de la segunda por los del primer rengl\'on:\[=(-\lambda)\begin{vmatrix}
+ -\lambda &1& 0\\
+0&-\lambda&1\\
+0&0&-\lambda\end{vmatrix}-(1)\begin{vmatrix}1&0&0\\
+ -\lambda &1& 0\\
+0&-\lambda&1\end{vmatrix}=(-\lambda)\left[(-\lambda)\begin{vmatrix}
+-\lambda&1\\
+0&-\lambda\end{vmatrix}\right]-(1)\left[(1)\begin{vmatrix}
+ 1& 0\\
+-\lambda&1\end{vmatrix}\right]\]\[=\lambda^2\begin{vmatrix}
+-\lambda&1\\
+0&-\lambda\end{vmatrix}-\begin{vmatrix}
+ 1& 0\\
+-\lambda&1\end{vmatrix}=\lambda^2[(-\lambda)(-\lambda)-(0)(1)]-[(1)(1)-(-\lambda)(0)]=\lambda^4-1\]
+Por lo que su polinomio caracter\'istico es $\lambda^4-1=(\lambda^2-1)(\lambda^2+1)=(\lambda-1)(\lambda+1)(\lambda-i)(\lambda+i)=0$, de modo que sus ra\'ices (valores propios) son:
+\[\lambda_1=1~~~\lambda_2=-1~~~\lambda_3=i~~~\lambda_4=-i\]Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(A-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y,z,w)\in\mathbb{C}^4$):
+\begin{itemize}
+    \item Para $\lambda_1=1$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\vec{0}=(B-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}-1&1&0&0\\
+0& -1 &1& 0\\
+0&0&-1&1\\
+1&0&0&-1\end{pmatrix}\begin{pmatrix}x\\
+y\\z\\w\end{pmatrix}=\begin{pmatrix}-x+y\\
+-y+z\\-z+w\\-w+x\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\begin{pmatrix}-x+y\\
+-y+z\\-z+w\\-w+x\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-x+y&=&0\\
+-y+z&=&0\\-z+w&=&0\\-w+x&=&0
+\end{eqnarray*}
+Si despejamos cada ecuaci\'on llegamos a que $x=y=z=w$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z,w)=(x,x,x,x)=x(1,1,1,1)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=1$ tiene asociado el vector propio $\vec{v_1}=(1,1,1,1)$.
+
+\item Para $\lambda_2=-1$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\vec{0}=(B-\lambda_2I_{n\times n })\vec{v}=\begin{pmatrix}1&1&0&0\\
+0& 1 &1& 0\\
+0&0&1&1\\
+1&0&0&1\end{pmatrix}\begin{pmatrix}x\\
+y\\z\\w\end{pmatrix}=\begin{pmatrix}x+y\\
+y+z\\z+w\\w+x\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\begin{pmatrix}x+y\\
+y+z\\z+w\\w+x\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+x+y&=&0\\
+y+z&=&0\\z+w&=&0\\w+x&=&0
+\end{eqnarray*}
+Si despejamos la primera ecuaci\'on llegamos a que $x=-y$, de la segunda tenemos que $-y=z$, de la tercera que $z=-w$ y de la cuarta que $x=-w$, por lo que nos da que $x=z=-y=-w$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z,w)=(x,-x,x,-x)=x(1,-1,1,-1)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_2=-1$ tiene asociado el vector propio $\vec{v_2}=(1,-1,1,-1)$.
+
+
+\item Para $\lambda_3=i$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\vec{0}=(B-\lambda_3I_{n\times n })\vec{v}=\begin{pmatrix}-i&1&0&0\\
+0& -i &1& 0\\
+0&0&-i&1\\
+1&0&0&-i\end{pmatrix}\begin{pmatrix}x\\
+y\\z\\w\end{pmatrix}=\begin{pmatrix}-ix+y\\
+-iy+z\\-iz+w\\-iw+x\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\begin{pmatrix}-ix+y\\
+-iy+z\\-iz+w\\-iw+x\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-ix+y&=&0\\
+-iy+z&=&0\\-iz+w&=&0\\-iw+x&=&0
+\end{eqnarray*}
+Si despejamos la primera ecuaci\'on llegamos a que $ix=y$, de la segunda tenemos que $iy=z$, de la tercera que $iz=w$ y de la cuarta que $x=iw$, por lo que nos da que $x=-z=-iy=iw$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z,w)=(x,ix,-x,-ix)=x(1,i,-1,-i)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_3=i$ tiene asociado el vector propio $\vec{v_3}=(1,i,-1,-i)$.
+
+
+\item Para $\lambda_4=-i$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\vec{0}=(B-\lambda_4I_{n\times n })\vec{v}=\begin{pmatrix}i&1&0&0\\
+0& i &1& 0\\
+0&0&i&1\\
+1&0&0&i\end{pmatrix}\begin{pmatrix}x\\
+y\\z\\w\end{pmatrix}=\begin{pmatrix}ix+y\\
+iy+z\\iz+w\\iw+x\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\begin{pmatrix}ix+y\\
+iy+z\\iz+w\\iw+x\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+ix+y&=&0\\
+iy+z&=&0\\iz+w&=&0\\iw+x&=&0
+\end{eqnarray*}
+Si despejamos la primera ecuaci\'on llegamos a que $-ix=y$, de la segunda tenemos que $-iy=z$, de la tercera que $-iz=w$ y de la cuarta que $x=-iw$, por lo que nos da que $x=-z=iy=iw$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z,w)=(x,-ix,-x,ix)=x(1,-i,-1,i)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_4=-i$ tiene asociado el vector propio $\vec{v_4}=(1,-i,-1,i)$.
+
+
+\end{itemize}
+\end{enumerate}

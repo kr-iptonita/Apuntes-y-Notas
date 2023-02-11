@@ -1,0 +1,59 @@
+\section{Resuelva la siguiente ecuación diferencial:}
+\[ \frac{y}{x}dx+\left(y^3-\ln \left(x\right)\right)dy=0 \]
+
+$$ \frac{y}{x}+\left(y^3-\ln \left(x\right)\right)\frac{dy}{dx}=0 \Rightarrow \frac{y}{x}+\left(y^3-\ln \left(x\right)\right)y'\:=0 $$
+
+Teniendo que:
+$$\mu '\left(y\right)=\frac{-\frac{1}{x}-\frac{1}{x}}{\frac{y}{x}}\mu \left(y\right)\Rightarrow \mu'\left(y\right)=-\frac{2}{y}\mu\left(y\right)$$
+entonces: resolviendo mediante variables separadas:
+$$\frac{1}{\mu\left(y\right)}\mu'\left(y\right)=-\frac{2}{y}$$
+$$\frac{1}{\mu\left(y\right)}\mu'\left(y\right)=-\frac{2}{y}$$
+$$\int \frac{1}{\mu\left(y\right)}d\mu\left(y\right)=\int \:-\frac{2}{y}dy$$
+$$\ln \left(\mu\left(y\right)\right)=-2\ln \left(y\right)+c_1$$
+$$\mu\left(y\right)=\frac{e^{c_1}}{y^2}\Rightarrow \mu\left(y\right)=\frac{c_1}{y^2}\Rightarrow \frac{1}{y^2}$$
+Multiplicando por $\frac{1}{y^2}$
+$$\Rightarrow \frac{1}{xy}+\frac{y^3-\ln \left(x\right)}{y^2}y'\:=0$$
+Lo cual está de la forma:
+$$\Psi _x\left(x,\:y\right)=M\left(x,\:y\right)=\frac{1}{xy},\:\quad \Psi _y\left(x,\:y\right)=N\left(x,\:y\right)=\frac{y^3-\ln \left(x\right)}{y^2}$$
+\textit{donde si se dan las condiciones se tendrá:
+$$\Psi_x+\Psi_y*y'=\frac{d\Psi(x,y)}{dx}=0$$
+y la solución general es: $\Psi(x,y)=0$}
+
+verificando:
+$$\frac{\partial M(x,y)}{\partial y}=\frac{\partial N(x,y)}{\partial x}$$
+
+Calculando:
+\begin{itemize}
+    \item $$\frac{\partial M}{y}$$
+    
+         $$\left(\frac{1}{xy}\right)'$$
+         Si $x$ es una constante
+         $$\frac{1}{x}\left(\frac{1}{y}\right)'\:$$
+         $$\frac{1}{x}\left(-1\cdot \:y^{-1-1}\right)$$ $$-\frac{1}{xy}$$
+    \item $$\frac{\partial N}{\partial x}$$
+          $$\left(\frac{y^3-\ln \left(x\right)}{y^2}\right)'$$
+          $$\frac{1}{y^2}\left(y^3-\ln \left(x\right)\right)'\:$$
+          $$\frac{1}{y^2}\left(\left(y^3\right)'\:-\left(\ln \left(x\right)\right)'\:\right)$$
+          como tratamos a $y$ constante entonces:
+          $$\frac{1}{y^2}\left(0-\frac{1}{x}\right)$$
+          $$-\frac{1}{xy^2}$$
+\end{itemize}
+\textsc{ Verdadero }
+
+Ahora solo queda encontrar: $$\Psi(x,y)$$
+
+así tenemos $$\int \:Ndy=\int \frac{y^3-\ln \left(x\right)}{y^2}dy$$
+$$\int \:-\frac{\ln \left(x\right)}{y^2}+ydy\Rightarrow -\int \frac{\ln \left(x\right)}{y^2}dy+\int \:ydy$$
+$$-\left(-\frac{\ln \left(x\right)}{y}\right)+\frac{y^2}{2}\Rightarrow \frac{\ln \left(x\right)}{y}+\frac{y^2}{2}$$
+Por lo tanto queda:
+$$\Psi\left(x,\:y\right)=\frac{\ln \left(x\right)}{y}+\frac{y^2}{2}+\mu\left(x\right)$$
+y para encontrar a $\mu$
+$$\left(\frac{\ln \left(x\right)}{y}+\frac{y^2}{2}+η\left(x\right)\right)'\Rightarrow \left(\frac{\ln \left(x\right)}{y}\right)'\:+\left(\frac{y^2}{2}\right)'\:+\mu'\left(x\right)\Rightarrow \frac{1}{yx}+0+\mu'\left(x\right)$$
+$$\Rightarrow \frac{1}{xy}=\frac{1}{xy}+\mu'\left(x\right)$$
+$$\mu'\left(x\right)=0 \Rightarrow \Rightarrow\left(x\right)=c_1$$
+$$\Psi \left(x,\:y\right)=\frac{\ln \left(x\right)}{y}+\frac{y^2}{2}+c_1$$
+Entonces:
+$$\frac{\ln \left(x\right)}{y}+\frac{y^2}{2}+c_1=c_2\Rightarrow \frac{\ln \left(x\right)}{y}+\frac{y^2}{2}=c_1$$
+$$\Rightarrow$$
+Ec implicita
+$$f(x,y)\frac{\ln \left(x\right)}{y}+\frac{y^2}{2}=c_1$$

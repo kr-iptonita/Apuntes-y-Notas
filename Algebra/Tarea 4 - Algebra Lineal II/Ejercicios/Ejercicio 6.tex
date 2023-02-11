@@ -1,0 +1,53 @@
+
+\section{ Si $V$ es un espacio vectorial real de dimensión finita, y si $P_1,P_2:V \rightarrow V $ son proyecciones,
+demuestra que son equivalentes:}
+\begin{itemize}
+    \item [$a)$] $P_1+P_2$ es un proyección.
+    \item [$b)$] $P_1 \circ P_2=P_2 \circ P_1=0$
+\end{itemize}
+\textbf{Demostraci\'on 6:}\\
+Por ser una equivalencia (\ie $a)\Longleftrightarrow b)$ ), demostraremos ambos condicionales.
+\begin{itemize}
+\item $a)\Longrightarrow b)$\\
+    Sea $P_1+P_2$ una proyección. P.D.$P_1 \circ P_2=P_2 \circ P_1=0$ \\
+   Como $P=P_1+P_2$ una proyección cumple que es una transformaci´on lineal $P : V \rightarrow V$ que verifica $P^2=P$ (siendo $P^2 = P\circ P$).\\
+   Como sabemos que $P^2=P$, entonces $P^2(v)=P(v)$, $\forall v\in V$, por lo que si desarrollamos ambos lados con un $v\neq0$:
+   \[P^2(v)=(P_1+P_2)[(P_1+P_2)(v)]=(P_1+P_2)(P_1(v)+P_2(v))\]\[=P_1(P_1(v))+P_1(P_2(v))+P_2(P_1(v))+P_2(P_2(v))=P_1^2(v)+P_1\circ P_2(v)+P_2\circ P_1(v)+P_2^2(v)\]
+   Si $P_1$ y $P_2$ son proyecciones se sabe que $P_1^2=P_1$ y $P_2^2=P_2$ por lo tanto:
+   \[\therefore P^2(v)=P_1(v)+P_1\circ P_2(v)+P_2\circ P_1(v)+P_2(v)\]
+   Por el otro lado:
+   \[\therefore P(v)=(P_1+P_2)(v)=P_1(v)+P_2(v)\]
+   De este modo si $P^2(v)=P(v)$, tenemos:
+   \[P_1(v)+P_2(v)=P_1(v)+P_1\circ P_2(v)+P_2\circ P_1(v)+P_2(v)\]
+   Entonces como $P_1,P_2$ son transfromaciones lineales por definici\'on, sabemos que existen sus inversos aditivos, por lo que despejando, tenemos:
+   \[P_1\circ P_2(v)+P_2\circ P_1(v)=0~~~\Longrightarrow~~~(P_1\circ P_2+P_2\circ P_1)(v)=0\]Como $v\neq 0$, tenemos:
+   \[P_1\circ P_2+P_2\circ P_1=0~~~\Longrightarrow~~~-P_1\circ P_2=P_2\circ P_1\]
+   Es importante recalcar que $P_1\neq P_2$, pues de lo contrario, tendr\'iamos que $P=2P_1$ y por lo tanto para que $P^2=4P_1=2P_1=P$, tendr\'iamos que $P=P_1=P_2=0$  y directamente tendr\'iamos que $P_1 \circ P_2=P_2 \circ P_1=0$, de este modo tenemos que $P_1-P_2\neq 0$, por lo tanto, recordando que $P_1^2=P_1$ y $P_2^2=P_2$ se tiene:
+   \[P_1\circ P_2(v)+P_2\circ P_1(v)=0~~~\Longrightarrow~~~P_1^2\circ P_2(v)+P_2^2\circ P_1(v)=0~~~\Longrightarrow~~~P_1((P_1\circ P_2))(v)+P_2((P_2\circ P_1))(v)=0\]
+   Recordando a que llegamos a que $-P_1\circ P_2=P_2\circ P_1$, sis sustituimos, tenemos que usando las porpiedades de transformaciones lineales:
+   \[P_1((P_1\circ P_2))(v)+P_2((-P_1\circ P_2))(v)=0~~~\Longrightarrow~~~P_1((P_1\circ P_2))(v)-P_2((P_1\circ P_2))(v)=0~~~\Longrightarrow~~~(P_1-P_2)(P_1\circ P_2)(v)=0\]
+   Como sabemos que $v\neq0$, $P_1-P_2\neq 0$, entonces $P_1\circ P_2=0$ y $P_1\circ P_2=-P_2\circ P_1=0$.\qed
+        Por tanto Si $P_1, P_2$ son proyecciones y  $P_1+P_2$ tambien lo es $\Longrightarrow$ $P_1 \circ P_2=P_2 \circ P_1=0$ \\
+    \item $b)\Longrightarrow a)$\\
+    Sea $P_1 \circ P_2=P_2 \circ P_1=0$. P.D. $P_1+P_2$ es un proyección.\\
+    Para demostrar que $P_1+P_2$ es un proyección, debemos demostrar que cumple las condiciones de proyecci\'on, es decir que es una transformaci´on lineal $P : V \rightarrow V$ que verifica $P^2=P$ (siendo $P^2 = P\circ P$).:
+    \begin{enumerate}
+        \item Sea $P=P_1+P_2$, tenemos que $P^2=(P_1+P_2)^2=(P_1+P_2)\circ (P_1+P_2)$, si calculamos $P(v)$, con $v\in V$ arbitrario, entonces tenemos: 
+        $$P^2(v)=(P_1+P_2)[(P_1+P_2)(v)]=(P_1+P_2)(P_1(v)+P_2(v))$$
+        $$=P_1(P_1(v))+P_1(P_2(v))+P_2(P_1(v))+P_2(P_2(v))=P_1^2(v)+P_1\circ P_2(v)+P_2\circ P_1(v)+P_2^2(v)$$
+        por hip\'otesis tenemos que $P_1 \circ P_2=P_2 \circ P_1=0$, por lo tanto:
+        $$P^2(v)=P_1^2(v)+P_2^2(v)$$
+        pero si tanto $P_1$ como $P_2$ son proyecciones se sabe que $P_1^2=P_1$ y $P_2^2=P_2$ por lo tanto:
+        $$P^2(v)=P_1^2(v)+P_2^2(v)=P_1(v)+P_2(v)=(P_1+P_2)(v)=P(v)$$
+        $$\therefore P^2=P$$
+        \item Dado que al ser $P_1$ y $P_2$ proyecciones, entonces son por definici\'on transformaciones lineales de $V$ a $V$, por lo tanto $P=P_1+P_2$ es lineal y la demostraci\'on es directa y $P:V\rightarrow V$ es una transformaci\'on lineal.
+        %\item De igual forma si $P_1$ y $P_2$ son proyecciones, son continuas, entonces: $P_1+P_2$ es continua        $\Rightarrow P$ es continua        \item Consideremos $P^*=(P_1+P_2)^*$        $$P^*=P_1^*+P_2^*$$        Por la condición de que $P_1$, $P_2$ son proyecciones tenemos:
+
+    \end{enumerate} 
+        %$$P^*=P_1+P_2\Rightarrow P^*=P$$
+        Por tanto Si $P_1, P_2$ son proyecciones y  $P_1 \circ P_2=P_2 \circ P_1=0$ $\Longrightarrow$ $P_1+P_2$ tambien lo es\\
+    
+    Por ambos puntos probados podemos afirmar que $a)$ y $b)$ son equivalentes.
+    %\item $P_1 \circ P_2=P_2 \circ P_1=0$    Pd. el espacio columna de $P_1=M_1$ y $P_2=M_2$ son ortogonales    Consideremos $x\in M_1$ y $y\in M_2$, y además $M_1=\{ x\in V: X=P_1x \}; \: M_2=\{y\in V: y=P_2y\}$\\    entonces. $P_1x=x$, $P_2y=y$\\    \textcolor{blue}{    Entonces $\norm{x}^2=\norm{P_1x}^2\leq \norm{(P_1+P_2)x}^2$    $$=<(P_1+P_2)x,(P_1+P_2)^*x>$$    $$=<(P_1+P_2)(P_1+P_2)X,X>$$    $$=<(P_+P_2)^2x,x>$$    $$=<(P_1+P_2)x,x>$$    $$=<P_1x,x>+<P_2x,x>$$    $$=<Px,x>=<P^*x,x>=<Px,P^*x>=\norm{Px}^2\leq \norm{x}^2$$    $$\therefore \norm{x}^2=\norm{Px+(I-P)x}^2=\norm{Px}^2+\norm{(I-P)x}^2\geq \norm{Px}^2$$    Ahora bien    $$\norm{x}^2=\norm{P_1x}^2\leq \norm{(P_1+P_2)x}^2\leq \norm{x}^2$$    $$\Rightarrow \norm{x}^2=\norm{P_1x}^2= \norm{(P_1+P_2)x}^2$$    $\Rightarrow \norm{P_1x}^2+\norm{P_2x}^2=\norm{P_1x}^2$    $$\Rightarrow \norm{P_2x}^2=0$$    $$\Rightarrow P_2x=0$$    $$\Rightarrow x\in \mbox{espacio nulo de } P_2=M_2^{\perp}$$    $$\Rightarrow X\in M_2^{\perp} $$    $$ M_1\subseteq M_2$$    $$\therefore M_1\perp M_2 \Rightarrow P_1\circ P_2=0$$}    y como  \footnote{Cabe notar que tambien es posible repetir los pasos en azul intercambiando a \textcolor{red}{$y$} por \textcolor{red}{$x$} } $$a\perp b \Leftrightarrow b\perp a$$     $$M_2 \perp M_1 \Rightarrow P_2 \circ P_2 =0$$    $\therefore$    $$P_1\circ P_2=P_2 \circ P_1 =0$$
+    
+\end{itemize}

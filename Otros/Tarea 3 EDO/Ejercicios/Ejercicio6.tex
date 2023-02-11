@@ -1,0 +1,35 @@
+\textcolor{blue}{Ejercicio 6.} Considere la función
+\begin{equation}
+    f(t)=e^{-3t}\int_{0}^{t}u\sin(2u)du
+\end{equation}
+Encuentre $\mathscr{L}\{f(t)\}$.\\
+
+Primero resolvemos la integral por partes donde $f=u \Rightarrow df=du$ \\
+y $dg=\sin(2u)du \Rightarrow g=-\frac{1}{2}\cos(2u)$de forma que
+\begin{equation*}
+\begin{split}
+   & \int_{0}^{t}u\sin(2u)du=  -u\frac{1}{2}\cos(2u) + \frac{1}{2} \int_{0}^{t}\cos(2u) du \\
+    & = \left[-u\frac{1}{2}\cos(2u) + \frac{1}{4}\sin(2u)\right]\Big|_0^t \\
+    &=-\frac{t\cos(2t)}{2}+ \frac{\sin(2x)}{4}
+\end{split}
+\end{equation*}
+Entonces, utilizando propiedades de la Transformada de Laplace se obtiene
+\begin{equation*}
+\begin{split}
+    \mathscr{L}\{f(t)\}=\mathscr{L}\{e^{-3t}(-\frac{t\cos(2t)}{2} + \frac{\sin(2x)}{4})\}\\
+    =\mathscr{L}\{-e^{-3t}\frac{t\cos(2t)}{2}\} +  \mathscr{L}\{-e^{-3t}\frac{\sin(2t)}{4}\} \\
+    =-\frac{1}{2}\mathscr{L}\{e^{-3t}t\cos(2t)\} - \frac{1}{4} \mathscr{L}\{e^{-3t}\sin(2t)\}
+\end{split}
+\end{equation*}
+Sabemos que $\mathscr{L}\{e^{at}cos(wt)\}=\frac{s-a}{(s-a)^{2}+ w^{2}}$ y  $\mathscr{L}\{e^{at}sin(wt)\}=\frac{w}{(s-a)^{2}+ w^{2}}$ y $\mathscr{L}\{t^{n}f(t)\}=(-1)^{n}F^{n}(s)$, entonces 
+\begin{equation*}
+    \mathscr{L}\{e^{-3t}t\cos(2t)\}= -\frac{s+3}{(s+3)^{2}+ 4}
+\end{equation*}
+\begin{equation*}
+    \mathscr{L}\{e^{-3t}sin(2t)\}=\frac{2}{(s+3)^{2}+ 4}
+\end{equation*}
+
+Por lo tanto, juntando 
+\begin{equation}
+    \mathscr{L}\{f(t)\}=\frac{s+3}{2(s+3)^{2}+ 8} - \frac{2}{4(s+3)^{2}+ 16}.
+\end{equation}

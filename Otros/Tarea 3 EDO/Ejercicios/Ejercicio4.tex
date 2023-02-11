@@ -1,0 +1,78 @@
+\textcolor{blue}{Ejercicio 4.}
+. La ecuación diferencial de Chebyshev es:
+\begin{equation}
+   (1-x^2)y''-xy'+\alpha^2y=0 
+\end{equation}
+
+
+Determine dos soluciones linealmente independientes en potencias de $x$ para $\left|x\right| < 1$
+
+Reescribiendo a su forma estandar tenemos:
+
+$$\dfrac{d^{2}y}{dx^{2}} -\dfrac{x}{1 -x^{2}} \dfrac{dy}{dx} + \dfrac{\lambda^{2}}{1 -x^{2}} y = 0
+$$
+
+de donde obtenemos:
+$$P(x) = -\dfrac{x}{1 -x^{2}} \hspace{1cm} y \hspace{1cm} Q(x) = \dfrac{\lambda^{2}}{1 -x^{2}}$$
+
+podemos ver que las funciones $P$ y $Q$ no se definen bajo $x=1,-1$ aunque el punto: $x_0=0$ si \\
+por lo tanto tenemos:
+$$y(x) = \sum_{n = 0}^{\infty}c_{n}x^{n}$$
+Derivando tenemos:
+\begin{equation}[2]
+\dfrac{dy}{dx} = \sum_{n = 1}^{\infty}nc_{n}x^{n -1} \hspace{1cm} y \hspace{1cm} \dfrac{d^{2}y}{dx^{2}} = \sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}
+\end{equation}
+
+Sustituyendo (2) en (1) tenemos: 
+$$(1 -x^{2}) \left[ \sum_{n = 2}^{\infty}n(n-1)c_{n}x^{n-2} \right] -x \left[ \sum_{n = 1}^{\infty}nc_{n}x^{n -1} \right] + \lambda^{2} \left[ \sum_{n = 0}^{\infty}c_{n}x^{n} \right] = 0$$
+$$\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2} -\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n} -\sum_{n = 1}^{\infty}nc_{n}x^{n} + \lambda^{2} \sum_{n = 0}^{\infty}c_{n}x^{n} = 0$$
+Sea la primera serie con $k=n-2$ y el resto como $k=n$
+$$\sum_{k = 0}^{\infty}(k + 2)(k + 1)c_{k + 2}x^{k} -\sum_{k = 2}^{\infty}k(k -1)c_{k}x^{k} -\sum_{k = 1}^{\infty}kc_{k}x^{k}+\lambda^{2} \sum_{k = 0}^{\infty}c_{k}x^{k} = 0$$
+
+extrayendo los primeros dos terminos para $k=0$ tenemos:
+$$2c_{2} + \lambda^{2}c_{0} = 0$$
+donde se tiene que : $c_{2} = -\dfrac{\lambda^{2}}{2}c_{0}$
+y para $k=1$ se tiene que
+\begin{align*}
+6c_{3}x -c_{1}x + \lambda^{2}c_{1}x &= 0 \\
+ [6c_{3} -c_{1} + \lambda^{2}c_{1}]x &= 0 \\
+ 6c_{3} -c_{1} + \lambda^{2}c_{1} &= 0
+\end{align*}
+
+donde se tiene que : $c_{3} = \dfrac{1 -\lambda^{2}}{6}c_{1}$
+
+Ahora tengamos la ecuación:
+$$\sum_{k = 2}^{\infty}(k + 2)(k + 1)c_{k + 2}x^{k} -\sum_{k = 2}^{\infty}k(k -1)c_{k}x^{k} -\sum_{k = 2}^{\infty}kc_{k}x^{k} + \lambda^{2} \sum_{k = 2}^{\infty}c_{k}x^{k} = 0$$
+Y juntandolo en una sola serie queda:
+$$\sum_{k = 2}^{\infty} \left[ (k + 2)(k + 1)c_{k + 2} -k(k -1)c_{k} -kc_{k} + \lambda^{2}c_{k} \right]x^{k} = 0$$
+Asi que tenemos:
+$$(k + 2)(k + 1)c_{k + 2} -[k(k -1) + k -\lambda^{2}]c_{k} = 0$$
+Despejando $c_{k+2}$ se tiene:
+$$c_{k + 2} = \dfrac{k^{2} -\lambda^{2}}{(k + 1)(k + 2)}c_{k}, \hspace{1cm} k = 0, 1, 2, 3, \cdots$$
+Como para $k=0 \Rightarrow c_{2} = -\dfrac{\lambda^{2}}{2!}c_{0}$ y para $k=1 \Rightarrow c_{3} = \dfrac{1 -\lambda^{2}}{3!}c_{1}$
+Para $k=2$ tenemos:
+$$c_{4} = \dfrac{2^{2} -\lambda^{2}}{(4)(3)}c_{2} = \dfrac{2^{2} -\lambda^{2}}{(4)(3)} \left( -\dfrac{\lambda^{2}}{2}c_{0} \right) = \dfrac{(2^{2} -\lambda^{2})(-\lambda^{2})}{4!}c_{0}$$
+Para $k=3$:
+$$c_{5} = \dfrac{3^{2} -\lambda^{2}}{(5)(4)}c_{3} = \dfrac{3^{2} -\lambda^{2}}{(5)(4)} \left( \dfrac{1 -\lambda^{2}}{3!}c_{1} \right) = \dfrac{(3^{2} -\lambda^{2})(1 -\lambda^{2})}{5!}c_{1}$$
+Para $k=4$:
+$$c_{6} = \dfrac{4^{2} -\lambda^{2}}{(6)(5)}c_{4} = \dfrac{4^{2} -\lambda^{2}}{(6)(5)} \left( \dfrac{(2^{2} -\lambda^{2})(-\lambda^{2})}{4!}c_{0} \right) = \dfrac{(4^{2} -\lambda^{2})(2^{2} -\lambda^{2})(-\lambda^{2})}{6!}c_{0}$$
+donde podemos obtener que:
+
+$$c_{2k} = \dfrac{[(2k -2)^{2} -\lambda^{2}][(2k -4)^{2} -\lambda^{2}] \cdots (2^{2} -\lambda^{2})(-\lambda^{2})}{(2k)!}c_{0}$$
+y
+$$c_{2k + 1} = \dfrac{[(2k -1)^{2} -\lambda^{2}][(2k -3)^{2}-\lambda^{2}] \cdots (3^{2} -\lambda^{2})(1 -\lambda^{2})}{(2k + 1)!}c_{1}$$
+Así la solución general parte de tomar $C_1=c_0$ y $C_2=c_1$ como factores comunes, entonces:
+$$y_{1} = C_{1}y_{1}(x) + C_{2}y_{2}(x) \label{9} \tag{9}$$
+
+tal que:
+\begin{align*}
+y_{1}(x) &= 1 -\dfrac{\lambda^{2}}{2!}x^{2} + \dfrac{(2^{2} -\lambda^{2})(-\lambda^{2})}{4!}x^{4} + \dfrac{(4^{2} -\lambda^{2})(2^{2} -\lambda^{2})(-\lambda^{2})}{6!}x^{6} + \cdots\\
+&\cdots + \dfrac{[(2k -2)^{2} -\lambda^{2}][(2k -4)^{2} -\lambda^{2}] \cdots (2^{2} -\lambda^{2})(-\lambda^{2})}{(2k)!} + \cdots \label{10} \tag{10}
+\end{align*}
+
+y 
+
+\begin{align*}
+y_{2}(x) &= x + \dfrac{1 -\lambda^{2}}{3!}x^{3} + \dfrac{(3^{2} -\lambda^{2})(1 -\lambda^{2})}{5!}x^{5} + \cdots \\
+&\cdots + \dfrac{[(2k -1)^{2} -\lambda^{2}][(2k -3)^{2}-\lambda^{2}] \cdots (3^{2} -\lambda^{2})(1 -\lambda^{2})}{(2k + 1)!} + \cdots \label{11} \tag{11}
+\end{align*}

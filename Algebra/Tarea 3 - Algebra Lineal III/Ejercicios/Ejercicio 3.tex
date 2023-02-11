@@ -1,0 +1,18 @@
+\section{Sea $T:V\longrightarrow W$ lineal. Demuestra que si $U,W \leq V$
+son invariantes bajo $T$, entonces también lo son $U+W$, $U\cap W$.}
+
+\begin{enumerate}
+
+\item \textbf{ Demostración 3.a}\\ Sea $U+W =Z$. Por definición, el conjunto $Z=\{z\in V : z= u+w$   con $u\in U$ y $w\in W\}$\\ P.D. $T(z)\in Z$, $\forall z\in Z$.\\
+Sea $z\in Z$ arbitario, por definición tenemos que $z= u+w$ (con $u\in U$ y $w\in W$). Aplicando $T$ sobre $z$ y tomando en cuenta que $T$ es lineal, es decir "separa la suma", tenemos que:
+\[T(z) = T(u+w) = T(u)+ T(w)\] como $U$ y $W$ son subespacios invariantes bajo $T$ entonces, tenemos que por definici\'on de contenci\'on: \[T(u) \in U~~~\text{y}~~~  T(w)\in W\]así por definici\'on, tenemos que: \[ T(z)=T(u)+T(w) \in U + W = Z\] \[\therefore T(z) \in Z\]  Y como $z$ era arbitrario, se cumple para toda $z\in Z$, por lo tanto $Z=U+W$ es un subespacio invariante bajo $T$.\qed
+
+\item\textbf{ Demostración 3.b}
+\\ Sea $U\cap W =X$. Por definición, el conjunto $X=\{x\in V :$   con $x\in U$ y $x\in W\}$\\ 
+
+P.D. $T(x)\in X$, $\forall x\in X$.\\
+
+Sea $x\in X$ arbitario, por definición tenemos que $x\in U$ y $x\in W$. Aplicando $T$ sobre $x$ y por definici\'on de $U$ y $W$ invariantes, tenemos que: \[T(x) \in U~~~\text{y}~~~  T(x)\in W\]
+Es decir $T(x)\in U\cap W =X $
+\[\therefore T(x)\in X\] Y como $x$ era arbitrario, se cumple para toda $x\in X$, por lo tanto $X=U+W$ es un subespacio invariante bajo $T$.\qed
+\end{enumerate}

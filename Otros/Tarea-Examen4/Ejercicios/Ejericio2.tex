@@ -1,0 +1,51 @@
+\textcolor{blue}{Ejercicio 2.}
+Para cada uno de los siguiente sistemas:
+\begin{itemize}
+    \item Encuentra los eigenvalores y los eigenvectores.
+    \item Halle la soluci\'on al sistema  y clasifique el punto critico $(0,0)$ seg\'un el tipo y determine si es estable o instable.
+    %\item Dibuje los planos fase correspondientes a la soluci\'on  de cada ecuaci\'on (puede usar un software si as\'i lo desea).
+
+\end{itemize}
+
+\begin{itemize}
+    \item $ x'=\begin{pmatrix}3&-2\\ 2&-2\end{pmatrix}x $
+            $$\det \begin{pmatrix}3-\lambda&-2\\ \:2&-2-\lambda\end{pmatrix}=\lambda^2-\lambda-2=\left(\lambda -2\right)\left(\lambda +1\right)=0$$
+            as\'i tenemos los valores propios:
+            $$\lambda_1=2\:,\: \lambda_2=-2$$
+            y los vectores propios como:
+            $$X_1=\begin{pmatrix}2\\ 1\end{pmatrix}e^{2t}\:,\: X_2=\begin{pmatrix}1\\ 2\end{pmatrix}e^{-2t}$$
+            La soluci\'on queda como:
+            
+            
+            
+            $(0,0)$ es un punto critico inestable en el sistema.
+    \item $x'=\begin{pmatrix}3&-5\\ \:1&-1\end{pmatrix}x$
+        $$\det \begin{pmatrix}3-\lambda&-5\\ \:1&-1-\lambda\end{pmatrix}=\lambda^2-2\lambda+1=0$$
+        de donde tenemos:
+        $$\lambda_1=1+i\:,\: \lambda_2=1-i$$
+        con los vectores propios:
+        
+        $$X_1=\begin{pmatrix}2+i\\ 1\end{pmatrix}\:,\:X_2=\begin{pmatrix}2-i\\ 1\end{pmatrix}$$
+        
+        y la soluci\'on queda como:
+        
+        $$X=c_1\left[ \begin{pmatrix}2-i\\ 1\end{pmatrix}\cos(t)-\begin{pmatrix}2+i\\ 1\end{pmatrix}\sin(t) \right]e^{t}+
+        c_2\left[ \begin{pmatrix}2+i\\ 1\end{pmatrix}\sin(t)+\begin{pmatrix}2-i\\ 1\end{pmatrix}\cos(t) \right]e^{t}$$
+        
+        As\'i tenemos que como la parte real es mayor que $0$ tenemos que el punto $(0,0)$ es un punto critico inestable
+        
+        
+    \item $x'=\begin{pmatrix}1&-4\\ \:\:4&-7\end{pmatrix}x$
+     $$\det \begin{pmatrix}1-\lambda&-4\\ \:\:4&-7-\lambda\end{pmatrix}=\lambda^2+6\lambda+9=0$$
+     Donde:
+     $$\lambda_{1,2}=-3 \mbox{ Con multiplicidad de 2}$$
+     y los vectores propios quedan como:
+     $$X_{1,2}=\begin{pmatrix}1\\ 1\end{pmatrix}$$
+     
+     Y la soluci\'on queda como:
+     $$X=c_1\begin{pmatrix}1\\ 1\end{pmatrix}e^{-3t}+c_2\begin{pmatrix}1\\ 1\end{pmatrix}e^{-3t}$$
+     
+     adem\'as dado que $\lambda_1,\lambda_2<0$ y la matriz no es diagonalizable tenemos que $(0,0)$ es un punto critico inestable
+     
+     
+\end{itemize}

@@ -1,0 +1,557 @@
+\documentclass{homework}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{adjustbox}
+
+
+\author{Frank Garcia Trillo\\
+Juárez Torres Carlos Alberto,   318013712\\
+Sánchez González Sharon Estefania, 315231881}
+\class{Teoría de Juegos}
+\title{Tarea 1}
+\address{Facultad de Ciencias.}
+
+\graphicspath{{./media/}}
+
+\begin{document} \maketitle
+
+
+\question EVALUE las siguientes afirmaciones (determine si es verdadera o falsa, bajo qué condiciones es verdadera o falsa, sea explícito y claro en su punto de vista; si lo cree necesario, incluya ejemplos)
+
+\begin{enumerate}
+        \item En un juego, la competencia induce a equilibrios de Nash debido a que ésta es un rasgo
+de racionalidad
+    
+        Aunque la competencia por su naturaleza egoísta para cada jugador tenemos que existe una tendencia a ir a un equilibrio de Nash sin embargo en modelo donde los jugadores puedan llegar a un acuerdo para lograr mejores ganancias no seria estrictamente necesario, aunque aquí entramos en la discusión entre si este comportamiento seria una competencia o no.
+    \item En un juego, la cooperación induce a equilibrios de Nash debido a que ésta produce los mayores pagos para los jugadores.
+        
+        Falso, dado que la cooperación no es condición necesaria para que cada jugador elija la mejor decisión en individual, dicho de otra forma no la mejor decisión individual no es la misma que es mejor para el conjunto de jugadores, por lo tanto se tiene un caso como el dilema del prisionero donde la cooperación induce un resultado que no es el equilibrio de Nash
+    \item En un juego en forma estratégica, si todos los jugadores eligen la estrategia que es mejor respuesta dentro de su conjunto de estrategias, entonces las estrategias elegidas conforman un perfil de Equilibrio de Nash
+        Por definición de equilibrio de Nash esta proposición es cierta siempre y cuando se asegure que cada jugador toma su mejor decisión en individual.
+    \item Una estrategia que es mejor respuesta es también una estrategia dominante
+        Cierto, una estrategia al ser una mejor respuesta, necesita dominar a las demás, por lo tanto 
+    \item Todos los equilibrios obtenidos de la eliminación iterativa de estrategias dominadas (EIED) conforman perfiles de mejor respuesta para cada jugador.
+        Cierto, dado que por definición de equilibrio son las mejores decisiones de cada jugador
+    \item El proceso de EIED elimina al menos un EN en estrategias puras (ep)
+        La condición de la eliminación iterativa de estrategias implica que llegará a un equilibrio de Nash por lo que si solo existe uno en el conjunto de decisiones si se elimina no se llegaria a ninguno por lo que se llegaria a un absurdo, entonces la eliminación de equilibrios de Nash no es una condición necesaria.
+    \item Para calcular EN por medio de EIED es necesario asumir a priori que existen equilibrios en el juego
+        
+        Para el EIED no es necesario recurrir a asumirlo dado que solo debe asegurarse que es un problema de estrategias mixtas y es de forma rectangular para asegurar la existencia de al menos un equilibrio de Nash.
+        
+    \item   Si en un juego solo hubiera un equilibrio de Nash en ep, necesariamente tenemos que llegar a este por medio de EIED
+        Cierto, el EIED tiene la condición de que siempre llega a un equilibrio de Nash por lo que si este fuera unico el algoritmo llegaria por conclusión a dicho equilibrio.
+    
+\newpage
+\question Considere el siguiente juego hipotético\\
+\begin{tabular}{lllll} 
+ &  &  &  & J_2 \\ \cline{3-5} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{i} & \multicolumn{1}{l|}{m} & \multicolumn{1}{l|}{d} \\ \cline{2-5} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{U} & \multicolumn{1}{l|}{(0,2)} & \multicolumn{1}{l|}{(3,2)} & \multicolumn{1}{l|}{(-1,1)} \\ \cline{2-5} \multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{D} & \multicolumn{1}{l|}{(3,-1)} & \multicolumn{1}{l|}{(0,0)} & \multicolumn{1}{l|}{(-1,0)} \\ \cline{2-5}
+\end{tabular}\\
+
+Calcule la correspondencia de mejor respuesta $BR : D \rightarrow D$ (el tabulador en cuyo dominio se encuentran todos los perfiles del juego y en la imagen el conjunto de los perfiles que son mejor respuesta al perfil dado). Compruebe empíricamente con este juego que si $\sigma ^*$ es EN, entonces $\sigma ^* \in BR (\sigma ^* )$\\
+
+\emph{Conjunto de jugadores $N$}: $\{ J_1, J_2 \}$
+
+\emph{Conjunto de estrategias}: $D_{J_1} = \{ U,D \} ;  D_{J_2} = \{ i,m,d \}$
+
+\emph{Funciones de pago: }
+        \begin{itemize}
+            \item $\phi_{J1} : D \rightarrow \mathbb R$
+            \begin{itemize}
+                \item $(U,i) \rightarrow 0$
+                \item $(U,m) \rightarrow 3$ 
+                \item $(U,d) \rightarrow -1$ 
+                \item $(D,i) \rightarrow 3$
+                \item $(D,m) \rightarrow 0$
+                \item $(D,d) \rightarrow -1$
+            \end{itemize}\\
+            
+            \item $\phi_{J1} : D \rightarrow \mathbb R$
+            \begin{itemize}
+                \item $(U,i) \rightarrow 2$
+                \item $(U,m) \rightarrow 2$ 
+                \item $(U,d) \rightarrow 1$ 
+                \item $(D,i) \rightarrow -1$
+                \item $(D,m) \rightarrow 0$
+                \item $(D,d) \rightarrow 0$
+            \end{itemize}
+            
+        \end{itemize}
+        
+\begin{center}
+\begin{tabular}{ c   }
+\multicolumn{4}{ c }{Correspondencia de mejor respuesta $BR : D \rightarrow D$} \\ \hline
+(U,i) \longrightarrow (U, m) \\
+(U,m) \longrightarrow (U, i) \\
+(U,d) \longrightarrow (U, m) \\
+(D,i) \longrightarrow (U, i) \\
+(D,m) \longrightarrow (U, m) \\
+(D,d) \longrightarrow (U, i) \\
+\end{tabular}
+\caption{Correspondencia de mejor respuesta}
+\label{tab:respuesta}
+\end{center}\\
+
+Por lo anterior, tenemos que nuestro EN es (U,m) = (3,2).\\
+Haciendo uso del Teorema de punto fijo de Kakutani, sabemos que es posible considerar la correspondencia de mejor respuesta por jugador $BR_J, J\in \{1,2\}$. Con esto tenemos para el Jugador 1:
+
+\begin{center}
+\begin{tabular}{c  }
+\multicolumn{4}{ c }{$BR_1 : D_2 \longrightarrow D_1$} \\ \hline
+i \longrightarrow U \\
+m \longrightarrow U \\
+d \longrightarrow U \\
+\end{tabular}
+\end{center}\\
+Para el jugador 2:
+\begin{center}
+\begin{tabular}{c  }
+\multicolumn{4}{ c }{$BR_1 : D_2 \longrightarrow D_1$} \\ \hline
+U \longrightarrow i \\
+D \longrightarrow m \\
+\end{tabular}
+\end{center}\\
+\end{enumerate}
+
+Si reducimos la tabla del juego para $J_1$, tenemos lo siguiente:
+
+\begin{tabular}{lllll} 
+ &  &  &  & J_2 \\ \cline{3-5} 
+& \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{i} & \multicolumn{1}{l|}{m} & \multicolumn{1}{l|}{d} \\ \cline{2-5} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{U} & \multicolumn{1}{l|}{(0,2)} & \multicolumn{1}{l|}{(3,2)} & \multicolumn{1}{l|}{(-1,1)} \\ \cline{2-5} \\
+\end{tabular}\\
+
+\begin{tabular}{llll}
+ &  &  & J_2 \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{i} & \multicolumn{1}{l|}{m} \\ \cline{2-4} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{U} & \multicolumn{1}{l|}{(0,2)} & \multicolumn{1}{l|}{(3,2)} \\ \cline{2-4}  
+\end{tabular}\\\\
+
+\begin{tabular}{| c | c |c |}
+\hline
+& &J_2 \\ \hline
+ &  & m \\\hline
+J_1 & U & (3,2) \\\hline
+\end{tabular}\\\\
+
+Para el $J_2$, tenemos lo siguiente:\\
+\begin{tabular}{llll}
+ &  &  & J_2 \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{i} & \multicolumn{1}{l|}{m} \\ \cline{2-4} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{U} & \multicolumn{1}{l|}{(0,2)} & \multicolumn{1}{l|}{(3,2)} \\ \cline{2-4} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{D} & \multicolumn{1}{l|}{(3,-1)} & \multicolumn{1}{l|}{(0,0)} \\ \cline{2-4} 
+\end{tabular}\\\\
+
+\begin{tabular}{| c | c |c |}
+\hline
+& &J_2 \\ \hline
+ &  & m \\\hline
+J_1 & U & (3,2) \\\hline
+ & D & (0,0) \\\hline
+\end{tabular}\\\\
+
+\begin{tabular}{| c | c |c |}
+\hline
+& &J_2 \\ \hline
+ &  & m \\\hline
+J_1 & U & (3,2) \\\hline
+\end{tabular}\\\\
+
+Por lo anterior tenemos que el perfil de decisiones que queda es $\sigma_1^*= (U,m)= (3,2)$, por lo que tenemos un EN.\\\\
+
+\question Considere el juego de una camioneta para dos hermanos, con las siguientes modificaciones: ambos jugadores eligen un número entero ($a_1, a_2$, respectivamente) entre 0 y 10, y lo anuncian al que controla el juego (su mamá), sin que se enteren entre ambos. La camioneta se prestará al que se acerque más al promedio, por abajo, entre ambos números. En caso de que elijan el mismo número, se declara empate; es decir, la camioneta podrá ser compartida, para lo cual están de acuerdo ambos. Los valores que deberán usar para los pagos son: 1 para el que gane $-1$ para el que pierda, y $\frac{1}{2}$ en caso de empate.
+
+\begin{enumerate}
+    \item Formule el juego en forma estratégica (obtenga el conjunto de jugadores, los conjuntos de estrategias y las funciones de pago para cada jugador).
+    \item Elabore la matriz de pagos y determine los equilibrios de Nash en ep.
+    \item Es posible determinar los EN por medio de EIED? Si es el caso, calcule y compare este resultado con el del inciso anterior.
+\end{enumerate}
+
+\emph{Conjunto de jugadores $N$}: $\{ J_1, J_2 \}$
+
+\emph{Conjunto de estrategias}: $D_{J_1} =   D_{J_2} = \{ x \in [0, \dots, 10] \}$
+
+\emph{Funciones de pago: $\phi_i $}: 
+
+\begin{equation}
+    \phi_{J_i} (\sigma^i)= \left\{ \begin{array}{lcc}
+             1 &   si  & \sigma^i < \sigma^j \\
+             \\ -1 &  si & \sigma^i > \sigma^j \\
+             \\ \frac{1}{2} &  si  & \sigma^i = \sigma^j
+             \end{array}
+   \right.
+\end{equation}
+
+
+La matriz de pago es:
+
+\begin{table}[h]
+\begin{adjustbox}{width=\columnwidth,center}
+\begin{tabular}{lllllllllllll}
+ &  & JUGADOR 2 &  &  &  &  &  &  &  &  &  &  \\
+ &  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+JUGADOR 1 & 0 & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 1 & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 2 & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 3 & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 4 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 5 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 6 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) & (1,-1) \\
+ & 7 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) & (1,-1) \\
+ & 8 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) & (1,-1) \\
+ & 9 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) & (1,-1) \\
+ & 10 & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (-1,1) & (1/2, 1/2) \\
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+Y utilizando el metodo de revisión por columnas y renglones, podemos ver que el equilibrio de Nash es $EN = \{ (10,10) \} $.
+
+Utilizando el metodo EIED: Podemos ver que si hay tomamos un jugador arbitrario, digamos $J_1$ entonces es claro que siempre, cualquier otro numero que no sea 10, domina fuertemente a 10, pues sus pagos siempre tienen al menos una ganancia más. Digamos que ese numero que domina fuertemente es 9, entonces, $J_1$ elimina 10 de sus opciones. De la misma forma, el $J_2$ nota que 9 domina fuertemente a 10, entonces elimina a 10 en sus estrategias.
+
+Siguiendo ese proceso con 9, 8, 7... hasta llegar a 1, la mejor estrategia para ambos es (0,0). Entonces, $EN = \{ (0,0) \} $.
+
+Podemos observar que:  Si se puede obtener un equilibrio de Nash utilizando EIED. Este equilibrio difiere del anterior, pues el anterior considera los escenarios donde ambos obtienen la ganancia máxima si estos juegan de forma racional. Al tener un empate, ambos pueden decidir tener el máximo valor, en este caso 10, para llevarse la camioneta. Luego, digamos que el juego se va reduciendo en unidad. Entonces, el máximo se reduce por unidad y este razonamiento se puede repetir. Podriamos sugerir que si el juego tuviese menos decisiones, entonces, el valor máximo posible seria equilibrio de Nash.
+
+Luego, con el metodo EIED, ambos piensan que el otro puede mejorar una situación de empate diciendo un valor menor al que uno elija. De tal forma, ambos van descartando los valores máximos, para luego terminar en $(0,0)$, que es tambien un equilibrio de Nash.
+
+
+\question  Considere el juego de Negociación X-Y visto en clase, pero ahora con 4 jugadores. Recuerde que se pide que cada uno de ellos elija, de manera simultánea, entre las letras “X” y “Y”, y lo anuncien al que controla el juego. La relación de pagos se muestra en la siguiente tabla.
+
+\begin{enumerate}
+    \item Formule el juego en forma estratégica (obtenga el conjunto de jugadores, los conjuntos de estrategias y las funciones de pago para cada jugador).
+        \begin{itemize}
+            \item $N={E_1, E_2, E_3, E_4}$
+            \item $D_i={X, Y}$
+            \item $D=D_1 \times D_2 \times D_3 \times D_4$
+            \item Funciones de pago para la disposición $R^4$:\\
+            \begin{itemize}
+                \item $(x,x,x,x) \rightarrow (-1,-1,-1,-1)$ 
+                \item $(x,x,x,y) \rightarrow (1,1,1,-4)$
+                \item $(x,x,y,x) \rightarrow (1,1,-4,1)$
+                \item $(x,x,y,y) \rightarrow (2,2,-1,-1)$
+                \item $(x,y,x,x) \rightarrow (1,-4,1,1)$
+                \item $(x,y,x,y) \rightarrow (2,-1,2,-1)$
+                \item $(x,y,y,x) \rightarrow (2,-1,-1,2)$
+                \item $(x,y,y,y) \rightarrow (3,1,1,1)$
+                \item $(y,x,x,x) \rightarrow (-4,1,1,1)$
+                \item $(y,x,x,y) \rightarrow (-1,2,2,-1)$
+                \item $(y,x,y,x) \rightarrow (-1,2,-1,2)$
+                \item $(y,x,y,y) \rightarrow (1,3,1,1)$
+                \item $(y,y,x,x) \rightarrow (-1,-1,2,2)$
+                \item $(y,y,x,y) \rightarrow (1,1,3,1)$
+                \item $(y,y,y,x) \rightarrow (1,1,1,3)$
+                \item $(y,y,y,y) \rightarrow (2,2,2,2)$
+            \end{itemize}
+            
+        \end{itemize}
+    \item Elabore la matriz, o matrices de pagos, y determine los equilibrios de Nash en ep.
+        \subsection*{Caso 1 $E_1$  elije X}
+        \begin{itemize}
+            \item Caso $E_2$  elije X
+                \begin{tabular}{llll}
+                    &  & E_4 &  \\ \cline{3-4} 
+                     & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{Y} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{E_3} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{(-1,-1,-1,-1)} & \multicolumn{1}{l|}{(1,1,1,-4)} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{(1,1,-4,1)} & \multicolumn{1}{l|}{(2,2,-1,-1)*} \\ \cline{2-4} 
+                \end{tabular}
+            \item Caso $E_2$ elije Y
+                \begin{tabular}{llll}
+                     &  & E_4 &  \\ \cline{3-4} 
+                     & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{Y} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{E_3} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{(1,-4,1,1)} & \multicolumn{1}{l|}{(2,-1,2,-1)} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{(2,-1,-1,2)} & \multicolumn{1}{l|}{(3,1,1,1)*} \\ \cline{2-4} 
+                \end{tabular}
+                
+                El EN=$(2,2,-1,-1)*$
+        \end{itemize}
+        \subsection*{Caso 2 $E_1$ elije Y}
+        \begin{itemize}
+            \item Caso $E_2$ elije X
+                \begin{tabular}{llll}
+                    &  & E_4 &  \\ \cline{3-4} 
+                    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{Y} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{E_3} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{(-4,1,1,1)} & \multicolumn{1}{l|}{(-1,2,2,-1)} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{(-1,2,-1,2)} & \multicolumn{1}{l|}{(1,3,1,1)*} \\ \cline{2-4} 
+                \end{tabular}
+            \item Caso $E_2$ elije Y
+                \begin{tabular}{llll}
+                     &  & E_4 &  \\ \cline{3-4} 
+                     & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{Y} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{E_3} & \multicolumn{1}{l|}{X} & \multicolumn{1}{l|}{(-1,-1,2,2)} & \multicolumn{1}{l|}{(1,1,3,1)} \\ \cline{2-4} 
+                    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{(1,1,1,3)} & \multicolumn{1}{l|}{(2,2,2,2)*} \\ \cline{2-4} 
+                \end{tabular}
+                
+                
+                El EN=$(1,3,1,1)*$
+                
+                y finalmente el EN=$(2,2,-1,-1)*$
+                
+    \item Concluya sobre si son o no coherentes el o los equilibrios obtenidos de acuerdo con la relación de pagos.
+        Es coherente en relación a la mejor toma de de decisiones de los jugadores aunque el resultado tiende a favorecer a los primeros dos jugadores.
+    \item ¿Realmente X es una estrategia vinculada a la cooperación y Y a la competencia?
+        No dado que X es la que ofrece mayores pagos para individual pero no la que puede incentivar una cooperación donde todos ganan tal cual es el caso de Y
+        \end{itemize}
+    \end{enumerate}
+
+\question Considere el juego de los \$100; solo que se repartirán \$10 en lugar de \$100. Hay dos
+jugadores quienes eligen un número entero entre 1 y 10, y lo anuncian al que controla el juego sin
+que se enteren entre ambos. Suponga que los números son $a_1$ y $a_2$, respectivamente para cada jugador.
+ \begin{itemize}
+     \item Si $a_1+a_2 \leq 10$ entonces el pago para $J_i$ es $a_i,i \in  \{1,2\}$ 
+     \item So $a_1+a_2 >10$
+        \begin{itemize}
+            \item Si $a_i=a_j$ entonces el pago para $J_i$ es $5, i\in\{1,2\}$
+            \item Si $a_i<a_j$ entonces el pago para $J_i$ es $a_i$ y para $J_j$ es $10-a_i$, $i,j\in \{1,2\}$
+        \end{itemize}   
+ \end{itemize}
+ \begin{enumerate}
+    \item Formule el juego en forma estratégica (obtenga el conjunto de jugadores, los conjuntos de estrategias y las funciones de pago para cada jugador).
+    \begin{itemize}
+        \item $N=\{J_1, J_2\}$ 
+        \item $D_1=D_2=\{1,2,3,4,5,6,7,8,9,10\}$
+        \item $D=D_1\times D_2=\{(0,0), (0,1), (0,2), (0,3), … (10,10)\}$
+    \end{itemize}
+    \item Elabore la matriz de pagos, matriz de 10×10, y determine los equilibrios de Nash en ep.
+    
+\begin{tabular}{llllllllllll}
+ &  & J_2 &  &  &  &  &  &  &  &  &  \\ \cline{3-12} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{10} \\ \cline{2-12} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{(1,1)} & \multicolumn{1}{l|}{(1,2)} & \multicolumn{1}{l|}{(1,3)} & \multicolumn{1}{l|}{(1,4)} & \multicolumn{1}{l|}{(1,5)} & \multicolumn{1}{l|}{(1,6)} & \multicolumn{1}{l|}{(1,7)} & \multicolumn{1}{l|}{(1,8)} & \multicolumn{1}{l|}{(1,9)} & \multicolumn{1}{l|}{(1,9)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{(2,1)} & \multicolumn{1}{l|}{(2,3)} & \multicolumn{1}{l|}{(2,3)} & \multicolumn{1}{l|}{(2,4)} & \multicolumn{1}{l|}{(2,5)} & \multicolumn{1}{l|}{(2,6)} & \multicolumn{1}{l|}{(2,7)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(2,8)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{(3,1)} & \multicolumn{1}{l|}{(3,2)} & \multicolumn{1}{l|}{(3,3)} & \multicolumn{1}{l|}{(3,4)} & \multicolumn{1}{l|}{(3,5)} & \multicolumn{1}{l|}{(3,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(3,7)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{(4,1)} & \multicolumn{1}{l|}{(4,2)} & \multicolumn{1}{l|}{(4,3)} & \multicolumn{1}{l|}{(4,4)} & \multicolumn{1}{l|}{(4,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(4,6)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,1)} & \multicolumn{1}{l|}{(5,2)} & \multicolumn{1}{l|}{(5,3)} & \multicolumn{1}{l|}{(5,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(6,1)} & \multicolumn{1}{l|}{(6,2)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(7,1)} & \multicolumn{1}{l|}{(7,2)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{(8,1)} & \multicolumn{1}{l|}{(8,2)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(8,2)} & \multicolumn{1}{l|}{(8,2)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{(9,1)} & \multicolumn{1}{l|}{(8,2)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(9,1)} \\ \cline{2-12} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{(9,1)} & \multicolumn{1}{l|}{(8,2)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(5,5)*} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(1,9)} & \multicolumn{1}{l|}{(5,5)*} \\ \cline{2-12} 
+\end{tabular}
+    
+    \item En la misma matriz, determine los EN por medio de EIED explicando paso por paso su procedimiento. Compare este resultado con el del inciso anterior.
+    
+    Podemos notar que las estrategia de 5 a 10 para el jugador 1 y 2 dominan fuertemente a las estrategias 1 a 4 entonces tenemos la siguiente tabla:
+
+    
+
+\begin{tabular}{llllllll}
+ &  &  &  & J_2 &  &  &  \\ \cline{3-8} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{10} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (6,4)}} & \multicolumn{1}{l|}{{ (6,4)}} & \multicolumn{1}{l|}{{ (6,4)}} & \multicolumn{1}{l|}{{ (6,4)}} \\ \cline{2-8} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (4,6)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (7,3)}} & \multicolumn{1}{l|}{{ (7,3)}} & \multicolumn{1}{l|}{{ (7,3)}} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (4,6)}} & \multicolumn{1}{l|}{{ (3,7)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (8,2)}} & \multicolumn{1}{l|}{{ (8,2)}} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (4,6)}} & \multicolumn{1}{l|}{{ (3,7)}} & \multicolumn{1}{l|}{{ (2,8)}} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (9,1)}} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{{ (5,5)}} & \multicolumn{1}{l|}{{ (4,6)}} & \multicolumn{1}{l|}{{ (3,7)}} & \multicolumn{1}{l|}{{ (2,8)}} & \multicolumn{1}{l|}{{ (1,9)}} & \multicolumn{1}{l|}{{ (5,5)}} \\ \cline{2-8} 
+\end{tabular}
+\newpage
+De aquí las estrategias 5 a 9 para el jugador 1 dominan a la 10 entonces
+
+\begin{tabular}{llllllll}
+ &  &  &  & J_2 &  &  &  \\ \cline{3-8} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{10} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-8} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(8,2)} & \multicolumn{1}{l|}{(8,2)} \\ \cline{2-8} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(9,1)} \\ \cline{2-8} 
+\end{tabular}
+
+y lo mismo para el jugador 2
+
+\begin{tabular}{lllllll}
+ &  &  &  & J_2 &  &  \\ \cline{3-7} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(8,2)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(2,8)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-7} 
+\end{tabular}
+    
+De la siguiente forma para el jugador 1 las estrategias 5 a 8 dominan a la 9, entonces:
+
+\begin{tabular}{lllllll}
+ &  &  &  & J_2 &  &  \\ \cline{3-7} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{9} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(7,3)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-7} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(8,2)} \\ \cline{2-7} 
+\end{tabular}
+
+y lo mismo para el jugador 2
+
+\begin{tabular}{llllll}
+ &  &  &  & J_2 &  \\ \cline{3-6} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} \\ \cline{2-6} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-6} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-6} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-6} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(3,7)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-6} 
+\end{tabular}
+
+Ahora para el jugador 1 las estrategias 5 a 7 dominan a la 8 entonces:
+
+\begin{tabular}{llllll}
+ &  &  &  & J_2 &  \\ \cline{3-6} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{8} \\ \cline{2-6} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-6} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-6} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(7,3)} \\ \cline{2-6} 
+\end{tabular}
+
+y lo mismo para el jugador 2
+
+\begin{tabular}{lllll}
+ &  &  &  & J_2 \\ \cline{3-5} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} \\ \cline{2-5} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-5} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(6,4)} \\ \cline{2-5} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(4,6)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-5} 
+\end{tabular}
+
+finalmente para el jugador 1 y 2 tambien les sucede esto con las estrategias 5 a 6 dominando a la 7 por lo que queda:
+
+\begin{tabular}{llll}
+ &  &  & J_2 \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} \\ \cline{2-4} 
+\multicolumn{1}{l|}{J_1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-4} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{(5,5)} & \multicolumn{1}{l|}{(5,5)} \\ \cline{2-4} 
+\end{tabular}
+
+donde vemos que llegamos a 4 equilibrios de Nash pero terminamos sin algunos equilibrios obtenidos bajo ep.
+
+ \end{enumerate}
+
+
+\question Considere el modelo de oligopolio de Cournot para $N$ empresas $(E_1, E_2, \dots, E_N)$, las cuales controlan el mercado de un bien. Cada empresa de be elegir simultáneamente la cantida que va a producir, $q_1, q_2, \dots, q_N \in \R_+$. Suponga que el costo por producir $c$ es constante y el mismo para cada empresa. La función de demanda está dada por:
+
+\begin{equation}
+\begin{split}
+    P(Q) &= a-bQ \\
+    a > 0 &, b > 0, c < a \\
+    Q &= \sum_{i \in I_{1}^{N}}^{N} q_i
+\end{split}
+\end{equation}
+
+El pago o beneficios para $E_i$ son:
+
+\begin{equation}
+    \phi_j(Q) = q_j [P(Q)-c], \forall j \in I_{1}^{N}
+\end{equation}
+
+
+\begin{enumerate}
+    \item Formule el juego en forma estratégica (obtenga el conjunto de jugadores, los conjuntos de estrategias y las funciones de pago para cada jugador)
+    \item Obtenga las correspondencias (funciones) de mejor respuesta para cada jugador.
+    \item Obtenga los niveles de producción en equilibrio de Nash. Recuerde que $q_j$ deberá estar solo en función de los parámetros del modelo $(a.b,c\text{ y } N) $
+    \item Calcule las ganancias para cada empresa, de acuerdo con el nivel de producción en equilibrio.
+    \item Explique sus resultados: ¿cuánto de la demanda del mercado es atendida?, ¿cuánto no lo es?, ¿por qué ocurre esto, ¿cuál es la ganancia de cada empresa?, ¿le parecen coherentes estos resultados?
+\end{enumerate}
+
+\emph{Conjunto de jugadores $N$}: $\{ E_1, E_2, \dots, E_N \}$
+
+\emph{Conjunto de estrategias}: $D_{E_i} =   D_{E_j} = \{ q_s, q_s \geq 0\}$
+
+\emph{Funciones de pago: $\phi_i $}: $\Pi_i(E_i(q_i)) =  q_i [P(Q)-c] $
+
+\begin{equation}
+\begin{split}
+    \Pi_i(E_i(q_i)) &=  q_i [P(Q)-c] = P(Q)q_i - c(q_i) \\
+     &= q_i[(a - bQ) - c] \\
+     &= q_i[(a-b(\sum_{i \in I_{1}^{N}}^{N}q_i)) -c] \\
+     &= a(q_i) -(q_i)\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j) - (q_{i}^{2})b - (q_i)c \\
+     &= a(q_i) -\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j)(q_i) - (q_{i}^{2})b - (q_i)c \\
+\end{split}
+\end{equation}
+
+Entonces, si usamos el metodo de la derivada para obtener el máximo con respeto a $q_i$, tenemos que:
+
+\begin{equation}
+\begin{split}
+    \frac{\delta}{\delta q_i} \Pi_i(E_i(q_i))  =& \frac{\delta}{\delta q_i}[a(q_i) -\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j)(q_i) - (q_{i}^{2})b - (q_i)c ] \\
+    =& a-\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j) - 2(q_{i})b - c = 0 \\
+    2bq_i =& a-\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j) - c \\
+    bq_i =& \frac{a-\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j) - c}{2} \\
+    bq_i =&   \frac{a-c}{2} - \frac{\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j)}{2} \\
+    q_i =& \frac{a-c}{2b} - \frac{\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}b(q_j)}{2b} = \frac{a-c}{2b} - \frac{\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}(q_j)}{2} \\
+    q_i =& (\frac{1}{2})[\frac{a-c}{b}-\sum_{j \in I_{1}^{N}\textbackslash \{ i\} }^{N-1}(q_j)]
+\end{split}
+\end{equation}
+
+
+Esta ultima ecuación es tambien llamada la función de reacción de la empresa $E_i$
+Tenemos que esta respuesta es igual para todas las empresas, pues comenzamos con una arbitraria.
+
+De tal forma, podemos ver las soluciones como:
+
+\begin{equation}
+\begin{split}
+    q_1^* =& \frac{a-c}{2b} - \frac{q_2^*}{2} - \frac{q_3^*}{2} - \dots \frac{q_n^*}{2} \\
+    q_2^* =& \frac{a-c}{2b} - \frac{q_1^*}{2} - \frac{q_3^*}{2} - \dots \frac{q_n^*}{2} \\
+    \dots =& \dots \\
+    q_n^* =& \frac{a-c}{2b} - \frac{q_1^*}{2} - \frac{q_3^*}{2} - \dots \frac{q_{n-1}^*}{2} \text{multiplicando por 2 para facilitar las cuentas} \\
+    2q_n^* =& \frac{a-c}{b} - q_1^* -q_2^* - \dots - q_{n-1}^*
+\end{split}
+\end{equation}
+
+Si en cada ecuación despejamos de un lado, tenemos que:
+
+\begin{equation}
+\begin{split}
+    0 =& \frac{a-c}{b} - q_2^* - q_3^* - \dots q_n^* - 2q_1^*\\
+    0 =& \frac{a-c}{b} - q_1^*- q_3^* - \dots q_n^* - 2q_2^* \\
+    \dots =& \dots \\
+    0 =& \frac{a-c}{b} - q_1^* - q_2^* - \dots q_{n-1}^* - 2q_n^*\\
+\end{split}
+\end{equation}
+
+Luego, restando la segunda ecuación con la primera, se puede notar que:
+
+\begin{equation}
+\begin{split}
+    0 =& \frac{a-c}{b} - q_2^* - q_3^* - \dots q_n^* - 2q_1^* - [\frac{a-c}{b} - q_1^*- q_3^* - \dots q_n^* - 2q_2^*] \\
+    0 =& \frac{a-c}{b} - q_2^* - q_3^* - \dots q_n^* - 2q_1^* - \frac{a-c}{b} + q_1^*+ q_3^* + \dots q_n^* + 2q_2^* \\
+    0 =& 0 -q_1^* + q_2^* \\
+    q_1^* =& q_2^*
+\end{split}
+\end{equation}
+
+Lo mismo pasa la segunda con la tercera, la tercera con la cuarta y asi hasta la ultima. De esa forma, podemos ver que las cantidades óptimas son todas iguales para la cantidad de empresas que hay. Entonces $q_1^* = q_2^* = \dots = q_n^* = q_{op} $.
+
+Reemplazando $q_{op}$ en cada ecuación, podemos notar que la cantidad optima es 
+
+\begin{equation}
+\begin{split}
+     0 =& \frac{a-c}{b} - q_{op}*(N+1) \\ 
+     q_{op}*(N+1) =& \frac{a-c}{b} \\
+     q_{op} =& \frac{a-c}{b*(N+1)}
+\end{split}
+\end{equation}
+
+Utilizando los valores de (8), tenemos que la función de ganancias indica lo siguiente:
+
+\begin{equation}
+\begin{split}
+    \Pi_i(q_{op}) =q_{op}[P(Q_{op} )-c] &= \frac{a-c}{b*(N+1)}[(a-b*(\sum_{i=1}^{N}\frac{a-c}{b*(N+1)} ) - c] \\
+    =& \frac{a-c}{b*(N+1)}[(a-b*( \frac{(a-b)(a-c)}{b}(\sum_{i=1}^{N}\frac{1}{(N+1)} )) - c] \\
+    =& \frac{a-c}{b*(N+1)}[( \frac{(a-b)^2(a-c)}{b}(\sum_{i=1}^{N}\frac{1}{(N+1)} ) - c] \\
+    =& \frac{(a-b)^2(a-c)^2}{b^2*(N+1)}(\sum_{i=1}^{N}\frac{1}{(N+1)} ) - \frac{ac-c^2}{b*(N+1)} \\
+    =& \frac{(a-b)^2(a-c)^2}{b^2*(N+1)}(\frac{N}{(N+1)} ) - \frac{ac-c^2}{b*(N+1)} \\
+    =& \frac{N*(a-b)^2(a-c)^2}{b^2*(N+1)^2}- \frac{ac-c^2}{b*(N+1)}
+\end{split}
+\end{equation}
+
+
+De tal modo, para un mercado con un oligopolio de N empresas que produzcan un bien, entonces, cada empresa cubre la $\frac{a-c}{b(N+1)}$ parte del mercado. Luego, en total, La ganancia de cada empresa esta dada por el primer factor de la ultima ecuación (9), $\frac{N*(a-b)^2(a-c)^2}{b^2*(N+1)^2}$, menos la perdida marcada por el segundo factor de la ultima ecuación $\frac{ac-c^2}{b*(N+1)}$
+
+\bibliographystyle{plain}
+\bibliography{citations}
+Osborne, M. J., \& Rubinstein, A. (1994). A Course in Game Theory. MIT Press.
+
+\end{document}

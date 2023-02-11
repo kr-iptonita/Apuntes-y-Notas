@@ -1,0 +1,53 @@
+\textcolor{blue}{Ejercicio 9.} Considera la Transformada de Laplace de $t^{p}$, donde p>-1.
+\begin{itemize}
+    \item En referencia al problema 8, prueba que
+    \begin{equation}
+        \mathscr{L}\{t^{p}\}=\frac{\Gamma(p+1)}{s^{p+1}}, s>0
+        \label{eq:ejer9}
+    \end{equation}
+    En clase se demostró que si $p$ es un entero positivo $n$, se tiene que $\mathscr{L}\{t^{p}\}=\frac{n!}{s^{s+1}}$
+\end{itemize}
+$\mathbf{Demostración:}$ Por definición tenemos que:
+
+\begin{equation*}
+     \mathscr{L}\{t^{p}\}= \int_{0}^{\infty}t^{p}e^{-st}dt
+\end{equation*}
+Hacemos un ca,bio de variable, de forma que los límites de integración se mantienenya que $s>0$ y $u=st \Rightarrow t=\frac{u}{s}$ entonces $du=s dt \Rightarrow dt=\frac{du}{s}$ 
+\begin{equation*}
+      \Rightarrow \int_{0}^{\infty}t^{p}e^{-st}dt= \int_{0}^{\infty}(\frac{u}{s})^{p}e^{-u} (\frac{du}{s})
+\end{equation*}
+\begin{equation*}
+        =\frac{1}{s^{p+1}}\int_{0}^{\infty}u^{p}e^{-u} du
+\end{equation*}
+Observamos que la integral es la función gamma de forma que $\Gamma (p+1)= \int_{0}^{\infty} e^{-u} x^{p} du$, por lo tanto
+\begin{equation}
+   \mathscr{L}\{t^{p}\} =\frac{1}{s^{p+1}}\Gamma (p+1)=\frac{\Gamma (p+1)}{s^{p+1}}
+\end{equation}
+$\hfill \blacksquare$
+\begin{itemize}
+    \item Pruebe que:
+    \begin{equation}
+        \mathscr{L}\{t^{-\frac{1}{2}}\}=\frac{2}{\sqrt{s}}\int_{0}^{+\infty}e^{-x^{2}}dx=\sqrt{\frac{\pi}{s}},   s>0
+    \end{equation}
+  $\mathbf{Hint:}$Puede asumir que $\int_{0}^{\infty}e^{-x^{2}}dx = \frac{\sqrt{\pi}}{2}$ 
+\end{itemize}
+$\mathbf{Prueba:}$ Por el inciso anterior tenemos que
+\begin{equation}
+    \mathscr{L}\{t^{-\frac{1}{2}}\}=\frac{\Gamma(-\frac{1}{2}+1)}{s^{-\frac{1}{2}+1}}=
+    \frac{\Gamma(\frac{1}{2})}{\sqrt{s}}
+    \label{eq:trans}
+\end{equation}
+Por definición de la función $\Gamma$ tenemos que:
+\begin{equation*}
+    \Gamma (\frac{1}{2})= \int_{0}^{\infty} e^{-x} x^{-\frac{1}{2}} dx= \int_{0}^{\infty} \frac{e^{-x}}{x^{\frac{1}{2}}}dx
+\end{equation*}
+Hacemos un cambio de variable, de forma que $x=u^{2}$ y $dx=2u du$ y usando el hint tenemos que:
+\begin{equation}
+    \Rightarrow \int_{0}^{\infty} \frac{e^{-u^{2}}}{u}2udu=2\int_{0}^{\infty} e^{-u^{2}}=2(\frac{\sqrt{\pi}}{2})=\sqrt{\pi}
+    \label{eq:gamma_1/2}
+\end{equation}
+Sustituyendo \ref{eq:gamma_1/2} en \ref{eq:trans}
+\begin{equation*}
+     \mathscr{L}\{t^{-\frac{1}{2}}\}=\frac{2}{\sqrt{s}}\int_{0}^{+\infty}e^{-x^{2}}dx=\sqrt{\frac{\pi}{s}}
+\end{equation*}
+$\hfill \blacksquare$

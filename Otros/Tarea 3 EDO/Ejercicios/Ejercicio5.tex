@@ -1,0 +1,106 @@
+\textcolor{blue}{Ejercicio 5.} Resuelva el sistema de ecuaciones diferenciales usando la Transformada de Laplace
+
+\begin{center}
+    $y'+3y+z'+2z= e^{-2t}$\\
+    
+    $2y'+2y+z'+z=1$
+\end{center}
+    
+con $y(0)=z(0)=0$\\
+
+$\mathbf{Sol:}$ Sean $Y(s)=  \mathcal{L}\{y(t)\}$ y $Z(s)= \mathcal{L}\{z(t)\}$, al restar la segunda ecuación de la primera obtenemos:
+
+\begin{equation*}
+    i): -y'+y+z= e ^{-2t}-1
+\end{equation*}
+
+Ahora, multiplicando la segunda ecuación por $-2$ y sumando la primera tenemos: 
+
+\begin{equation*}
+    ii): -3y'-y-z'= e^{-2t}-2
+\end{equation*}
+
+Aplicando la transformada a estas dos ecuaciones, como $y(0)=z(0)=0$ se obtiene: 
+
+\begin{equation*}
+    a): -sY(s)+Y(s)+Z(s)=  \frac{1}{s+2}- \frac{1}{s}
+\end{equation*}
+
+\begin{equation*}
+    b): -3sY(s)- Y(s)-sZ(s)= \frac{1}{s+2}- \frac{2}{s}
+\end{equation*}
+
+A su vez la ecuación $b) $ puede dividirse netre $s$ y así obtenemos: 
+
+\begin{equation*}
+     b): -3Y(s)- \frac{Y(s)}{s} - Z(s)= \frac{1}{s(s+2)}- \frac{2}{s^{2}}
+\end{equation*}
+
+Si sumamos $a$) y $b)$ se obtiene: 
+
+\begin{equation*}
+    c): (1-s-3- \frac{1}{s})Y(s)= \frac{1}{s+2} - \frac{1}{s}+ \frac{1}{s(s+2)}- \frac{2}{s^2}
+\end{equation*}
+
+\begin{equation*}
+    -\frac{(s+1)^2}{s} Y(s)= \frac{s^2 -s(s+2)+ s-2(s+2)}{s^2(s+2)}
+\end{equation*}  
+
+\begin{equation*}
+    - \frac{(s+1)^2}{s}Y(s)= \frac{s^2-s^2-2s+s-2s-4}{s^2(s+2)}
+\end{equation*}
+
+\begin{equation*}
+    \frac{(s+1)^2}{s} Y(s)= \frac{3s+4}{s^2(s+2)}
+\end{equation*}
+
+\begin{equation*}
+    Y(s)= \frac{3s+4}{s(s+2)(s+1)^2}
+\end{equation*}
+
+Podemos reescribir $Y(s)$ por medio de fracciones parciales como sigue: 
+
+\begin{equation*}
+    Y(s)= \frac{2}{s}+ \frac{1}{s+2}- \frac{3}{s+1}- \frac{1}{(s+1)^2}
+\end{equation*}
+
+Para hallar $y(t)$ usamos la transformada inversa y obtenemos lo que sigue: 
+
+\begin{equation*}
+    y(t)= {\mathcal{L}}^{-1} \left\lbrace \frac{2}{s}+ \frac{1}{s+2}- \frac{3}{s+1}- \frac{1}{(s+1^2)} \right\rbrace
+\end{equation*}
+
+\begin{equation*}
+    y(t)=2+ e^{-2t}- 3e^{-t}- te^{-t}
+\end{equation*}
+
+Notemos que: 
+
+\begin{equation*}
+    y'(t)= te^{-t}+ 2e^{-t}-2e^{-2t}
+\end{equation*}
+
+Con los resultados obtenidos anteriormente, podemos sustituir en $i)$ como sigue: 
+
+\begin{equation*}
+    -te^{-t}-2e^{-t}+2e^{-2t}+2+e^{-2t}-3e^{-t}-te^{-t}+z=e^{-2t}-1
+\end{equation*}
+
+\begin{equation*}
+    z-5e^{-t}-2te^{-t}+2e^{-2t}+3=0
+\end{equation*}
+    
+\begin{equation*}
+   z(t)= 5e^{-t}+2te^{-t}-2e^{-2t}-3 
+\end{equation*}    
+
+Y las soluciones del sistema son:
+
+\begin{equation*}
+    y(t)=e^{-2t}-(3+t)e^{-t}+2;
+\end{equation*}
+
+\begin{equation*}
+     z(t)=-2e^{-2t}+(5+2t)e^{-t}-3 
+\end{equation*}
+   

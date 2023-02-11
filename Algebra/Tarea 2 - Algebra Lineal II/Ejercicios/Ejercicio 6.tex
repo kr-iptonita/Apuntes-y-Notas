@@ -1,0 +1,52 @@
+\section{Sean $S, T: V \longrightarrow V$ operadores lineales. Demuestra que:}
+\begin{itemize}
+    \item[$a)$] Si $v\in V$ es un vector propio de $T$, entonces también lo es de $T^n$, $\forall n \geq 0$.\\\\
+    \textbf{Demostraci\'on 6.a:}\\
+    Demostrando por inducci\'on:
+    \begin{itemize}
+        \item \textbf{Base:} Para $n=0$ tenemos:\\
+    Sea $v \in V  $ vector propio de $T:V\longrightarrow V$, pero
+    $T^n=T^0=I$, donde $I$ es el operador identidad por lo tanto se cumple para $n=0$ que $Iv=v$.\\
+    
+    Para $n=1$ tenemos:\\
+    Sea $v \in V  $ vector propio de $T:V\longrightarrow V$, existe $\lambda_1\in K$ valor propio asociado, tal que:
+    \[T(v)=\lambda_1 v\]
+    
+    \item \textbf{Hip\'otesis:} Sea $n=k$, asumimos como v\'alido que
+    $T^k$ tal que $\forall k\geq0$\\
+    $T^k(v)=(T^{k-1}\circ T)(v)=\lambda_{k}v$, para alg\'un $\lambda_k\in K$ valor propio.
+    
+    \item \textbf{Paso inductivo:} Para $n=k+1$ tenemos que por ser T operador lineal se abre a escalares y por la hip\'otesis:
+    
+    $$T^{k+1}(v)=(T^{k}\circ T)(v)=(T\circ T^{k})(v) =T(T^k(v))=T(\lambda_kv)= \lambda_{k}T(v)=\lambda_k\lambda_1 v=\lambda_{k+1}v$$
+    siendo $\lambda_k\lambda_1=\lambda_{k+1}$.
+    \end{itemize}
+    Por lo que podemos asegurar que $v\in V$ sigue siendo autovector de $T^n$, $\forall n\in\mathbb{N}$.\qed
+   
+    
+    
+    
+    
+
+
+    \item[$b)$] Si $v\in V$ es un vector propio de $T$ y de $S$, entonces también lo es de $T + S$ y de $kT$, $k\in K $.\\\\
+    \textbf{Demostraci\'on 6.b:}\\
+    \begin{itemize}
+        \item Por hip\'otesis, sabemos que existen $\lambda, \mu\in  K$ valores propios asociados al vector propio $v$, tales que $T(v)=\lambda v$ y $S(v)=\mu v$ .P.D. $(T+S)(v)=(\lambda+\mu)v$\\
+    Tenemos por definici\'on que al ser vector propio de T y S entonces:\\
+    
+    $$T(v)=\lambda v \mbox{ , } S(v)=\mu v :\lambda,\mu\in K :$$
+    de donde podemos obtener abriendo sumas sobre las transfromaciones linelaes y factorizando que:
+    $$T(v)+S(v)=(T+S)(v)=kv+lv=(k+l)v$$
+    \[\therefore (T+S)(v)=(\lambda+\mu)v\]
+    Por lo que con eso comprobamos que $v\in V$ es autovector tambien de $T+S$,\qed
+    
+    \item Por hip\'otesis, sabemos que existe $\lambda\in  K$ valore propio asociados al vector propio $v$, tal que $T(v)=\lambda v$. P.D. $kT(v)-k\lambda v$.\\
+    Como los operadores lineales sacan y meten escalares, entonces ocupando nuestra hip\'otesis tenemos:
+    \[kT(v)=T(kv)=\lambda (kv)=k(\lambda v)\]
+    \[\therefore kT(v)-k\lambda v\]
+    
+    Por lo que con eso comprobamos que $v\in V$ es autovector tambien de $kT$,\qed
+    \end{itemize}
+    
+\end{itemize}

@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[table,xcdraw]{xcolor}
+
+\title{Tarea corta}
+\author{Juárez Torres Carlos Alberto}
+\date{11 de Mayo del 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Encontrar una solución básica factible inicial del siguiente problema
+de transporte utilizando el Método de Aproximación de Vogel}
+
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\cellcolor[HTML]{67FD9A} & \cellcolor[HTML]{67FD9A}M & \cellcolor[HTML]{67FD9A}M & \cellcolor[HTML]{67FD9A}M & \cellcolor[HTML]{67FD9A}M &  \\ \hline
+\cellcolor[HTML]{67FD9A}W & \cellcolor[HTML]{67FD9A}5 & \cellcolor[HTML]{67FD9A}12 & \cellcolor[HTML]{67FD9A}8 & \cellcolor[HTML]{67FD9A}50 & 26 \\ \hline
+\cellcolor[HTML]{67FD9A}W & \cellcolor[HTML]{67FD9A}11 & \cellcolor[HTML]{67FD9A}4 & \cellcolor[HTML]{67FD9A}10 & \cellcolor[HTML]{67FD9A}8 & 20 \\ \hline
+\cellcolor[HTML]{67FD9A}W & \cellcolor[HTML]{67FD9A}14 & \cellcolor[HTML]{67FD9A}50 & \cellcolor[HTML]{67FD9A}1 & \cellcolor[HTML]{67FD9A}9 & 30 \\ \hline
+ & 15 & 20 & 26 & 15 & 76$\backslash$76 \\ \hline
+\end{tabular}
+\end{center}
+De donde obtenemos las siguientes penalizaciones
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & M & M & M & M &  & P \\ \hline
+W & \cellcolor[HTML]{34FF34}5 & \cellcolor[HTML]{34FF34}12 & \cellcolor[HTML]{34FF34}8 & \cellcolor[HTML]{34FF34}50 & 26 & 3 \\ \hline
+W & \cellcolor[HTML]{34FF34}11 & \cellcolor[HTML]{34FF34}4 & \cellcolor[HTML]{34FF34}10 & \cellcolor[HTML]{34FF34}8 & 20 & 4 \\ \hline
+W & \cellcolor[HTML]{34FF34}14 & \cellcolor[HTML]{34FF34}50 & \cellcolor[HTML]{34FF34}1 & \cellcolor[HTML]{34FF34}9 & 30 & \cellcolor[HTML]{CB0000}8 \\ \hline
+ & \cellcolor[HTML]{34FF34}15 & \cellcolor[HTML]{34FF34}20 & \cellcolor[HTML]{34FF34}26 & \cellcolor[HTML]{34FF34}15 & 76$\backslash$76 &  \\ \hline
+ & 6 & 8 & 7 & 1 &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+Actualizando las penalizaciones:
+
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & M & M & M & M &  & P \\ \hline
+W & \cellcolor[HTML]{67FD9A}5 & \cellcolor[HTML]{67FD9A}12 & \cellcolor[HTML]{67FD9A}8 & \cellcolor[HTML]{67FD9A}50 & 26 & 3 \\ \hline
+W & \cellcolor[HTML]{67FD9A}11 & \cellcolor[HTML]{67FD9A}4 & \cellcolor[HTML]{67FD9A}10 & \cellcolor[HTML]{67FD9A}8 & 20 & 4 \\ \hline
+W & \cellcolor[HTML]{67FD9A}14 & \cellcolor[HTML]{67FD9A}50 & \cellcolor[HTML]{FFC702}26 & \cellcolor[HTML]{67FD9A}9 & 4 & 5 \\ \hline
+ & 15 & 20 & 26 & 15 & 76$\backslash$76 &  \\ \hline
+ & 6 & \cellcolor[HTML]{FE0000}8 & 2 & 1 &  &  \\ \hline
+\end{tabular}
+\end{center}
+Reorganizando:
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & M & M & M & M &  & P \\ \hline
+W & \cellcolor[HTML]{34FF34}5 & \cellcolor[HTML]{34FF34}12 & \cellcolor[HTML]{34FF34}8 & \cellcolor[HTML]{34FF34}50 & 26 & 3 \\ \hline
+W & \cellcolor[HTML]{34FF34}11 & \cellcolor[HTML]{34FF34}20 & \cellcolor[HTML]{34FF34}10 & \cellcolor[HTML]{34FF34}8 & 20 & 2 \\ \hline
+W & \cellcolor[HTML]{34FF34}14 & \cellcolor[HTML]{34FF34}50 & \cellcolor[HTML]{34FF34}26 & \cellcolor[HTML]{34FF34}9 & 4 & 5 \\ \hline
+ & 15 & 20 & 26 & 15 & 76$\backslash$76 &  \\ \hline
+ & \cellcolor[HTML]{FE0000}6 & 8 & 2 & 1 &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & M & M & M & M &  & P \\ \hline
+W & \cellcolor[HTML]{34FF34}15 & \cellcolor[HTML]{34FF34}12 & \cellcolor[HTML]{34FF34}8 & \cellcolor[HTML]{34FF34}50 & 11 & \cellcolor[HTML]{FE0000}4 \\ \hline
+W & \cellcolor[HTML]{34FF34}11 & \cellcolor[HTML]{34FF34}20 & \cellcolor[HTML]{34FF34}10 & \cellcolor[HTML]{34FF34}8 & 20 & 2 \\ \hline
+W & \cellcolor[HTML]{34FF34}14 & \cellcolor[HTML]{34FF34}50 & \cellcolor[HTML]{34FF34}26 & \cellcolor[HTML]{34FF34}9 & 4 & 5 \\ \hline
+ & 15 & 20 & 26 & 4 & 76$\backslash$76 &  \\ \hline
+ & 1 & 8 & 2 & 1 &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+ & M & M & M & M &  \\ \hline
+W & \cellcolor[HTML]{FD6864}15 & \cellcolor[HTML]{34FF34}12 & \cellcolor[HTML]{34FF34}8 & \cellcolor[HTML]{FD6864}11 & 11 \\ \hline
+W & \cellcolor[HTML]{34FF34}11 & \cellcolor[HTML]{FD6864}20 & \cellcolor[HTML]{FD6864}10 & \cellcolor[HTML]{34FF34}8 & 20 \\ \hline
+W & \cellcolor[HTML]{34FF34}14 & \cellcolor[HTML]{34FF34}50 & \cellcolor[HTML]{FD6864}26 & \cellcolor[HTML]{FD6864}4 & 4 \\ \hline
+ & 15 & 20 & 26 & 4 & 76$\backslash$76 \\ \hline
+\end{tabular}
+
+\end{center}
+
+Por lo tanto tenemos que:
+$$Z=(26 \times 1 + 20 \times 4 + 15 \times 5 + 11 \times 50 + 4 \times 9)=767$$
+
+\end{document}

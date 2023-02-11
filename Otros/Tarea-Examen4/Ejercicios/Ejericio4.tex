@@ -1,0 +1,421 @@
+\justify
+\textcolor{blue}{Ejercicio 4.} Un modelo de un par de fuerzas convencionales en combate proporciona el siguiente sistema: 
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \begin{pmatrix}
+-a & -b\\
+-c & -d
+\end{pmatrix} \begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix} + \begin{pmatrix}
+p\\
+q
+\end{pmatrix}$$
+Las variables $x_1(t)$ y $x_2(t)$ representan la fuerza de los ejércitos enemigos en el instante $t$. Los términos $-ax_1$ y $-dx_2$ representan las tasas de pérdidas operativas, y los términos $-bx_2$ y $-cx_1$ representan las tasas de pérdida en combate para las tropas $x_1$ y $x_2$, respectivamente. Las constantes $p$ y $q$ representan las tasas respectivas de refuerzo. Sea $a=1, b=4, c=3, d=2$ y $p=q=5$. Resuelva el problema con valores iniciales adecuado para determinar cuál de los ejércitos ganará si\\
+
+(a)$x_1(0) = 20, x_2(0) = 20$\\
+
+(b)$x_1(0) = 21, x_2(0) = 20$\\
+
+(c)$x_1(0) = 20, x_2(0) = 21$\\
+\\
+$\mathbf{Solución:}$
+\\
+Sustituyendo los valores dados en el sistema, tenemos
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \begin{pmatrix}
+-1 & -4\\
+-3 & -2
+\end{pmatrix} \begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix} + \begin{pmatrix}
+5\\
+5
+\end{pmatrix}$$
+Calculamos los valores propios de 
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \begin{pmatrix}
+-1 & -4\\
+-3 & -2
+\end{pmatrix} \begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}$$
+obtenemos
+$$det(A - \lambda I) = \left|\begin{matrix}
+-1- \lambda & -4\\
+-3 & -2- \lambda
+\end{matrix} \right| = (-1- \lambda)(-2- \lambda) - (-4) (-3) = \lambda ^2 + 3\lambda - 10$$
+Igualando a cero
+$$\lambda ^2 + 3\lambda - 10 = 0$$
+$$(\lambda - 2)(\lambda  + 5) = 0$$
+donde
+$$\lambda _1 = 2 , \lambda _2 = -5$$
+Ahora buscamos los vectores propios con
+$$det(A - \lambda I) = \begin{pmatrix}
+-1- \lambda & -4\\
+-3 & -2- \lambda
+\end{pmatrix}$$ Para $\lambda_1 = 2$, tenemos
+\begin{equation*}
+     (A-2I) =
+     \begin{pmatrix}
+     -1-2 & -4 \\
+     -3 & -2-2
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+     -3 & -4\\
+     -3 & -4
+     \end{pmatrix}
+\end{equation*}
+Buscamos $ker(A-2I)$
+\begin{equation*}
+\begin{pmatrix}
+     -3 & -4\\
+     -3 & -4
+     \end{pmatrix}
+\begin{pmatrix}
+v_{1}\\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0\\
+0  
+\end{pmatrix}
+\end{equation*} donde
+$$\Rightarrow -3v_1-4v_2 = 0$$
+$$\Rightarrow -3v_1 = 4v_2$$ Por lo cual, 
+$$v_2 = \begin{pmatrix}
+3\\
+-4
+\end{pmatrix}$$ Para $\lambda_2 = -5$, tenemos
+\begin{equation*}
+     (A+5I) =
+     \begin{pmatrix}
+     -1-(-5) & -4 \\
+     -3 & -2-(-5)
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+     4 & -4\\
+     -3 & 3
+     \end{pmatrix}
+\end{equation*}
+Buscamos $ker(A+5I)$
+\begin{equation*}
+\begin{pmatrix}
+     4 & -4\\
+     -3 & 3
+     \end{pmatrix}
+\begin{pmatrix}
+v_{1}\\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0\\
+0  
+\end{pmatrix}
+\end{equation*} donde
+$$\Rightarrow 4v_1-4v_2 = 0$$
+$$\Rightarrow 4v_1 = 4v_2$$ Por lo cual, 
+$$v_1 = \begin{pmatrix}
+1\\
+1
+\end{pmatrix}$$ Por los datos anteriores, tenemos que 
+$$x_C = c_1 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + c_2 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t}$$
+Ahora buscamos calcular la solución particular
+$$x_P = u_1 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + u_2 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t}$$ entonces tenemos
+$$u'_1 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + u'_2 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} = \begin{pmatrix}
+     5\\
+     5
+     \end{pmatrix}$$
+$$\begin{pmatrix}
+     e^{2t}\\
+     e^{2t}
+     \end{pmatrix}u'_1 + \begin{pmatrix}
+     3e^{-5t}\\
+     -4e^{-5t}
+     \end{pmatrix}u'_2 = \begin{pmatrix}
+     5\\
+     5
+     \end{pmatrix}$$ 
+donde\\
+$u'_1 = \frac{\left|\begin{matrix}
+5 & 3e^{-5t}\\
+5 & -4e^{-5t}
+\end{matrix} \right|}{\left|\begin{matrix}
+e^{2t} & 3e^{-5t}\\
+e^{2t} & -4e^{-5t}
+\end{matrix} \right|} = \frac{-35e^{-5t}}{-7e^{-3t}} = 5$\\
+$u'_2 = \frac{\left|\begin{matrix}
+e^{2t} & 5\\
+e^{2t} & 5
+\end{matrix} \right|}{\left|\begin{matrix}
+e^{2t} & 3e^{-5t}\\
+e^{2t} & -4e^{-5t}
+\end{matrix} \right|} = 0$
+$$u'_1 = 5 \Rightarrow u_1 = \int 5dt \Rightarrow u_1 = 5t$$
+$$u'_2 = 0 \Rightarrow u_2 = \int 0dt \Rightarrow u_2 = 0$$
+Sustituyendo los valores encontrados para $c_1$ y $c_2$
+$$x_P = 5t \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + 0 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t}$$
+obtenemos
+$$x_P = \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$ 
+Por lo tanto, la solución es de la forma $x = x_C + x_P$
+$$c_1 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + c_2 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+(a) Pero tenemos que si $x_1(0) = 20$ y $x_2(0) = 20$, entonces sustituyendo los valores iniciales dados
+$$\begin{pmatrix}
+x_1(0)\\
+x_2(0)
+\end{pmatrix} = c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix}e^{2(0)} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix}e^{-5(0)} + \begin{pmatrix}
+5(0)\\
+5(0)
+\end{pmatrix}e^{2(0)} = \begin{pmatrix}
+20\\
+20
+\end{pmatrix}$$
+obtenemos
+$$c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix} = \begin{pmatrix}
+20\\
+20
+\end{pmatrix}$$
+Para determinar $c_1$ y $c_2$, tenemos que
+\\
+$c_1 = \frac{\left|\begin{matrix}
+20 & 3\\
+20 & -4
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = \frac{-140}{-7} = 20$\\
+$c_2 = \frac{\left|\begin{matrix}
+1 & 20\\
+1 & 20
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = 0$\\
+Sustituyendo los valores de $c_1$ y $c_2$, tenemos
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = 20 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + 0 \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+Por lo tanto, la solución para estos valores iniciales es:
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = 20 \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+(b) Ahora tenemos que si $x_1(0) = 21$ y $x_2(0) = 20$, entonces sustituyendo los valores iniciales dados
+$$\begin{pmatrix}
+x_1(0)\\
+x_2(0)
+\end{pmatrix} = c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix}e^{2(0)} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix}e^{-5(0)} + \begin{pmatrix}
+5(0)\\
+5(0)
+\end{pmatrix}e^{2(0)} = \begin{pmatrix}
+21\\
+20
+\end{pmatrix}$$
+obtenemos
+$$c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix} = \begin{pmatrix}
+21\\
+20
+\end{pmatrix}$$
+Para determinar $c_1$ y $c_2$, tenemos que
+\\
+$c_1 = \frac{\left|\begin{matrix}
+21 & 3\\
+20 & -4
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = \frac{-144}{-7} = \frac{144}{7}$\\
+$c_2 = \frac{\left|\begin{matrix}
+1 & 21\\
+1 & 20
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = \frac{-1}{-7} = \frac{1}{7}$\\
+Sustituyendo los valores de $c_1$ y $c_2$, tenemos
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \frac{144}{7} \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + \frac{1}{7} \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+Por lo tanto, la solución para estos valores iniciales es:
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \frac{144}{7} \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} + \frac{1}{7} \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+(c) Por último tenemos que si $x_1(0) = 20$ y $x_2(0) = 21$, entonces sustituyendo los valores iniciales dados
+$$\begin{pmatrix}
+x_1(0)\\
+x_2(0)
+\end{pmatrix} = c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix}e^{2(0)} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix}e^{-5(0)} + \begin{pmatrix}
+5(0)\\
+5(0)
+\end{pmatrix}e^{2(0)} = \begin{pmatrix}
+20\\
+21
+\end{pmatrix}$$
+obtenemos
+$$c_1 \begin{pmatrix}
+1\\
+1
+\end{pmatrix} + c_2 \begin{pmatrix}
+3\\
+-4
+\end{pmatrix} = \begin{pmatrix}
+20\\
+21
+\end{pmatrix}$$
+Para determinar $c_1$ y $c_2$, tenemos que
+\\
+$c_1 = \frac{\left|\begin{matrix}
+20 & 3\\
+21 & -4
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = \frac{-143}{-7} = \frac{143}{7}$\\
+$c_2 = \frac{\left|\begin{matrix}
+1 & 20\\
+1 & 21
+\end{matrix} \right|}{\left|\begin{matrix}
+1 & 3\\
+1 & -4
+\end{matrix} \right|} = \frac{1}{-7} = -\frac{1}{7}$\\
+Sustituyendo los valores de $c_1$ y $c_2$, tenemos
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \frac{143}{7} \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} - \frac{1}{7} \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+Por lo tanto, la solución para estos valores iniciales es:
+$$\begin{pmatrix}
+\frac{dx_1}{dt}\\
+\frac{dx_1}{dt}
+\end{pmatrix} = \frac{143}{7} \begin{pmatrix}
+     1\\
+     1
+     \end{pmatrix}e^{2t} - \frac{1}{7} \begin{pmatrix}
+     3\\
+     -4
+     \end{pmatrix}e^{-5t} + \begin{pmatrix}
+     5t\\
+     5t
+     \end{pmatrix}e^{2t}$$
+     

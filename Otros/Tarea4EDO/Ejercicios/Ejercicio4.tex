@@ -1,0 +1,33 @@
+\textcolor{blue}{Ejercicio 4.}
+Considere el sistema que describe un circuito electrico:
+$$\frac{d}{dt}\begin{pmatrix}i\\ v\end{pmatrix}=\begin{pmatrix}0&\frac{1}{L}\\ -\frac{1}{C}&-\frac{1}{RC}\end{pmatrix}\begin{pmatrix}i\\ \:v\end{pmatrix}$$
+
+\begin{itemize}
+    \item  Demuestre que los valores propios son reales e iguales si $L=R^2C$
+    Calculando el determinante de $\|A-\lambda I\|=0$
+    
+    $\Rightarrow$
+    $$ det \begin{pmatrix}-\lambda &\frac{1}{L}\\ \:-\frac{1}{C}&-\frac{1}{RC}-\lambda \end{pmatrix}=0$$
+    
+    $$\Rightarrow=\lambda(\lambda+\frac{1}{RC})+\frac{1}{LC}=0 \Rightarrow \lambda^2\frac{1}{RC}\lambda+\frac{1}{LC}=0$$
+    $$\lambda=\frac{-\frac{1}{RC}\pm \sqrt{\frac{1}{R^2C^2}-\frac{4}{LC}}}{2}$$
+    donde tenemos que los valores propios son Reales e iguales
+    entonces tenemos:
+    $$\sqrt{\frac{1}{R^2C^2}}=0\Rightarrow L=4R^2C$$
+    
+    \item Suponga que $R= 1\Omega$, $C=1F$, y $L=4Hz$ Suponga también que $i(0)=1$ ampere y $v(0)=2$V, encuentre $I(t)$ y $V(t)$
+    Tengamos que:
+        $$\Rightarrow \frac{di}{dt}=\frac{1}{L}v \Rightarrow \int di=\frac{v}{L}\int dt \Rightarrow i\left(t\right)=\frac{v}{L}t+C$$
+        Sustituyendo tenemos:
+        $$i(t)=1+0.25t$$
+        $$\Rightarrow \frac{dv}{dt}=\frac{-i}{c}-\frac{v}{RC} \Rightarrow \frac{dv}{dt}+\frac{v}{RC}=\frac{-i}{C} \Rightarrow \frac{dv}{dt}+v=-i$$
+        Lo cual es una Ecuación Diferencial Ordinaria de Primer orden
+        y con factor integral:\\
+        
+        F.I=$e^{\int dt}=e^t$
+        $$\Rightarrow v(F.I)=\int -i(F.I)dt+c \Rightarrow ve^t=\int -i(e^t)dt+c$$
+        $$\Rightarrow ve^t=-ie^t+C, v(0)=1 \Rightarrow 1=-i+c$$
+        $$v)-i+ce^{-t}, i(0)=1 \Rightarrow C=2$$
+        $$v(t)=-1+2e^{-t}$$
+
+\end{itemize}

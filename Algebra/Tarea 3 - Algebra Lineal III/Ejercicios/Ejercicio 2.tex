@@ -1,0 +1,32 @@
+\section{ Una matriz cuadrada A se llama \textbf{nilpotente} si existe un entero positivo $m$ tal que $A^m = 0$. Sea $A$ una de tales matrices, prueba que:}
+\begin{itemize}
+    \item [$a)$]$\lambda = 0$ es valor propio de $A$\\\\
+\textbf{Demostraci\'on 2.a:}\\
+Sea $A$ una matriz nilpotente, por definici\'on  existe $m\in\mathbb{N}$, tal que $A^m =0$, por lo que tenemos que al ser la matriz $0$, tenemos que:
+\[|A^m|=0\]
+Pero recordemos que por propiedades de la determinante de una matriz, tenemos que la determinante de la potencia de una matriz es igual a la potencia de la determinante de la matriz, por lo tanto:
+\[|A|^m=0~~\Longleftrightarrow~~|A|=0\]
+Pero si nos damos cuenta, tenemos que $|A|=|A-(0)I|=0$, por lo que $\lambda=0$ es un posible valor propio para $A$.\qed
+
+\item [$b)$]$\lambda = 0$ es el \'unico valor propio de $A$\\\\
+\textbf{Demostraci\'on 2.b:}\\
+Suponemos que $v\neq 0$ es un eigenvector correspondiente a un valor propio $\lambda\in K$ arbitrario de una matriz nilpotente (i.e. $\exists m\in\mathbb{N}$, tal que $A^m =0$), por lo que tenemos por definici\'on que $Av=\lambda v$. \\
+Entonces, usando el hecho de que $A^m=0$  y que $Av=\lambda v$, adem\'as que podemos sacar escalares de una matriz, tenemos si repetimos el siguiente paso $m$ veces, tenemos:
+\[0=0v=A^mv=A\cdot A\cdots A^2v=A\cdot A\cdots A(Av)=A\cdot A\cdots A(\lambda v)=A\cdot A\cdots \lambda(A v)\]\[=A\cdot A\cdots \lambda(\lambda v)=A\cdot A\cdots\lambda^2v\]
+Repitiendo el mismo paso $m-2$ veces, llegamos a que:
+\[\therefore 0=\lambda^m v\]
+Es f\'acil ver que como $v\neq 0$, entonces $\lambda^m=0~~~\Longleftrightarrow~~~\lambda=0$. Por lo que $\lambda^m$ es un eigenvalor para $A^m$, pero como hab\'iamos tomado $\lambda$ arbitrario y $v\neq0$ para $A$, llegamos a que para toda $\lambda=0$ es valor propio de $A$.\qed
+
+
+
+
+%\[Av=\lambda v \Longrightarrow Avv^T = \lambda v v^T\]De manera que $v$ es un vector columna, y $v^T$ es un vector rengl\'on, así podremos obtener una matriz de ello. \[\Longrightarrow [Avv^T]^k = [\lambda vv^T]^k\]Por la propiedad distributiva:\[\Longrightarrow A^k [vv^T]^k = \lambda^k [vv^T]^k\]Por propiedades de matrices:\[\Longrightarrow A^k [vv^T]^k ([vv^T]^k)^{-1}v = \lambda^k Iv \]Y como sabemos una matriz multiplicada por su inversa es igual a la matrizidentidad, ent:\[A^kv=\lambda ^k v\]Y como $A^k=0 \Longrightarrow A^kv=0$\[\Longrightarrow A^k = 0 \lor v=0\] $\therefore \lambda =0 \Longrightarrow v=0$.\\ $\therefore$ $\lambda = 0$ es el \'unico valor propio de $A$. \qed
+
+
+\end{itemize}
+
+
+
+
+
+

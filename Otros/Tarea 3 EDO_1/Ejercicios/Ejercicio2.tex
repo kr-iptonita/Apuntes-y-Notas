@@ -1,0 +1,60 @@
+\section{Resuelva la siguiente ecuación diferencial:}
+
+\begin{equation*}
+    \frac{dy}{dx}= \frac{x+y+4}{x-y-6}
+\end{equation*}
+
+Notemos que tenemos una ecuación diferencial no homogénea, así que realizaremos un cambio de variable.\\
+
+Notemos que la ecuación es equivalente a hacer:\\
+
+$(x-y-6)dy= (x+y-4)dx$\\
+
+$\Rightarrow (x+y+4)dx + (y-x+6)dy= 0$\\ 
+
+Ahora igualamos a cero ambos términos como sigue:\\
+
+$x+y+4= 0$ y $y-x+6=0$, obteniendo así un sistema de ecuaciones, de tal manera que obtenemos $x=1$ y $y=-5$, así realizaremos el siguiente cambio de variable:\\
+
+$x=u+1$ y $y= v-5$ de tal manera que $dx=du$ y $dy=dv$\\
+
+Sustituyendo tenemos:\\
+
+$(u+1+v-5+4)du + (v-5-u-1+6)dv= 0$\\
+
+$(u+v)du + (v-u)dv=0$ ... (1)\\
+
+Así llevamos la ecuación diferencial a una ecuación diferencial homogénea y hacemos la sustitución correspondiente:\\
+
+Tomamos $u=uw$ derivando tenemos $du= v dw + w dv$\\
+
+sustituyendo en (1) tenemos: $(vw + v)(v dw + w dv)+ (v- vw)dv= 0$\\
+
+Desarrollando tenemos:\\
+
+$v^{2}w dw + v w^{2} dv + v^{2} dw + vw dv + v dv - vw dv= 0$\\
+
+$(v^{2} w + v^{2})dw + (vw^{2} + v)dv= 0$\\
+    
+$v^{2}(w+1)dw + v(w^{2} + 1)dv= 0$\\
+    
+$v(w+1)dw + (w^{2}+1)dv= 0$\\
+    
+$v(w+1)dw = -(w^{2}+1)dv$\\
+    
+$\frac{w+1}{w^{2}+1} dw= - \frac{dv}{v}$\\
+
+Ahora integramos en ambos lados y desarrollamos\\ 
+
+$\int \frac{w+1}{w^{2}+1} dw= - \int \frac{dv}{v}$\\
+
+$\frac{1}{2} \int \frac{(2w+2)dw}{w^{2}+1}= -ln |v| $\\
+
+$\frac{1}{2}(\int \frac{(2w)dw}{w^{2}+1}+ \int \frac{2dw}{w^{2}+1})= -ln |v|$\\
+
+$\frac{1}{2}(ln|w^{2}+1|+ 2arctan |w|)= -ln|v|+ C$\\
+
+Recordemos que habíamos hecho un cambio de variable, regresando a las variables originales con $x-1=u$, $y+5=v$, $\frac{u}{v}=w$ y $\frac{x-1}{y+5}=w$ tenemos la solución:\\
+
+$ln|(\frac{x-1}{y+5})^{2}+1|+ 2arctan(\frac{x-1}{y+5})=-2ln |y+5|+ C$\\
+

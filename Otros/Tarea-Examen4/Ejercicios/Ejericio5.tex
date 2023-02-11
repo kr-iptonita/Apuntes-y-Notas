@@ -1,0 +1,255 @@
+\textcolor{blue}{Ejercicio 5.}
+Un núcleo radiactivo decae de acuerdo a la ley:
+\begin{equation*}
+    \frac{dx}{dt}=-\lambda N
+\end{equation*}
+donde $N$ es la concentración de un nucleón radiactivo y $\lambda$ la constante de decaimiento. En una serie de decaimientos de 2 diferentes nucleones comenzando por $N_{1}$.
+\begin{equation*}
+    \frac{dN_{1}}{dt}=-\lambda_{1}N_{1} \hspace{1cm} \frac{dN_{2}}{dt}=\lambda_{1}N_{1}-\lambda_{2}N_{2}
+\end{equation*}
+Encuentre $N_{2}$ con las condiciones $N_{1}(0)=N_{0}$ y $N_{2}(0)=0$. \\
+
+Construimos la matriz $A$ de forma que $\dot N=(\frac{dN_{1}}{dt},\frac{dN{2}}{dt})$
+\begin{equation*}
+\dot N =
+    \begin{pmatrix}
+    \frac{dN_{1}}{dt} \\
+    \frac{dN{2}}{dt}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -\lambda_{1} & 0 \\
+    \lambda_{1} & -\lambda_{2}
+    \end{pmatrix}
+    \begin{pmatrix}
+    N_{1} \\
+    N_{2}
+    \end{pmatrix}
+\end{equation*}
+Determinamos los valores propios de A, entonces
+\begin{equation*}
+     |A - \alpha I| = 
+     \left|\begin{pmatrix}
+     -\lambda_{1} - \alpha & 0 \\
+    \lambda_{1} & -\lambda_{2} - \alpha
+     \end{pmatrix}\right |
+     =(-\lambda_{1} - \alpha )(-\lambda_{2} - \alpha)-(\lambda_{1})(0)
+\end{equation*}
+\begin{equation*}
+    (\alpha +\lambda_{1})(\alpha + \lambda_{2})=0
+\end{equation*}
+Entonces $\alpha_{1}=-\lambda_{1}$ y $\alpha_{2}=-\lambda_{2}$
+
+Caso con $\alpha_{1}=-\lambda_{1}$
+\begin{equation*}
+     A - (-\lambda_{1}) I = A + \lambda_{1} I =
+     \begin{pmatrix}
+     -\lambda_{1}  +\lambda_{1} & 0 \\
+    \lambda_{1} & -\lambda_{2} +\lambda_{1}
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+     0 & 0\\
+      \lambda_{1} & -\lambda_{2} +\lambda_{1}
+     \end{pmatrix}
+\end{equation*}
+Buscamos $ker(A + \lambda_{1} I)$
+\begin{equation*}
+\begin{pmatrix}
+     0 & 0\\
+      \lambda_{1} & -\lambda_{2} +\lambda_{1}
+     \end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow 0v_{1}+ 0v_{2}=0 \atop
+    \lambda_{1} v_{1} +(-\lambda_{2} +\lambda_{1}) v_{2} =0
+\end{equation*}
+\begin{equation*}
+    \Rightarrow v_{1}=\frac{-(-\lambda_{2} +\lambda_{1}) v_{2}}{\lambda_{1}}
+\end{equation*}
+Tomamos $v_{2}=1$ entonces
+\begin{equation*}
+  v_{1}=\frac{\lambda_{2} -\lambda_{1}}{\lambda_{1}}= \frac{\lambda_{2}}{\lambda_{1}} - 1
+\end{equation*}
+Por lo tanto $u_{1}= 
+\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}} - 1 \\
+1
+\end{pmatrix}$
+
+Entonces
+\begin{equation*}
+  N_{1}=e^{-\lambda_{1}t}
+\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}} - 1 \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}}e^{-\lambda_{1}t} - e^{-\lambda_{1}t} \\
+e^{-\lambda_{1}t}
+\end{pmatrix}  
+\end{equation*}
+
+Caso con $\alpha_{1}=-\lambda_{2}$
+\begin{equation*}
+     A - (-\lambda_{2}) I = A + \lambda_{2} I =
+     \begin{pmatrix}
+     -\lambda_{1}  +\lambda_{2} & 0 \\
+    \lambda_{1} & -\lambda_{2} +\lambda_{2}
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+ -\lambda_{1} +\lambda_{2} & 0 \\
+ \lambda_{1} & 0
+     \end{pmatrix}
+\end{equation*}
+Buscamos $ker(A + \lambda_{2} I)$
+\begin{equation*}
+    \begin{pmatrix}
+ -\lambda_{1} +\lambda_{2} & 0 \\
+ \lambda_{1} & 0
+     \end{pmatrix}
+     \begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow  (-\lambda_{1} +\lambda_{2})v_{1}+ 0v_{2}=0 \atop
+    \lambda_{1} v_{1} +0 v_{2} =0
+\end{equation*}
+Por lo tanto $u_{2}= 
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}$
+Entonces
+\begin{equation*}
+  N_{2}=e^{-\lambda_{2}t}  
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+e^{-\lambda_{2}t}
+\end{pmatrix}
+\end{equation*}
+Por lo que la matriz fundamental es
+\begin{equation*}
+    \Phi(t)= 
+    \begin{pmatrix}
+    \frac{\lambda_{2}}{\lambda_{1}}e^{-\lambda_{1}t} - e^{-\lambda_{1}t} & 0 \\
+    e^{-\lambda_{1}t} & e^{-\lambda_{2}t}
+    \end{pmatrix}
+\end{equation*}
+Y la solución es 
+\begin{equation}
+     N=c_{1}N_{1} + c_{2}N_{2} =c_{1}\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}}e^{-\lambda_{1}t} - e^{-\lambda_{1}t} \\
+e^{-\lambda_{1}t}
+\end{pmatrix}  
++ c_{2}\begin{pmatrix}
+0 \\
+e^{-\lambda_{2}t}
+\end{pmatrix}
+\label{eq:soluciongeneralp5}
+\end{equation}
+
+Ahora bien, tenemos que por condiciones iniciales,$N(0)=(N_{0},0)$,por lo que, sustituyendo en la ecuación \ref{eq:soluciongeneralp5}, se tiene que:
+\begin{equation*}
+    N=\begin{pmatrix}
+    N_{0} \\
+    0
+    \end{pmatrix}
+    =
+    c_{1}\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}}e^{-\lambda_{1}(0)} - e^{-\lambda_{1}(0)} \\
+e^{-\lambda_{1}(0)}
+\end{pmatrix}  
++ c_{2}\begin{pmatrix}
+0 \\
+e^{-\lambda_{2}(0)}
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    =c_{1}\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}}e^{0} - e^{0} \\
+e^{0}
+\end{pmatrix}  
++ c_{2}\begin{pmatrix}
+0 \\
+e^{0}
+\end{pmatrix}
+ =c_{1}\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}} - 1 \\
+1
+\end{pmatrix}  
++ c_{2}\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}
+\end{equation*}
+
+\begin{equation*}
+    =\begin{pmatrix}
+c_{1}(\frac{\lambda_{2}}{\lambda_{1}} - 1) \\
+c_{1}
+\end{pmatrix}  
++ \begin{pmatrix}
+0 \\
+c_{2}
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    =\begin{pmatrix}
+    c_{1}(\frac{\lambda_{2}}{\lambda_{1}} - 1) \\
+    c_{1}+c_{2}
+    \end{pmatrix}
+\end{equation*}
+Entonces
+\begin{equation*}
+    N_{0}= c_{1}(\frac{\lambda_{2}}{\lambda_{1}} - 1) \atop
+    0 = c_{1}+c_{2}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow c_{1}= \frac{N_{0}}{\frac{\lambda_{2}}{\lambda_{1}} - 1} \atop
+    c_{2}= -c_{1}=-\frac{N_{0}}{\frac{\lambda_{2}}{\lambda_{1}} - 1} =\frac{N_{0}}{1 -\frac{\lambda_{2}}{\lambda_{1}} } 
+\end{equation*}
+Por lo  que , la solución con el problema de valor inicial es:
+\begin{equation}
+     N=\frac{N_{0}}{\frac{\lambda_{2}}{\lambda_{1}} - 1}\begin{pmatrix}
+\frac{\lambda_{2}}{\lambda_{1}}e^{-\lambda_{1}t} - e^{-\lambda_{1}t} \\
+e^{-\lambda_{1}t}
+\end{pmatrix}  
++ \frac{N_{0}}{1 -\frac{\lambda_{2}}{\lambda_{1}} } \begin{pmatrix}
+0 \\
+e^{-\lambda_{2}t}
+\end{pmatrix}
+\label{eq:solvalorinicialp5}
+\end{equation}
+Por lo tanto 
+
+
+\begin{equation}
+    N_{2}=\begin{pmatrix}
+    0 \\
+    \frac{N_{0}}{1 -\frac{\lambda_{2}}{\lambda_{1}} }e^{-\lambda_{2}t}
+    \end{pmatrix}
+\end{equation}   
+
+

@@ -1,0 +1,35 @@
+\section{Encuentre la solución general $f(t)$ de la ecuación integro-diferencial $f'(t)+4 \int_{0}^{t} f(x) dx= t-sent$}\\
+
+Para pasar de la ecuación integro-diferencial a una ecuación diferencial de segundo orden derivamos ambos lados de la ecuación obteniendo así:\\
+
+$\frac{d^{2}f}{dt^{2}}+4f(x)= 1-cos(t)$\\
+
+De la cual obtenemos el siguiente solución:\\
+
+$\frac{d^{2}f}{dt^{2}}+4f(x)=0$\\
+
+$f_n(t)= Acos(4t)+B sen (4t)$... (1)\\
+
+Obteniendo soluciones particulares:\\
+
+$f_p(t)= C + D cos(t) +E sen(t)$...(2)\\
+
+$f'_p(t)= -D sen(t)+ E cos(t)$\\
+
+$f''_p(t)= -D cos(t)- E sen(t)$\\
+
+Una vez obtenidas las soluciones particulares ccon coeficientes indeterminados podemos sustituir en la ecuación que habíamos derivado con respecto a t, obteniendo así:\\
+
+$-Dcos(t)-Esen(t)+4C+4Dcos(t)+4Esen(t)=1-cos(t)$\\
+
+Despejando $C$, $D$ y $E$ tenemos:\\
+
+$C=\frac{1}{4}$, $D=-\frac{1}{3}$ y $E=0$\\
+
+Sustituyendo en (2) obtenemos:\\
+
+$f_p(t)= \frac{1}{4}- \frac{1}{3} cos(t)$\\
+
+Finalmente remplazamos el valor de $f_p$ en (1) y obtenemos como resultado:\\
+
+$f(t)= A cos 4(t)+ Bsen4(t)+ \frac{1}{4}-\frac{1}{3}cos(t)$

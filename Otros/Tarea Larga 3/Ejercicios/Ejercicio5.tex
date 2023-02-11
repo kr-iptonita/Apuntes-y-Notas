@@ -1,0 +1,168 @@
+\section{Se envían automóviles en camión de tres centros de distribución a cinco distribuidores.
+El costo de envío está basado en la distancia recorrida entre las fuentes y destinos. El costo
+es independiente de si el camión hace el recorrido con una carga parcial o completa. La tabla
+siguiente hace un resumen de las distancias de recorrido (en Km) entre los centros de
+distribución y los distribuidores y también las cifras mensuales de oferta y demanda
+calculadas en números de automóviles. Cada camión puede transportar un máximo de 18
+vehículos. El costo de transportar por Km recorrido por el camión es \$100.}
+
+\begin{itemize}
+    \item Formula el problema como un problema de transporte. Define
+explícitamente las variables de decisión, las restricciones y la función objetivo.
+    Primeramente definiendo la tabla de transporte:
+        \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+        ~ & 1 & 2 & 3 & 4 & 5 & oferta \\ \hline
+        1 & 10000 & 15000 & 20000 & 14000 & 35000 & 400 \\ \hline
+        2 & 5000 & 7000 & 6000 & 6500 & 8000 & 200 \\ \hline
+        3 & 4000 & 9000 & 10000 & 15000 & 13000 & 150 \\ \hline
+       ww demanda & 100 & 200 & 150 & 160 & 140 & ~ \\ \hline
+    \end{tabular}
+    Variables de desici\'on:\\ 
+    $X_{i,j}=$ n\'umero de carga a transportar de \textsc{i} a \textsc{j} donde:
+    $$i=\alpha, \beta, \gamma \mbox{ y } j=1,2,3,4,5$$
+    
+    Funci\'on objetivo:\\
+    $$Z_{\mbox{Min}}=100(100)x_{\alpha 1}+150(100)x_{\alpha 2}+200(100x_{\alpha 3})+140(100)x_{\alpha 4}+35(100)x_{\alpha 5}$$
+    $$+50(100)x_{\beta 1}+70(100)x_{\beta 2}+60(100)x_{\beta 3}+65(100)x_{\beta 4}+80(100)x_{\beta 5}$$
+    $$+40(100)x_{\gamma 1} +90(100)x_{\gamma 2}+100(100)x_{\gamma 3}+150(100)x_{\gamma 4}+130(100)x_{\gamma 5}$$
+    \newpage 
+    Restricci\'ones:\\
+
+    \textsc{Oferta}
+    
+    \begin{align}
+        x_{\alpha 1}+x_{\alpha 2}+x_{\alpha 3})+x_{\alpha 4}+x_{\alpha 5}=400\\
+        x_{\beta1}+x_{\beta 2}+x_{\beta 3}+x_{\beta 4}+x_{\beta 5}=200\\
+        x_{\gamma 1} +x_{\gamma 2}+x_{\gamma 3}+x_{\gamma 4}+x_{\gamma 5}=150
+    \end{align}
+    
+    \textsc{Demanda}\\
+    \begin{align}
+        x_{\alpha 1}+x_{\beta 1}+x_{\gamma 1}=100\\
+        x_{\alpha 2}+x_{\beta 2 }+x_{\gamma 2}=200\\
+        x_{\alpha 3}+x_{\beta 3}+x_{\gamma 3}=150\\
+        x_{\alpha 4}+x_{\beta 4}+x_{\gamma 4}=160\\
+        x_{\alpha 5}+x_{\beta 5}+x_{\gamma 5}=140
+    \end{align}
+    
+    donde $x_{i,j}\geq 0$
+    
+    
+    
+    
+    
+    
+    
+    
+    \item Encuentra una solución inicial básica factible por el Método de la
+Esquina Noroeste.
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & 1 & 2 & 3 & 4 & 5 & Oferta \\ \hline
+1 & \cellcolor[HTML]{6434FC}100\| 100 & \cellcolor[HTML]{6434FC}200\| 150 & \cellcolor[HTML]{6434FC}100\| 200 & 140 & 35 & 400-100-200-100=0 \\ \hline
+2 & 50 & 70 & \cellcolor[HTML]{6434FC}50\| 60 & \cellcolor[HTML]{6434FC}150\| 65 & 80 & 200-50-150=0 \\ \hline
+3 & 40 & 90 & 100 & \cellcolor[HTML]{6434FC}10\| 150 & \cellcolor[HTML]{6434FC}140\| 130 & 150-10-140=0 \\ \hline
+Demanda & 100 & 200 & 150 & 160 & 140 &  \\ \hline
+\end{tabular}\textbf{}
+Así tenemos que: 
+$$Z_\mbox{min}=100(100)+150(200)+200(100)+60(50)+65(150)+150(10)+130(140)=92450$$
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    \item Encuentra una solución inicial básica factible por el Método de
+aproximación de Vogel.\\
+    
+    obteniendo las penalizaciones:
+    \centering
+\begin{tabular}{llllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta & penalizacion \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{200} & \multicolumn{1}{l|}{140} & \multicolumn{1}{l|}{35} & 400 & 65 \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{50} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}65} & \multicolumn{1}{l|}{80} & 200 & 5 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{130} & 150 & 50 \\ \cline{2-6}
+Demanda & 100 & 200 & 150 & 160 & 140 &  &  \\
+Penalizacion & 10 & 20 & 40 & \cellcolor[HTML]{FE0000}75 & 45 &  & 
+\end{tabular}\\
+
+de donde obtenemos:\\
+\begin{tabular}{llllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta & penalizacion \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{200} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}140} & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}35} & 400 & \cellcolor[HTML]{FE0000}65 \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{50} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFC702}160\|65} & \multicolumn{1}{l|}{80} & 40 & 10 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{100}    & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}150} & \multicolumn{1}{l|}{130} & 150 & 50 \\ \cline{2-6}
+Demanda & 100 & 200 & 150 & 0 & 140 &  &  \\
+Penalizacion & 10 & 20 & 40 &  & 45 &  & 
+\end{tabular}
+    
+    
+\begin{tabular}{llllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta & penalizacion \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}100} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{200} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}140} & \multicolumn{1}{l|}{140\|35} & 260 & \cellcolor[HTML]{FE0000}{\color[HTML]{000000} 50} \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}50} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{160\|65} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}80} & 40 & 10 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}40} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}150} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}130} & 150 & 50 \\ \cline{2-6}
+Demanda & 100 & 200 & 150 & 160 & 140 &  &  \\
+Penalizacion & 10 & 20 & 40 &  &  &  & 
+\end{tabular}   
+
+\arrayrulecolor{black}
+\begin{tabular}{l|l|l|l|l|l|ll}
+\multicolumn{1}{l}{}             & \multicolumn{1}{l}{1}                  & \multicolumn{1}{l}{2}             & \multicolumn{1}{l}{3}   & \multicolumn{1}{l}{4}                   & \multicolumn{1}{l}{5}                   & oferta & penalizacion                  \\ 
+\hhline{~-----~>{\arrayrulecolor[rgb]{0.4,0,0}}-}
+1                                & 100100                                 & {\cellcolor[rgb]{0.8,0.518,0}}150 & 200                     & {\cellcolor[rgb]{0.169,0.169,0.514}}140 & 14035                                   & 160    & {\cellcolor[rgb]{0.4,0,0}}50  \\ 
+\hhline{~>{\arrayrulecolor{black}}-----~~}
+2                                & {\cellcolor[rgb]{0.169,0.169,0.514}}50 & 70                                & 60                      & 16065                                   & {\cellcolor[rgb]{0.169,0.169,0.514}}80  & 40     & 10                            \\ 
+\hhline{~-----~~}
+3                                & {\cellcolor[rgb]{0.169,0.169,0.514}}40 & 90                                & 100                     & {\cellcolor[rgb]{0.169,0.169,0.514}}150 & {\cellcolor[rgb]{0.169,0.169,0.514}}130 & 150    & 10                            \\ 
+\cline{2-6}
+\multicolumn{1}{l}{Demanda}      & \multicolumn{1}{l}{}                & \multicolumn{1}{l}{200}           & \multicolumn{1}{l}{150} & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    &        &                               \\
+\multicolumn{1}{l}{Penalizacion} & \multicolumn{1}{l}{}                   & \multicolumn{1}{l}{20}            & \multicolumn{1}{l}{40}  & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    &        &                              
+\end{tabular}
+
+
+\begin{tabular}{llllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta & penalizacion \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100\|100} & \multicolumn{1}{l|}{160\|150} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}200} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}140} & \multicolumn{1}{l|}{140\|35} &  & \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}50} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}{\color[HTML]{000000} 60}} & \multicolumn{1}{l|}{160\|65} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}80} & 40 & 10 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}40} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}150} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}130} & 150 & 10 \\ \cline{2-6}
+Demanda &  & 40 & 150 &  &  &  &  \\
+Penalizacion &  & 20 & \cellcolor[HTML]{FE0000}40 &  &  &  & 
+\end{tabular}
+
+    \begin{tabular}{lllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100\|100} & \multicolumn{1}{l|}{160\|150} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}200} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}140} & \multicolumn{1}{l|}{140\|35} &  \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}50} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}70} & \multicolumn{1}{l|}{40\|60} & \multicolumn{1}{l|}{160\|65} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}80} & 40 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}40} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}150} & \multicolumn{1}{l|}{\cellcolor[HTML]{6665CD}130} & 150 \\ \cline{2-6}
+Demanda & 0 & 40 & 110 &  &  & 
+\end{tabular}
+
+Rellenando las ultimas casillas restantes
+
+\begin{tabular}{lllllll}
+ & 1 & 2 & 3 & 4 & 5 & oferta \\ \cline{2-6}
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100\|100} & \multicolumn{1}{l|}{160\|150} & \multicolumn{1}{l|}{\|200} & \multicolumn{1}{l|}{\|140} & \multicolumn{1}{l|}{140\|35} & 400 \\ \cline{2-6}
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{\|50} & \multicolumn{1}{l|}{\|70} & \multicolumn{1}{l|}{40\|60} & \multicolumn{1}{l|}{160\|65} & \multicolumn{1}{l|}{\|80} & 200 \\ \cline{2-6}
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{\|40} & \multicolumn{1}{l|}{40\|90} & \multicolumn{1}{l|}{110\|100} & \multicolumn{1}{l|}{\|150} & \multicolumn{1}{l|}{\|130} & 150 \\ \cline{2-6}
+Demanda & 100 & 200 & 150 & 160 & 140 & 
+\end{tabular}
+    
+    \item Utiliza alguna de las soluciones iniciales anteriores para encontrar la
+solución óptima con el Algoritmo de transporte. Indica explícitamente cuántos
+automóviles deben ser transportados de cada uno de los centros de distribución a
+cada uno de los distribuidores y el costo total de la operación mensual.
+    
+    Usando el ultimo inciso tengamos:
+    
+    $$Z=100(100)+160(150)+40(90)+40(60)+110(100)+160(65)+140(35)=66300$$
+
+    
+\end{itemize}

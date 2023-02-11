@@ -1,0 +1,77 @@
+\textcolor{blue}{Ejercicio 1.} Dada la matriz $ A= \begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}$, donde $a,\: b,\: c\: \mbox{y} \: d$ son números reales, demuestre que el polinomio característico de $A$ se puede reescribir como $p(\lambda)= \lambda^2 -tr(A) \lambda + \det(A)$; donde $tr(A)$ es la traza de A  y $\det(A)$ el determinante de A.\\
+Adicionalmente demuestre que todas las soluciones del sistema
+
+$$ x'= \begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}x$$
+
+Con a, b, c y d $\in \mathbb{R}$ tienden a cero cuando $t \rightarrow + \infty$ si y solo si $a + d < 0$ y $ad -bc > 0$\\
+
+$\mathbf{Sol:}$ Dada $A= \begin{pmatrix} a & b\\ c & d
+\end{pmatrix}$ tenemos que el polinomio característico está dado por $|A - \lambda I|=0$\\
+
+
+$$\Rightarrow \begin{pmatrix} a & b\\ c & d \end{pmatrix} - \begin{pmatrix}  \lambda & 0 \\ 0 & \lambda \end{pmatrix} = 0$$
+
+$$\Leftrightarrow \begin{pmatrix} a - \lambda  & b\\ c & d - \lambda
+\end{pmatrix} = 0$$
+
+$$\Leftrightarrow (a - \lambda)(d - \lambda) - bc = 0$$
+
+$$ \Leftrightarrow \lambda^2 - (a + d)\lambda + ad - bc = 0$$
+
+Por otra parte $tr(A)= a + d$; $det(A)= ad -bc$
+
+$$\Rightarrow p(\lambda)= \lambda^2 - tr(A)\lambda + det(A)= \lambda^2 - (a+d)\lambda + ad -bc = |A - \lambda I|$$
+
+$\therefore$ El polinomio característico se puede expresar como $p(\lambda)= \lambda^2 -tr(A)\lambda + det(A)$
+
+Ahora falta por demostrar que todas las soluciones del sistema
+
+$$x'= \begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}x$$
+
+Con a, b , c y d $\in \mathbb{R}$ tiende a cero cuando $t \rightarrow + \infty$ si y solo si $a + d < 0$ y $ad - bc > 0$
+
+$\Rightarrow$
+
+$\mathbf{Sol:}$ Sea $x= e^{\lambda t}u$ solución, los eigenvalores de A son solución de: 
+
+$$\lambda^2 - tr(A)\lambda + det(A)= 0$$
+
+$$\Rightarrow  \lambda = \frac{tr(A) \pm \sqrt{tr(A)^2 - 4det(A)}}{2}$$
+
+Así las soluciones de la ecuación son de la forma 
+
+$$\begin{bmatrix}
+x_1(t)\\
+x_2(t)
+\end{bmatrix}= 
+C_1 e^{\lambda_1 t}\begin{bmatrix}
+u_1(t)\\
+u_2(t)
+\end{bmatrix}+
+C_2 e^{\lambda_2 t}\begin{bmatrix}
+v_1(t)\\
+v_2(t)
+\end{bmatrix}$$
+
+como $c_1, c_2, u_1, u_2, v_1, v_2 \in \mathbb{R}$ la única forma de que las soluciones tiendan a cero es que $\lambda_1, \lambda_2$ sean negativos, es decir: 
+
+$$ i) tr(A) + \sqrt{tr(A)^2 -4det(A)} < 0 $$
+
+$$ ii) tr(A) - \sqrt{tr(A)^2 -4det(A)} < 0 $$
+
+sumando $i)$ y $ii)$ se debe tener que $tr(A)<0 \Rightarrow a+ d <0$
+
+$\Leftarrow$
+
+El regreso es análogo 
+
+$\therefore$ las soluciones tienden a cero cuando $t \rightarrow + \infty$ si y solo si $a + d <0 $ y $ad -bc >0 $

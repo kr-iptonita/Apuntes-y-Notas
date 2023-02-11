@@ -1,0 +1,245 @@
+\textcolor{blue}{Ejercicio 6.} Dada 
+$J = \begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}$, donde $\lambda$ es un número real arbitrario\\
+
+a) Encuentre $J^2, J^3$ y $J^4$\\
+
+b) Use un argumento inductivo para mostrar que 
+$J^n = \begin{pmatrix}
+\lambda^n & n \lambda^{n-1}\\
+0 & \lambda^n
+\end{pmatrix}$\\
+
+c) Encuentre $e^{Jt}$\\
+
+d) Use $e^{Jt}$ para resolver 
+
+$$\dot{x}= Jx$$ 
+
+$$x(0)= \begin{pmatrix} -1\\2 \end{pmatrix}$$
+
+$\mathbf{Sol:}$\\
+
+a) $$J^2= J*J= 
+\begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}
+\begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^2 & \lambda + \lambda\\
+0 & \lambda^2
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^2 & 2\lambda\\
+0 & \lambda^2
+\end{pmatrix}$$\\
+
+$$J^3= J^2 * J=
+\begin{pmatrix}
+\lambda^2 & 2\lambda\\
+0 & \lambda^2
+\end{pmatrix}
+\begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^3 & \lambda^2 + 2\lambda^2\\
+0 & \lambda^3
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^3 & 3\lambda^2\\
+0 & \lambda^3
+\end{pmatrix}$$\\
+
+$$J^4= J^3 * J= 
+\begin{pmatrix}
+\lambda^3 & 3\lambda^2\\
+0 & \lambda^3
+\end{pmatrix}
+\begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^4 & \lambda^3 + 3\lambda^3\\
+0 & \lambda^4
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^4 & 4\lambda^3\\
+0 & \lambda^4
+\end{pmatrix}$$
+
+b) Por inducción:\\
+
+La base inductiva fue realizada en el inciso a)\\
+
+Ahora, para la hipótesis inductiva tenemos:
+
+$$J^k= \begin{pmatrix}
+\lambda^k & k \lambda^{k-1}\\
+0 & \lambda^k
+\end{pmatrix}$$
+
+Finalmente en el paso inductivo tenemos: 
+
+$$J^{k+1}= J^{k}* J= \begin{pmatrix}
+\lambda^k & k \lambda^{k-1}\\
+0 & \lambda^k
+\end{pmatrix}
+\begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^k +1 & \lambda^k + k \lambda^k\\
+0 & \lambda^k
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda^k +1 & (k+1)\lambda^k\\
+0 & \lambda^k
+\end{pmatrix}$$
+
+c) Determine $e^{Jt}$
+
+$$e^{Jt}= \displaystyle \sum_{k=0}^{\infty} J^k \frac{t^k}{k!}= \frac{t^0}{0!}
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}+
+\begin{pmatrix}
+\displaystyle \sum_{k=1}^{\infty} \frac{\lambda^k t^k}{k!} & \displaystyle \sum_{k=1}^{\infty} \frac{k \lambda^{k-1} t^k}{k!}\\
+0 & \displaystyle \sum_{k=1}^{\infty} \frac{\lambda^k t^k}{k!}
+\end{pmatrix}$$
+
+$$= \begin{pmatrix}
+\frac{(\lambda t)^0}{0!} + \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^k}{k!} & t \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^{k-1}}{(k-1)!}\\
+0 & \frac{(\lambda t)^0}{0!} + \displaystyle \sum_{k=1}^{\infty} \frac{(\lambda t)^k}{k!}
+\end{pmatrix}$$
+
+$$=\begin{pmatrix}
+\displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!} & t \displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!} \\
+0 & \displaystyle \sum_{k=0}^{\infty} \frac{(\lambda t)^k}{k!}
+\end{pmatrix}$$
+
+Y así tenemos: 
+
+$$e^{Jt}= \begin{pmatrix}
+e^{\lambda t} & t e^{\lambda t}\\
+0 & e^{\lambda t}
+\end{pmatrix}$$
+
+d) Dado que $e^{Jt}$ es matriz fundamental de J, sean $x_1= \begin{pmatrix}
+e^{\lambda t}\\
+0
+\end{pmatrix}$,
+$x_2= \begin{pmatrix}
+t e^{\lambda t}\\
+e^{\lambda t}
+\end{pmatrix}$
+las columnas de $e^{Jt}$, se sigue que: 
+
+$$J x_1= \begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}
+\begin{pmatrix}
+e^{\lambda t}\\
+0
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda e^{\lambda t} +1(0)\\
+0 e^{\lambda t} + \lambda(0)
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda e^{\lambda t}\\
+0
+\end{pmatrix}
+\begin{pmatrix}
+\frac{d(e^{\lambda t})}{dt}\\
+\frac{d(0)}{dt}
+\end{pmatrix}= x'_1$$
+
+$$J x_2= \begin{pmatrix}
+\lambda & 1\\
+0 & \lambda
+\end{pmatrix}
+\begin{pmatrix}
+t e^{\lambda t}\\
+e^{\lambda t}
+\end{pmatrix}= 
+\begin{pmatrix}
+\lambda(t e^{\lambda t}) + 1(e^{\lambda t})\\
+0(t e^{\lambda t}) + \lambda(e^{\lambda t})
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda t e^{\lambda t} + e^{\lambda t}\\
+\lambda e^{\lambda t}
+\end{pmatrix}=
+\begin{pmatrix}
+\frac{d(t e^{\lambda t})}{dt}\\
+\frac{d(e^{\lambda t})}{dt}
+\end{pmatrix} = x'_2$$
+
+Así: 
+
+$$x(t)= C_1 X_1 + C_2 X_2= C_1\begin{pmatrix}
+e^{\lambda t}\\
+0
+\end{pmatrix}
++ C_2 \begin{pmatrix}
+t e^{\lambda t}\\
+e^{\lambda t}
+\end{pmatrix}= 
+\begin{pmatrix}
+C_1 e^{\lambda t} + C_2 t e^{\lambda t}\\
+C_2 e^{\lambda t}
+\end{pmatrix}$$
+
+Luego 
+
+$$x(0)= C_1 \begin{pmatrix}
+e^{\lambda(1)}\\
+0
+\end{pmatrix}
++ C_2 \begin{pmatrix}
+0 e^{\lambda(0)}\\
+e^{\lambda(0)}
+\end{pmatrix}
+= C_1 \begin{pmatrix}
+1\\
+0
+\end{pmatrix}
++ C_2 \begin{pmatrix}
+0\\
+1
+\end{pmatrix}=
+\begin{pmatrix}
+C_1\\
+0
+\end{pmatrix}
++ \begin{pmatrix}
+0\\
+C_2
+\end{pmatrix}
+\begin{pmatrix}
+C_1\\
+C_2
+\end{pmatrix}=
+\begin{pmatrix}
+-1\\
+2
+\end{pmatrix}$$
+
+$\Rightarrow C_1= -1$ y $C_2= 2$\\
+
+$\therefore x(t)= J x_0= \begin{pmatrix}
+-e^{\lambda t} + 2 t e^{\lambda t}\\
+2 e^{\lambda t}
+\end{pmatrix}$

@@ -1,0 +1,165 @@
+\textcolor{blue}{Ejercicio 3.} Encuentre la solución general del sistema no homogéneo
+$$\frac{d\textbf{x}}{dt} = \begin{pmatrix}
+-2 & 1\\
+1 & -2
+\end{pmatrix}\textbf{x} + \begin{pmatrix}
+2e^{-t}\\
+3t
+\end{pmatrix}$$
+\\
+\\
+Primero resolvemos $x' = \begin{pmatrix} 
+-2 & 1\\
+1 & -2
+\end{pmatrix}$
+\\
+Calculamos la determinante de la matriz, de tal manera que $det(A - \lambda I) = 0$, multiplicamos $\lambda$ por la diagonal principal, entonces
+$$A - \lambda I = \begin{pmatrix}
+-2- \lambda & 1\\
+- & -2- \lambda
+\end{pmatrix}$$
+
+$$\implies det(A - \lambda I) = \left|\begin{matrix}
+-2- \lambda & 1\\
+1 & -2- \lambda
+\end{matrix} \right| = (-2- \lambda)(-2- \lambda) - 1*1 = \lambda ^2 + 4\lambda + 3$$
+\\
+Igualando a cero
+$$\lambda ^2 + 4\lambda + 3 = 0$$
+$$(\lambda + 1)(\lambda  + 3) = 0$$
+$$\implies \lambda _1 = -1 ; \lambda _2 = -3$$
+\\
+Calculando los vectores propios
+\begin{itemize}
+    \item $\lambda _1 = -1$
+            \\
+            \\
+            Sustituimos en $A - \lambda I$
+            $$A - \lambda I = \begin{pmatrix}
+            -2- \lambda & 1\\
+            1 & -2- \lambda
+            \end{pmatrix} \implies A - \lambda I = \begin{pmatrix}
+            -2 + 1 & 1\\
+            1 & -2 + 1
+            \end{pmatrix} = \begin{pmatrix}
+            -1 & 1\\
+            1 & -1
+            \end{pmatrix}$$
+            \\
+            Entonces, nos queda
+            $$\begin{pmatrix}
+            -1 & 1\\
+            1 & -1
+            \end{pmatrix}\begin{pmatrix}
+            a\\
+            b
+            \end{pmatrix} = \begin{pmatrix}
+            0\\
+            0
+            \end{pmatrix}$$
+            \\
+            $\implies -a + b = 0 \implies b = a$ si $a = 1$ entonces $b = 1 \implies \Vec{v}_1 = \begin{pmatrix}
+            1\\
+            1
+            \end{pmatrix}$
+        \item $\lambda _ 2 = -3$
+            \\
+            \\
+             Sustituimos en $A - \lambda I$
+            $$A - \lambda I = \begin{pmatrix}
+            -2- \lambda & 1\\
+            1 & -2- \lambda
+            \end{pmatrix} \implies A - \lambda I = \begin{pmatrix}
+            -2 + 3 & 1\\
+            1 & -2 + 3
+            \end{pmatrix} = \begin{pmatrix}
+            1 & 1\\
+            1 & 1
+            \end{pmatrix}$$
+            \\
+            Entonces, nos queda
+            $$\begin{pmatrix}
+            1 & 1\\
+            1 & 1
+            \end{pmatrix}\begin{pmatrix}
+            a\\
+            b
+            \end{pmatrix} = \begin{pmatrix}
+            0\\
+            0
+            \end{pmatrix}$$
+            \\
+            $\implies a + b = 0 \implies b = -a$ si $a = 1$ entonces $-a = -1 \implies b = -1 \implies \Vec{v}_1 = \begin{pmatrix}
+            - 1\\
+            - 1
+            \end{pmatrix}$
+\end{itemize}
+\\
+Tenemos que $\textbf{x}' = C_1\Vec{v}_1 e^{\lambda_1 t} + C_2\Vec{v}_2 e^{\lambda_2 t}$
+ \\
+ Sacamos las solución complementaria
+ $$\textbf{x}'_C = C_1\begin{pmatrix}
+ 1\\
+ 1
+ \end{pmatrix} e^{-t} + C_2\begin{pmatrix}
+ -1\\
+ -1
+ \end{pmatrix}e^{-3t}$$
+ \\
+ Entonces $$\Vec{x}_1 = \begin{pmatrix}
+ e^{-t}\\
+ e^{-t}
+ \end{pmatrix} ; \Vec{x}_2 = \begin{pmatrix}
+ -e^{-3t}\\
+ -e^{-3t}
+ \end{pmatrix}$$
+ \\
+ Sacamos la matriz fundamental
+ $$\phi = \begin{pmatrix}
+ e^{-t} & e^{-t}\\
+ -e^{-3t} & -e^{-3t}
+ \end{pmatrix}$$
+ \\
+ Ahora, calculando la solución particular con $\textbf{x}_P = \phi (t) \int \phi ^{-1} (t) F(t)dt$
+ \\
+ Tenemos que $\phi ^{-1} = 0$ ya que la matriz es singular, entonces si sustituimos tenemos que
+ $$\textbf{x}'_P = \begin{pmatrix}
+ e^{-t} & e^{-t}\\
+ -e^{-3t} & -e^{-3t}
+ \end{pmatrix} \int 0 \begin{pmatrix}
+ 2e^{-t}\\
+ 3t
+ \end{pmatrix} dt$$
+ $$\implies\textbf{x}'_P = \begin{pmatrix}
+ e^{-t} & e^{-t}\\
+ -e^{-3t} & -e^{-3t}
+ \end{pmatrix}\begin{pmatrix}
+ 0\\
+ 0
+ \end{pmatrix}$$
+ $$\implies\textbf{x}'_P = \begin{pmatrix}
+ 0\\
+ 0
+ \end{pmatrix}$$
+ \\
+ Como $\textbf{x}' = \textbf{x}'_C + \textbf{x}'_P$, entonces
+ $$\textbf{x}' = C_1\begin{pmatrix}
+ 1\\
+ 1
+ \end{pmatrix}e^{-t} + C_2\begin{pmatrix}
+ -1\\
+ -1
+ \end{pmatrix}e^{-3t} + \begin{pmatrix}
+ 0\\
+ 0
+ \end{pmatrix}$$
+ \\
+ Entonces
+ $$\textbf{x}' = C_1\begin{pmatrix}
+ 1\\
+ 1
+ \end{pmatrix}e^{-t} + C_2\begin{pmatrix}
+ -1\\
+ -1
+ \end{pmatrix}e^{-3t}$$
+ $\begin{flushright}\blacksquare\end{flushright}$

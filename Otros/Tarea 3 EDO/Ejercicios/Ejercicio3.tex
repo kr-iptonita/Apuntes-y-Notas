@@ -1,0 +1,94 @@
+\textcolor{blue}{Ejercicio 3.} Determine 2 soluciones linealmente independientes en forma de series de potencias de la ecuación diferencial
+\begin{equation}
+    (x^{2}+2)y'' +3xy' -y = 0 
+    \label{eq:ecuación_ejer_3}
+\end{equation}
+en torno al punto ordinario x=0.
+
+Ya que tenemos un punto ordinario, proponemos que $y(x)$ sea de la forma:
+
+\begin{equation}
+    y(x) = \sum_{n = 0}^{\infty}c_{n}x^{n}
+    \label{eq:y(x)}
+\end{equation}
+
+Por lo que se tiene que 
+\begin{equation}
+    y'= \sum_{n = 1}^{\infty}nc_{n}x^{n -1} \hspace{1cm} y \hspace{1cm} y'' = \sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}
+    \label{eq:derivadas}
+\end{equation}
+
+Si sustituimos $y,y',y''$ en \ref{eq:ecuación_ejer_3}, tenemos que:
+\begin{equation*}
+\begin{split}
+         (x^{2}+2) \left[\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}\right] +3x \left[\sum_{n = 1}^{\infty}nc_{n}x^{n -1}\right]- \left[ \sum_{n = 0}^{\infty}c_{n}x^{n} \right] = 0 \\
+x^{2}\left[\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}\right]
++2\left[\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}\right]
++3x \left[\sum_{n = 1}^{\infty}nc_{n}x^{n -1}\right]
+-\left[ \sum_{n = 0}^{\infty}c_{n}x^{n} \right] = 0 \\
+        \left[\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n}\right]
+        +2\left[\sum_{n = 2}^{\infty}n(n -1)c_{n}x^{n -2}\right]
+        +3 \left[\sum_{n = 1}^{\infty}nc_{n}x^{n}\right]
+        -\left[ \sum_{n = 0}^{\infty}c_{n}x^{n} \right] = 0 \\
+\end{split}
+\end{equation*}
+Ahora bien, si para la primera suma establecemos que $k=n$, para la segunda $k=n-2$ , para la tercera  y cuarta que $k=n$, se tiene que:
+\begin{equation*}
+\centering
+    \begin{split}
+        &\sum_{k=2}^{\infty} k(k-1) c_{k} x^{k}+2 \sum_{k=0}^{\infty}(k+2)(k+2-1) c_{k+2} x^{k}+3 \sum_{k=1}^{\infty} k c_{k} x^{k}-\sum_{k=0}^{\infty} c_{k} x^{k}=0 \\
+        &\sum_{k=2}^{\infty} k(k-1) c_{k} x^{k}+2 \sum_{k=0}^{\infty}(k+2)(k+1) c_{k+2} x^{k}+3 \sum_{k=1}^{\infty} k c_{k} x^{k}-\sum_{k=0}^{\infty} c_{k} x^{k}=0 \\
+        &\sum_{k=2}^{\infty} k(k-1) c_{k} x^{k}+2(0+2)(0+1) c_{0+2} x^{0}+2(1+2)(1+1) c_{1+2} x^{1}+\sum_{k=2}^{\infty}(k+2)(k+1) c_{k+2} x^{k} \\
+        &+3(1) c_{1} x^{1}+3 \sum_{k=2}^{\infty} k c_{k} x^{k}-c_{0} x^{0}-c_{1} x^{1}-\sum_{k=2}^{\infty} c_{k} x^{k}=0 \\
+    \end{split}
+\end{equation*}
+\begin{equation*}
+       \sum_{k=2}^{\infty} k(k-1) c_{k} x^{k}+4 c_{2}+12 c_{3} x+\sum_{k=2}^{\infty}(k+2)(k+1) c_{k+2} x^{k}+3 c_{1} x+3 \sum_{k=2}^{\infty} k c_{k} x^{k}-c_{0}-c_{1} x-\sum_{k=2}^{\infty} c_{k} x^{k}=0
+\end{equation*}
+Ahora bien podemos juntar la suma y eliminar términos semejantes, entonces
+\begin{equation*}
+    \begin{split}
+        4 c_{2}+12 c_{3} x+2 c_{1} x-c_{0}+\sum_{k=2}^{\infty}\left[k(k-1) c_{k}+(k+2)(k+1) c_{k+2}+3 k c_{k}-c_{k}\right] x^{k}=0 \\
+    \end{split}
+\end{equation*}
+Si comparamos los coeficientes tenemos que:
+\begin{equation*}
+\begin{split}
+     &4c_{2}-c_{0}=0 \Rightarrow c_{2}=\frac{1}{4}c_{0}\\
+     &12c_{3}+2c_{1}=0 \Rightarrow c_{3}=-\frac{1}{6}c_{1}\\
+     &k(k-1) c_{k}+2(k+2)(k+1) c_{k+2}+3 k c_{k}-c_{k}=0\\
+     &2\left(k^{2}+3 k+2\right) c_{k+2}=\left(-k^{2}+k-3 k+1\right) c_{k}\\
+     &2\left(k^{2}+3 k+2\right) c_{k+2}=\left(-k^{2}-2 k+1\right) c_{k}\\
+    &\Rightarrow 
+     c_{k+2}=\frac{-k^{2}-2 k+1}{2\left(k^{2}+3 k+2\right)} c_{k}, k=2,3,4
+\end{split}
+\end{equation*}
+Ahora calculando para $k=2,3,4$, se tiene que
+
+\begin{equation*}
+\begin{split}
+    &c_{4}=\frac{-7}{24}c_{2}=\frac{-7}{24}(\frac{1}{4}c_{0})=-\frac{7}{96}c_{0}\\
+    &c_{5}=\frac{7}{120}c_{1}\\
+    &c_{6}=\frac{161}{5760}c_{0}\\
+\end{split}
+\end{equation*}
+Debido a la ecuación \ref{eq:y(x)}, entonces
+\begin{equation*}
+    y(x)=c_{0}+c_{1}x+c_{2}x^{2}+c_{3}x^{3}+c_{4}x^{4}
+\end{equation*}
+Entonces observando el comportamiento de los coeficientes, podemos ver que si $k$ es par, entonces lo acompañara $c_{0}$ mientras que si es impar, se tendrá a $c_{1}$, entonces factorizando:
+\begin{equation*}
+    y(x)=c_{0}+c_{1}x+\frac{1}{4}c_{0}x^{2}-\frac{1}{6}c_{1}x^{3}-\frac{7}{96}c_{0}x^{4}+...
+\end{equation*}
+\begin{equation*}
+    y(x)=c_{0}(\frac{1}{4}x^{2}-\frac{7}{96}x^{4}+\frac{161}{5760}x^{6}+...)+c_{1}(x-\frac{1}{6}x^{3}+\frac{7}{120}x^{5}+...)
+\end{equation*}
+\begin{equation}
+    y_{1}(x)=c_{0}(\frac{1}{4}x^{2}-\frac{7}{96}x^{4}+\frac{161}{5760}x^{6}+...)
+    \label{eq:y1}
+\end{equation}
+\begin{equation}
+     y_{2}(x)=c_{1}(x-\frac{1}{6}x^{3}+\frac{7}{120}x^{5}+...)
+     \label{eq:y2}
+\end{equation}
+Debido a que no comparten potencias, son linealmente independientes las ecuaciones \ref{eq:y1} y \ref{eq:y2},siendo soluciones.

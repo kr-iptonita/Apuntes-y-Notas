@@ -1,0 +1,40 @@
+\section{Utilizando variación de parámetros determine una solución particular
+y escriba la solución general de la ecuación}
+
+$$y''+3y'+2y=\frac{1}{1+e^{2t}}$$
+
+Ecuación auxiliar:
+$$m^2+3m+2=0 \Rightarrow m=-1,-2$$
+$$y_c=c_1e^{-2t}+c_2e^{-4t}$$
+
+Solución Particular:
+$$\Rightarrow y_1=e^{-2t} \mbox{ , } y_2=e^{-4t}  \mbox{ , } g(t)=\frac{1}{1+e^{2t}}$$
+$$W(y_1, y_2)=det\begin{pmatrix}y_1&y_2\\ \:y_1'&y_2'\end{pmatrix}=\det \begin{pmatrix}e^{-2t}&e^{-4t}\\ -2e^{-2t}&-4e^{-4t}\end{pmatrix}=-e^{-2t}\cdot \:4e^{-4t}+e^{-4t}\cdot \:2e^{-2t}$$
+$$=-2e^{-2t}e^{-4t}=-2e^{-6t}$$
+
+$$W_1=det\begin{pmatrix}0&y_2\\ \:g\left(t\right)&y_2'\end{pmatrix}=det\begin{pmatrix}0&e^{-4t}\\ \:\frac{1}{1+e^{2t}}&-4e^{-4t}\end{pmatrix}=0\cdot \left(-4e^{-4x}\right)-e^{-4t}\frac{1}{1+e^{2t}}=-\frac{e^{-4t}}{e^{2t}+1}$$
+
+
+$$W_2=\det \begin{pmatrix}e^{-2t}&0\\ -2e^{-2t}&\frac{1}{1+e^{2t}}\end{pmatrix}=e^{-2t}\frac{1}{1+e^{2t}}-0\cdot \left(-2e^{-2t}\right)=\frac{e^{-2t}}{e^{2t}+1}$$
+
+$$u_1=\int \:\frac{W_1}{W}dt=\frac{-1}{-2}\cdot \int \frac{\frac{e^{-4t}}{e^{2t}+1}}{e^{-6t}}dt=\frac{1}{2}\cdot \int \frac{e^{2t}}{e^{2t}+1}dt$$
+sea $o=e^{2t}+1$
+$$\frac{d}{dt}\left(e^{2t}+1\right)=2e^{2t}$$
+$$\Rightarrow \:do=2e^{2t}dt$$
+$$\Rightarrow \:dt=\frac{1}{2e^{2t}}do$$
+$$\Rightarrow\int \frac{e^{2t}}{o}\cdot \frac{1}{2e^{2t}}do=\int \frac{1}{2o}do=\frac{1}{2}\cdot \frac{1}{2}\cdot \int \frac{1}{o}do=\frac{1}{2}\cdot \frac{1}{2}\cdot \int \frac{1}{o}do=\frac{1}{2}\cdot \frac{1}{2}\ln \left|o\right|=\frac{1}{4}\ln \left|e^{2x}+1\right|$$
+
+$$u_2=\int \frac{\frac{e^{-2t}}{e^{2t}+1}}{-2e^{-6t}}dt=\left(-\frac{1}{2}\right)\cdot \int \frac{\frac{e^{-2t}}{e^{2t}+1}}{e^{-6t}}dt$$
+sea $0=e^{2t}+1$
+
+$$\frac{d}{dt}\left(e^{2t}+1\right)=2e^{2t}$$
+$$\Rightarrow \:do=2e^{2t}dt$$
+$$\Rightarrow \:dt=\frac{1}{2e^{2t}}do$$
+$$ \Rightarrow \int \frac{e^{4t}}{o}\cdot \frac{1}{2e^{2t}}do  =\int \frac{e^{2t}}{2o}do=\int \frac{o-1}{2o}do=\left(-\frac{1}{2}\right)\frac{1}{2}\cdot \int \frac{o-1}{o}du=-\frac{1}{4}\left(e^{2t}+1-\ln \left|e^{2t}+1\right|\right)$$
+
+$$y_p=u_1y_1+u_2y_2=(\frac{1}{4}\ln \left|e^{2t}+1\right|)e^{-2t}+(-\frac{1}{4}\left(e^{2t}+1-\ln \left|e^{2t}+1\right|\right))e^{-4t}$$
+%$$=\frac{1}{4}\ln \left|e^{2x}+1\right|e^{-2t}-\frac{1}{4}e^{-2t}-\frac{1}{4}e^{-4t}+\frac{1}{4}e^{-4t}\ln \left|e^{2t}+1\right|$$
+%$$=\frac{1}{4}(e^{-2t}\ln \left|e^{2x}+1\right|-e^{-2t}-e^{-4t}+e^{-4t}\ln \left|e^{2t}+1\right|)$$
+Solución General
+$$y=y_c+y_p=c_1e^{-2t}+c_2e^{-4t}+\left[(\frac{1}{4}\ln \left|e^{2t}+1\right|)e^{-2t}+(-\frac{1}{4}\left(e^{2t}+1-\ln \left|e^{2t}+1\right|\right))e^{-4t}\right] $$
+$$y=c_1e^{-2t}+c_2e^{-4t}+\frac{1}{4}e^{-2t}\ln \left|e^{2t}+1\right|-\frac{1}{4}e^{-4t}\left(e^{2t}+1-\ln \left|e^{2t}+1\right|\right)$$

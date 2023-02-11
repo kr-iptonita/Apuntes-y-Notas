@@ -1,0 +1,17 @@
+\textcolor{blue}{Ejercicio 1.}
+\textbf{Ecuación de Duffing.} En el estudio de un resorte no lineal con forzamiento periódico surge la ecuación:
+$$y''+ky+ry^3=A\cos{(\omega t)}$$
+Sean $k=r=A=1$ y $\omega=10$. Determine los tres primeros términos no nulos de las aproximaciones mediante polinomios de Taylor a la solución con valores iniciales $y(0)=0$, $y'(0)=1$-
+
+Tenemos que:
+$$y''+y+y^3=\cos{(10t)}$$
+Sustituyendo las condiciones iniciales:
+
+$$y''(0) = -y (0) - y (0) ^ 3 + \cos (10 * 0) = -0 - (0) ^ 3 + \cos (0) = 1$$
+Diferenciando:
+$$y'''= (-y -y ^ 3 + \cos10t)' = -y'-3y^2 y'-10sen(10t)$$
+donde en $t=0$
+$$y'''(0) = -y' (0) -3y (0) ^ 2 \times y '(0) -10\sin (10 \times 0) = -1-3 (0) ^ 2 \times (1) -10 \sin(0) = -1$$
+ASi que los primeros términos distintos de cero, en las aproximaciones polinómicas de Taylor a la solución de problema son:
+
+$$y(t) = y(0)+\frac{y'(0)}{1!}\times t + (\frac{y''(0)}{2!})\times t ^ 2 + (\frac{y'''(0)}{3!})\times t ^ 3 + ...... = t + (\frac{1}{2}) t ^ 2 - (\frac{1}{6}) t ^ 3 + ....$$

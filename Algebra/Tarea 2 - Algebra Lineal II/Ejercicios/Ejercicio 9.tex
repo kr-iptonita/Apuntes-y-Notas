@@ -1,0 +1,139 @@
+\section{Determina los valores y vectores propios de las siguientes transformaciones (operadores):}
+\textbf{Soluci\'on 9:}\\
+\begin{itemize}
+\item[$a)$] $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ definida por $T(x, y) = (4x + 3y, 3x - 4y)$.\\\\
+Sabemos que para que para obtener los eigenvalore y eigenvectores de una transformaci\'on $T$ es necesario primero obtener su matriz, en nuestro caso, construiremos la matriz $A$ de $2\times 2$ asociada a la transformaci\'on $T$ respecto a la base can\'onica de $\mathbb{R}^2$, entonces primero debemos calcular la transformaci\'on para cada vector de la base can\'onica, es decir:
+\[T(\vec{e_1})=T(1,0)=(4(1)+3(0),3(1)-4(0))=(4,3)\]
+\[T(\vec{e_2})=T(0,1)=(4(0)+3(1),3(0)-4(1))=(3,-4)\]
+Entonces definimos a $A$ en el que cada columna es el vector resultante de la transfromaci\'on al vector dentro de la base:
+\[A=\begin{pmatrix}T(\vec{e_1})&T(\vec{e_2})\end{pmatrix}=\begin{pmatrix}4&3\\
+3&-4\end{pmatrix}\]
+Y como est\'a construida respecto de la base can\'onica, no es necesario calcular la combinaci\'on lineal respecto de la base can\'onica por cada vector (pues son los coeficientes del vector mismo).\\
+Sabemos que para encontrar un valor propio $\lambda_n$ de una matriz $A\in\mathcal{M}_{n\times n }$ que satisfaga $T(\vec{v})=A\vec{v}=\lambda_n\vec{v}$, debemos tener que $\text{det}(A-\lambda_nI_{n\times n })=0$, de esta manera obtenemos su polinomio caracter\'istico, cuyas $n$ ra\'ices son sus valores propios.
+Lo primero que se deber\'a hacer es encontrar su polinomio caracter\'istico:
+\[0=\text{det}(A-\lambda_nI_{n\times n })=\left|\begin{pmatrix}
+4&3\\
+3&-4
+\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0\\0 &1
+\end{pmatrix}\right|=\begin{vmatrix}4-\lambda &3\\
+3 &-4-\lambda\end{vmatrix}=(4-\lambda)(-4-\lambda)-(3)(3)\]\[=-16+\lambda^2-9=\lambda^2-25\]
+Por lo que su polinomio caracter\'istico es $\lambda^2-25=(\lambda+5)(\lambda-5)=0$, de modo que sus ra\'ices (valores propios) son $\lambda_1=-5$ y $\lambda_2=5$. Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(A-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y)$):
+\begin{itemize}
+    \item Para $\lambda_1=-5$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}4-(-5) &3\\
+3&-4-(-5)\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}9 &3\\
+3 &1\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}9x+3y\\
+3x+y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}9x+3y\\
+3x+y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+9x+3y&=&0\\
+3x+y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{9}{3}=\frac{3}{1}=3$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $y=-3x$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(x,-3x)=x(1,-3)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=-5$ tiene asociado el vector propio $\vec{v_1}=(1,-3)$.
+
+
+\item Para $\lambda_2=5$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}4-(5) &3\\
+3&-4-(5)\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}-1 &3\\
+3 &-9\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}-x+3y\\
+3x-9y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}-x+3y\\
+3x-9y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-x+3y&=&0\\
+3x-9y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{-1}{3}=\frac{3}{-9}=-\frac{1}{3}$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $3y=x$, por lo que si damos a $y\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(3y,y)=y(3,1)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_2=5$ tiene asociado el vector propio $\vec{v_2}=(3,1)$.
+
+\end{itemize}
+\item[$b)$] $T: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ dada por $T(x, y, z) = (2y - z, 2x - z, 2x -y)$.\\\\
+Sabemos que para que para obtener los eigenvalore y eigenvectores de una transformaci\'on $T$ es necesario primero obtener su matriz, en nuestro caso, construiremos la matriz $B$ de $3\times 3$ asociada a la transformaci\'on $T$ respecto a la base can\'onica de $\mathbb{R}^3$, entonces primero debemos calcular la transformaci\'on para cada vector de la base can\'onica, es decir:
+\[T(\vec{e_1})=T(1,0,0)=(2(0) - (0), 2(1) - (0), 2(1) -(0))=(0,2,2)\]
+\[T(\vec{e_2})=T(0,1,0)=(2(1) - (0), 2(0) - (0), 2(0) -(1))=(2,0,-1)\]
+\[T(\vec{e_3})=T(0,0,1)=(2(0) - (1), 2(0) - (1), 2(0) -(0))=(-1-1,0)\]
+Entonces definimos a $A$ en el que cada columna es el vector resultante de la transfromaci\'on al vector dentro de la base:
+\[B=\begin{pmatrix}T(\vec{e_1})&T(\vec{e_2})&T(\vec{e_3})\end{pmatrix}=\begin{pmatrix}0&2&-1\\2&0&-1\\2&-1&0\end{pmatrix}\]
+Y como est\'a construida respecto de la base can\'onica, no es necesario calcular la combinaci\'on lineal respecto de la base can\'onica por cada vector (pues son los coeficientes del vector mismo).\\
+Sabemos que para encontrar un valor propio $\lambda_n$ de una matriz $B\in\mathcal{M}_{n\times n }$ que satisfaga $T(\vec{v})=B\vec{v}=\lambda_n\vec{v}$, debemos tener que $\text{det}(B-\lambda_nI_{n\times n })=0$, de esta manera obtenemos su polinomio caracter\'istico, cuyas $n$ ra\'ices son sus valores propios.
+Lo primero que se deber\'a hacer es encontrar su polinomio caracter\'istico, lo cual haremos por cofactores sobre la primera columna:
+\[0=\text{det}(B-\lambda_nI_{n\times n })=\left|\begin{pmatrix}
+0&2&-1\\
+2&0&-1\\
+2&-1&0
+\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0&0\\0 &1&0\\0&0&1
+\end{pmatrix}\right|=\begin{vmatrix}-\lambda&2&-1\\
+2&-\lambda&-1\\
+2&-1&-\lambda\end{vmatrix}=-\lambda\begin{vmatrix}
+-\lambda&-1\\
+-1&-\lambda\end{vmatrix}-2\begin{vmatrix}2&-1\\
+-1&-\lambda\end{vmatrix}+2\begin{vmatrix}2&-1\\
+-\lambda&-1\end{vmatrix}\]\[=-\lambda[(-\lambda)(-\lambda)-(-1)(-1)]-2[(2)(-\lambda)-(-1)(-1)]+2[(2)(-1)-(-\lambda)(-1)]=-\lambda[\lambda^2-1]-2[-2\lambda-1]+2[-2-\lambda]\]\[=-\lambda^3+\lambda+4\lambda+2-4-2\lambda=-\lambda^3+3\lambda-2\]
+Por lo que su polinomio caracter\'istico es $\lambda^3-3\lambda+2=0$, del cual si jos damos cuenta 1 es ra\'iz, pues $1-3+2=0$, de modo que sus ra\'ices (valores propios) son:
+\[\lambda^3-3\lambda+2=(\lambda-1)(\lambda^2+\lambda-2)=(\lambda-1)(\lambda-1)(\lambda+2)=0\]
+$\lambda_1=\lambda_2=1$ (tiene multiplicidad 2) y $\lambda_3=-2$. Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(B-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y,z)$):
+\begin{itemize}
+    \item Para $\lambda_1=\lambda_2=1$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\end{pmatrix}=\vec{0}=(B-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}-1&2&-1\\
+2&-1&-1\\
+2&-1&-1\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}-x+2y-z\\
+2x-y-z\\2x-y-z\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\end{pmatrix}=\begin{pmatrix}-x+2y-z\\
+2x-y-z\\2x-y-z\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-x+2y-z&=&0\\
+2x-y-z&=&0\\2x-y-z&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la segunda ecuaci\'on es igual a la tercera,
+, por lo que si restamos la primera ecuaci\'on a la segunda, tenemos:
+\[2x-y-z-(-x+2y-z)=0-0~~\Longrightarrow~3x-3y=0~~\Longrightarrow~x=y\]
+De modo que al sustituir en la tercera:
+\[2x-y-z=2y-y-z=y-z=0~~\Longrightarrow~y=z\]Por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z)=(x,x,x)=x(1,1,1)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=\lambda_2=1$ tiene asociado el vector propio $\vec{v_1}=\vec{v_2}=(1,1,1)$.
+
+
+\item Para $\lambda_2=-2$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\\0\end{pmatrix}=\vec{0}=(B-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}2&2&-1\\
+2&2&-1\\
+2&-1&2\end{pmatrix}\begin{pmatrix}x\\
+y\\z\end{pmatrix}=\begin{pmatrix}2x+2y-z\\
+2x+2y-z\\2x-y+2z\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\\0\\0\end{pmatrix}=\begin{pmatrix}2x+2y-z\\
+2x+2y-z\\2x-y+2z\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+2x+2y-z&=&0\\
+2x+2y-z&=&0\\2x-y+2z&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primer ecuaci\'on es igual a la segunda,
+, por lo que si restamos la tercera ecuaci\'on a la primera, tenemos:
+\[2x+2y-z-(2x-y+2z)=0-0~~\Longrightarrow~3y-3z=0~~\Longrightarrow~y=z\]
+De modo que al sustituir en la tercera:
+\[2x+2y-z=2x+2y-y=2x+y=0~~\Longrightarrow~y=-2x\]Por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y,z)=(x,-2x,-2x)=x(1,-2,-2)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_3=-2$ tiene asociado el vector propio $\vec{v_3}=(1,-2,-2)$.
+
+
+\end{itemize}
+\end{itemize}

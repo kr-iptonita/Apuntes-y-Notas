@@ -1,0 +1,147 @@
+\section{Para los siguientes operadores calculay clasifica $T^{*}$}
+\begin{itemize}
+    \item [$a)$] $V=\mathbb{R}^2,T(a,b)=(2a+b,a-3b)$\\\\
+    \textbf{Soluci\'on 2.a:}\\
+        Tomando la base can\'onica:
+        $$C=\{(1,0),(0,1)\}$$ Calculamos $T^*$ para la base, de modo que:
+        $\Rightarrow$
+        $$\langle (a,b),T^*(1,0)\rangle =\langle T(a,b),(1,0)\rangle=\langle (2a+b,a-3b),(1,0)\rangle=1(2a+b)+0(a-3b)=2a+b=a(2)+b(1)=\langle (a,b),(2,1)\rangle $$
+        $$\therefore \langle (a,b),T^*(1,0)\rangle =\langle (a,b),(2,1)\rangle , \forall (a,b)$$
+        $\Rightarrow$
+        $$\therefore T^*(1,0)=(2,1)$$
+        $\Rightarrow$
+        $$\langle (a,b),T^*(0,1)\rangle =\langle T(a,b),(0,1)\rangle=\langle (2a+b,a-3b),(0,1)\rangle=0(2a+b)+1(a-3b)=a-3b=a(1)+b(-3)=\langle (a,b),(1,-3)\rangle $$
+        $$\therefore \langle (a,b),T^*(0,1)\rangle =\langle (a,b),(1,-3)\rangle  , \forall (a,b)$$
+        $\Rightarrow$
+        $$\therefore T^*(0,1)=(1,-3)$$
+        entonces tenemos:
+        \begin{align*}
+           T^*(1,0)=(2,1)\\
+           T^*(0,1)=(1,-3)
+        \end{align*}
+        así tenemos que por propiedades lineales:
+        $$T^*(a,b)=a\cdot T^*(0,1)+b\cdot T^*(1,0) $$
+        $$T^*(a,b)=a(2,1)+b(1,-3)=(2a+b,a-3b)=T(a,b)$$
+        
+        Por lo tanto $T$ es \textsc{Autoadjunto}.\qed
+        
+    \item [$b)$] $V=\mathbb{C}^2, T(z_1,z_2)=(2z_1+iz_2,(i-1)z_1)$\\\\
+        \textbf{Soluci\'on 2.b:}\\
+        Tomando una base de $\mathbb{C}^2$ (asumiendo que esta definido sobre $\mathbb{C}$), tenemos : $$\left \{ (1,0),(0,1) \right \}$$
+        Calculamos $T^*$ para la base, de modo que:\\
+        $\Rightarrow$
+        $$\langle (z_1,z_2),T^*(1,0)\rangle =\langle T(z_1,z_2),(1,0)\rangle  =\langle (2z_1+iz_2,(i-1)z_1),(1,0)\rangle=1(2z_1+iz_2)+0[(i-1)z_1]$$
+        $$=2z_1+iz_2=z_1(1)+i(z_2)=\langle (z_1,z_2),(2,i)\rangle$$
+        \[\therefore \langle (z_1,z_2),T^*(1,0)\rangle =\langle (z_1,z_2),(2,i)\rangle , \forall (z_1,z_2)\]
+        $\Rightarrow$
+        $$T^*(1,0)=(2,i)$$
+        $\Rightarrow$
+        $$\langle (z_1,z_2),T^*(0,1)\rangle =\langle T(z_1,z_2),(0,1)\rangle  =\langle (2z_1+iz_2,(i-1)z_1),(0,1)\rangle=0(2z_1+iz_2)+1[(i-1)z_1]$$ $$=(i-1)z_1=(i-1)z_1+0z_2=\langle (z_1,z_2),(i-1,0)\rangle$$
+        \[\therefore \langle (z_1,z_2),T^*(0,1)\rangle =\langle (z_1,z_2),(i-1,0)\rangle , \forall (z_1,z_2)\]
+        $\Rightarrow$
+        $$T^*(0,1)=(i-1,0)$$
+        entonces tenemos:\\
+        \begin{align*}
+            T^*(1,0)=(2,i)\\
+            T^*(0,1)=(i-1,0)
+        \end{align*}
+        Así tenemos:
+        $$T^*(z_1,z_2)=z_1\cdot T^*(1,0)+z_2\cdot T^*(0,1)=z_1(2,i)+z_2(i-1,0)=(2z_1+(i-1)z_2,iz_1)$$
+        Si componemos:
+        \[TT^*(z_1,z_2)=T(T^*(z_1,z_2))=T(2z_1+(i-1)z_2,iz_1)=(2[2z_1+(i-1)z_2]+i(iz_1),(i-1)[2z_1+(i-1)z_2])\]
+        \[=(4z_1+(2i-2)z_2-z_1,(2i-2)z_1+(-2i)z_2])=(3z_1+(2i-2)z_2,(2i-2)z_1-2iz_2])\]
+        \[T^*T(z_1,z_2)=T^*(T(z_1,z_2)=T^*(2z_1+iz_2,(i-1)z_1)=(2(2z_1+iz_2)+(i-1)((i-1)z_1),i(2z_1+iz_2))\]\[=(4z_1+2iz_2-2iz_1,2iz_1-z_2)\]
+        
+        Por lo tanto no tiene clasificaci\'on.\\
+    
+    \item [$c)$] $V=\mathbb{R}^2, T(a,b)=(2a-2b,-2a+5b)$ \\\\
+        \textbf{Soluci\'on 2.c:}\\
+    Tomando la base canonica:
+    $$C=\{(1,0),(0,1)\}$$
+Calculamos $T^*$ para la base, de modo que:
+        $\Rightarrow$
+        $$\langle (a,b),T^*(1,0)\rangle =\langle T(a,b),(1,0)\rangle =\langle (2a-2b,-2a+5b),(1,0)\rangle=1(2a-2b)+0(-2a+5b)$$ $$=2a-2b=a(2)+b(-2)=\langle (a,b),(2,-2)\rangle , \forall (a,b)$$
+        $\Rightarrow$
+        $$\therefore T^*(1,0)=(2,-2)$$
+
+        $\Rightarrow$
+        $$\langle (a,b),T^*(0,1)\rangle =\langle T(a,b),(0,1)\rangle =\langle (2a-2b,-2a+5b),(0,1)\rangle=0(2a-2b)+1(-2a+5b)$$ $$=-2a+5b=a(-2)+b(5)=\langle (a,b),(-2,5)\rangle , \forall (a,b)=\langle (a,b),(-2,5)\rangle , \forall (a,b)$$
+        $\Rightarrow$
+        $$\therefore T^*(0,1)=(-2,5)$$
+
+        entonces tenemos:\\
+        \begin{align*}
+           T^*(1,0)=(2,-2)\\
+           T^*(0,1)=(-2,5)
+        \end{align*}
+        así tenemos que:
+        $$T^*(a,b)=a\cdot T^*(0,1)+b\cdot T^*(1,0)=a(2,-2)+b(-2,5)=(2a-2b,-2a+5b)=T(a,b)$$
+       Por lo que $T$ es \textsc{Autoadjunto}
+        
+    \item [$d)$]$V=\mathbb{R}^3,T(a,b,c)=(-a+b,5b, 4a-2b+5c)$\\\\
+        \textbf{Soluci\'on 2.d:}\\
+         Tomando la base can\'onica:
+    $$C=\{(1,0,0),(0,1,0),(0,0,1)\}$$
+Calculamos $T^*$ para la base, de modo que:
+        $\Rightarrow$
+        $$\langle (a,b,c),T^*(1,0,0)\rangle =\langle T(a,b,c),(1,0,0)\rangle=\langle (-a+b,5b, 4a-2b+5c),(1,0,0)\rangle=1(-a+b)+0(5b)+0(4a-2b+5c) $$
+        $$=-a+b=a(-1)+b(1)+c(0)=\langle (a,b,c),(-1,1,0)\rangle , \forall (a,b,c)$$
+        $\Rightarrow$
+        $$\therefore T^*(1,0,0)=(-1,1,0)$$
+        $\Rightarrow$
+        $$\langle (a,b,c),T^*(0,1,0)\rangle =\langle T(a,b,c),(0,1,0)\rangle=\langle (-a+b,5b, 4a-2b+5c),(0,1,0)\rangle=0(-a+b)+1(5b)+0(4a-2b+5c) $$
+        $$=5b=a(0)+b(5)+c(0)=\langle (a,b,c),(0,5,0)\rangle , \forall (a,b,c)$$
+        $\Rightarrow$
+        $$\therefore T^*(0,1,0)=(0,5,0)$$
+        
+        $\Rightarrow$
+        $$\langle (a,b,c),T^*(0,0,1)\rangle =\langle T(a,b,c),(0,0,1)\rangle=\langle (-a+b,5b, 4a-2b+5c),(0,0,1)\rangle=0(-a+b)+0(5b)+1(4a-2b+5c) $$
+        $$=4a-2b+5c=a(4)+b(-2)+c(5)=\langle (a,b,c),(4,-2,5)\rangle , \forall (a,b,c)$$
+        $\Rightarrow$
+        $$\therefore T^*(1,0,0)=(4,-2,5)$$    
+    Entonces nos queda que:\\
+            \begin{align*}
+           T^*(1,0,0)=(-1,1,0)\\
+           T^*(0,1,0)=(0,5,0)\\
+           T^*(0,0,1)=(4,-2,5)
+        \end{align*}
+        y así tenemos:
+        $$T^*(a,b,c)=a\cdot T^*(1,0,0)+b \cdot T^*(0,1,0)+c \cdot T^*(0,0,1)$$
+        $$a(-1,1,0)+b(0,5,0)+c(4,-2,5) =(-a+4c,a+5b-2c,5c)$$
+        Por lo tanto si la componemos ambas:
+        \[TT^*(a,b,c)=T(T^*(a,b,c))=T(-a+4c,a+5b-2c,5c)\]\[=(-[-a+4c]+[a+5b-2c],5[a+5b-2c],4[-a+4c]-2[a+5b-2c]+5[5c])\]\[=(a+4c+a+5b-2c,5a+25b-10c,-4a+14c-2a-10b+4c+25c)=(2a+5b+2c,5a+25b-10c,-6a-10b+43c)\]
+        Y:
+        \[T^*T(a,b,c)=T^*(T(a,b,c))=T^*(-a+b,5b, 4a-2b+5c)\]\[=(-[-a+b]+4[4a-2b+5c],[-a+b]+5[5b]-2[4a-2b+5c],5[4a-2b+5c])\]
+        \[a-b+16a-8b+20c,-a+25b-8a+4b-10c,20a-10b+25c)=(17a-8b+10c,-9a+19b-10c,20a-10b+25c)\]
+        Por lo tanto no tiene clasificaci\'on.\\
+        
+    \item [$e)$] $V=\mathbb{C}^2,T(z_1,z_2)=(2z_1+iz_2,z_1+2z_2)$\\\\
+        \textbf{Soluci\'on 2.e:}\\
+        Tomando una base de $\mathbb{C}$ $\left \{ (1,0),(0,1) \right \}$\\
+         entonces tenemos:\\
+        $\Rightarrow$
+        $$\langle (z_1,z_2),T^*(1,0)\rangle =\langle T(z_1,z_2),(1,0)\rangle =\langle (2z_1+iz_2,z_1+2z_2),(1,0)\rangle=1(2z_1+iz_2)+0(z_1+2z_2)=2z_1+iz_2 $$
+        $$=z_1(2)+z_2(i)=\langle (z_1,z_2),(2,i)\rangle , \forall (z_1,z_2)$$
+        $\Rightarrow$
+        $$\therefore T^*(1,0)=(2,i)$$
+        
+        $\Rightarrow$
+        $$\langle (z_1,z_2),T^*(0,1)\rangle =\langle T(z_1,z_2),(0,1)\rangle =\langle (2z_1+iz_2,z_1+2z_2),(0,1)\rangle=0(2z_1+iz_2)+1(z_1+2z_2)=z_1+2z_2 $$
+        $$=z_1(1)+z_2(2)=\langle (z_1,z_2),(1,2)\rangle , \forall (z_1,z_2)$$
+        $\Rightarrow$
+        $$\therefore T^*(0,1)=(1,2)$$         
+        \begin{align*}
+            T^*(1,0)=(2,i)\\
+            T^*(0,1)=(1,2)
+        \end{align*}
+        Así tenemos:
+        $$T^*(z_1,z_2)=a\cdot T^*(1,0)+b\cdot T^*(0,1)$$
+        $$a(2,i)+b(1,2)=(2z_1+z_2,iz_1+2z_2)=T(z_1,z_2)$$
+        Por lo tanto $T$ es \textsc{Autoadjunta}
+    
+\end{itemize}
+
+
+
+
+

@@ -1,0 +1,388 @@
+\textcolor{blue}{Ejercicio 3.} Encuentre la solución general de:
+\begin{itemize}
+    \item $\dot x = 
+\begin{pmatrix}
+-3 & \sqrt{2} \\
+\sqrt{2} & -2
+\end{pmatrix}x$
+\end{itemize}
+
+Determinamos los valores propios de A, entonces
+\begin{equation*}
+    |A - \lambda I| = 
+|\begin{pmatrix}
+-3 - \lambda & \sqrt{2} \\
+\sqrt{2} & -2 - \lambda
+\end{pmatrix}| 
+= (-3 - \lambda)(-2 - \lambda)-(\sqrt{2} )(\sqrt{2} )= \lambda^{2}+5\lambda+4
+\end{equation*}
+\begin{equation*}
+    = (\lambda +4)(\lambda +1 )= 0
+\end{equation*}
+Entonces $\lambda_{1}=-4$ y $\lambda_{2}=-1$ \\
+
+Caso con $\lambda_{1}=-4$ 
+\begin{equation*}
+    A - (-4) I = A +4 I =
+\begin{pmatrix}
+-3 + 4 & \sqrt{2} \\
+\sqrt{2} & -2+4
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & \sqrt{2} \\
+\sqrt{2} & 2
+\end{pmatrix}
+\end{equation*}
+
+Buscamos $ker(A +4 I)$
+\begin{equation*}
+    \begin{pmatrix}
+1 & \sqrt{2} \\
+\sqrt{2} & 2
+\end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow v_{1}+ \sqrt{2}v_{2}=0 \atop
+    \sqrt{2}v_{1}+2v_{2} =0
+\end{equation*}
+Por lo tanto $u_{1}=\begin{pmatrix}
+-\sqrt{2} \\
+1
+\end{pmatrix}$ \\
+Entonces $x_{1}=e^{-4t}\begin{pmatrix}
+-\sqrt{2} \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\sqrt{2}e^{-4t} \\
+e^{-4t}
+\end{pmatrix}$ 
+
+Caso con $\lambda_{1}=-1$ 
+\begin{equation*}
+    A - (-1) I = A + I =
+\begin{pmatrix}
+-3 +1 & \sqrt{2} \\
+\sqrt{2} & -2+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2 & \sqrt{2} \\
+\sqrt{2} & -1
+\end{pmatrix}
+\end{equation*}
+
+Buscamos $ker(A + I)$
+\begin{equation*}
+    \begin{pmatrix}
+-2 & \sqrt{2} \\
+\sqrt{2} & -1
+\end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \Rightarrow -2v_{1}+ \sqrt{2}v_{2}=0 \atop
+    \sqrt{2}v_{1}-1v_{2} =0
+\end{equation*}
+Podemos tomar que $u_{2}=\begin{pmatrix}
+\frac{\sqrt{2}}{2} \\
+1
+\end{pmatrix}$ \\
+Entonces $x_{2}=e^{-t}\begin{pmatrix}
+\frac{\sqrt{2}}{2} \\
+1
+\end{pmatrix}$ 
+\begin{equation*}
+    x_{2}=\begin{pmatrix}
+\frac{\sqrt{2}}{2}e^{-t} \\
+e^{-t}
+\end{pmatrix}
+\end{equation*}
+
+Por lo que la matriz fundamental es 
+
+\begin{equation*}
+    \Phi(t)= \begin{pmatrix}
+-\sqrt{2}e^{-4t}& \frac{\sqrt{2}}{2}e^{-t} \\
+e^{-4t} & e^{-t}
+\end{pmatrix}
+\end{equation*}
+Y la solución es 
+\begin{equation*}
+    X=c_{1}x_{1} + c_{2}x_{2} =c_{1}\begin{pmatrix}
+-\sqrt{2}e^{-4t} \\
+e^{-4t}
+\end{pmatrix} + c_{2} \begin{pmatrix}
+    \frac{\sqrt{2}}{2}e^{-t}  \\
+    e^{-t}
+    \end{pmatrix}
+\end{equation*}
+\newpage
+\begin{itemize}
+    \item $\dot x = 
+\begin{pmatrix}
+3 & -2 \\
+4 & -1
+\end{pmatrix}x$
+\end{itemize}
+Determinamos los valores propios de A, entonces
+\begin{equation*}
+    |A - \lambda I| = 
+|\begin{pmatrix}
+3 - \lambda & -2\\
+4 & -1 - \lambda
+\end{pmatrix}| 
+= (3 - \lambda)(-1 - \lambda)-(-2)(4)= \lambda^{2}-2\lambda+5 = 0
+\end{equation*}
+Usando la fórmula general obtenemos que:
+
+\begin{equation*}
+\begin{split}
+    &\lambda= \frac{2-\sqrt{-16}}{2} \\ \Rightarrow &\lambda_{1}= 1-2i \\
+    &\lambda_{2}=1+2i
+\end{split}
+\end{equation*}
+Caso con $\lambda_{1}=1-2i$ 
+\begin{equation*}
+    A - (1-2i) I = 
+\begin{pmatrix}
+3 - (1-2i) & -2 \\
+4 & -1 - (1-2i)
+\end{pmatrix}
+=
+\begin{pmatrix}
+2+2i& -2\\
+4 & -2 +2i
+\end{pmatrix}
+\end{equation*}
+Buscamos $ker(A - (1-2i) I)$
+\begin{equation*}
+\begin{pmatrix}
+2+2i & -2\\
+4 & -2 +2i
+\end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow (2+2i)v_{1} -2 v_{2}=0 \atop
+   4 v_{1}+ (-2 +2i) v_{2} =0
+\end{equation*}
+Podemos tomar que $u_{2}=\begin{pmatrix}
+\frac{1-i}{2} \\
+1
+\end{pmatrix}$ \\
+Entonces $x_{1}=e^{1-2i}\begin{pmatrix}
+\frac{1-i}{2} \\
+1
+\end{pmatrix}
+=
+e^{t}
+\begin{pmatrix}
+\frac{1-i}{2} \\
+1
+\end{pmatrix}
+(\cos{(2t)}-i\sin{(2t)})
+$ 
+\begin{equation*}
+    x_{1}= 
+\begin{pmatrix}
+e^{t}\frac{1-i}{2}\cos{(2t)}- e^{t}\frac{1-i}{2}i\sin{(2t)}\\
+e^{t}\cos{(2t)}-e^{t}i\sin{(2t)}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{2}e^{t}(\cos{(2t)}+ \sin{(2t)}) \\
+e^{t}\cos{(2t)}
+\end{pmatrix}
+-i
+\begin{pmatrix}
+e^{t}(\frac{\sin{(2t)}}{2} + \cos{(2t)}) \\
+e^{t}\sin{(2t)}
+\end{pmatrix}
+\end{equation*}
+Por lo que encontramos que: 
+\begin{equation*}
+    \begin{split}
+        x_{1}&=e^{t}\begin{pmatrix}
+\frac{1}{2}(\cos{(2t)}+ \sin{(2t)}) \\
+\cos{(2t)}
+\end{pmatrix} \\
+x_{2}&= e^{t} \begin{pmatrix}
+-(\frac{\sin{(2t)}}{2} + \cos{(2t)}) \\
+-\sin{(2t)}
+\end{pmatrix}
+    \end{split}
+\end{equation*}
+
+Por lo que la matriz fundamental es 
+
+\begin{equation*}
+    \Phi(t)= \begin{pmatrix}
+e^{t}\frac{1}{2}(\cos{(2t)}+ \sin{(2t)}) & -e^{t}(\frac{\sin{(2t)}}{2} + \cos{(2t)}) \\
+e^{t}\cos{(2t)} & -e^{t}\sin{(2t)}
+\end{pmatrix}
+\end{equation*}
+Y la solución es 
+\begin{equation*}
+    X=c_{1}x_{1} + c_{2}x_{2} = c_{1}\begin{pmatrix}
+    e^{t}\frac{1}{2}(\cos{(2t)}+ \sin{(2t)}) \\
+    e^{t}\cos{(2t)}
+    \end{pmatrix} + c_{2} \begin{pmatrix}
+    -e^{t}(\frac{\sin{(2t)}}{2} + \cos{(2t)}) \\
+    -e^{t}\sin{(2t)}
+    \end{pmatrix}
+\end{equation*}
+\newpage
+\begin{itemize}
+    \item $\dot x=\begin{pmatrix}
+    3 & -4 \\
+    1 & -1
+    \end{pmatrix}x$
+\end{itemize}
+Determinamos los valores propios de A, entonces
+\begin{equation*}
+    |A - \lambda I| = 
+|\begin{pmatrix}
+3 - \lambda & -4\\
+1 & -1 - \lambda
+\end{pmatrix}| 
+= (3 - \lambda)(-1 - \lambda)-(1)(-4)= \lambda^{2}-2\lambda+1 = 0
+\end{equation*}
+\begin{equation*}
+    = (\lambda - 1 )^{2}= 0
+\end{equation*}
+Entonces $\lambda_{1}=\lambda_{2}=1$ \\
+
+Tomamos $\lambda=1$
+\begin{equation*}
+    A - (1) I = A - I =
+\begin{pmatrix}
+3 - 1 & -4\\
+1 & -1 - 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 & -4\\
+1 & -2
+\end{pmatrix}
+\end{equation*}
+Buscamos $ker(A -I)$
+\begin{equation*}
+\begin{pmatrix}
+2 & -4\\
+1 & -2
+\end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+0   \\
+0  
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow 2v_{1}-4v_{2}=0 \atop
+    v_{1}-2v_{2} =0
+\end{equation*}
+Podemos tomar que $u_{1}=\begin{pmatrix}
+2 \\
+1
+\end{pmatrix}$ \\
+
+Entonces $x_{1}=e^{t}\begin{pmatrix}
+2\\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+2e^{t} \\
+e^{t}
+\end{pmatrix}$ \\
+Debido a que $\lambda_{1}=\lambda_{2}$, buscamos el vector propio generalizado.
+\begin{equation*}
+\begin{split}
+    (A-I)u_{2}=u_{1} \\
+\begin{pmatrix}
+2 & -4\\
+1 & -2
+\end{pmatrix}
+\begin{pmatrix}
+v_{1}   \\
+v_{2}  
+\end{pmatrix} =
+\begin{pmatrix}
+2   \\
+1  
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\begin{equation*}
+    \Rightarrow 2v_{1}+ \sqrt{2}v_{2}=2 \atop
+    \sqrt{2}v_{1}+3v_{2} =1
+\end{equation*}
+Podemos tomar que $u_{2}=\begin{pmatrix}
+3 \\
+1
+\end{pmatrix}$ \\
+
+Entonces
+\begin{equation*}
+    x_{2}= e^{t}\left[t 
+    \begin{pmatrix}
+    2\\
+    1
+    \end{pmatrix} + 
+    \begin{pmatrix}
+    3 \\
+    1
+    \end{pmatrix} \right]
+    =
+    e^{t}\begin{pmatrix}
+    2t +3 \\
+    t + 1
+    \end{pmatrix}
+\end{equation*}
+Por lo que la matriz fundamental es 
+
+\begin{equation*}
+    \Phi(t)= \begin{pmatrix}
+2e^{t} &  2te^{t}+ 3e^{t}\\
+e^{t} & te^{t} + e^{t}
+\end{pmatrix}
+\end{equation*}
+Y la solución es 
+\begin{equation*}
+    X=c_{1}x_{1} + c_{2}x_{2} = c_{1}\begin{pmatrix}
+2e^{t} \\
+e^{t}
+\end{pmatrix} + c_{2}\begin{pmatrix}
+2te^{t}+ 3e^{t}\\
+te^{t} + e^{t}
+\end{pmatrix}
+\end{equation*}

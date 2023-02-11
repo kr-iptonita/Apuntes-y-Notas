@@ -1,0 +1,160 @@
+\section{Realizar los siguientes incisos:}
+\begin{itemize}
+    \item [$a)$] Encontrar una matriz ortogonal, cuya primera fila sea $\displaystyle  \left(\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}}\right)$\\\\
+    \textbf{Soluci\'on 9.a:}\\
+    Como sabemos al ser una matriz ortogonal, por definici\'on sus elementos est\'an en $\mathbb{R}$, es decir sea $A\in\mathcal{M}_n(\mathbb{R})$, $A$ es ortogonal si $A\cdot A^{T}=A^{T}\cdot A=I_n$, adem\'as se nos indica los valores de la primer fila, es decir un vector de $1\times 2$, por lo que la matriz $A$ ser\'a de $2\times 2$, por tanto si damos $x,y\in\mathbb{R}$ tenemos que:
+    \[A=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}\\
+    x & y\end{pmatrix}\]Y por tanto:
+    \[A^{T}=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & x\\
+    \frac{2}{\sqrt{5}} & y\end{pmatrix}\]
+    De modo que si tenemos que $A\cdot A^{T}=A^{T}\cdot A=I_2$, nos resulta que:
+    \[A\cdot A^{T}=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}\\
+    x & y\end{pmatrix}\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & x\\
+    \frac{2}{\sqrt{5}} & y\end{pmatrix}=\begin{pmatrix}
+    \left(\frac{1}{\sqrt{5}}\right)^2+\left(\frac{2}{\sqrt{5}}\right)^2 & \frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y\\
+    \frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y & x^2+y^2\end{pmatrix}=\begin{pmatrix}
+    \frac{1}{5}+\frac{4}{5} & \frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y\\
+    \frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y & x^2+y^2\end{pmatrix}=\begin{pmatrix}
+    1 & 0\\
+    0 & 1\end{pmatrix}\]
+    Por lo que podemos ver que tenemos el sistema:
+    \begin{eqnarray*}
+    \frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y&=&0\\
+    x^2+y^2&=&1
+    \end{eqnarray*}
+    De esta forma despejando la primer ecuaci\'on:
+    \[\frac{1}{\sqrt{5}}x+\frac{2}{\sqrt{5}}y=0~~~\Longrightarrow~~~x+2y=0~~~\Longrightarrow~~~x=-2y\]
+    Por lo que sustituyendo en la primer ecuaci\'on:
+    \[x^2+y^2=1~~~\Longrightarrow~~~(-2y)^2+y^2=1~~~\Longrightarrow~~~4y^2+y^2=1~~~\Longrightarrow~~~5y^2=1~~~\Longrightarrow~~~y^2=\frac{1}{5}~~~\Longrightarrow~~~y=\pm\frac{1}{\sqrt{5}}\]
+    por lo que S.P.G. podemos tomar a $\displaystyle y= \frac{1}{\sqrt{5}}$, de este modo $x=-2y=-\frac{2}{\sqrt{5}}$ y por tanto nuestras matrices quedan respectivamente:
+    \[A=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}\\
+    -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}\end{pmatrix}~~~~~~~~~~A^{T}=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}}\\
+    \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}\end{pmatrix}\]
+    por lo que solo queda verificar que $A^T\cdot A=I_2$, por tanto:
+    \[A^T\cdot A=\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}}\\
+    \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}\end{pmatrix}\begin{pmatrix}
+    \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}\\
+    -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}\end{pmatrix}=\begin{pmatrix}
+    \left(\frac{1}{\sqrt{5}}\right)^2+\left(-\frac{2}{\sqrt{5}}\right)^2 & \frac{1}{\sqrt{5}}\left(\frac{2}{\sqrt{5}}\right)+-\frac{2}{\sqrt{5}}\left(\frac{1}{\sqrt{5}}\right)\\
+    \frac{2}{\sqrt{5}}\left(\frac{1}{\sqrt{5}}\right)+\frac{1}{\sqrt{5}}\left(-\frac{2}{\sqrt{5}}\right) & \left(\frac{2}{\sqrt{5}}\right)^2+\left(\frac{1}{\sqrt{5}}\right)^2\end{pmatrix}\]\[=\begin{pmatrix}
+    \frac{1}{5}+\frac{4}{5} & \frac{2}{5}-\frac{2}{5}\\
+    \frac{2}{5}-\frac{2}{5} & \frac{4}{5}+\frac{1}{5}\end{pmatrix}=\begin{pmatrix}
+    1 & 0\\
+    0 & 1\end{pmatrix}=I_2\]
+    Por lo tanto la matriz encontrada y su transpuesta son ortogonales
+    \item [$b)$] Encontrar una matriz unitaria cuya primera fila es $\displaystyle  \left(\frac{1}{2},\frac{i}{2},\frac{1}{2}-\frac{i}{2}\right)$\\\\
+    \textbf{Soluci\'on 9.b:}\\
+    Como sabemos al ser una matriz unitaria, por definici\'on sus elementos est\'an en $\mathbb{C}$, es decir sea $B\in\mathcal{M}_n(\mathbb{C})$. $B$ es unitaria si $B\cdot B^*=B^*\cdot B=I_n$ (donde $B^*$ es la transpuesta conjugada de la matriz), adem\'as se nos indica los valores de la primer fila, es decir un vector de $1\times 3$, por lo que la matriz $B$ ser\'a de $3\times 3$.\\
+    Usaremos el \textbf{Teorema 14}, definiendo un conjunto ortonormal a partir de las filas de la matriz que deseamos construir, de modo que si definimos $u_1 = \left(\frac{1}{2},\frac{i}{2},\frac{1}{2}-\frac{i}{2}\right) $, lo primero que podemos hacer es definir la segunda fila de la matriz como un vector a partir de la primera fila, es decir un $u'_2=(a,b,c)$, con $a,b,c\in\mathbb{C}$, tal que:
+    \[\langle u_1,u_2\rangle=0=\overline{0}=\overline{\langle u_1,u_2\rangle}=\langle u_2,u_1\rangle\]
+    Entonces al realizar el producto interno usual en $\mathbb{C}^3$, tenemos:
+    \[0=\langle u_2,u_1\rangle=\langle (a,b,c),\left(\frac{1}{2},\frac{i}{2},\frac{1}{2}-\frac{i}{2}\right)\rangle=a\left(\overline{\frac{1}{2}}\right)+b\left(\overline{\frac{i}{2}}\right)+c\left(\overline{\frac{1}{2}-\frac{i}{2}}\right)=a\left(\frac{1}{2}\right)+b\left(-\frac{i}{2}\right)+c\left(\frac{1}{2}+\frac{i}{2}\right)\]
+    Multiplicando todo por 2, tenemos:
+    \[\Longrightarrow~~~~ a-ib+(1+i)c=0\]
+    Pero si nos damos cuenta se nos da una sola ecuaci\'on con 3 inc\'ognitas por lo que tenemos $3-1=2$ variables libres, por lo tanto podemos definir a $c=0$ y $a=-1$, de este modo tenemos:
+    \[a-ib+(1+i)c=0~~~\Longrightarrow~~~-1-ib+(1+i)0=0~~~\Longrightarrow~~~-1-ib+0=0~~~\Longrightarrow~~~-ib=1~~~\Longrightarrow~~~i[-ib=1]\]
+    \[\therefore b=i\]
+    De este modo tenemos que nuestro vector es:
+    \[u'_2=(a,b,c)=(-1,i,0)\]
+    Para hacerlo unitario, lo primero que hacemos es encontrar la norma, de este modo:
+    \[\Vert u'_2\Vert=\sqrt{\langle u'_2,u'_2\rangle}=\sqrt{-1(1)+i(-i)+0(0)}=\sqrt{1+1}=\sqrt{2}\]
+    De este modo ahora si podemos definir nuestro vector unitario como:
+    \[u_2=\frac{1}{\Vert u'_2\Vert}u'_2=\frac{1}{\sqrt{2}}(-1,i,0)=\left(-\frac{1}{\sqrt{2}},\frac{i}{\sqrt{2}},0\right)\]
+    Ahora para la tercer fila usamos ambos productos internos, es decir, si definimos $u_3'=(d,e,f)$, con $d,e,f\in\mathbb{C}$, tenemos que debe ser ortogonales a los otros dos, es decir:
+    \[0=\langle u_3,u_1\rangle=\langle (d,e,f),\left(\frac{1}{2},\frac{i}{2},\frac{1}{2}-\frac{i}{2}\right)\rangle=d\left(\overline{\frac{1}{2}}\right)+e\left(\overline{\frac{i}{2}}\right)+f\left(\overline{\frac{1}{2}-\frac{i}{2}}\right)=d\left(\frac{1}{2}\right)+e\left(-\frac{i}{2}\right)+f\left(\frac{1}{2}+\frac{i}{2}\right)\]
+    \[\Longrightarrow~~~~ d-ie+(1+i)f=0\]
+    Y tambi\'en:
+    \[0=\langle u_3,u_1\rangle=\langle (d,e,f),\left(-\frac{1}{\sqrt{2}},\frac{i}{\sqrt{2}},0\right)\rangle=d\left(\overline{-\frac{1}{\sqrt{2}}}\right)+e\left(\overline{\frac{i}{\sqrt{2}}}\right)+f\left(\overline{0}\right)=d\left(-\frac{1}{\sqrt{2}}\right)+e\left(-\frac{i}{\sqrt{2}}\right)\]
+    \[\Longrightarrow~~~~ -d-ie=0\]
+    Por lo que tenemos el sistema de ecuaciones:
+    \begin{eqnarray*}
+    d-ie+(1+i)f&=&0\\
+     -d-ie&=&0
+     \end{eqnarray*}
+     Si restamos la segunda de la primer ecuaci\'on, tenemos:
+     \[ d-ie+(1+i)f-(-d-ie)=0-0~~~\Longrightarrow~~~~2d+(1+i)f=0~~~\Longrightarrow~~~~2d=-(1+i)f\]
+     Mientras que si despejamos la segunda, tenemos:
+     \[d=-ie~~~\Longrightarrow~~~id=e\]
+     De este modo observamos que tenemos dos ecuaciones con 3 inc\'ognitas por lo que tenemos $3-2=1$ variable libre, por lo tanto podemos definir a $f=2$, de este modo tenemos:
+     \[2d=-(1+i)f~~~\Longrightarrow~~~~2d=-(1+i)2\]
+     \[\therefore d= -1-i\]
+      y en la segunda:
+      \[id=e~~~\Longrightarrow~~~i(-1-i)=e\]
+      \[\therefore e=1-i\]
+      De este modo nuestro vector fila queda: \[u_3'=(d,e,f)=(-1-i,1-i,2)\]
+       Para hacerlo unitario, lo primero que hacemos es encontrar la norma, de este modo:
+    \[\Vert u'_3\Vert=\sqrt{\langle u'_3,u'_3\rangle}=\sqrt{(-1-i)(-1+i)+(1-i)(1+i)+2(2)}=\sqrt{1+1+1+1+4}=\sqrt{8}=2\sqrt{2}\]
+    De este modo ahora si podemos definir nuestro vector unitario como:
+    \[u_3=\frac{1}{\Vert u'_3\Vert}u'_3=\frac{1}{2\sqrt{2}}(-1-i,1-i,2)=\left(-\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}},\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}},\frac{1}{\sqrt{2}}\right)\]
+    De este modo tenemos que nuestra matriz $B$ queda:
+    \[B=\begin{pmatrix}
+       u_1\\u_2\\u_3
+    \end{pmatrix}=\begin{pmatrix}
+   \frac{1}{2} & \frac{i}{2} & \frac{1}{2}-\frac{i}{2}\\
+    -\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0\\
+    -\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{\sqrt{2}}
+    \end{pmatrix}\]
+    Y por lo tanto la adjunta:
+    \[B^*=\overline{\begin{pmatrix}
+   \frac{1}{2} & \frac{i}{2} & \frac{1}{2}-\frac{i}{2}\\
+    -\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0\\
+    -\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{\sqrt{2}}
+    \end{pmatrix}}^T=\begin{pmatrix}
+   \frac{1}{2} & -\frac{i}{2} & \frac{1}{2}+\frac{i}{2}\\
+    -\frac{1}{\sqrt{2}} & -\frac{i}{\sqrt{2}} & 0\\
+    -\frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}} & \frac{1}{\sqrt{2}}
+    \end{pmatrix}^T=\begin{pmatrix}
+   \frac{1}{2} & -\frac{1}{\sqrt{2}} & -\frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    -\frac{i}{2} & -\frac{i}{\sqrt{2}} & \frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    \frac{1}{2}+\frac{i}{2} & 0 & \frac{1}{\sqrt{2}}
+    \end{pmatrix}\]
+    Entonces solo falta comprobar que efectivamente $B\cdot B^*=B^*\cdot B=I_3$, entonces:
+    \[B\cdot B^*=\begin{pmatrix}
+   \frac{1}{2} & \frac{i}{2} & \frac{1}{2}-\frac{i}{2}\\
+    -\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0\\
+    -\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{\sqrt{2}}
+    \end{pmatrix}
+    \begin{pmatrix}
+   \frac{1}{2} & -\frac{1}{\sqrt{2}} & -\frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    -\frac{i}{2} & -\frac{i}{\sqrt{2}} & \frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    \frac{1}{2}+\frac{i}{2} & 0 & \frac{1}{\sqrt{2}}
+    \end{pmatrix}\]
+    \[=\begin{pmatrix}
+   \frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4} & -\frac{1}{2\sqrt{2}}+\frac{1}{2\sqrt{2}}+0 & -\frac{1}{4\sqrt{2}}+\frac{i}{4\sqrt{2}}+\frac{i}{4\sqrt{2}}-\frac{1}{4\sqrt{2}}+\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}}\\
+   -\frac{1}{4\sqrt{2}}+\frac{1}{4\sqrt{2}}+0 & \frac{1}{2}+\frac{1}{2}+0 & \frac{1}{4}-\frac{i}{4}+\frac{i}{4}-\frac{1}{4}+0\\
+   -\frac{1}{4\sqrt{2}}-\frac{i}{4\sqrt{2}}-\frac{i}{4\sqrt{2}}-\frac{1}{4\sqrt{2}}+\frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}} & \frac{1}{4}+\frac{i}{4}-\frac{i}{4}-\frac{1}{4}+0
+   & \frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{2}\end{pmatrix}=\begin{pmatrix}
+       1&0&0\\
+       0&1&0\\
+       0&0&1
+    \end{pmatrix}\]
+    Y:
+    \[B^*\cdot B=
+    \begin{pmatrix}
+   \frac{1}{2} & -\frac{1}{\sqrt{2}} & -\frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    -\frac{i}{2} & -\frac{i}{\sqrt{2}} & \frac{1}{2\sqrt{2}}+\frac{i}{2\sqrt{2}}\\
+    \frac{1}{2}+\frac{i}{2} & 0 & \frac{1}{\sqrt{2}}
+    \end{pmatrix}\begin{pmatrix}
+   \frac{1}{2} & \frac{i}{2} & \frac{1}{2}-\frac{i}{2}\\
+    -\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0\\
+    -\frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{2\sqrt{2}}-\frac{i}{2\sqrt{2}} & \frac{1}{\sqrt{2}}
+    \end{pmatrix}\]
+    \[=\begin{pmatrix}
+   \frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4} & \frac{i}{4}-\frac{i}{2}-\frac{1}{8}+\frac{i}{8}+\frac{i}{8}+\frac{1}{8}& \frac{1}{4}-\frac{i}{4}+0-\frac{1}{4}+\frac{i}{4}\\
+   -\frac{i}{4}+\frac{i}{2}-\frac{1}{8}-\frac{i}{8}-\frac{i}{8}+\frac{1}{8} & \frac{1}{4}+\frac{1}{2}+\frac{1}{8}+\frac{1}{8} & -\frac{i}{4}-\frac{1}{4}+0+\frac{1}{4}+\frac{i}{4}\\
+   \frac{1}{4}+\frac{i}{4}+0-\frac{1}{4}-\frac{i}{4} & \frac{i}{4}-\frac{1}{4}+\frac{1}{4}-\frac{i}{4}
+   & \frac{1}{4}+\frac{1}{4}+0+\frac{1}{2}\end{pmatrix}=\begin{pmatrix}
+       1&0&0\\
+       0&1&0\\
+       0&0&1
+    \end{pmatrix}\]
+    
+    
+\end{itemize}

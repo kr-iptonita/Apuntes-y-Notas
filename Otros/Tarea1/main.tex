@@ -1,0 +1,315 @@
+\documentclass{homework}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+
+
+\author{Frank Garcia Trillo\\
+Juárez Torres Carlos Alberto,   318013712\\
+Sánchez González Sharon Estefania}
+\class{Teoría de Juegos}
+\date{\today}
+\title{Tarea 1}
+\address{Facultad de Ciencias.}
+
+\graphicspath{{./media/}}
+
+\begin{document} \maketitle
+
+
+\question EVALUE las siguientes afirmaciones (determine si es verdadera o falsa, bajo qué condiciones es verdadera o falsa, sea explícito y claro en su punto de vista; si lo cree necesario, incluya ejemplos)
+
+\begin{enumerate}
+    \item Todo juego en forma estratégica tiene al menos un equilibrio de Nash.
+    \item Para motivar las cooperación de los rivales en el juego del \textit{Dilema del prisionero}, basta con que en los pagos se introduzcan premios y se eliminen los castigos.
+    \item En el juego de de la batalla de los sexos, la cantidad de Equilibrio de Nash dependerá de la intensidad de la relación de los jugadores.
+    \item Si cada jugador elige la estrategia que maximiza su pago, considerando que el resto también hace lo propio, entonces el equilibrio resultante es \textit{Pareto Eficiente}.
+\end{enumerate}
+
+
+\textbf{1(A)} .- \textbf{Contraejemplo: El juego del peso}:
+Dos jugadores, cada uno elige sol o águila, la decisión es simultanea. Si las decisiones difieren, el \textbf{jugador 1} pagaría 1 peso al \textbf{jugador 2}. En caso contrario, el \textbf{jugador 2} pagaría 1 peso al jugador 1. (Osborne, Rubinstein, 1994)
+
+El juego de forma estratégica podemos verlo como:
+
+\begin{equation}
+    N = \{ J1, J2 \},  \\
+    D_i = D_j = \{ Aguila, Sol \},  \\
+    D = \{ (A,A), (A,S), (S,A), (A,A) \} 
+\end{equation}
+
+Notemos como se observa esta matriz de pagos
+    
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{J1} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{A} & S \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{J2}} & A & \multicolumn{1}{l|}{(1,-1)} & (-1,1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & S & \multicolumn{1}{l|}{(-1,1)} & (1,-1) \\ \hline
+\end{tabular}
+\caption{Tabla del juego del peso}
+\end{table}
+
+De este juego podemos afirmar que no existe ningún equilibrio de Nash. Por lo tanto, no todo juego puede tener un equilibrio de Nash.
+
+
+
+
+\textbf{1.(B).-}
+
+Consideremos la matriz de pagos del juego del \textit{Dilema del prisionero}, donde los pagos dependerán de la versión del juego que estemos jugando. Probemos varias combinaciones. 
+
+Observemos primero la combinación que implica solo castigos (tabla 2), uno reducido para quien confiesa.
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{J1} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{C} & NC \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{J2}} & C & \multicolumn{1}{l|}{(-1,-1)} & (0,-3) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NC & \multicolumn{1}{l|}{(-3,0)} & (0,0) \\ \hline
+
+\end{tabular}
+\end{table}
+
+En este juego, los equilibrios de Nash, $EN = \{ (C,C) (NC, NC) \}$. Esto es lógico, pues si solo tratamos de no llevarnos el peor de los castigos, ambos confesarían tratando de no verse perjudicados y entonces nos llevaríamos el equilibrio de $(-1, -1)$. 
+
+Luego, en la combinación donde hay premios y castigos. Notemos como se observa esta matriz de pagos.
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{J1} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{C} & NC \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{J2}} & C & \multicolumn{1}{l|}{(1,1)} & (2,-1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NC & \multicolumn{1}{l|}{(-1,2)} & (0,0) \\ \hline
+\end{tabular}
+\end{table}
+
+Veamos ahora dos combinaciones donde solo hay premios:
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{J1} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{C} & NC \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{J2}} & C & \multicolumn{1}{l|}{(1,1)} & (0,3) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NC & \multicolumn{1}{l|}{(3,0)} & (0,0) \\ \hline
+\end{tabular}
+\end{table}
+
+Y la segunda es
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{J1} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{C} & NC \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{J2}} & C & \multicolumn{1}{l|}{(0,0)} & (2,0) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NC & \multicolumn{1}{l|}{(0,2)} & (1,1) \\ \hline
+\end{tabular}
+\end{table}
+
+De la primera tabla, los equilibrios de Nash (EN), son $EN_{Castigo} = \{(C,C), (NC,NC)\}$. De las otras tablas, los EN son:
+
+\begin{equation} \label{eq1}
+\begin{split}
+EN_{Premios 1} & = \{(C,NC), (NC, C)\} \\
+EN_{Premios 2} & = \{(C,C), (NC, C), (C, NC)\} \\
+EN_{Premios y castigos} & = \{(C,C)\}
+\end{split}
+\end{equation}
+
+
+Podemos ver que en el juego del \textit{Dilema del prisionero}, aunque se sustituyan los castigos o estos se vean reducidos con premios más altos, el interés propio conduce al escenario menos deseable para los participantes, que es el de \textbf{Confesar/Confesar}. El único caso donde no se tiene esta conclusión por el argumento de los equilibrios de Nash, es con la tabla de pagos del escenario donde los premios son muy altos por confesar para una sola persona. Esto solo podría ser si uno confiesa, pero ambos tienen ese mismo escenario, de modo que ambos terminarían en el escenario de \textbf{Confesar/Confesar}.
+
+\textbf{1.(C) .-} a primeras se podría decir qué si dada la versión egoísta y el caso inicial.
+
+\begin{center}
+    "Versión egoísta"\\
+    \begin{tabular}{llll}
+ &  & E & o \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{S} \\ \cline{2-4} 
+\multicolumn{1}{l|}{Ea} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{(2,-1)} & \multicolumn{1}{l|}{(3,3)*} \\ \cline{2-4} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{S} & \multicolumn{1}{l|}{(-1,-1)} & \multicolumn{1}{l|}{(-1,2)} \\ \cline{2-4} 
+\end{tabular}\\
+\\
+
+"Caso inicial"
+
+    \begin{tabular}{llll}
+ &  & Eo &  \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{S} \\ \cline{2-4} 
+\multicolumn{1}{l|}{Ea} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{(2,1)*} & \multicolumn{1}{l|}{(0,0)} \\ \cline{2-4} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{S} & \multicolumn{1}{l|}{(0,0)} & \multicolumn{1}{l|}{(1,2)*} \\ \cline{2-4} 
+\end{tabular}
+\end{center}
+
+sin embargo para el caso de la versión "se acabó el amor" 
+\begin{center}
+\begin{tabular}{llll}
+ &  & E & o \\ \cline{3-4} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{S} \\ \cline{2-4} 
+\multicolumn{1}{l|}{Ea} & \multicolumn{1}{l|}{B} & \multicolumn{1}{l|}{(0,-2)} & \multicolumn{1}{l|}{(2,2)*} \\ \cline{2-4} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{S} & \multicolumn{1}{l|}{(1,1)*} & \multicolumn{1}{l|}{(-2,0)} \\ \cline{2-4} 
+\end{tabular}
+\end{center}
+podemos notar que la cantidad de EN se mantiene e incluso cambia su disposición, por lo que no necesariamente la cantidad de equilibrios se encuentra como una función directa de la cantidad de amor entre la pareja, aunque podría serlo para una función que tome al tipo de amor y la cantidad de este para cada jugador.
+
+
+\textbf{1.(D) .-} El juego del dilema del prisionero es un buen ejemplo de como un escenario donde todos los participantes optan por seguir la estrategia más óptima para si mismos, no lleva al resultado más óptimo para todos los participantes del juego. Esto quiere decir que el dilema del prisionero es un ejemplo donde jugar de la manera más "óptima" en el raciocinio individual, no conduce al equilibrio de Pareto.
+
+
+\question Considere el popular juego de “piedra (Pi), papel (Pa) o tijeras (T)”: de forma simultánea dos
+jugadores representan con su mano uno de estos tres objetos; \textit{si son diferentes los objetos
+necesariamente un jugador gana, y el otro pierde; si son iguales, se empata el juego. La matriz de
+pagos se representa en la siguiente tabla:}
+
+Determine los elementos de forma estratégica y los equilibrios de Nash.
+
+\emph{Conjunto de jugadores $N$}: $\{ J_1, J_2\}$
+
+\emph{Conjunto de estrategias}: $D_{J_1} = D_{J_2} = \{ Ti, Pi, Pa\}$
+
+$D$ = $\{ (Pi, Pi), (Pa, Pa), (Ti, Ti), (Pi, Pa), (Pi, Ti), (Pa, Pi), (Pa, Ti), (Ti, Pa), (Ti, Pi)\}$
+
+
+\emph{Funciones de pago: $\phi_i $}: 
+\begin{equation}
+\begin{bmatrix}
+(0,0) & (-1,1) & (1,-1)\\
+(1,-1) & (0,0) & (-1,1)\\
+(-1,1) & (1,-1) & (0,0)
+\end{bmatrix}
+\end{equation}
+
+
+\emph{Equilibrios de Nash $(EN)$}: $\empty$
+
+Si analizamos el método de eliminación de estrategias óptimas, encontramos que el conjunto de equilibrios de Nash es vació. Por como esta definido el juego de Piedra, Papel y Tijeras, podemos ver que no existe una estrategia pura óptima, pues toda estrategia que deje fija una elección para un jugador, tiene una respuesta que puede hacerle empatar o perder.
+
+
+\question Considere la situación planteada en clase acerca de la problemática del país occidental ($PO$), y los migrantes dentro del país ($M$)
+
+    $PO$ : País occidental que recibe migrantes y encuentra que éstos no se integran del todo en su cultura y sociedad.
+    $M$ : Gente que ha migrado a $PO$ y que no están decididos del todo a integrarse a la sociedad de $PO$.
+
+Los conjuntos de estrategias de cada jugador serian: 
+
+$D_{PO}: \{ tolera (T), acosa (A)\}$
+$D_M : \{ \text{Se integra} I, \text{No se integra} NI \}$
+
+Determine dos escenarios distintos para este juego (dos matrices de pagos distintas), en donde
+prevalezca una perspectiva del conflicto: tolerante, xenofóbico, humanitario, con soluciones
+aparentes para los que están fuera del conflicto, etc., o la perspectiva que usted quiera proponer.
+Explique la perspectiva elegida y obtenga, para ambas versiones, los elementos del juego en forma
+estratégica (conjunto de jugadores, conjuntos de estrategias para cada jugador, funciones de pago)
+y los equilibrios de Nash.
+
+
+    \textbf{Escenario 1:} \emph{Inclusión}
+
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(2,2)} & (0,-2) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(0,0)} & (-1,-1) \\ \hline
+\end{tabular}
+\end{table}
+
+
+    \textbf{Escenario 2:} \emph{Hipocresía }
+
+    
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(2,1)} & (-1,0) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(1,0)} & (-2,1) \\ \hline
+
+\end{tabular}
+\end{table}
+
+
+
+    \textbf{Escenario 3:} \emph{Xenofobia}
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(0,-1)} & (-1,1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(0,-2)} & (-3,3) \\ \hline
+\end{tabular}
+\end{table}
+
+
+    \textbf{Escenario 4:} \emph{Etnia}
+\begin{table}[h!]
+\begin{tabular}{|ll|ll|}
+\hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{PO} \\ \cline{3-4} 
+\multicolumn{2}{|l|}{} & \multicolumn{1}{l|}{Ti} & A \\ \hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{M}} & I & \multicolumn{1}{l|}{(1,1)} & (-1,-1) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{} & NI & \multicolumn{1}{l|}{(2,0)} & (-2,-2) \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\emph{Conjunto de jugadores $N$}: $\{ M, PO\}$
+
+\emph{Conjunto de estrategias}:
+\begin{equation}
+\begin{split}
+    D_M & =  \{ I, NI\} \\
+    D_{PO} & = \{ T, A\} \\
+    D = (D_M x D_{PO}) &= \{ (I, T), (I, A), (NI, T), (NI, A) \}
+\end{split}
+\end{equation}
+
+
+
+
+\begin{equation}
+\begin{split}
+    EN_{E_1} &= \{ (I,T)\} \\
+    EN_{E_2} &= \{ (I,T)\}  \\
+    EN_{E_3} &= \{ (I,A)\} \\
+    EN_{E_4} &= \{ (NI,T)\} 
+\end{split}
+\end{equation}
+
+
+El escenario 1, donde prima la \emph{inclusión}, los migrantes son tolerados e incluso, se prima que estos sean bien recibidos e integrados dentro de la sociedad. Debido a que, por lo general, los migrantes tienden a integrarse al lugar donde llegan buscando un mejor nivel de vida, el interés más grande radica en integrarse adecuadamente dentro de la población local. Por lo tanto, no es una decisión benéfica el no integrarse. A su vez, al estado receptor o PO, le interesa desarrollar una legislación que no aliente el acoso y la xenofobia, sumado a las recomendaciones de organismos internacionales acerca de los derechos humanos de los migrantes. Esto nos lleva a que $PO$ no considera adecuado permitir el acoso a los migrantes. De ello, el escenario óptimo para cada jugador si siguiesen su racionalidad seria \textbf{Integrarse/Tolerar}. \newline
+
+El escenario 2, donde se tiene el caso norteamericano o bien, el caso de la hipocresía, los migrantes son tolerados y acosados a partes iguales. Si los migrantes, siguiendo el mismo razonamiento de antes, buscan integrarse por un beneficio en su calidad de vida, entonces, al estado receptor le parece bien que estos se integren y tolera a los migrantes, sin embargo, no reconoce sus derechos en todos los ambitos (laborales, educacionales, de acceso a recursos estatales, etc.) y aprovecha una condición precaria y sin formalidad para explotarlos constantemente. Por ello, no necesita tampoco hacer mucho caso ni tomar responsabilidad en los casos donde los migrantes son acosados por su ciudadanía. \newline
+
+Cuando los migrantes no se integran pero algunos los toleran, al país receptor no le resulta ningun beneficio, pues estos no se involucran en las actividades productivas de la misma forma en la que lo hacen los migrantes que si se integran en la población. A su vez, si los migrantes no se integran y estos son acosados, esto representa un beneficio político que permitiría preservar el \textit{status quo} en la situación migratoria, señalando a un grupo que puede ser conflictivo (migrantes no integrados) como los representantes de una problemática para la población del país (violencia, narcotráfico, desempleo, etc.). De tal manera, para ambos jugadores, la estrategia más racional es \textbf{Integrarse/Tolerar}.\newline
+
+En el escenario 3, donde prima una visión xenófoba, los migrantes viajan a un país donde no son bien recibidos y son sujetos a tratos poco éticos, con poca o nula seguridad en sus empleos, sin reconocer sus derechos de ciudadanía. En este, los migrantes buscan integrarse apenas para ser tolerados, sin embargo, prima la necesidad de trabajo y calidad de vida de la cual suelen huir de sus países para mejorarla en los países receptores. Luego, el país receptor no busca tolerar a estos migrantes, deseando que regresen a sus países hasta por la fuerza. Luego, prima una visión de excluirlos y segregarlos, a pesar de que estos se integren, por lo que forman comunidades muy diferenciadas. Luego, si estos no se integran, no reciben ningún beneficio y el estado receptor busca más motivos para deshacerse de ellos o sumirlos en la explotación. \newline
+
+Por lo tanto, si ambos jugadores siguiesen su mejor estrategia, el equilibrio de Nash es \textbf{Integrarse/Acosar} \newline
+
+Con el escenario 4, un escenario ligeramente distinto. Supongamos que $M$ no representa a un grupo de migrantes, sino a una etnia o una comunidad religiosa dentro del territorio de $PO$. En este caso, los miembros de esta población $M$, no desean necesariamente tener el mismo estilo de vida, cultura y tradiciones que tienen en común los habitantes de $PO$. El país occidental al reconocerlos como ciudadanos de su territorio, se ve obligado por sus leyes a darles respeto y capacidad de decidir de manera autónoma ciertas formas de su organización. De tal manera, si las personas del grupo $M$ buscan integrarse o no a la forma de vida que tiene el resto de la población, estos tienen garantizados sus derechos de cualquier manera. Luego, si el país los acosara, esto representaría un conflicto interno que podría desembocar en escaladas de violencia entre el estado y la población $M$. Luego, ambos no consideran óptimo vivir en conflicto con las autoridades de los respectivos grupos y evitar la confrontación violenta. \newline
+
+De tal manera, en este escenario, el equilibrio de Nash es \textbf{No integrarse/Tolerar} \newline
+
+
+
+% citations
+
+
+
+\bibliographystyle{plain}
+\bibliography{citations}
+Osborne, M. J., & Rubinstein, A. (1994). A Course in Game Theory. MIT Press.
+
+\end{document}

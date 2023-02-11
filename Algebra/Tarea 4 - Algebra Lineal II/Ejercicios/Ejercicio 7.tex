@@ -1,0 +1,60 @@
+\section{Sea $T:V \longrightarrow V$ lineal. Prueba que:}
+
+
+\begin{itemize}
+\item[$a)$]Si $\langle T(u),v\rangle=0$, para cada $u,v \in V $, entonces es $T=0$\\\\
+    \textbf{Demostración 7.a:}\\
+    Dados $T:V\longrightarrow V$ y $\langle T(u),v\rangle=0$, $\forall u,v \in V $. P.D. que $T=0$.\\
+    Por hip\'otesis tomamos $u,v \in V $ tales que que:
+    \[\langle T(u),v\rangle= 0 = \langle u,T^* (v) \rangle\]
+    \[\Longrightarrow u \perp T^*(v)\]
+    \[\Longrightarrow u \in (\text{Im}(T^*))^{\perp}, \forall u \in V \]
+
+    Y en la ayudant\'ia vimos que sucede que $(\text{Im}(T^*))^{\perp} =\text{Nuc}(T)$
+
+    \[\Longrightarrow u \in \text{Nuc}(T)\]Lo que por definici\'on nos indica que
+    \[T(u)=0\]
+    Pero como $u$ es arbitraria, entonces se cumple para todo $u\in V$ y de esta forma tenemos que $T=0$
+
+$\therefore \langle T(u),v\rangle=0$, para cada $u,v \in V \Longrightarrow T=0. $\qed
+
+
+\item[$b)$] Si $V$ es un espacio complejo y si $\langle T(u), u\rangle=0$, para cada $u \in V$, entonces $T=0$ \\\\
+\textbf{Demostraci\'on 7.b:}\\
+Dados $T:V\longrightarrow V$ donde V es un espacio complejo pues por hip\'otesis nos dan que est\'a definido sobre $\mathbb{C}$) y $\langle T(u), u\rangle=0$, $\forall u\in V$, P.D. $T=0$ \\ 
+Sea $u=ra+b$, $\forall a, b \in V$, $r \in \mathbb{C}$ De manera que por propiedades del producto interno en $\mathbb{C}$, tenemos:
+\[0=\langle T(ra+b), ra+b\rangle=\langle T(ra)+T(b), ra+b\rangle=\langle rT(a), ra+b\rangle+\langle T(b), ra+b\rangle=r\overline{\langle ra+b,T(a)\rangle}+\overline{\langle ra+b,T(b)\rangle}\]\[=r\overline{r}\cdot\overline{\langle a,T(a)\rangle}+r\overline{\langle b,T(a)\rangle}+\overline{r}\cdot\overline{\langle a,T(b)\rangle}+\overline{\langle b,T(b)\rangle}\]
+\[=|r|^2 \langle T(a),a \rangle + r\langle T(a),b\rangle + \overline{r}\langle  T(b), a\rangle+ \langle T(b), b\rangle\]
+Pero recordando que $\langle T(u), u\rangle=0$, $\forall u\in V$, tenemos:
+\[=|r|^2 (0) + r\langle T(a),b\rangle + \overline{r}\langle  T(b), a\rangle+0=r\langle T(a),b\rangle + \overline{r}\langle  T(b), a\rangle\]
+\[\therefore 0=r\langle T(a),b\rangle + \overline{r}\langle  T(b),a\rangle\]
+
+Si le damos el valor de $r=1=\overline{r}$, entonces tenemos que: \[\langle T(a), b \rangle + \langle T(b), a \rangle = 0\]
+Si le damos el valor de $r=i$, entonces $\overline{r}=-i$ tenemos que: \[i\langle T(a), b \rangle - i\langle T(b), a \rangle = 0~~~\Longrightarrow~~~\langle T(a), b \rangle - \langle T(b), a \rangle = 0\]
+Si analizamos estas dos ecuaciones (y las sumamos o restamos para encobtrar valores) entonces nos podemos percatar de que $\langle T(a), b \rangle=\langle T(b), a \rangle=0$, $\forall a, b \in V$ (para cada par de vectores), entonces por la \textbf{Demostraci\'on 7.a}, tenemos que $T=0$. \qed
+
+
+
+\item[$c)$] Si $T$ es autoadjunto y si $\langle T(u), u =0\rangle$, para cada $u \in V$, entonces $T=0$\\\\
+\textbf{Demostraci\'on 7.c:}\\
+Dados $T:V\longrightarrow V$, $T$ autoadjunto y $\langle T(u),u\rangle=0$. $\forall u\in v$. P.D $T=0$.\\
+Por hip\'otesis tenemos que $T=T^*$ (por definici\'on de autoadjunto):
+\[\langle T(u),u\rangle= 0 = \langle u,T^*(u) \rangle= \langle u,T(u) \rangle\]
+\[\Longrightarrow u \perp T(u)\]
+\[\Longrightarrow u \in (\text{Im}(T^*))^{\perp}\]
+ya que $T(u)\in \text{Im}(T)$ y por lo visto en la ayudant\'ia y ya mencionado anteriormente $(\text{Im}(T^*))^{\perp} = \text{Nuc}(T)$. As\'i mismo,como $T=T^*$, entonces por definici\'on vamos a tener que:
+\[\Longrightarrow u \in \text{Nuc}(T^*)\]
+\[\text{Nuc}(T^*)=\text{Nuc}(T)\]
+\[u \in \text{Nuc}(T)\]
+\[T(u)=0\]
+Y como se vale para todo $u\in V$ (en especial si 
+$u\neq0$), tenemos finalmente que:
+\[T=0\]
+$\therefore $ Si $T$ es autoadjunto y si $\langle T(u), u =0\rangle$, para cada $u \in V, \Longrightarrow T=0$. $\qed$
+
+\end{itemize}
+
+
+
+
+

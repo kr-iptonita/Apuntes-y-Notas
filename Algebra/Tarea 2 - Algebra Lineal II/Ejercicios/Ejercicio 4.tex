@@ -1,0 +1,169 @@
+\section{Para las siguientes matrices:}
+\[a)~ A = \begin{pmatrix}
+3 &-4\\
+2 &-6
+\end{pmatrix}~~ , ~b)~B =\begin{pmatrix}
+2&2\\
+1 &3\end{pmatrix}
+\]\textbf{Soluci\'on 4:}\\
+\begin{itemize}
+    \item[$i)$] Encontrar todos los valores y vectores propios correspondientes.
+    Sabemos que para encontrar un valor propio $\lambda_n$ de una matriz $A\in\mathcal{M}_{n\times n }$ que satisfaga $A\vec{v}=\lambda_n\vec{v}$, debemos tener que $\text{det}(A-\lambda_nI_{n\times n })=0$, de esta manera obtenemos su polinomio caracter\'istico, cuyas $n$ ra\'ices son sus valores propios.
+    \begin{enumerate}
+        \item[$a)$] Lo primero que se deber\'a hacer es encontrar su polinomio caracter\'istico:
+        \[0=\text{det}(A-\lambda_nI_{n\times n })=\left|\begin{pmatrix}
+3 &-4\\
+2 &-6
+\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0\\0 &1
+\end{pmatrix}\right|=\begin{vmatrix}3-\lambda &-4\\
+2 &-6-\lambda\end{vmatrix}=(3-\lambda)(-6-\lambda)-(2)(-4)\]\[=-18-3\lambda+\lambda^2+8=\lambda^2+3\lambda-10\]
+Por lo que su polinomio caracter\'istico es $\lambda^2+3\lambda-10=(\lambda+5)(\lambda-2)=0$, de modo que sus ra\'ices (valores propios) son $\lambda_1=-5$ y $\lambda_2=2$. Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(A-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y)$):
+\begin{itemize}
+    \item Para $\lambda_1=-5$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}3-(-5) &-4\\
+2 &-6-(-5)\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}8 &-4\\
+2 &-1\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}8x-4y\\
+2x-y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}8x-4y\\
+2x-y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+8x-4y&=&0\\
+2x-y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{8}{-4}=\frac{2}{-1}=-2$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $y=2x$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(x,2x)=x(1,2)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=-5$ tiene asociado el vector propio $\vec{v_1}=(1,2)$.
+
+\item Para $\lambda_2=2$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(A-\lambda_2I_{n\times n })\vec{v}=\begin{pmatrix}3-2 &-4\\
+2 &-6-2\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}1 &-4\\
+2 &-8\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}x-4y\\
+2x-8y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}x-4y\\
+2x-8y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+x-4y&=&0\\
+2x-8y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{1}{-4}=\frac{2}{-8}$.\\
+Si despejamos de la primera ecuaci\'on tenemos que $x=4y$, por lo que si damos a $y\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(4y,y)=y(4,1)$.\\
+S.P.G., damos el valor de $y=1$, por lo que el valor propio $\lambda_2=2$ tiene asociado el vector propio $\vec{v_2}=(4,1)$.
+
+    
+\end{itemize}
+        \item[$b)$] Calculando su polinomio caracter\'istico:
+        \[0=\text{det}(B-\lambda_nI_{n\times n })=\left|\begin{pmatrix}
+2&2\\
+1 &3
+\end{pmatrix}-\lambda\begin{pmatrix}
+1 &0\\0 &1
+\end{pmatrix}\right|=\begin{vmatrix}2-\lambda &2\\
+1 &3-\lambda\end{vmatrix}=(2-\lambda)(3-\lambda)-(1)(2)\]\[=6-5\lambda+\lambda^2-2=\lambda^2-5\lambda+4\]
+Por lo que su polinomio caracter\'istico es $\lambda^2-5\lambda+4=(\lambda-4)(\lambda-1)=0$, de modo que sus ra\'ices (valores propios) son $\lambda_1=4$ y $\lambda_2=1$. Ahora lo que haremos ser\'a calcular los vectores propios de cada uno, para lo cual debemos resolver la ecuaci\'on $(B-\lambda_nI_{n\times n })\vec{v}=\vec{0}$ (con $\vec{v}=(x,y)$):
+\begin{itemize}
+    \item Para $\lambda_1=4$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(B-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}2-4 &2\\
+1 &3-4\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}-2 &2\\
+1 &-1\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}-2x+2y\\
+x-y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}-2x+2y\\
+x-y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+-2x+2y&=&0\\
+x-y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es m\'ultiplo de la segunda, pues si dividimos los coeficientes de las $x$ entre los coeficientes de las $y$ nos queda $\displaystyle\frac{-2}{2}=\frac{1}{-1}=-1$.\\
+Si despejamos de la segunda ecuaci\'on tenemos que $x=y$, por lo que si damos a $x\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(x,x)=x(1,1)$.\\
+S.P.G., damos el valor de $x=1$, por lo que el valor propio $\lambda_1=4$ tiene asociado el vector propio $\vec{v_1}=(1,1)$.
+
+\item Para $\lambda_2=1$, sustituyendo, tenemos que:
+    \[\begin{pmatrix}0\\
+0\end{pmatrix}=\vec{0}=(B-\lambda_1I_{n\times n })\vec{v}=\begin{pmatrix}2-1 &2\\
+1 &3-1\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}1 &2\\
+1 &2\end{pmatrix}\begin{pmatrix}x\\
+y\end{pmatrix}=\begin{pmatrix}x+2y\\
+x+2y\end{pmatrix}\]
+\[\therefore \begin{pmatrix}0\\
+0\end{pmatrix}=\begin{pmatrix}x+2y\\
+x+2y\end{pmatrix}\]
+Por lo que tenemos el siguiente sistema de ecuaciones:
+\begin{eqnarray*}
+x+2y&=&0\\
+x+2y&=&0
+\end{eqnarray*}
+Pero si nos damos cuenta la primera ecuaci\'on es igual a segunda, por lo que si despejamos de la primera ecuaci\'on tenemos que $x=-2y$, por lo que si damos a $y\in\mathbb{R}$ como valor fijo tenemos un vector $(x,y)=(-2y,y)=y(-2,1)$.\\
+S.P.G., damos el valor de $y=1$, por lo que el valor propio $\lambda_2=1$ tiene asociado el vector propio $\vec{v_2}=(-2,1)$.
+
+    
+\end{itemize}
+    \end{enumerate}
+    \item[$ii)$] Encontrar matrices $P,D$ con $P$ no singular y de manera que $D = P^{-1}AP$ es diagonal.\\
+    Para encontrar una matriz diagonal $D$ y $P$ que cumpla $D = P^{-1}AP$, usamos el \textbf{Teorema 14} visto en clase en la cual una base $\beta$ est\'a formada por vectores propios de una transformaci\'on $T$, la cual est\'a asociada a los valores propios $\lambda_1\,dots,\lambda_n$, entonces la matriz de $T$ respecto de la base $\beta$ es la matriz diagonal $D$, mientras que $P$ y $P^{-1}$ son las matrices de cambio de base $\beta$ a la base can\'onica y viceversa, de modo que sabemos que los valores propios son las columnas de $P$, mientras que los valores propios son los elementos en la diagonal de $D$:
+    \[P=\begin{pmatrix}\vec{v_1}&\cdots&\vec{v_n}\end{pmatrix}~~~~~\text{y}~~~~~~~~D=\begin{pmatrix}\lambda_1&\cdots&0\\ \vdots&\ddots&\vdots\\0&\cdots&\lambda_n\end{pmatrix}\]
+    Entonces teniendo lo del inciso anterior, tenemos que:
+    \begin{itemize}
+        \item Sabemos que para $\displaystyle A= \begin{pmatrix}
+3 &-4\\
+2 &-6
+\end{pmatrix}$ se tienen los valores propios $\lambda_1=-5$ y $\lambda_2=2$ y los vectores propios $\vec{v_1}=(1,2)$ y $\vec{v_2}=(4,1)$, respectivamente, por lo que nuestras matrices quedan:
+\[P=\begin{pmatrix}\vec{v_1}&\vec{v_2}\end{pmatrix}=\begin{pmatrix}1&4\\2&1\end{pmatrix}~~~~~\text{y}~~~~~~~~D=\begin{pmatrix}\lambda_1&0\\0&\lambda_2\end{pmatrix}=\begin{pmatrix}-5&0\\0&2\end{pmatrix}\]
+Entonces usando la f\'ormula $\displaystyle P=\begin{pmatrix}a&b\\c&d\end{pmatrix}~~\Longrightarrow~~P^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$, por tanto:
+\[P^{-1}=\frac{1}{(1)(1)-(2)(4)}\begin{pmatrix}1&-4\\-2&1\end{pmatrix}=\begin{pmatrix}-\frac{1}{7}&\frac{4}{7}\\\frac{2}{7}&-\frac{1}{7}\end{pmatrix}\]
+Por lo que solo falta verificar que $D = P^{-1}AP$, entonces:
+\[P^{-1}AP=\begin{pmatrix}-\frac{1}{7}&\frac{4}{7}\\\frac{2}{7}&-\frac{1}{7}\end{pmatrix}\begin{pmatrix}
+3 &-4\\
+2 &-6
+\end{pmatrix}\begin{pmatrix}1&4\\2&1\end{pmatrix}=\begin{pmatrix}-\frac{1}{7}&\frac{4}{7}\\\frac{2}{7}&-\frac{1}{7}\end{pmatrix}\begin{pmatrix}
+(3)(1)+(-4)(2) &(3)(4)+(-4)(1)\\
+(2)(1)+(-6)(2) &(2)(4)+(-6)(1)\\
+\end{pmatrix}\]\[\begin{pmatrix}-\frac{1}{7}&\frac{4}{7}\\\frac{2}{7}&-\frac{1}{7}\end{pmatrix}\begin{pmatrix}
+-5 &8\\
+-10 &2\\
+\end{pmatrix}=\begin{pmatrix}\left(-\frac{1}{7}\right)(-5)+\left(\frac{4}{7}\right)(-10)&\left(-\frac{1}{7}\right)(8)+\left(\frac{4}{7}\right)(2)\\\left(\frac{2}{7}\right)(-5)+\left(-\frac{1}{7}\right)(-10)&\left(\frac{2}{7}\right)(8)+\left(-\frac{1}{7}\right)(2)\end{pmatrix}=\begin{pmatrix}\left(\frac{1}{7}\right)(5-40)&\left(\frac{1}{7}\right)(-8+8)\\\left(\frac{1}{7}\right)(-10+10)&\left(\frac{1}{7}\right)(16-2)\end{pmatrix}\]\[=\begin{pmatrix}\frac{-35}{7}&\frac{0}{7}\\\frac{0}{7}&\frac{14}{7}\end{pmatrix}=\begin{pmatrix}-5&0\\0&2\end{pmatrix}=D\]
+\[\therefore P^{-1}AP=D\]
+
+
+\item Sabemos que para $\displaystyle B= \begin{pmatrix}
+2 &2\\
+1 &3
+\end{pmatrix}$ se tienen los valores propios $\lambda_1=4$ y $\lambda_2=1$ y los vectores propios $\vec{v_1}=(1,1)$ y $\vec{v_2}=(-2,1)$, respectivamente, por lo que nuestras matrices quedan:
+\[P=\begin{pmatrix}\vec{v_1}&\vec{v_2}\end{pmatrix}=\begin{pmatrix}1&-2\\1&1\end{pmatrix}~~~~~\text{y}~~~~~~~~D=\begin{pmatrix}\lambda_1&0\\0&\lambda_2\end{pmatrix}=\begin{pmatrix}4&0\\0&1\end{pmatrix}\]
+Entonces usando la f\'ormula $\displaystyle P=\begin{pmatrix}a&b\\c&d\end{pmatrix}~~\Longrightarrow~~P^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$, por tanto:
+\[P^{-1}=\frac{1}{(1)(1)-(-2)(1)}\begin{pmatrix}1&2\\-1&1\end{pmatrix}=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}\\-\frac{1}{3}&\frac{1}{3}\end{pmatrix}\]
+Por lo que solo falta verificar que $D = P^{-1}AP$, entonces:
+\[P^{-1}BP=\begin{pmatrix}\frac{1}{3}&-\frac{2}{3}\\-\frac{1}{3}&\frac{1}{3}\end{pmatrix}\begin{pmatrix}
+2 &2\\
+1 &3
+\end{pmatrix}\begin{pmatrix}1&-2\\1&1\end{pmatrix}=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}\\-\frac{1}{3}&\frac{1}{3}\end{pmatrix}\begin{pmatrix}
+(2)(1)+(2)(1) &(2)(-2)+(2)(1)\\
+(1)(1)+(3)(1) &(1)(-2)+(3)(1)
+\end{pmatrix}\]\[=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}\\-\frac{1}{3}&\frac{1}{3}\end{pmatrix}\begin{pmatrix}
+4 &-2\\
+4 &1
+\end{pmatrix}=\begin{pmatrix}\left(\frac{1}{3}\right)(4)+\left(\frac{2}{3}\right)(4)&\left(\frac{1}{3}\right)(-2)+\left(\frac{2}{3}\right)(1)\\\left(-\frac{1}{3}\right)(4)+\left(\frac{1}{3}\right)(4)&\left(-\frac{1}{3}\right)(-2)+\left(\frac{1}{3}\right)(1)\end{pmatrix}=\begin{pmatrix}\left(\frac{1}{3}\right)(4+8)&\left(\frac{1}{3}\right)(-2+2)\\\left(\frac{1}{3}\right)(-4+4)&\left(\frac{1}{3}\right)(2+1)\end{pmatrix}\]\[=\begin{pmatrix}
+4 &0\\
+0 &1
+\end{pmatrix}=D\]
+\[\therefore P^{-1}BP=D\]
+
+    \end{itemize}
+    
+    
+\end{itemize}

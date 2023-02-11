@@ -1,0 +1,36 @@
+\section{Si $V$ es un espacio vectorial de dimensión finita, y si $P_1,P_2: V \longrightarrow V$ son proyecciones, pruebe que
+son equivalentes:}
+\begin{itemize}
+    \item [$a)$] $\text{Im}(P_1) = \text{Im}(P_2)$
+    \item [$b)$] $P_1 \circ P_2 = P_2$ y $P_2 \circ P_1 = P_1$
+    
+\end{itemize}
+\textbf{Demostraci\'on 5:}\\
+Para hacer la demostraci\'on de equivalencia, demostraremos con un bicondicional, de modo que debemos demostrar ambos condicionales:
+\begin{itemize}
+    \item $a)\Longrightarrow b)$\\
+    Por hip\'otesis tenemos que $\text{Im}(P_1) = \text{Im}(P_2)$. P.D. $P_1 \circ P_2 = P_2$ y $P_2 \circ P_1 = P_1$\\
+    Sea $w\in \text{Im}(P_1) = \text{Im}(P_2)$ arbitrario, entonces tenemos que por estar en la imagen de las proyecciones:
+    \[P_{1}(w)=w~~~~~\text{y}~~~~~P_2(w)=w\]
+    \[\therefore P_1(w)=P_2(w)\]
+    De este modo si sustituimos primero $w=P_2(w)$, tenemos:
+    \[P_1(w)=P_2(w)~~~\Longrightarrow~~~P_1(P_2(w))=P_2(P_2(w))~~~\Longrightarrow~~~(P_1\circ P_2)(w)=P_2^2(w)\]pero recordemos que por ser proyecci\'on $P_2^2=P_2$ y como $w$ era arbitrario, se cumple que para todo $w\in \text{Im}(P_1) = \text{Im}(P_2)$:
+    \[\therefore (P_1 \circ P_2)(w) = P_2(w)\]
+    An\'alogamente si sustituimos $w=P_1(w)$, tenemos:
+    \[P_1(w)=P_2(w)~~~\Longrightarrow~~~P_1(P_1(w))=P_2(P_1(w))~~~\Longrightarrow~~~P_1^2(w)=(P_2\circ P_1)(w)\]pero recordemos que por ser proyecci\'on $P_1^2=P_1$ y como $w$ era arbitrario, se cumple que para todo $w\in \text{Im}(P_1) = \text{Im}(P_2)$:
+    \[\therefore (P_2 \circ P_1)(w) = P_1(w)\]
+    Por lo que tenemos que si $\text{Im}(P_1) = \text{Im}(P_2)$, entonces $P_1 \circ P_2 = P_2$ y $P_2 \circ P_1 = P_1$.\qed
+    
+    \item $b)\Longrightarrow a)$\\
+    Por hip\'otesis tenemos que $P_1 \circ P_2 = P_2$ y $P_2 \circ P_1 = P_1$. P.D. $\text{Im}(P_1) = \text{Im}(P_2)$\\
+    Realizando la demostraci\'on por doble contenci\'on, tomamos un $w\in \text{Im}(P_2)$, entonces usando la hip\'otesis $P_1 \circ P_2 = P_2$ y por estar en la imagen de la proyecci\'on, tenemos que:
+    \[w=P_2(w)=(P_1 \circ P_2)(w)= P_1(P_2(w))\]
+    \[\therefore w=P_1(P_2(w))=P_1(w)\]
+    Por lo que tenemos que $w\in \text{Im}(P_1)$ y como $w$ era arbitrario, se puede extender a todo elemento en la imagen, lo que por definici\'on nos indica que $\text{Im}(P_2)\subseteq \text{Im}(P_1)$.\\
+    An\'alogamente, tomamos un $w\in \text{Im}(P_1)$, entonces usando la hip\'otesis $P_2 \circ P_1 = P_1$ y por estar en la imagen de la proyecci\'on, tenemos que:
+    \[w=P_1(w)=(P_2 \circ P_1)(w)= P_2(P_1(w))\]
+    \[\therefore w=P_2(P_1(w))=P_2(w)\]
+    Por lo que tenemos que $w\in \text{Im}(P_2)$ y como $w$ era arbitrario, se puede extender a todo elemento en la imagen, lo que por definici\'on nos indica que $\text{Im}(P_1)\subseteq \text{Im}(P_2)$.\\
+    Lo que por doble contenci\'on nos indica que $\text{Im}(P_1) = \text{Im}(P_2)$.\qed
+\end{itemize}
+Por ambos condicionales llegamos a que son equivalentes $a)$ y $b)$.\qed

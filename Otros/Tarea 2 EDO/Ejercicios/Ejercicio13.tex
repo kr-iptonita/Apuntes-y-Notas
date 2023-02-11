@@ -1,0 +1,59 @@
+\section{Determine la solución general de:}
+
+\begin{equation*}
+    y^{\prime \prime}+\lambda^{2} y=\sum_{m=1}^{N} a_{m} \sin (m \pi x)
+\end{equation*}
+
+donde $\lambda>0$ y $\lambda \neq m \pi$ para $m=1,2, \ldots . N$.\\
+
+\textbf{Solución.} La ecuación homogénea es la misma que la del oscilador del ejercicio 11. La solución es entonces, la misma.\\
+$$
+y(t)=c_{1} \cos (\lambda t)+c_{2} \sin (\lambda t)
+$$\\
+
+Sea $g_{m}(x)=a_{m} \sin (m \pi x)$, para $m=1, \ldots, N$. Ahora, encontramos una solución particular para cada $m$. Como $\lambda \neq m \pi$, podemos suponer que:\\
+
+$$
+y_{m}=A_{m} \sin (m \pi x)+B_{m} \cos (m \pi x) \quad \ldots(1)
+$$\\
+
+Derivando (1), se tiene que:\\
+
+\begin{center}
+   $y_{m}^{\prime}=m \pi A_{m} \cos (m \pi x)-m \pi B_{m} \sin (m \pi x)$ \\
+    
+    $y_{m}^{\prime \prime}=-m^{2} \pi^{2} A_{m} \sin (m \pi x)-m^{2} \pi^{2} B_{m} \cos (m \pi x)$
+\end{center}
+
+Sustituyendo en la ecuación, tenemos que:\\
+
+$-m^{2} \pi^{2} A_{m} \sin (m \pi x)-m^{2} \pi^{2} B_{m} \cos (m \pi x)+\lambda^{2}\left(A_{m} \sin (m \pi x)+B_{m} \cos (m \pi x)\right)=a_{m} \sin (m \pi x)$\\
+
+Así, obtenemos el siguiente sistema de ecuaciones:\\
+$$
+\left\{\begin{array}{ll}
+-m^{2} \pi^{2} A_{m}+\lambda^{2} A_{m} & =a_{m} \\
+-m^{2} \pi^{2} B_{m}+\lambda^{2} B_{m} & =0
+\end{array}\right.
+$$\\
+
+Ahora, como $\lambda \neq m \pi \Rightarrow \lambda^{2} \neq m^{2} \pi^{2}$, entonces:
+
+\begin{center}
+
+$A_{m}=\frac{a_{m}}{\lambda^{2}-m^{2} \pi^{2}} ; \quad B_{m}=0$
+
+\end{center}
+
+para todo $m=1, \ldots, N$. Por lo tanto la solución particular es:\\
+
+\begin{center}
+
+$y_{m}=\frac{a_{m}}{\lambda^{2}-m^{2} \pi^{2}} \sin (m \pi x)$
+
+\end{center}
+
+Ahora, al sumar cada una de las $N$ soluciones particuales, tenemos que la solución general de la ecuación es:\\
+$$
+y(x)=c_{1} \cos (\lambda t)+c_{2} \sin (\lambda t)+\sum_{m=1}^{N} \frac{a_{m}}{\lambda^{2}-m^{2} \pi^{2}} \sin (m \pi x)
+$$

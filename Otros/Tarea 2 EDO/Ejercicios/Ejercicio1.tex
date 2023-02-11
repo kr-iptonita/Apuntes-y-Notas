@@ -1,0 +1,54 @@
+\section{ Escriba los primeros términos del esquema de iteración de Picard para cada uno de los siguientes PVI y cuando sea posible encuentre explicitamente la solución:}
+
+\subsection*{a) $x^{\prime}=x+2, x(0)=2$}
+
+Iniciamos la iteración con la condición inicial:\\
+
+    $x_{0}(t)=2$\\
+    
+    $x_{1}(t)=2+\int_{0}^{t}(2+2) ds= 2+ 4t=4\left(\frac{1}{0 !}+\frac{t}{1 !}\right)-2$\\
+    
+    $x_{2} (t)=2+\int_{0}^{t}(4s+4) ds =2t^2 + 4t + 2= 4\left(\frac{1}{0 !}+\frac{t}{1 !}+\frac{t^{2}}{2 !}\right)-2$\\
+    
+    $x_{3}(t)=2+\int_{0}^{t}\left(2 s^{2}+4 s+2\right) d s=\frac{2 t^{3}}{3}+2 t^{2}+2 t+2=4\left(\frac{1}{0 !}+\frac{t}{1 !}+\frac{t^{2}}{2 !}+\frac{t^{3}}{3 !}\right)-2$\\
+    
+El término $n$-ésimo es:
+$$
+x_{n}(t)=4 \sum_{i=0}^{n} \frac{t^{i}}{i !}-2
+$$
+El límite es entonces:
+$$
+\lim _{t \rightarrow \infty} x_{n}(t)=4 \lim _{t \rightarrow \infty} \sum_{i=0}^{n} \frac{t^{i}}{i !}-2=4 e^{t}-2
+$$
+Así obtenemos la solución de PVI dada por:\\
+
+$x(t)=4 e^{t}-2$.
+
+\subsection*{b) $x^{\prime}=x^{4 / 3}, x(0)=0$}
+
+Iniciamos la iteración con la condición inicial:\\
+
+$x_{0}(t)=0$ \\
+
+$x_{1}(t)=0+\int_{0}^{t} 0^{4 / 3} ds= 0+0= 0$ \\
+
+$x_{2}(t)=0+\int_{0}^{t} 0^{4 / 3} ds= 0+0= 0$\\
+
+$\vdots$\\
+
+$x_{n}(t)=0+\int_{0}^{t} 0^{4 / 3} d s=0+0=0$\\
+
+Entonces, al hacer tender $n$ al infinito, la solución es:\\
+
+$y(t)=0$
+
+\subsection*{c)$x^{\prime}=x^{4 / 3}, x(0)=1$}
+Iniciamos la iteración con la condición inicial:
+
+$x_{0}(t)=1$\\
+
+$x_{1}(t)=1+\int_{0}^{t} 1^{4 / 3} d s=1+\int_{0}^{t} ds= 1+t$\\
+
+$x_{2}(t)=1+\int_{0}^{t}(1+s)^{4 / 3} d s=1+\frac{3(1+t)^{7 / 3}}{7}=\frac{7+3(1+t)^{4 / 3}}{7}$\\
+
+$x_{3}(t)=1+\int_{0}^{t}\left(\frac{7+3(1+s)^{4 / 3}}{7}\right)^{4 / 3} ds= 1+t+\int_{0}^{t}\left(\frac{3(1+s)^{4 / 3}}{7}\right) ds=1+t+ \frac{3^{\frac{10}{3}}\left((t+1)^{\frac{7}{9}}\left(t^{2}+2 t+1\right)-1\right)}{25 \cdot 7^{\frac{4}{3}}}$
