@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{}
+\author{Juárez Torres Carlos Alberto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+Después de tantas horas de caminar sin encontrar ni una sombra de árbol, ni una semilla de  árbol, ni una raíz de nada, se oye el ladrar de los perros. \\
+
+Uno ha creído a veces, en medio de este camino sin orillas, que nada habría después; que no se podría encontrar nada al otro lado, al final de esta llanura rajada de grietas y de arroyos  secos. Pero si, hay algo. Hay un pueblo. Se oye que ladran los perros y se siente en el aire el  olor del humo, y se saborea ese olor de la gente como si fuera una esperanza.
+
+Pero el pueblo esta todavía muy allá. Es el viento el que lo acerca.\\
+
+Hemos venido caminando desde el amanecer. Ahorita son algo asi como las cuatro de la tarde. Alguien se asoma al cielo, estira los ojos hacia donde esta colgado el sol y dice:\\
+
+-Son como las cuatro de la tarde.\\
+
+Ese alguien es Melitón. Junto con el, vamos Faustino, esteban y yo. Somos cuatro. Yo los  cuento: dos adelante, otros dos atrás. Miro mas atrás y no veo a nadie. entonces me digo: "Somos cuatro". Hace rato, como a eso de las once, éramos veintitantos; pero puñito a puñito se han ido desperdigando hasta quedar nada mas este nudo que somos nosotros.\\
+
+Faustino dice:\\
+
+
+-Puede que llueva.\\
+
+Todos levantamos la cara y miramos una nube negra y pesada que pasa por encima de  nuestras cabezas. Y pensamos: "Puede que si."\\
+
+No decimos lo que pensamos. Hace ya tiempo que se nos acabaron las ganas de hablar. Se nos acabaron con el calor. Uno platicaría muy a gusto en otra parte, pero aqui cuesta trabajo. Uno platica aqui y las palabras se calientan en la boca con el calor de afuera, y se le resecan a uno en la lengua hasta que acaban con el resuello. Aqui asi son las cosas. Por eso a nadie le  da por platicar.\\
+
+Cae una gota de agua, grande, gorda, haciendo un agujero en la tierra y dejando una plasta  como la de un salivazo. Cae sola. Nosotros esperamos a que sigan cayendo mas. No llueve.  Ahora si se mira el cielo se ve a la nube aguacera corriendose muy lejos, a toda prisa. El viento  que viene del pueblo se le arrima empujándola Contra las sombras azules de los cerros. Y a la gota caída por equivocación se la come la tierra y la desaparece en su sed, ¿Quién diablos haría este llano tan grande? ¿Para que sirve, eh?\\
+
+Hemos vuelto a caminar. Nos habíamos detenido para ver llover. No llovió. Ahora volvemos a  caminar. Y a mi se me ocurre que hemos caminado mas de lo que llevamos andado. Se me  ocurre eso. De haber llovido quizá se me ocurrieran otras cosas. Con todo, yo se que desde que yo era muchacho, no vi llover nunca sobre el Llano, lo que se llama llover.  \\
+
+No, el Llano no es cosa que sirva. No hay ni conejos ni pájaros. No hay nada. A no ser unos cuantos huizaches trespeleques y una que otra manchita de zacate con las hojas enroscadas; a no ser eso, no hay nada.  \\
+
+Y por aqui vamos nosotros. Los cuatro a pie. Antes andábamos a caballo y traíamos terciada  una carabina. Ahora no traemos ni siquiera la carabina.  \\
+
+Yo siempre he pensado que en eso de quitarnos la carabina hicieron bien. Por acá resulta  peligroso andar armado. Lo matan a uno sin avisarle, viéndolo a toda hora con "la 30"  amarrada a las correas. Pero los caballos son otro asunto. De venir a caballo ya hubiéramos  probado el agua verde del rio, y paseado nuestros estómagos por las calles del pueblo para que se les bajara la comida. Ya lo hubiéramos hecho de tener todos aquellos caballos que  teníamos. Pero tambien nos quitaron los caballos junto con la carabina.  \\
+
+Vuelvo hacia todos lados y miro el Llano. Tanta y tamaña tierra para nada. Se le resbalan a uno los ojos al no encontrar cosa que los detenga. Solo unas cuantas lagartijas salen a asomar la  cabeza por encima de sus agujeros, y luego que sienten la tatema del sol corren a esconderse  en la sombrita de una piedra. Pero nosotros, cuando tengamos que trabajar aqui, ¿Qué haremos para enfriarnos del sol eh? Porque a nosotros nos dieron esta costra de tepetate para que la sembráramos.  \\
+
+\end{document}
