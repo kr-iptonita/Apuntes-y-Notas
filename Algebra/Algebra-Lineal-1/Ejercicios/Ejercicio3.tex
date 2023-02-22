@@ -1,0 +1,18 @@
+\section{Sea $S$ un conjunto y sea $K^S$ el conjunto de todas las funciones de $S$ en $K: K^S = \{f : S \rightarrow  K | f$ es funcion$\}$. Demuestre que $K^S$ con las operaciones usuales es un espacio vectorial sobre el campo $K$.}
+
+Veamos que estas propiedades se cumplen:
+
+\begin{itemize}
+    \item La suma es cerrada: Para cualquier par de funciones $f$ y $g$ en $K^S$, la función $f + g$ definida por $(f + g)(s) = f(s) + g(s)$ para todo $s$ en $S$ es una función de $S$ en $K$.
+    \item La suma es conmutativa: $(f + g)(s) = f(s) + g(s) = g(s) + f(s)$ para todo $s$ en $S$.
+    \item La suma es asociativa: $((f + g) + h)(s) = (f + g)(s) + h(s) = f(s) + g(s) + h(s) = f(s) + (g + h)(s) = (f + (g + h))(s)$ para todo $s$ en $S$. 
+    \item $K^S$ tiene un elemento neutro de suma: La función cero, $0: S \leftarrow K$ tal que $0(s) = 0$ para todo $s$ en $S$ es la función neutra de suma.
+    \item $K^S$ tiene inversos de suma: Para cualquier función $f$ en $K^S$, la función $-f$ tal que $(-f)(s) = -f(s)$ para todo $s$ en $S$ es el inverso aditivo de $f$.
+    \item La multiplicación por escalar es cerrada: Para cualquier función $f$ en $K^S$ y cualquier escalar $a$ en $K$, la función $af$ definida por $(af)(s) = a * f(s)$ para todo $s$ en $S$ es una función de $S$ en $K$.
+    \item La multiplicación por escalar es distributiva con respecto a la suma de vectores: $(a*(f+g))(s) = a*(f(s) + g(s)) = af(s) + ag(s) = (af + ag)(s)$ para todo $s$ en $S$.
+    \item La multiplicación por escalar es distributiva con respecto a la suma de escalares: $((a+b)f)(s) = (a+b)f(s) = af(s) + bf(s) = (af + bf)(s)$ para todo $s$ en $S$ 
+    \item La multiplicación por escalar es asociativa: $((ab)f)(s) = abf(s) = a*(bf(s)) = (a*(b*f))(s)$ para todo $s$ en $S$.
+    \item $K^S$ tiene un elemento neutro de multiplicación: La función identidad, $1 : S \leftarrow K $ tal que $1(s) = 1$ para todo $s$ en $S$ es la función neutra de multiplicación.
+\end{itemize}
+
+Por lo tanto, $K^S$ cumple las diez propiedades necesarias para ser un espacio vectorial sobre el campo $K$$.

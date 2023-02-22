@@ -1,0 +1,36 @@
+\section{Consideremos el intervalo cerrado $[a, b] \subset  \mathbb{R}$ y denotemos por $\mathcal{C}  = \mathcal{C}[a, b]$ al conjunto de todas las funciones 
+continuas de $[a, b]$ en los reales. Similarmente, denotemos por $\mathcal{D} = \mathcal{D}[a, b]$ e $\mathcal{I}  = \mathcal{I} [a, b]$ a los conjuntos de
+todas las funciones de $[a, b]$ en los reales que sean derivables e integrables respectivamente. Mencionando
+los resultados de Cálculo requeridos, demuestre que $\mathcal{C}$ , $\mathcal{D}$  e $\mathcal{I}$  son subespacios vectoriales del espacio
+vectorial real $\mathbb{R}[a, b]$ y que $\mathcal{D}$  es subespacio de $\mathcal{C}$ , que a su vez es subespacio de $\mathcal{I}$ .}
+
+
+Primero, demostraremos que $\mathcal{C}$ es un subespacio vectorial de $\mathbb{R}[a, b]$. Sean $f , g \in \mathcal{C}$ y $\alpha,\beta \in \mathbb{R}$, entonces tenemos que:
+
+\begin{itemize}
+    \item Cerradura bajo la suma: La suma $f + g$ es continua en $[a, b]$ ya que es la suma de dos funciones continuas en $[a, b]$. Por lo tanto, $f + g \in \mathcal{C}$.
+    \item Cerradura bajo la multiplicación por escalar: La función $\alpha f$ es continua en $[a, b]$ ya que es una función continua multiplicada por un escalar $\alpha$. Por lo tanto, $\alpha f \in \mathcal{C}$.
+    \item Contiene al vector cero: La función cero, $0: [a, b] \leftarrow \mathbb{R}$, definida como $0(x) = 0$ para todo $x$ en $[a, b]$, es continua y pertenece a $\mathcal{C}$.
+\end{itemize}
+
+Por lo tanto, $\mathcal{C}$ es un subespacio vectorial de $\mathbb{R}[a, b]$.
+
+Luego, demostraremos que $\mathcal{D}$ es un subespacio vectorial de $\mathcal{C}$. Sean $f, g \in \mathcal{D}$ y $\alpha, \beta \in \mathbb{R}$, entonces tenemos que:
+
+\begin{itemize}
+    \item Cerradura bajo la suma: La suma $f + g$ es derivable en $[a, b]$ ya que es la suma de dos funciones derivables en $[a, b]$. Por lo tanto, $f + g \in \mathcal{D}$. Además, como $f$ y $g$ son continuas en $[a, b]$, la suma $f + g$ es continua en $[a, b]$, por lo que $f + g \in \mathcal{C}$.
+    \item Cerradura bajo la multiplicación por escalar: La función $\alpha f$ es derivable en $[a, b]$ ya que es una función derivable multiplicada por un escalar $\alpha$. Por lo tanto, $\alpha f  \in \mathcal{D}$. Además, como $f$ es continua en $[a, b]$, la función $\alpha f$ es continua en $[a, b]$, por lo que $\alpha f \in \mathcal{C}$.
+    \item Contiene al vector cero: La función cero, $0: [a, b] \leftarrow \mathbb{R}$, definida como $0(x) = 0$ para todo $x$ en $[a, b]$, es derivable e integrable, por lo que $0 \in \mathcal{D}$ y $0 \in \mathcal{C}$.
+\end{itemize}
+
+Por lo tanto, $\mathcal{D}$ es un subespacio vectorial de $\mathcal{C}$.\\
+
+Finalmente, demostraremos que $\mathcal{C}$ es un subespacio vectorial de $\mathcal{I}$. Sean $f, g \in \mathcal{C}$ y $\alpha, \beta \in \mathbb{R}$, entonces tenemos que:\\
+
+\begin{itemize}
+    \item Cerradura bajo la suma: La suma $f + g$ es integrable en $[a, b]$ ya que es la suma de dos funciones continuas en $[a, b]$. Por lo tanto, $f + g \in \mathcal{I}$.
+    \item Cerradura bajo la multiplicación por escalar: La función $\alpha f$ es integrable en $[a, b]$ ya que es una función continua multiplicada por un escalar $\alpha$. Por lo tanto, $\alpha f \in \mathcal{I}$.
+    \item Contiene al vector cero: La función cero, $0: [a, b] \leftarrow \mathbb{R}$, definida como $0(x) = 0$ para todo $x$ en $[a, b]$, es integrable, por lo que $0 \in \mathcal{I}$.
+\end{itemize}
+
+Por lo tanto, $\mathcal{C}$ es un subespacio vectorial de $\mathcal{I}$

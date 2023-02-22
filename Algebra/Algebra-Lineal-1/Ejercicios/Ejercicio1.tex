@@ -1,0 +1,18 @@
+\section{Sea $n \geq 2$ un entero. Por Algebra Superior I sabemos que el anillo de los enteros módulo $n (\mathbb{Z}_n)$ es un anillo conmutativo con unidad. Demuestre que $\mathbb{Z}_n$ es campo si y sólo si n es primo.}
+
+Para demostrar que el anillo de los enteros módulo $n$,
+denotado por $Z_n$, es un campo si y sólo si $n$ es primo,
+necesitamos demostrar dos direcciones.\\
+Dirección hacia adelante:\\
+Supongamos que $\mathbb{Z}_n$ es un campo.
+Entonces, para todo $a \neq 0$ en $\mathbb{Z}_n$, existe un elemento $b$ en $\mathbb{Z}_n$ tal que $ab = 1$.
+Esto implica que $a$ y $n$ son coprimos, es decir, MCD$(a,n) = 1$. De lo contrario, no habría un elemento $b$ en $\mathbb{Z}_n$ tal que $ab = 1$.
+Entonces, si n no es primo, existen dos enteros positivos $a$ y $b$ tales que $a < n$, $b < n$, y $n = ab$. 
+Entonces, MCD$(a,n) =$ MCD$(b,n) = 1$. Pero esto significa que $ab$ y $n$ tienen factores comunes y por lo tanto, no puede existir un elemento $b$ en $\mathbb{Z}_n$ tal que $ab = 1$. 
+Esto contradice la suposición de que $\mathbb{Z}_n$ es un campo. Por lo tanto, $n$ debe ser primo.\\ 
+Dirección hacia atrás:\\
+Supongamos que $n$ es primo.
+Entonces, para cualquier $a \neq 0$ en $\mathbb{Z}_n$, MCD$(a,n) = 1$. 
+Por lo tanto, existe un entero $b$ tal que $ab \equiv 1 (mod n)$, que implica que $ab - 1$ es múltiplo de $n$. 
+Esto significa que a tiene un inverso multiplicativo en $\mathbb{Z}_n$. Por lo tanto, $\mathbb{Z}_n$ es un campo.\\
+$\therefore$   $\mathbb{Z}_n$ es campo $\Leftrightarrow$ $n$ es primo.
