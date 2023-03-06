@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{helvet}
+
+\title{Tarea 2 EDO}
+\author{Juárez Torres Carlos Alberto}
+\date{6 de Marzo 2023}
+
+\begin{Document}
+\section{Ejercicio 1} 
+
+  \begin{enumerate}
+    \item Algoritmo iterativo:
+
+    \begin{lstlisting}[language=Python]
+      function potencia(x, n):
+        resultado = 1
+        while n > 0:
+          if n % 2 == 1:
+            resultado *= x
+          x *= x
+          n //= 2
+        return resultado
+    \end{lstlisting}
+
+      Este algoritmo calcula la potencia $x^n$ de manera iterativa utilizando la técnica de exponenciación 
+      binaria. En cada iteración, se divide el exponente por 2 y se eleva la base al cuadrado. 
+      Si el exponente es impar, se multiplica el resultado por la base.
+
+  \item  Demostración de corrección utilizando la técnica del Invariante del ciclo:
+        Antes de la primera iteración del ciclo, el valor de result es 1, 
+        que es el valor correcto para x^0. En cada iteración, se actualiza result multiplicándolo por $x$ 
+        si el exponente actual es impar, o simplemente elevando x al cuadrado si el exponente es par. 
+        En cualquier caso, el valor de result es siempre igual a $x$ elevado a la potencia correspondiente 
+        a la mitad del exponente actual. Después de cada iteración, se divide el exponente actual por 2.
+
+        En cada iteración del ciclo, el invariante es que result es igual a x elevado a la potencia 
+        correspondiente al exponente actual. Al final del ciclo, el exponente es 0 y el resultado 
+        es el valor correcto de x^n, por lo tanto, el algoritmo es correcto.
+
+  \item Comprobación del tiempo deseado:
+
+        Cada iteración del ciclo toma tiempo constante $O(1)$, y el número de iteraciones es igual a $\log_2(n)$, 
+        ya que el exponente se divide por $2$ en cada iteración. Por lo tanto, el tiempo de ejecución del algoritmo es 
+        $O(\log n)$, como se requería.
+  \item Algoritmo recursivo:
+        \begin{lstlisting}[language=Python]
+            function potencia(x, n):
+              if n == 0:
+                return 1
+              temporal = potencia(x , n//2)
+              if n % 2 == 0:
+                return temporal*temporal
+              else:
+                return x*temporal*temporal
+
+        \end{lstlisting}
+
+        Este algoritmo utiliza la misma técnica de exponenciación binaria, pero de manera recursiva. 
+        En cada llamada recursiva, se divide el exponente por 2 y se eleva la base al cuadrado. 
+        Si el exponente es impar, se multiplica la base por el resultado de la llamada recursiva.
+
+  \item Demostración de corrección utilizando inducción matemática:
+        Sea $P(n)$ la proposición "el algoritmo devuelve el resultado correcto para $x^n$" para todo $n$ no negativo.
+
+Base de la inducción:
+$P(0)$ es verdadera ya que el algoritmo devuelve $1$, que es el valor correcto para $x^0$.
+
+Hipótesis de inducción:
+Supongamos que $P(k)$ es verdadera para todo $k$ tal que $0 \leq k \leq n$, donde $n$ es un número no negativo.
+
+Paso inductivo:
+Consideremos el caso $n + 1$. En la primera llamada recursiva, el exponente $n + 1$ se divide por $2$, 
+lo que da como resultado un exponente $k$ tal que $0 \leq k \leq n$. Por lo tanto, la hipótesis de inducción 
+se aplica a la llamada recursiva y el algoritmo devuelve el resultado correcto para $x^k$. Luego, el resultado se eleva 
+al cuadrado si el exponente actual ($n + 1$) es par, o se multiplica la base por el resultado al cuadrado si el exponente es impar. 
+En cualquier caso, el resultado es igual a $x$ elevado a la potencia correspondiente al exponente actual ($n + 1$). 
+Por lo tanto, $P(n + 1)$ es verdadera.
+
+Por el principio de inducción matemática, $P(n)$ es verdadera para todo $n$ no negativo. 
+Por lo tanto, el algoritmo es correcto para cualquier exponente no negativo $x^n$.
+
+  \item Comprobación del tiempo deseado:
+
+    Cada llamada recursiva divide el exponente por $2$, por lo que el número de llamadas recursivas es igual a $\log_2(n)$. 
+    En cada llamada recursiva, se realizan operaciones de tiempo constante $O(1)$, por lo que el tiempo total de ejecución del algoritmo es 
+    $O(\log n)$, como se requería.
+
+  En resumen, hemos proporcionado algoritmos iterativos y recursivos para el problema de calcular la $x^n$ en tiempo $O(\log n)$ cuando $n$ es una potencia de $2$. 
+  También hemos demostrado la corrección de ambos algoritmos utilizando diferentes técnicas y hemos comprobado que el tiempo de ejecución es el deseado.
+
+  \end{enumerate}
+  
+
+\section{Ejercicio 2}
+
+
+
+\end{Document}
