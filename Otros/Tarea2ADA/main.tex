@@ -1,106 +1,171 @@
-\documentclass[12pt]{article}
-
-% Paquetes necesarios
-\usepackage[utf8]{inputenc}
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
 \usepackage[spanish]{babel}
-\usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{geometry}
 \usepackage{helvet}
-\usepackage{lstlisting}
+\usepackage{pythonhighlight}
+% \usepackage{fontspec}
+% \setmainfont{FiraCode NF}
 
-\title{Tarea 2 EDO}
+
+\title{TAREA 3}
 \author{Juárez Torres Carlos Alberto}
-\date{6 de Marzo 2023}
+\date{Marzo 2023}
 
-\begin{Document}
+\begin{document}
+
+\maketitle
+
 \section{Ejercicio 1} 
 
   \begin{enumerate}
-    \item Algoritmo iterativo:
+    \item Algoritmo iterativo para el problema $\Pi$:
 
-    \begin{lstlisting}[language=Python]
-      function potencia(x, n):
-        resultado = 1
-        while n > 0:
-          if n % 2 == 1:
-            resultado *= x
-          x *= x
-          n //= 2
-        return resultado
+    \begin{lstlisting}[language=python]
+          funcion potencia_iterativa(x, n):
+            resultado = 1
+            while n > 0:
+              if n % 2 == 1:
+                resultado = resultado * x
+              x = x * x
+              n = n // 2
+            return resultado
     \end{lstlisting}
 
-      Este algoritmo calcula la potencia $x^n$ de manera iterativa utilizando la técnica de exponenciación 
-      binaria. En cada iteración, se divide el exponente por 2 y se eleva la base al cuadrado. 
-      Si el exponente es impar, se multiplica el resultado por la base.
+  \item 
+    Demostración de la corrección del algoritmo iterativo utilizando la técnica del invariante del ciclo:
+      Antes del ciclo, el resultado es igual a $1$. En cada iteración, si el bit menos significativo de $n$ es $1$, multiplicamos el resultado por $x$.
+      Luego, multiplicamos $x$ por sí mismo y dividimos $n$ por $2$. En cada iteración, el resultado sigue siendo igual a $x$ elevado a alguna potencia de 
+      $2 (n/2^k)$, y en la última iteración, $n$ es $0$ y el resultado es $x^n$. Por lo tanto, el algoritmo es correcto.
 
-  \item  Demostración de corrección utilizando la técnica del Invariante del ciclo:
-        Antes de la primera iteración del ciclo, el valor de result es 1, 
-        que es el valor correcto para x^0. En cada iteración, se actualiza result multiplicándolo por $x$ 
-        si el exponente actual es impar, o simplemente elevando x al cuadrado si el exponente es par. 
-        En cualquier caso, el valor de result es siempre igual a $x$ elevado a la potencia correspondiente 
-        a la mitad del exponente actual. Después de cada iteración, se divide el exponente actual por 2.
 
-        En cada iteración del ciclo, el invariante es que result es igual a x elevado a la potencia 
-        correspondiente al exponente actual. Al final del ciclo, el exponente es 0 y el resultado 
-        es el valor correcto de x^n, por lo tanto, el algoritmo es correcto.
-
-  \item Comprobación del tiempo deseado:
-
-        Cada iteración del ciclo toma tiempo constante $O(1)$, y el número de iteraciones es igual a $\log_2(n)$, 
+  \item Comprobación de que el algoritmo iterativo alcanza el tiempo deseado:
+       Cada iteración del ciclo toma tiempo constante $O(1)$, y el número de iteraciones es igual a $\log_2(n)$, 
         ya que el exponente se divide por $2$ en cada iteración. Por lo tanto, el tiempo de ejecución del algoritmo es 
         $O(\log n)$, como se requería.
+       
+
+\newpage
   \item Algoritmo recursivo:
-        \begin{lstlisting}[language=Python]
-            function potencia(x, n):
-              if n == 0:
-                return 1
-              temporal = potencia(x , n//2)
-              if n % 2 == 0:
-                return temporal*temporal
-              else:
-                return x*temporal*temporal
+        \begin{lstlisting}[language=python]
+          funcion potencia_recursiva(x, n):
+            if n == 0:
+              return 1
+            mitad = potencia_recursiva(x, n//2)
+            elif n % 2 == 0:
+              return mitad * mitad
+            else:
+              return mitad * mitad * x
+
 
         \end{lstlisting}
 
-        Este algoritmo utiliza la misma técnica de exponenciación binaria, pero de manera recursiva. 
-        En cada llamada recursiva, se divide el exponente por 2 y se eleva la base al cuadrado. 
+        En este algoritmo para cada llamada recursiva, se divide el exponente por 2 y se eleva la base al cuadrado. 
         Si el exponente es impar, se multiplica la base por el resultado de la llamada recursiva.
 
-  \item Demostración de corrección utilizando inducción matemática:
-        Sea $P(n)$ la proposición "el algoritmo devuelve el resultado correcto para $x^n$" para todo $n$ no negativo.
-
-        Base de la inducción:
-        $P(0)$ es verdadera ya que el algoritmo devuelve $1$, que es el valor correcto para $x^0$.
-
-        Hipótesis de inducción:
-        Supongamos que $P(k)$ es verdadera para todo $k$ tal que $0 \leq k \leq n$, donde $n$ es un número no negativo.
-
-        Paso inductivo:
-        Consideremos el caso $n + 1$. En la primera llamada recursiva, el exponente $n + 1$ se divide por $2$, 
-        lo que da como resultado un exponente $k$ tal que $0 \leq k \leq n$. Por lo tanto, la hipótesis de inducción 
-        se aplica a la llamada recursiva y el algoritmo devuelve el resultado correcto para $x^k$. Luego, el resultado se eleva 
-        al cuadrado si el exponente actual ($n + 1$) es par, o se multiplica la base por el resultado al cuadrado si el exponente es impar. 
-        En cualquier caso, el resultado es igual a $x$ elevado a la potencia correspondiente al exponente actual ($n + 1$). 
-        Por lo tanto, $P(n + 1)$ es verdadera.
-
-        Por el principio de inducción matemática, $P(n)$ es verdadera para todo $n$ no negativo. 
-        Por lo tanto, el algoritmo es correcto para cualquier exponente no negativo $x^n$.
-
-  \item Comprobación del tiempo deseado:
-
-        Cada llamada recursiva divide el exponente por $2$, por lo que el número de llamadas recursivas es igual a $\log_2(n)$. 
-        En cada llamada recursiva, se realizan operaciones de tiempo constante $O(1)$, por lo que el tiempo total de ejecución del algoritmo es 
-        $O(\log n)$, como se requería.
-
-        En resumen, hemos proporcionado algoritmos iterativos y recursivos para el problema de calcular la $x^n$ en tiempo $O(\log n)$ cuando $n$ es una potencia de $2$. 
-        También hemos demostrado la corrección de ambos algoritmos utilizando diferentes técnicas y hemos comprobado que el tiempo de ejecución es el deseado.
-
+  \item Demostración de la corrección del algoritmo recursivo utilizando inducción matemática:
+        Si $n = 0$, entonces el resultado es $1$, que es correcto. Supongamos que el algoritmo es correcto para $n/2$. Luego, si $n$ es par, 
+        tenemos que $x^n = (x^{n/2})^2$, que es igual a la mitad del resultado al cuadrado. Si $n$ es impar, tenemos que 
+        $x^n = x * (x^{n/2})^2$, que es igual a la mitad del resultado al cuadrado multiplicado por $x$. Por lo tanto, 
+        el algoritmo es correcto para $n$.
+  \item Comprobación de que el algoritmo recursivo alcanza el tiempo deseado:
+        En cada llamada recursiva, se divide n por 2 y se realiza una multiplicación. Por lo tanto, el número total de operaciones es O(log n).
   \end{enumerate}
   
-
+\newpage
 \section{Ejercicio 2}
 
+        El invariante del ciclo para el algoritmo de búsqueda binaria es:
+
+\begin{itemize}
+    \item Para cualquier iteración del ciclo, el valor de "mid" se encuentra entre "i" y "j", y "x" no se encuentra en el subarreglo $A[a, i-1]$ o $A[j+1, b]$.
+    
+    \item Antes de la primera iteración del ciclo, "mid" no está definido, por lo que el invariante se cumple trivialmente.
+    
+    \item Durante cada iteración del ciclo, se actualizan los valores de "i", "j" y "mid" según el valor de "x" y del elemento
+    "A[mid]". Si "x" es igual a "A[mid]", entonces el algoritmo ha encontrado el elemento buscado, y se establece "found" como 
+    verdadero. Si "x" es menor que "A[mid]", se actualiza "j" a "mid-1", reduciendo el rango de búsqueda a la mitad inferior del 
+    subarreglo. Si "x" es mayor que "A[mid]", se actualiza "i" a "mid+1", reduciendo el rango de búsqueda a la mitad superior del 
+    subarreglo. En cualquier caso, el valor de "mid" siempre se encuentra entre "Sea $P(n)$ la afirmación de que las regiones formadas por $n$ círculos en el plano pueden ser coloreadas con dos colores de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+Base de inducción: $P(1)$ es verdadera, ya que la única región formada por un círculo puede ser coloreada de cualquier color.
+
+Hipótesis de inducción: Se supone que $P(n)$ es verdadera para cierto $n$, es decir, que las regiones formadas por $n$ círculos en el plano pueden ser coloreadas con dos colores de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+Paso inductivo: Se debe demostrar que $P(n+1)$ es verdadera, es decir, que las regiones formadas por $n+1$ círculos en el plano pueden ser coloreadas con dos colores de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+Consideremos los $n$ círculos originales y supongamos que están coloreados de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes. Luego, se agrega un círculo adicional al plano. Este círculo intersectará a algunos de los círculos originales en puntos finitos, creando nuevas regiones.
+
+Dado que las regiones originales ya estaban coloreadas de tal forma que cualesquiera dos regiones vecinas tenían colores diferentes, solo es necesario colorear las nuevas regiones que se formaron al agregar el círculo adicional. Para esto, se elige uno de los dos colores que se usaron para colorear la región vecina que intersecta cada nueva región y se utiliza el otro color para colorear la nueva región. De esta forma, cualesquiera dos regiones vecinas tendrán colores diferentes, ya que si comparten un borde, la región vecina y la nueva región tendrán colores diferentes en ese borde.
+
+Por lo tanto, $P(n+1)$ es verdadera, y por inducción, se concluye que la afirmación original es verdadera para todo número natural $n$.i" y "j", y "x" no se encuentra en el subarreglo 
+    $A[a, i-1]$ o $A[j+1, b]$.
+    
+    \item Después de cada iteración del ciclo, el invariante se mantiene verdadero porque el rango de búsqueda se ha reducido a la 
+    mitad del subarreglo original. Si "x" no se encuentra en el subarreglo $A[a, i-1]$ o $A[j+1, b]$, entonces se actualiza el valor de 
+    "pos" para que apunte al elemento "A[j]" (si "found" es falso), o al elemento "A[mid]" (si "found" es verdadero). En ambos casos, 
+    se cumple que $a-1 \leq pos \leq b$ y (para todo $k \in [a, pos], A[k] < x)$.
+
+    
+\end{itemize}
+    
+    Por lo tanto, se ha demostrado que el algoritmo de búsqueda binaria es correcto utilizando la Técnica del Invariante del Ciclo y demostrando que el invariante se mantiene verdadero antes, durante y después de cada iteración del ciclo.
+
+\newpage
+\section{Ejercicio 3}
+    El algoritmo W busca el índice de la primera ocurrencia de un valor $w$ en un subarreglo de enteros $X$ que se encuentra entre los índices $x$ e $y$, y devuelve dicho índice.
+
+    Para demostrar la corrección del algoritmo, se utilizará la técnica del Invariante del ciclo:
+    \begin{itemize}
+      \item Precondición: $x \leq y$ y $w \in A[x..y]$
+      \item Invariante: Para todo $j$ tal que $x \leq j < k$, $X[j] \neq w$
+      \item Postcondición: $x \leq k \leq y$ y $w \notin X[x..k-1]$ y $w = X[k]$
+      \end{itemize}
+
+    Demostración:
+
+    \begin{itemize}
+      \item Al inicio del ciclo, $k=x$. El invariante es verdadero ya que aún no se ha recorrido ningún elemento del subarreglo $X[x..y]$.
+      \item Supongamos que el invariante es verdadero al inicio de una iteración del ciclo (para cierto $k$).
+      \begin{itemize}
+        \item Si $X[k] \neq w$, entonces se incrementa $k$ en 1 y se mantiene el invariante, ya que el valor $X[k-1]$ es diferente de $w$, y para cualquier $j$ tal que $x \leq j < k-1$, $X[j] \neq w$ (por el invariante).
+        \item Si $X[k] = w$, entonces se cumple la postcondición, ya que $x \leq k \leq y$ y $w = X[k]$. Además, el invariante implica que $w \notin X[x..k-1]$.
+      \end{itemize}
+      \item Por lo tanto, si el ciclo termina, entonces se cumple la postcondición.
+      \item Si el ciclo no termina, entonces $k = y+1$. En este caso, el invariante implica que para todo $j$ tal que $x \leq j < k$, $X[j] \neq w$, lo cual implica que $w \notin X[x..y]$, lo cual contradice la precondición. Por lo tanto, el algoritmo siempre termina.
+      \item Finalmente, al terminar el ciclo, se cumple la postcondición.
+      \end{itemize}
+
+    Por lo tanto, se ha demostrado que el algoritmo W es correcto con respecto a la precondición y postcondición dadas.
 
 
-\end{Document}
+
+
+\newpage
+   \section{Opcional 1}
+
+  Sea $P(n)$ la afirmación de que las regiones formadas por $n$ círculos en el plano pueden ser coloreadas con dos colores de tal forma
+  que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+  \textbf{Caso Base}: $P(1)$ es verdadera, ya que la única región formada por un círculo puede ser coloreada de cualquier color.
+
+  \textbf{Hipótesis de inducción}: Se supone que $P(n)$ es verdadera para cierto $n$, es decir, que las regiones formadas por $n$ círculos en
+  el plano pueden ser coloreadas con dos colores de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+  \textbf{Paso inductivo}: Se debe demostrar que $P(n+1)$ es verdadera, es decir, que las regiones formadas por $n+1$ círculos en el plano 
+  pueden ser coloreadas con dos colores de tal forma que cualesquiera dos regiones vecinas tienen colores diferentes.
+
+  Consideremos los $n$ círculos originales y supongamos que están coloreados de tal forma que cualesquiera dos regiones vecinas tienen 
+  colores diferentes. Luego, se agrega un círculo adicional al plano. Este círculo intersectará a algunos de los círculos originales en 
+  puntos finitos, creando nuevas regiones.
+
+  Dado que las regiones originales ya estaban coloreadas de tal forma que cualesquiera dos regiones vecinas tenían colores diferentes, 
+  solo es necesario colorear las nuevas regiones que se formaron al agregar el círculo adicional. Para esto, se elige uno de los dos colores 
+  que se usaron para colorear la región vecina que intersecta cada nueva región y se utiliza el otro color para colorear la nueva región. 
+  De esta forma, cualesquiera dos regiones vecinas tendrán colores diferentes, ya que si comparten un borde, la región vecina y la nueva región 
+  tendrán colores diferentes en ese borde.
+
+  Por lo tanto, $P(n+1)$ es verdadera, y por inducción, se concluye que la afirmación original es verdadera para todo número natural $n$.
+
+\end{document}
