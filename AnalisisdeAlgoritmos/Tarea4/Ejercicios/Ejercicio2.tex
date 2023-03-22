@@ -3,14 +3,27 @@ Dada una secuencia $S= [x_1, x_2, . . . , x_n]$ encontrar a los dos mayores elem
 
 \subsection{Diseñar, usando Inducción matematica, un algoritmo que resuelva el problema}
 
-\textbf{Caso Base}:  Si la secuencia S tiene longitud 1, el algoritmo devuelve el único elemento como el mayor y el segundo mayor, y no se realiza ninguna comparación. Por lo tanto, la afirmación es verdadera para secuencias de longitud 1.\\
-\textbf{Hipótesis de Inducción} Supongamos que el algoritmo es correcto para todas las secuencias de longitud $k$, donde $k$ es un entero positivo menor que $n$.\\
+\textbf{Caso Base}:  Si la secuencia S tiene longitud 1, el algoritmo devuelve el único elemento como 
+el mayor 
+y el segundo mayor, y no se realiza ninguna comparación. Por lo tanto, la afirmación es verdadera para 
+secuenciasde longitud 1.\\
+\textbf{Hipótesis de Inducción} Supongamos que el algoritmo es correcto para todas las secuencias de 
+longitud $k$, donde $k$ es un entero positivo menor que $n$.\\
 \textbf{Paso Inductivo}\\
-Consideremos una secuencia S de longitud $n$. Dividimos $S$ en dos mitades, $S_1$ y $S_2$, de longitud $n_1$ y $n_2$, respectivamente, donde $n_1$ y $n_2$ son enteros positivos que suman $n$. Por hipótesis de inducción, el algoritmo encuentra los dos mayores elementos de $S_1$ y $S_2$ utilizando la menor cantidad posible de comparaciones.\\
+Consideremos una secuencia S de longitud $n$. Dividimos $S$ en dos mitades, $S_1$ y $S_2$, 
+de longitud $n_1$ y $n_2$, respectivamente, donde $n_1$ y $n_2$ son enteros positivos que suman $n$. 
+Por hipótesis de inducción, el algoritmo encuentra los dos mayores elementos de $S_1$ y $S_2$ utilizando 
+la menor cantidad posible de comparaciones.\\
 
-Encontrar los dos mayores elementos de $S$ utilizando el algoritmo implica encontrar los dos mayores elementos de $S_1$ y $S_2$ y compararlos para obtener los dos mayores elementos de $S$. El número de comparaciones necesarias para encontrar los dos mayores elementos de $S$ es el número de comparaciones necesarias para encontrar los dos mayores elementos de $S_1$ y $S_2$, más una comparación adicional para comparar los dos mayores elementos encontrados en $S_1$ y $S_2$.\\
+Encontrar los dos mayores elementos de $S$ utilizando el algoritmo implica encontrar los 
+dos mayores elementos de $S_1$ y $S_2$ y compararlos para obtener los dos mayores elementos de $S$. 
+El número de comparaciones necesarias para encontrar los dos mayores elementos de $S$ es el número de 
+comparaciones necesarias para encontrar los dos mayores elementos de $S_1$ y $S_2$, más una comparación 
+adicional para comparar los dos mayores elementos encontrados en $S_1$ y $S_2$.\\
 
-Por lo tanto, el número de comparaciones necesarias para encontrar los dos mayores elementos de $S$ es la menor cantidad posible de comparaciones, ya que se utiliza la menor cantidad posible de comparaciones para encontrar los dos mayores elementos de $S_1$ y $S_2$.
+Por lo tanto, el número de comparaciones necesarias para encontrar los dos mayores elementos de $S$ 
+es la menor cantidad posible de comparaciones, ya que se utiliza la menor cantidad posible de comparaciones 
+para encontrar los dos mayores elementos de $S_1$ y $S_2$.
 
 El algoritmo se puede describir utilizando el siguiente pseudocódigo:
 
@@ -42,7 +55,7 @@ function Dosgrandes(S):
                 return max3, max4
         else:
             if max3 >= max2:
-                if max4 >= max2:\usepackage{pythonhighlight}
+                if max4 >= max2:
                     return max3, max4
                 else:
                     return max3, max2
@@ -58,18 +71,23 @@ Depende del tamaño de la secuencia de entrada. Sea $n$ la longitud de la secuen
 \begin{itemize}
   \item Si $n = 1$, el algoritmo no realiza ninguna comparación.
   \item Si $n = 2$, el algoritmo realiza una comparación para determinar cuál de los dos elementos es mayor.
-  \item Si $n > 2$, el algoritmo divide la secuencia en dos mitades de tamaño aproximadamente igual y llama recursivamente al algoritmo para cada mitad. 
+  \item Si $n > 2$, el algoritmo divide la secuencia en dos mitades de tamaño aproximadamente igual y 
+  llama recursivamente al algoritmo para cada mitad. 
   Después, el algoritmo realiza tres comparaciones para determinar los dos mayores 
   elementos de la secuencia original a partir de los dos mayores elementos de cada mitad. 
   Por lo tanto, el número total de comparaciones es:
  \[ T(n) = T\left(\left\lfloor\frac{n}{2}\right\rfloor\right) + T\left(\left\lceil\frac{n}{2}\right\rceil\right) + 3 \]
 
-  Donde $T(n)$ es el número total de comparaciones realizadas por el algoritmo para una secuencia de longitud $n$. 
-  Esta ecuación de recurrencia puede resolverse mediante el método de resolución de recurrencias.podemos asumir que $n$ es 
-  una potencia de 2 (es decir, $n = 2^k$ para algún entero $k$). En este caso, la ecuación de recurrencia se puede escribir como:\\
+  Donde $T(n)$ es el número total de comparaciones realizadas por el algoritmo para una 
+  secuencia de longitud $n$. 
+  Esta ecuación de recurrencia puede resolverse mediante el método de resolución de recurrencias.
+  Podemos asumir que $n$ es 
+  una potencia de 2 (es decir, $n = 2^k$ para algún entero $k$). En este caso, 
+  la ecuación de recurrencia se puede escribir como:\\
  \[ T(n) = 2T\left(\frac{n}{2}\right) + 3 \]
 
-Aplicando la regla de sustitución repetida, podemos encontrar una expresión para $T(n)$ en términos de $T(1)$
+Aplicando la regla de sustitución repetida, podemos encontrar una expresión para 
+$T(n)$ en términos de $T(1)$
 
 \begin{align*}
 T(n) &= 2T\left(\frac{n}{2}\right) + 3 \
@@ -83,6 +101,7 @@ T(n) &= 2T\left(\frac{n}{2}\right) + 3 \
 &= 3n - 2
 \end{align*}
 
-Por lo tanto, el número de comparaciones que realiza el algoritmo para una secuencia de longitud $n$ es $3n - 2$. En otras palabras, el algoritmo es $O(n)$ lineal en el peor de los casos.
+Por lo tanto, el número de comparaciones que realiza el algoritmo para una secuencia de 
+longitud $n$ es $3n - 2$. En otras palabras, el algoritmo es $O(n)$ lineal en el peor de los casos.
 
 \end{itemize}

@@ -3,19 +3,28 @@
 \textbf{Cambio de Base}
 \textsc{Dado un número en base 6 convertirlo a binario, la entrada es un arreglo de digitos en base 6 y la salida es un arreglo de bits}
 
-\subsection{Diseñar usando Inducción Matematica un algoritmo eficiente que solucione el problema y que use el menor número de comparaciones}
-\textbf{Caso Base}: Cuando $n=1$, el número en base 6 es simplemente un dígito, que se puede convertir a su representación binaria de 3 bits usando una tabla de búsqueda o una serie de comparaciones. El resultado es un arreglo de 3 bits.\\
-\textbf{Hipotesis}: Supongamos que ya hemos convertido los primeros $k$ dígitos del número en base 6 a su representación binaria de longitud $k*3$ bits. \\
-\textbf{Paso Inductivo}: Para convertir el dígito $k+1$, podemos utilizar una tabla de búsqueda o una serie de comparaciones, como se hizo en el caso base. Sin embargo, en lugar de comparar cada dígito con los 6 posibles valores en base 6, podemos aprovechar el hecho de que los dígitos en base 6 solo tienen 3 bits de información. Podemos comparar el valor del dígito con los valores 0, 1, 2, 4, 5 y 6 en su representación binaria de 3 bits. Si el valor del dígito es mayor que 6, podemos dividirlo en dos dígitos en base 6 y convertirlos por separado.\\
-Una vez que tenemos la representación binaria del dígito $k+1$, podemos concatenarla con la representación binaria de los primeros $k$ dígitos para obtener la representación binaria de los primeros $k+1$ dígitos. En total, se necesitan $k*3+3$ comparaciones para convertir los primeros $k+1$ dígitos.\\
-Finalmente, cuando hemos convertido todos los dígitos, obtenemos la representación binaria completa. El número total de comparaciones necesarias para convertir un número en base 6 de longitud $n$ a su representación binaria de longitud $m$ es:\\
-$$(n-1)*3 + \log_2(m)$$
+\subsection{Diseñar usando Inducción Matematica un algoritmo eficiente que solucione el problema y que use el 
+menor número de comparaciones}
+\textbf{Caso Base}: Cuando $n=1$, el número en base 6 es simplemente un dígito, que se puede convertir a su 
+representación binaria de 3 bits usando una tabla de búsqueda o una serie de comparaciones. El resultado es un arreglo de 3 bits.\\
+\textbf{Hipotesis}: Supongamos que ya hemos convertido los primeros $k$ dígitos del número en base 6 a su 
+representación binaria de longitud $k*3$ bits. \\
+\textbf{Paso Inductivo}: Para convertir el dígito $k+1$, podemos utilizar una tabla de búsqueda o una serie 
+de comparaciones, como se hizo en el caso base. Sin embargo, en lugar de comparar cada dígito con los 6 posibles valores en base 6, 
+podemos aprovechar el hecho de que los dígitos en base 6 solo tienen 3 bits de información. Podemos comparar el 
+valor del dígito con los valores 0, 1, 2, 4, 5 y 6 en su representación binaria de 3 bits. Si el valor del dígito 
+es mayor que 6, podemos dividirlo en dos dígitos en base 6 y convertirlos por separado.\\
+Una vez que tenemos la representación binaria del dígito $k+1$, podemos concatenarla con la representación 
+binaria de los primeros $k$ dígitos para obtener la representación binaria de los primeros $k+1$ dígitos. 
+En total, se necesitan $k*3+3$ comparaciones para convertir los primeros $k+1$ dígitos.\\
+Finalmente, cuando hemos convertido todos los dígitos, obtenemos la representación binaria completa. El número total de comparaciones necesarias para convertir un número en base 6 de longitud $n$ a su representación binaria de longitud $m$ es:
+    \[(n-1)*3 + \log_2(m)\]
 donde $\log_2(m)$ es el número de bits necesarios para representar la longitud $m$ en binario. El término $(n-1)*3$ representa el número de comparaciones necesarias para convertir los $n-1$ primeros dígitos, y $\log_2(m)$ representa el número de bits necesarios para representar la longitud $m$ en binario, lo que se puede calcular en tiempo constante.\\
 
 Finalmente obtenemos el siguiente algoritmo
 
 \begin{lstlisting}[language=python]
-lstlisting
-\end{lstlistinglstlisting}
+
+\end{lstlisting}
 
 \subsection{Determinar la complejidad del algoritmo obtenido}
