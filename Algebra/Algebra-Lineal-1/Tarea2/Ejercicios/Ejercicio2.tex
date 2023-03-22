@@ -1,0 +1,56 @@
+\section{Sea $W$ el subespacio de $V_K$ generado por las funciones $\sin(t)$ y $\cos(t)$.}
+
+\subsection{Demuestre que $\beta={\sin(t), \cos(t)}$ es una base de $W$}
+Para demostrar que $\beta$ es linealmente independiente, debemos demostrar que la única combinación lineal de $\sin(t)$ y $\cos(t)$ 
+que da como resultado el vector cero es la combinación trivial. Es decir, si $a\sin(t) + b\cos(t) = 0$ para cualquier $t\in K$, entonces $a=b=0$.
+
+Podemos demostrar esto al observar que la función $\sin^2(t) + \cos^2(t) = 1$ para todo $t\in K$. Por lo tanto, si $a\sin(t) + b\cos(t) = 0$ 
+para cualquier $t\in K$, entonces tenemos $a\sin(t) = -b\cos(t)$. Elevando ambos lados de la ecuación al cuadrado y sumándolos, obtenemos 
+$a^2\sin^2(t) + b^2\cos^2(t) = 0$, lo que implica $a^2+b^2=0$. Como $a^2$ y $b^2$ son no negativos, esto solo puede ser cierto si $a=b=0$. 
+Por lo tanto, $\beta$ es linealmente independiente.
+
+Para demostrar que $\beta$ genera $W$, debemos demostrar que cualquier vector en $W$ se puede escribir como una combinación lineal de $\sin(t)$ y $\cos(t)$. 
+Es decir, para cualquier función $f(t)\in W$, existen escalares $a$ y $b$ tales que $f(t) = a\sin(t) + b\cos(t)$.
+
+Dado que $W$ está generado por $\sin(t)$ y $\cos(t)$, cualquier función $f(t)\in W$ se puede expresar como $f(t) = c_1\sin(t) + c_2\cos(t)$ para 
+algunos escalares $c_1$ y $c_2$. Podemos escribir $c_1$ y $c_2$ en términos de $a$ y $b$ al resolver el sistema de ecuaciones 
+$c_1\sin(t) + c_2\cos(t) = a\sin(t) + b\cos(t)$. La solución es $c_1 = a$ y $c_2 = b$. Por lo tanto, cualquier función en $W$ se puede 
+escribir como una combinación lineal de $\sin(t)$ y $\cos(t)$, lo que significa que $\beta$ genera $W$.
+
+\subsection{Demuestre que $f(t) = 3\sin(t) + 5\cos(t)$, entonces $\frac{d}{dt}f(t) \in W$}
+
+Debemos demostrar que $\frac{d}{dt}f(t)$ se puede expresar como una combinación lineal de $\sin(t)$ y $\cos(t)$.
+
+Primero, calculemos la derivada de $f(t)$:
+
+$$\frac{d}{dt}f(t) = 3\cos(t) - 5\sin(t)$$
+
+Ahora, podemos expresar $\frac{d}{dt}f(t)$ como una combinación lineal de $\sin(t)$ y $\cos(t)$:
+
+$$\frac{d}{dt}f(t) = 3\cos(t) - 5\sin(t) = 3\frac{d}{dt}\cos(t) - 5\frac{d}{dt}\sin(t)$$
+
+Por lo tanto, $\frac{d}{dt}f(t)$ se puede expresar como $a\sin(t) + b\cos(t)$ con $a=-5$ y $b=3$. 
+Esto significa que $\frac{d}{dt}f(t) \in W$, ya que es una combinación lineal de $\sin(t)$ y $\cos(t)$, 
+que son las funciones generadoras de $W$. Por lo tanto, hemos demostrado que si $f(t) = 3\sin(t) + 5\cos(t)$, 
+entonces $\frac{d}{dt}f(t) \in W$.
+
+\subsection{Para la función $f$ del inciso anterior calcula el vector $[\frac{d}{dt}f]_\beta$}
+
+Primero, encontramos la derivada de $f(t) = 3\sin(t) + 5\cos(t)$:
+
+$$\frac{d}{dt}f(t) = 3\cos(t) - 5\sin(t)$$
+
+Ahora, necesitamos expresar $\frac{d}{dt}f(t)$ como una combinación lineal de $\sin(t)$ y $\cos(t)$, y 
+luego encontrar los coeficientes que corresponden a esa combinación lineal.
+
+Podemos escribir $\frac{d}{dt}f(t)$ como $a\sin(t) + b\cos(t)$, es decir:
+
+$$3\cos(t) - 5\sin(t) = a\sin(t) + b\cos(t)$$
+
+Para encontrar los valores de $a$ y $b$, debemos resolver el sistema de ecuaciones:
+
+$$\begin{cases} a = -5\ b = 3\end{cases}$$
+
+Por lo tanto, $[\frac{d}{dt}f]_\beta = \begin{bmatrix} -5 \ 3 \end{bmatrix}$.
+
+En resumen, hemos encontrado que el vector $[\frac{d}{dt}f]_\beta$ es igual a $\begin{bmatrix} -5 \ 3 \end{bmatrix}$ en la base $\beta = {\sin(t), \cos(t)}$.
