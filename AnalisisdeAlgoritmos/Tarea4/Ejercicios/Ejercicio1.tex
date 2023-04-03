@@ -2,4 +2,21 @@
 Si se le da una secuencia de $n$ números y un entero $k$,  el algoritmo responde si o no, según exista un subconjunto de esos números cuya suma sea exactamente $k$.
 Mostrar como usar este algoritmo $O(n)$ veces en un programa que encuentre el subconjunto en cuestión, si es que existe, donde $n$ es el tamaño de la secuencia.}
 
+\begin{itemize}
+  \item Inicializar un arreglo $A$ de tamaño $n+1$ con valores booleanos, donde $A_i$ indica si existe un subconjunto de los primeros $i$ números de la secuencia que suma exactamente $k$.
+  \item Establecer $A_0$ como verdadero, ya que el subconjunto vacío siempre suma $0$.
+  \item Para cada número $x_i$ en la secuencia, realizar lo siguiente:
+  \begin{itemize}
+    \item Recorrer el arreglo $A$ de derecha a izquierda.
+    \item Si $A_j$ es verdadero, entonces establecer $A_{j+x_i}$ como verdadero.
+  \end{itemize}
+  \item Si $A_n$ es verdadero, entonces existe un subconjunto de la secuencia que suma exactamente $k$. Para encontrar dicho subconjunto, 
+  se puede reconstruir iterativamente el subconjunto a partir de los valores del arreglo $A$. Comenzando en $i=n$, se comprueba si $A_{i-x_j}$ 
+  es verdadero para cada $x_j$ en la secuencia. Si es verdadero, se añade $x_j$ al subconjunto y se establece $i$ 
+  como $i-x_j$. Se continúa hasta que $i$ sea igual a $0$.
+\end{itemize}
 
+El tiempo de ejecución del algoritmo es $O(n^2)$, ya que el recorrido del arreglo $A$ 
+para cada número de la secuencia implica un tiempo total de $O(n^2)$. Sin embargo, 
+si se utiliza la Caja Negra para determinar si un subconjunto de los primeros $i$ números suma exactamente $k$, 
+entonces el tiempo de ejecución se reduce a $O(n)$, lo que permite resolver el problema de manera eficiente para entradas grandes.

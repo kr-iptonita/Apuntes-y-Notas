@@ -6,7 +6,7 @@ Dada una secuencia $S= [x_1, x_2, . . . , x_n]$ encontrar a los dos mayores elem
 \textbf{Caso Base}:  Si la secuencia S tiene longitud 1, el algoritmo devuelve el único elemento como 
 el mayor 
 y el segundo mayor, y no se realiza ninguna comparación. Por lo tanto, la afirmación es verdadera para 
-secuenciasde longitud 1.\\
+ secuenciasde longitud 1.\\
 \textbf{Hipótesis de Inducción} Supongamos que el algoritmo es correcto para todas las secuencias de 
 longitud $k$, donde $k$ es un entero positivo menor que $n$.\\
 \textbf{Paso Inductivo}\\
@@ -90,14 +90,14 @@ Aplicando la regla de sustitución repetida, podemos encontrar una expresión pa
 $T(n)$ en términos de $T(1)$
 
 \begin{align*}
-T(n) &= 2T\left(\frac{n}{2}\right) + 3 \
-&= 2\left(2T\left(\frac{n}{2^2}\right) + 3\right) + 3 \
-&= 2^2 T\left(\frac{n}{2^2}\right) + 2^1\cdot 3 + 2^0\cdot 3 \
-&= 2^2 T\left(\frac{n}{2^2}\right) + 2^1\cdot 3 + 2^0\cdot 3 \
-&\vdots \
-&= k\cdot 3 + 2^{k-1} T\left(\frac{n}{2^{k-1}}\right) \
-&= k\cdot 3 + 2^{k-1} T(2) \
-&= k\cdot 3 + 2^{k-1} \cdot 1 \
+T(n) &= 2T\left(\frac{n}{2}\right) + 3 \\
+&= 2\left(2T\left(\frac{n}{2^2}\right) + 3\right) + 3 \\
+&= 2^2 T\left(\frac{n}{2^2}\right) + 2^1\cdot 3 + 2^0\cdot 3 \\
+&= 2^2 T\left(\frac{n}{2^2}\right) + 2^1\cdot 3 + 2^0\cdot 3 \\
+&\vdots \\
+&= k\cdot 3 + 2^{k-1} T\left(\frac{n}{2^{k-1}}\right) \\
+&= k\cdot 3 + 2^{k-1} T(2) \\
+&= k\cdot 3 + 2^{k-1} \cdot 1 \\
 &= 3n - 2
 \end{align*}
 

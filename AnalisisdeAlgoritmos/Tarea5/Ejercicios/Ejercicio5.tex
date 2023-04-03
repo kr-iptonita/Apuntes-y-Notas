@@ -1,0 +1,32 @@
+\section{Opcional: Problema $Psi$: Dados dos conjuntos ordenados de números enteros $X_1$, $X_2$ y un entero $z$ se desea encontrar $x_1\in X_1$ y $x_2 \in X_2$ tales que $z=x_1+x_2$ y que se muestren tales elementos, en caso de existir.}
+
+
+\subsection{Diseña una algoritmo que resuelva el Problema $Psi$.}
+
+Podemos resolver el Problema $Psi$ utilizando la técnica de "Búsqueda de Dos Punteros" en $X_1$ y $X_2$. Los punteros se mueven hacia el centro de los conjuntos, comparando la suma de los elementos señalados en cada iteración con el valor objetivo $z$.\\
+
+\begin{lstlisting}[language=python]
+def busca_sum(X1, X2, z):
+    n1, n2 = len(X1), len(X2)
+    i, j = 0, n2-1  # inicializar punteros
+    while i < n1 and j >= 0:
+        # comparar la suma actual con z
+        if X1[i] + X2[j] == z:
+            return X1[i], X2[j]  # elementos encontrados
+        elif X1[i] + X2[j] < z:
+            i += 1  # incrementar puntero de X1
+        else:
+            j -= 1  # decrementar puntero de X2
+    return None  # no se encontraron elementos
+
+\end{lstlisting}
+
+Este algoritmo toma como entrada los dos conjuntos ordenados $X_1$ y $X_2$, y el entero objetivo $z$, y devuelve una tupla con los elementos $x_1$ y $x_2$ si existen, o None si no se encuentran elementos que sumen $z$.
+
+\subsection{Indica específicamente cuántas operaciones realiza únicamente la búsqueda de los valores $x_1 \in X_1$ y de $x_2 \in X_2$.}
+
+La búsqueda de los valores $x_1 \in X_1$ y $x_2 \in X_2$ se realiza en los punteros i y j respectivamente, los cuales se mueven a través de los elementos de los conjuntos.\\
+
+Cada iteración del ciclo while realiza una comparación y una actualización de punteros, por lo que se realizan en total $n_1 + n_2$ comparaciones en el peor caso. Además, las operaciones de incrementar o decrementar punteros son O(1), por lo que en total se realizan $3n$ operaciones de este tipo en el peor caso.\\
+
+Por lo tanto, podemos afirmar que el algoritmo realiza $n_1 + n_2 + 3n$ operaciones en el peor caso para buscar los valores $x_1 \in X_1$ y $x_2 \in X_2$.

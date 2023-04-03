@@ -1,0 +1,35 @@
+\section{Sea $V = \mathbb{R}^3$ y $U$ el espacio vectorial generado por el conjunto $\{ (1,0,1) , (0,1,1) \}$. Dé u subespacio de $W$ de $V$ tal que $V=U \oplus W$.}
+
+Un subespacio $W$ de $V$ tal que $V=U \oplus W$ existe si y solo si podemos encontrar un vector $w \in V$ tal que cualquier vector $v \in V$ se puede escribir de manera única como una suma $v = u + w$ donde $u \in U$ y $w \in W$.
+
+Para encontrar tal vector $w$, podemos encontrar una base para $U$ y extenderla a una base para $V$. Una base para $U$ está dada por ${(1,0,1), (0,1,1)}$. Podemos extender esta base a una base para $V$ al agregar otro vector linealmente independiente. Por ejemplo, podemos tomar $(1,1,1)$ como el tercer vector. Entonces, una base para $V$ es ${(1,0,1), (0,1,1), (1,1,1)}$.
+
+Consideremos ahora el subespacio $W$ generado por el vector $(1,1,-1)$. Para demostrar que $V=U \oplus W$, debemos demostrar que cualquier vector en $V$ puede escribirse de manera única como una suma de un vector en $U$ y un vector en $W$.
+
+Para demostrar la unicidad, supongamos que $v = u_1 + w_1 = u_2 + w_2$, donde $u_1, u_2 \in U$ y $w_1, w_2 \in W$. Entonces, $u_1 - u_2 = w_2 - w_1$. Como $u_1 - u_2 \in U$ y $w_2 - w_1 \in W$, esto implica que $u_1 - u_2$ y $w_2 - w_1$ son ortogonales. Pero $u_1 - u_2$ y $w_2 - w_1$ también están en el plano generado por los vectores $(1,0,1)$ y $(0,1,1)$, que es un plano de dos dimensiones. Por lo tanto, la única forma en que pueden ser ortogonales es si uno de ellos es cero. Si $u_1 - u_2 = 0$, entonces $u_1 = u_2$ y $w_1 = w_2$, lo que demuestra la unicidad.
+
+Para demostrar la existencia, sea $v$ un vector arbitrario en $V$. Queremos escribir $v$ como una suma de un vector en $U$ y un vector en $W$. Primero, podemos encontrar las coordenadas de $v$ con respecto a la base de $V$: $v = a(1,0,1) + b(0,1,1) + c(1,1,1)$, para algunos escalares $a$, $b$ y $c$.
+
+Para encontrar el componente de $v$ en $W$, debemos encontrar un vector $w$ en $W$ tal que $v - w$ esté en $U$. Podemos despejar $c$ de la ecuación de $v$ y escribir $c = \frac{1}{3}(v_1 + v_2 - v_3)$. Entonces, podemos tomar $w = \frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2)$. Es fácil verificar que $w$ está en $W$
+
+Ahora, veamos que $v - w$ está en $U$. Tenemos que
+
+$$v - w = a(1,0,1) + b(0,1,1) + c(1,1,1) - \frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2)$$
+
+Simplificando, obtenemos:
+
+$$v - w = \left( a - \frac{1}{3}(v_1 + v_2)\right) (1,0,1) + \left( b - \frac{1}{3}(v_1 + v_2)\right) (0,1,1)$$
+
+Por lo tanto, $v - w$ está en $U$ si y solo si $a - \frac{1}{3}(v_1 + v_2) = b - \frac{1}{3}(v_1 + v_2)$. Pero esto es cierto, ya que $c = \frac{1}{3}(v_1 + v_2 - v_3)$. Entonces, tenemos que $v = u + w$, donde $u = a(1,0,1) + b(0,1,1)$ está en $U$ y $w = \frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2)$ está en $W$.
+
+De esta forma cualquier vector en $V$ se puede escribir de manera única como una suma de un vector en $U$ y un vector en $W$, lo que implica que $V=U \oplus W$.
+
+
+En forma resumida el subespacio $W$ es el conjunto de vectores de la forma $w = \frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2)$, es decir:
+
+$$W = \left\{ \frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2) : v_1, v_2 \in \mathbb{R} \right\}$$
+
+Cualquier vector en $W$ es de la forma $\frac{1}{3}(v_1 + v_2, v_1 + v_2, -v_1 - v_2)$ para algunos $v_1, v_2 \in \mathbb{R}$.
+
+
+

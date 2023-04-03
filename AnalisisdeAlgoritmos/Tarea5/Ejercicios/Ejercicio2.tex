@@ -1,0 +1,31 @@
+\section{Juego de Adivinanza}
+
+\subsection{Diseña y presenta una excelente estrategia para este juego.}
+
+Podemos usar busqueda binaria:\\
+
+La idea básica es dividir repetidamente la lista en dos mitades y descartar una de ellas, dependiendo de si el elemento que se busca es mayor o menor que el elemento medio de la lista.\\
+
+En el juego de adivinanza, la estrategia consiste en que el jugador B comience preguntando si el número pensado por el jugador A es mayor o menor que el número medio del rango (es decir, $\frac{n}{2}$). Si el jugador A responde que es menor, entonces el jugador B descarta la mitad superior del rango y repite la pregunta para la mitad inferior. Si el jugador A responde que es mayor, entonces el jugador B descarta la mitad inferior del rango y repite la pregunta para la mitad superior.\\
+
+Este proceso se repite hasta que el jugador B adivina el número pensado por el jugador A. Debido a que en cada pregunta se descarta la mitad del rango, el número de preguntas necesarias para adivinar el número es logarítmico en el tamaño del rango. Por ejemplo, si el rango es de $1$ a $100$, se necesitarán como máximo $7$ preguntas para adivinar el número.\\
+
+Esta estrategia es óptima porque cada pregunta reduce a la mitad el tamaño del rango de búsqueda. De esta manera, el número de preguntas necesarias para adivinar el número crece de forma logarítmica con el tamaño del rango, lo que garantiza que la estrategia siempre encontrará el número en el menor número de preguntas posible.
+
+\subsection{Complejidad del Algoritmo}
+
+En cada paso del algoritmo, el tamaño del rango se reduce a la mitad, lo que significa que se necesitan $\log_2 n$ preguntas para adivinar el número. Por lo tanto, la complejidad del algoritmo de búsqueda binaria es $O(\log n)$.
+
+La complejidad logarítmica del algoritmo de búsqueda binaria se debe a que cada pregunta elimina la mitad del rango de posibles números. Por lo tanto, a medida que el tamaño del rango aumenta, el número de preguntas necesarias para adivinar el número pensado por el jugador A aumenta lentamente en comparación con el tamaño del rango.
+
+\subsection{Valor de $n$ desconocido}
+
+La estrategia consiste en hacer preguntas en las que se divida el rango en tres partes iguales en lugar de dos. En la primera pregunta, el jugador B pregunta si el número pensado por el jugador A es menor que $n/3$, mayor que $2n/3$, o está en el rango intermedio $[n/3, 2n/3]$. Dependiendo de la respuesta, el jugador B reduce el rango de búsqueda a uno de estos tres subrangos.
+
+En la siguiente pregunta, el jugador B divide el subrango seleccionado en tres partes iguales y repite el proceso hasta que se encuentra el número pensado por el jugador A. En cada pregunta, el jugador B reduce el tamaño del rango de búsqueda en un factor de tres en lugar de dos, lo que hace que el número de preguntas necesarias crezca de forma logarítmica con el tamaño del rango.
+
+Por ejemplo, si el rango es de $1$ a $100$, la primera pregunta del jugador B podría ser: ¿Es el número pensado por el jugador A menor que $33$, mayor que $66$, o está en el rango intermedio $[33, 66]$?. Dependiendo de la respuesta del jugador A, el jugador B reduciría el rango de búsqueda a uno de estos tres subrangos y repetiría el proceso hasta encontrar el número pensado por el jugador A.
+
+\subsection{Complejidad del Algoritmo}
+
+Supongamos que el tamaño del rango es $n$. En cada paso del algoritmo, el tamaño del rango se reduce a una tercera parte en lugar de la mitad, lo que significa que se necesitan $\log_3 n$ preguntas para adivinar el número. Sin embargo, cada pregunta del jugador B implica tres posibles respuestas del jugador A en lugar de dos, por lo que cada pregunta tiene una información útil menor. Esto significa que se necesitan más preguntas en comparación con la búsqueda binaria estándar para llegar al número buscado.

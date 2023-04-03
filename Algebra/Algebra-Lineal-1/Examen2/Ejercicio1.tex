@@ -1,0 +1,16 @@
+\section{Sea $V$ un espacio vectorial sobe un campo $K$. Sea $\mathbb{B}$ una base para $V$ tal que $|\mathbb{B}| = n$ y sea $\mathbb{B} '$ una para $V$ tal que $|\mathbb{B}'|=m$ pruebe que $n=m$} Como $\mathbb{B}$ y $\mathbb{B}'$ son bases para $V$, entonces cada uno de los vectores en $V$ se puede expresar de forma única como una combinación lineal de los vectores en $\mathbb{B}$ y $\mathbb{B}'$, respectivamente. Es decir, para todo $v \in V$ existe una única tupla de escalares $\alpha_1,\ldots,\alpha_n \in K$ tal que $$v = \alpha_1 \mathbf{v}_1 + \cdots + \alpha_n \mathbf{v}_n,$$ donde ${\mathbf{v}_1,\ldots,\mathbf{v}_n}$ es la base $\mathbb{B}$, y también existe una única tupla de escalares $\beta_1,\ldots,\beta_m \in K$ tal que $$v = \beta_1 \mathbf{u}_1 + \cdots + \beta_m \mathbf{u}_m,$$ donde ${\mathbf{u}_1,\ldots,\mathbf{u}_m}$ es la base $\mathbb{B}'$.
+
+Para demostrar que $n=m$, podemos utilizar el teorema de la dimensión, que establece que todas las bases de un espacio vectorial tienen la misma cardinalidad, conocida como la dimensión del espacio vectorial.
+
+Supongamos que $\mathbb{B}$ y $\mathbb{B}'$ son dos bases distintas de $V$. Como $\mathbb{B}$ es una base de $V$, cualquier vector $v$ en $V$ puede expresarse de manera única como combinación lineal de los vectores en $\mathbb{B}$:
+$$v = \sum_{i=1}^n a_i b_i,$$
+donde $b_1, b_2, \dots, b_n$ son los vectores en $\mathbb{B}$ y $a_1, a_2, \dots, a_n$ son escalares en $K$.
+
+De manera similar, cualquier vector en $V$ puede expresarse de manera única como combinación lineal de los vectores en $\mathbb{B}'$:
+$$v = \sum_{i=1}^m a_i' b_i',$$
+donde $b_1', b_2', \dots, b_m'$ son los vectores en $\mathbb{B}'$ y $a_1', a_2', \dots, a_m'$ son escalares en $K$.
+
+Ahora, observe que $v$ se puede expresar como una combinación lineal de los vectores en ambas bases $\mathbb{B}$ y $\mathbb{B}'$. Por lo tanto, podemos igualar las dos expresiones para $v$ y obtener:
+$$\sum_{i=1}^n a_i b_i = \sum_{i=1}^m a_i' b_i'.$$
+
+Como $b_1, b_2, \dots, b_n$ son linealmente independientes, la única manera en que la primera expresión pueda ser igual a la segunda es si $n=m$ y si $a_i=a_i'=0$ para todo $i$. Esto significa que los vectores en $\mathbb{B}$ y $\mathbb{B}'$ son los mismos, salvo posiblemente por un reordenamiento, y por lo tanto $n=m$.

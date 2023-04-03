@@ -1,0 +1,7 @@
+\section{Considérese $V$ el espacio de todas las funciones de una variable $t$. Demostrar que el conjunto $\{e^t, t\} \subset V$ es un conjunto linealmente independiente.}
+
+Para demostrar que ${e^t, t}$ es linealmente independiente, debemos demostrar que la única solución a la ecuación $c_1 e^t + c_2 t = 0$ para $c_1, c_2 \in \mathbb{R}$ es $c_1 = c_2 = 0$.
+
+Supongamos que existe una solución no trivial a la ecuación dada, es decir, $c_1 e^t + c_2 t = 0$ con $c_1 \neq 0$ o $c_2 \neq 0$. Entonces, podemos despejar $t$ en términos de $e^t$ como $t = -\frac{c_1}{c_2} e^{-t}$. Sustituyendo esto en la ecuación original, obtenemos $c_1 e^t - c_2 \frac{c_1}{c_2} e^{-t} = 0$, lo cual se reduce a $c_1 e^{2t} = 0$. Como $c_1 \neq 0$, esto implica que $e^{2t} = 0$, lo cual es una contradicción. Por lo tanto, la única solución a la ecuación dada es $c_1 = c_2 = 0$.
+
+Como la única solución a la ecuación $c_1 e^t + c_2 t = 0$ es $c_1 = c_2 = 0$, podemos concluir que el conjunto ${e^t, t}$ es linealmente independiente en $V$.

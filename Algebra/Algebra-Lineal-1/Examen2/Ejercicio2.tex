@@ -1,0 +1,20 @@
+\section{Sean $\left\{v_1,v_2,.\:.\:.,v_n\right\}$  y  $\left\{w_1,w_2,.\:.\:.w_m\right\}$ dos bases del $K$-espacio vectorial $V$. Demuestre que $m=n$}
+
+Para demostrar que $m=n$, primero notemos que cualquier vector $v\in V$ se puede escribir de forma única como combinación lineal de los vectores de la base $\left\{v_1,v_2,...,v_n\right\}$, es decir, existen constantes únicas $a_1,a_2,...,a_n$ tales que:
+
+$$v=a_1v_1+a_2v_2+...+a_nv_n$$
+
+Del mismo modo, cualquier vector $w\in V$ se puede escribir de forma única como combinación lineal de los vectores de la base $\left\{w_1,w_2,...,w_m\right\}$, es decir, existen constantes únicas $b_1,b_2,...,b_m$ tales que:
+
+$$w=b_1w_1+b_2w_2+...+b_mw_m$$
+
+Ahora, debemos demostrar que $m=n$. Para ello, supongamos por contradicción que $m\neq n$. Sin pérdida de generalidad, podemos asumir que $m>n$. Entonces, podemos escribir $w_m$ como una combinación lineal de los vectores de la base $\left\{v_1,v_2,...,v_n\right\}$:
+
+$$w_m=c_1v_1+c_2v_2+...+c_nv_n$$
+
+donde $c_1,c_2,...,c_n$ son constantes. Sin embargo, esto significa que podemos escribir cualquier vector $w\in V$ de la siguiente manera:
+
+$$w=b_1w_1+b_2w_2+...+b_{m-1}w_{m-1}+b_m(c_1v_1+c_2v_2+...+c_nv_n)$$
+
+lo cual significa que $\left\{w_1,w_2,...,w_{m-1},c_1v_1,c_2v_2,...,c_nv_n\right\}$ es una base de $V$ que consta de $m+n-1$ vectores. Sin embargo, esto es una contradicción, ya que una base de $V$ debe constar de exactamente $n$ vectores. Por lo tanto, se sigue que $m=n$.
+

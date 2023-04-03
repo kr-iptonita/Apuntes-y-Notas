@@ -1,0 +1,36 @@
+\section{Se tiene un conjunto de $N = 2n + 1$ rocas, todas ellas de diferente
+tamaño forma y consistencia. Rocas que se ven del mismo tamaño pueden tener peso muy diferente.}
+
+Para encontrar la roca de peso mínimo, podemos usar un algoritmo de selección por comparaciones para encontrar el elemento más pequeño. Este algoritmo de selección toma $n-1$ comparaciones para encontrar el elemento mínimo.
+
+Para encontrar la roca de peso máximo, podemos dividir las rocas restantes en dos grupos de tamaño $n$. Luego, realizamos una búsqueda lineal en cada grupo para encontrar el elemento máximo en cada grupo. Esto requiere $2n-2$ comparaciones en total. Finalmente, comparamos los dos elementos máximos encontrados para determinar cuál es el máximo global. Esto requiere una comparación adicional. En total, la búsqueda del máximo requiere $2n-1$ comparaciones.
+
+Por lo tanto, en total se requieren $n-1 + 2n-1 = 3n-2$ comparaciones para encontrar la roca de peso mínimo y máximo. Como $3n-2$ es menor que $3n$, podemos concluir que sí es posible encontrar las rocas de peso mínimo y máximo utilizando solo $3n$ comparaciones.
+
+\begin{lstlisting}[language=python]
+def min_max_rocas(rocas):
+    n = len(rocas)
+    # Encontrar la roca de peso minimo 
+    min_roca = rocas[0]
+    for i in range(1, n):
+        if rocas[i] < min_roca:
+            min_roca = rocas[i]
+    #Dividir las rocas restantes en dos grupos
+    grupo_1 = rocas[1:n//2+1]
+    grupo_12 = rocas[n//2+1:n]
+    #Encontrar los elementos maximos en cada grupo
+    max1 = grupo1[0]
+    for i in range(1, n//2):
+        if grupo_1[i] > max1:
+            max1 = grupo_1[i]
+    max2 = grupo_2[0]
+    for i in range(1, n//2):
+        if grupo_2[i] > max2:
+            max2 = grupo_2[i]
+    #Comparar los dos elementos maximos encontrados
+    if max1 > max2:
+        max_roca = max1
+    else:
+        max_roca = max2
+    return min_roca, max_roca
+\end{lstlisting}

@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Ensayo (Reto BANXICO) }
+\author{Carrasco Sánchez Mariana\\
+Juárez Torres Carlos Alberto\\
+Vega Gónzalez Pedro Rubén}
+\date{31-marzo-2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+  \section{Análisis de la condición actual (Entorno internacional)}
+
+  \subsection{Evolución y perspectiva actual de la economía mundial}
+
+  La lucha global contra la inflación, la guerra de Rusia en Ucrania y el resurgimiento del COVID-19 en China pesaron sobre la actividad económica mundial en 2022, y los dos primeros factores seguirán haciéndolo en 2023.A pesar de estos obstáculos, el PIB real fue sorprendentemente sólido en el tercer trimestre de 2022 en cifras
+economías, incluidos Estados Unidos, la zona del euro y los principales mercados emergentes y en desarrollo economías. Las fuentes de estas sorpresas fueron en muchos casos internas: más fuertes de lo esperado el consumo privado y la inversión en medio de mercados laborales ajustados y fiscal mayor de lo previsto. Los hogares gastaron más para satisfacer la demanda acumulada, particularmente en servicios, en parte reduciendo su stock de ahorros a medida que se reabrieron las economías. La inversión empresarial aumentó para cumplir lo exigido. Por el lado de la oferta, la reducción de los cuellos de botella y la disminución de los costos de transporte redujeron las presiones en los precios de los insumos y permitió un repunte en sectores previamente restringidos, como los vehículos de motor.\\
+
+Por otro lado, los mercados energéticos se han ajustado más rápido de lo esperado al impacto de la invasión rusa de Ucrania. Sin embargo, en el cuarto trimestre de 2022, se estima que este repunte se desvaneció en la mayoría, aunque no todas las principales economías. El crecimiento de EE. UU. sigue siendo más fuerte de lo esperado, y los consumidores continúan gastan de su stock de ahorros (la tasa de ahorro personal está en su nivel más bajo en más de 60 años, excepto julio de 2005), desempleo cerca de mínimos históricos y abundantes oportunidades laborales. pero en otros lugares, los indicadores de actividad de alta frecuencia (como el sentimiento comercial y del consumidor, las compras, encuestas a gerentes e indicadores de movilidad generalmente apuntan a una desaceleración.\\
+
+En ese contexto de volatilidad, los datos recientemente publicados confirman que la economía mundial se encuentra en medio de una desaceleración de amplio alcance a medida que los riesgos a la baja incluidos aquellos señalados en la Actualización de las Perspectivas de la economía mundial (informe WEO) de julio de 2022 se materializan, aunque con algunas señales contrastantes. En el segundo trimestre de 2022, el PIB real mundial se contrajo moderadamente (crecimiento de 0,1 punto porcentual a una tasa trimestral anualizada), registrándose un crecimiento negativo en China, Estados Unidos y Rusia, así como también fuertes desaceleraciones en países de Europa oriental más directamente afectados por la guerra en Ucrania y sanciones internacionales orientadas a presionar a Rusia para que ponga fin a las hostilidades. Al mismo tiempo, algunas economías importantes no se contrajeron: la zona del euro dio una sorpresa al alza en el segundo trimestre, impulsada por el crecimiento de las economías del sur de Europa dependientes del turismo. Los indicadores prospectivos, incluidos los nuevos pedidos de manufacturas y mediciones del ánimo económico, indican una desaceleración entre las principales economías (gráfico 1.1). En algunos casos, sin embargo, las señales se contraponen, mostrando algunos indicadores débiles niveles de producción en medio de un sólido mercado de trabajo.
+  \subsection{Mercados financieros internacionales}
+
+ El comportamiento de los mercados financieros internacionales ha sido muy volátil y desafiante en todo lo largo del 2022 y lo que va del 2023. Algunos de los factores que han influido en este comportamiento son:\\
+\begin{itemize}
+  \item La pandemia de la COVID-19 y sus variantes, que han afectado la actividad económica, el comercio, el turismo y la movilidad en todo el mundo.
+  \item La inflación generalizada y el aumento de los precios de las materias primas, han generado presiones sobre los costos y los ingresos de las empresas y los consumidores.
+  \item La normalización de las políticas monetarias y fiscales en las economías avanzadas, especialmente en Estados Unidos, donde la Reserva Federal ha iniciado un proceso de reducción gradual de sus compras de activos y se espera que suba las tasas de interés a partir del segundo trimestre del 2023.
+  \item La vulnerabilidad financiera y la limitada capacidad de respuesta de política en muchas economías emergentes y en desarrollo, que enfrentan mayores riesgos de salida de capitales, depreciación cambiaria, aumento del costo del endeudamiento y deterioro fiscal.
+
+\end{itemize}
+
+Estos factores han provocado una desaceleración del crecimiento mundial, donde hubo una predicción del 5.9 \% en 2021 al 2.9 \% en 2022 y para el 2023 al 1.7 \%. También han generado una mayor divergencia entre las regiones y los países, según su grado de exposición a los choques externos, su nivel de vacunación contra la COVID-19, su espacio macroeconómico para apoyar la recuperación y su estructura productiva.\\
+
+Entre las regiones más afectadas por la desaceleración se encuentran Europa y Asia central, América Latina y el Caribe, Oriente Medio y Norte de África y África al sur del Sahara. Estas regiones presentan un menor crecimiento potencial, una mayor dependencia de las exportaciones de materias primas o el turismo, una menor diversificación económica, una mayor informalidad laboral y una menor capacidad institucional.\\
+
+Entre las regiones más resilientes se encuentran Asia oriental y el Pacífico y Asia meridional. Estas regiones se benefician de una mayor integración comercial intrarregional, una mayor inversión en infraestructura e innovación, una mayor inclusión financiera y social y una mejor gestión sanitaria.\\
+
+Los mercados financieros internacionales reflejan esta heterogeneidad regional. Los mercados bursátiles han mostrado un mejor desempeño en Asia oriental que en América Latina o Europa. Los mercados cambiarios han experimentado mayores depreciaciones en países con mayores déficits fiscales o externos o con menores reservas internacionales. Los mercados de bonos han registrado mayores aumentos en los rendimientos o los diferenciales soberanos en países con mayores niveles o ratios de endeudamiento público o privado.\\
+
+De esta forma los mercados financieros internacionales enfrentan un escenario complejo e incierto para el resto del 2022 y el 2023. Se requiere una acción coordinada a nivel global para mitigar los riesgos sanitarios, económicos y financieros derivados de la pandemia. También se requiere una acción focalizada a nivel nacional para impulsar el crecimiento potencial mediante reformas estructurales que mejoren la productividad, la competitividad, la inclusión social y la sostenibilidad ambiental.\\
+
+\section{Inflación, política monetaria y estabilidad financiera en los países avanzados y emergentes.}
+
+Un factor importante que fundamenta la desaceleración en el primer semestre del año en curso es el rápido retiro de la política monetaria acomodaticia en un contexto en que muchos bancos centrales procuran moderar una inflación persistentemente alta. Las tasas de interés más elevadas, y el consiguiente aumento de los costos de endeudamiento, incluidas las tasas hipotecarias, están teniendo el efecto deseado de aplacar la demanda interna, mostrando el mercado de la vivienda los signos más tempranos y evidentes de una desaceleración en economías tales como la de Estados Unidos. El endurecimiento de la política monetaria ha estado generalmente aunque no en todos los casos acompañado por una reducción del apoyo fiscal, que previamente había apuntalado el ingreso disponible de los hogares. A grandes rasgos, las tasas de referencia nominales están ahora por encima de los niveles pre-pandemia tanto en las economías avanzadas como en las de mercados emergentes y en desarrollo. Con una inflación elevada, las tasas de interés reales en general no han vuelto aún a sus niveles previos a la pandemia. El endurecimiento de las condiciones financieras en la mayoría de las regiones, con la notable excepción de China (Informe sobre la estabilidad financiera mundial (informe GFSR), octubre de 2022), se reflejó en una fuerte apreciación real del dólar de EE.UU. Esto también ha empujado al alza los diferenciales de rendimiento —la diferencia entre el rendimiento de los bonos públicos que emiten los países denominados en dólares de EE.UU. o en euros y los rendimientos de los bonos públicos de Estados Unidos o Alemania— en el caso de las economías de ingreso más bajo y mediano con problemas de sobreendeudamiento. En África subsahariana, los diferenciales de rendimiento correspondientes a más de dos tercios de los bonos soberanos traspasaron el nivel de 700 puntos básicos en agosto de 2022, un valor significativamente más alto que hace un año.\\
+
+En Europa oriental y central, los efectos de la guerra en Ucrania han exacerbado el apetito mundial por el riesgo. Más allá de la política monetaria por sí sola, los brotes de COVID-19 que surgieron en China y las restricciones a la movilidad impuestas por las autoridades de ese país como parte de su estrategia de cero COVID y la invasión rusa de Ucrania también han menguado la actividad económica. Los confinamientos de China han impuesto considerables restricciones a nivel interno y atascado las cadenas de suministro mundial ya bajo presión. La guerra en Ucrania y la profundización de los cortes de abastecimiento de gas a Europa han amplificado las tensiones preexistentes en los mercados mundiales de materias primas, elevando otra vez los precios del gas natural. Las economías europeas incluida la más grande, Alemania están expuestas al impacto de los cortes de suministro gasífero. La continua incertidumbre acerca de la provisión de energía ha contribuido a ralentizar la actividad económica en Europa, particularmente en las manufacturas, desalentando la confianza de los consumidores y, en menor medida, de las empresas . Sin embargo, la fuerte recuperación de las economías del sur dependientes del turismo contribuyó a producir un crecimiento general mejor que el previsto en la primera mitad de 2022.\\
+
+\section{La Economía de nuestro México}
+
+\subsection{Evolución y perspectiva actual de la economía mexicana.}
+
+La economía de México ha tenido un comportamiento moderado a lo largo del 2022 y lo que va del 2023. Según el INEGI, el PIB de México creció un 3\% en 2022 respecto al nivel alcanzado el año previo, superando la caída del crecimiento por la pandemia de la COVID-19 desde 2020. El crecimiento económico fue impulsado por las actividades industriales, que registraron un aumento del 3.2\% anual, principalmente por el sector manufacturero y las exportaciones. Las actividades agropecuarias y los servicios también crecieron, pero a un menor ritmo.\\
+
+Sin embargo, la economía mexicana también enfrentó varios desafíos en el 2022 y lo que va del 2023. Uno de ellos fue la inflación generalizada, que promedió una tasa de crecimiento interanual de 7.89\% en el 2022, la más alta de las últimas dos décadas. Esto obligó al Banco de México a elevar sus tasas de interés a niveles superiores al 10.5\%, lo que encareció el crédito y afectó la inversión y el consumo internos. Otro desafío fue la vulnerabilidad externa, debido a la dependencia de las remesas, el turismo y las materias primas, que se vieron afectados por la pandemia, los conflictos geopolíticos y la volatilidad financiera internacional.\\
+
+
+Para este 2023, se espera una desaceleración del crecimiento económico de México, debido a factores como la persistencia de la pandemia y sus variantes, el endurecimiento de las políticas monetarias y fiscales en Estados Unidos y otras economías avanzadas, los cuellos de botella en las cadenas globales de valor y los riesgos sociales y ambientales. Según diferentes fuentes, se estima que el PIB de México crecerá entre 0.3\% y 1.8\% este año. Algunas instituciones internacionales como la UNCTAD proyectan un crecimiento aún menor para el próximo año: 1.4 \% en 2024.\\
+
+\subsection{Mercados financieros en México}
+
+Los mercados financieros en México han mostrado un comportamiento volátil y restrictivo en el último año, debido al entorno económico mundial complejo e incierto, la inflación elevada, la pandemia de COVID-19 y otros factores internos y externos. Sin embargo, el sistema financiero mexicano se mantiene fuerte y resiliente en términos generales, con niveles adecuados de capital, liquidez y solvencia. El tipo de cambio ha registrado una apreciación frente al dólar estadounidense, lo que refleja el diferencial de tasas de interés favorable para México y la conducción prudente de las políticas monetaria y fiscal.\\
+
+En comparación a las predicciones de la recuperación gradual en 2022 por las medidas del consumo interno y la vacunación contra COVID-19, podemos ver que según el tablero de indicadores económicos del INEGI, el PIB a precios constantes creció un 3.6\% anual en el cuarto trimestre del 2022,  la tasa de desocupación urbana fue del 3\% en enero de 2023 y la inflación anual se ubicó en 7.5\% en la segunda quincena de febrero de 2023. Según el cuadro resumen del Banco de México. La tasa de interés interbancaria de equilibrio fue del 6.25\% en febrero de 2023, el tipo de cambio nominal se situó en 21.35 pesos por dólar y las reservas internacionales ascendieron a 198 mil millones de dólares. Sin embargo se espera que exista la posibilidad de que la Reserva Federal de los Estados Unidos suba su tasa de referencia gradualmente lo cual puede afectar directamente la liquidez y los flujos financieros hacia México.
+
+\subsection{Inflación, política monetaria y estabilidad financiera}
+
+\paragraph{Inflación}
+
+Durante la primera semana del año pudimos EL índice Nacional de Precios al consumidor llegó a un punto del 7.94\% a tasa anual lo que aceleró la inflación en el país a contrario del 7.86\% con lo que había cerrado el 2022; De acuerdo con los datos brindados por el Instituto Nacional de Estadística Y Geografía (INEGI) , la inflación no tiene en cuenta los alimentos o la calidad de los servicios lo que a largo y mediano plazo incrementó un 0,44\% mientras que su tasa anual fue del 4,85\%.\\
+
+En el mismo periodo, el índice de precios no subyacente aumentó 0,51\% quincenal y 6,44\% a tasa anual. Dentro del índice no subyacente, los precios de los productos agropecuarios crecieron 0,35\% y los de energéticos y tarifas autorizadas por el Gobierno, 0,64\% a tasa quincenal. La electricidad subió 7,35\% a tasa anual, mientras que el gas LP disminuyó su precio anual en 9,65\%.
+
+Entre los genéricos con mayor incremento en su precio respecto a la quincena previa figuraron el tomate verde (13.95\%) y los plátanos (8,51\%). El precio de los cigarrillos también presionó al alza el indicador con un incremento del 3.13\% y los refrescos envasados tuvieron un repunte de 1,02\% quincenal. Por el contrario, entre los productos que bajaron su precio durante la primera quincena de enero se encontraron el transporte aéreo (-17,72\%); el chile poblano (10,76\%) y los paquetes de servicios turísticos, con un descenso de más del 10\%; Contrario a lo visto en Noviembre del 2022 ya que en este mes el Índice Nacional De precios al Consumidor registró una variación del 0.58\% respecto al anterior lo que dio una inflación unal de un 7.80\% lo que lo que a comparación es un incremento bastante alto.\\
+
+Este indicador, uno de los referentes para las tomas de decisiones de política monetaria del Banco de México, se ha frenado por primera vez desde noviembre del 2020, desde 8,51\% a 8,35\% al cierre de diciembre de 2022. ´´Aunque aún existen presiones inflacionarias, los datos más recientes de inflación son una buena noticia, pues empiezan a mostrar señales de que la inflación pudiera disminuir en el 2023´´, menciona Gabriela Siller, directora de análisis económico de Grupo Base.\\
+
+El chile serrano, los alimentos cocinados y el jitomate fresco fueron los productos que más aumentaron durante el último mes del año. En el rubro de mercancías, los precios aumentaron 11.09\% anual, lo que se explicó principalmente por un incremento en los alimentos, bebidas y tabaco de 14.14 \%.\\
+
+En tanto, en los servicios, el incremento de los precios promedio, a nivel nacional, fue de 5.19\% al cierre del 2022. Del lado de la inflación no subyacente - los bienes y servicios cuyos precios no responden directamente a condiciones de mercado, sino que influenciados por condiciones externas-, se observó una tasa anual de 6.27\%.\\
+
+\paragraph{Política monetaria actual y anterior}
+
+El peso mexicano el año pasado mostró bastante resiliencia . Por su parte las tasas de interés corto aumentaron y las de largo plazo disminuyeron considerablemente lo que dieron consigo un lenta recuperación  así tratando que las condiciones de holgura sigan recuperándose lo cual logró que para los pronósticos de inflación general se a la baja de los primeros dos trimestres de ese año y a comparación de la trayectoria prevista para la inflación subyacente del 2023 se incrementó; Los datos mencionados por la Junta de gobierno mantuvo presiones inflacionarias lo que dio asi como todos los factores que inciden en la trayectoria vista que la inflación mejore las expectativas.\\
+
+Ahora con la política monetaria actual en la cual se incrementó 50 puntos base para la tasa de interés interbancaria se esperan cambios para abril de 2023  lo que nos da como espera una pronta desaceleración en la inflación aunque esta se ha mantenido elevada, si bien la general disminuyó en un amplio número de economías con menores presiones sociales.\\
+
+Para términos particulares se determinó que ante la dinámica de inflación subyacente es necesario repetir la magnitud de incremento de la tasa de referencias de reuniones pasadas aunque con ciertos cambios en esta para así poder reducir un porcentaje considerable en la inflación actual. Considerando esto planteamos una política monetaria restrictiva en la cual esperamos con operaciones de financiación a largo plazo y así dar una facilidad al crédito y un aumento de 25 puntos base para la tasa de interés.\\
+
+\paragraph{Estabilidad financiera actual}
+
+Según los datos de Banxico del 7 de Diciembre del año pasado nos podemos percatar que el sistema financiero mexicano aún mantiene una posición sólida y en particular con niveles altos de de capital y de liquidez que exceden con holgura los mínimos regulatorios, aunque no obstante nos enfrentamos a un entorno más complejo e incierto debido a los niveles altos de inflación anteriormente mencionados además de un deterioro sobre las perspectivas de crecimiento lo que nos da un apretamiento sobre las condiciones financieras globales y riesgos a la estabilidad financiera con respecto a países avanzados.\\
+
+Así, en un entorno de niveles de inflación persistentemente elevados, de menores expectativas de crecimiento, de mayor incertidumbre sobre la evolución de las condiciones financieras globales y de tensiones geopolíticas, será relevante dar seguimiento a la evolución del sistema financiero.Adicionalmente, el otorgamiento del crédito continúa sin registrar una reactivación robusta y generalizada que pueda acompañar e impulsar el crecimiento económico. Los mercados financieros internacionales también se han visto  afectados por el entorno descrito, así como por episodios de elevada volatilidad y mayor  aversión al riesgo, en conjunto con un apretamiento significativo de las condiciones financieras. Ello, derivado de una aceleración en el proceso de ajuste de la política monetaria por parte de los principales bancos centrales en respuesta a lecturas de inflación persistentemente elevadas e incrementos en sus expectativas.\\
+
+
+En particular, los mercados financieros de las economías emergentes han sido afectados. Desde junio de 2022, las divisas de dichos países han presentado un desempeño negativo. No obstante, cabe destacar que el peso mexicano se ha mantenido como la única divisa de este conjunto que ha mostrado una apreciación en el periodo. Este comportamiento obedece, entre otros, a los siguientes factores: el diferencial de tasas de interés frente a otras economías, la conducción prudente de las políticas fiscal y monetaria, y el equilibrio de las cuentas externas.\\
+
+\section{Postura y defensa sobre la política monetaria}
+
+El contexto financiero actual exige una política monetaria restrictiva como la mejor opción para mantener la estabilidad económica. Esto se logra limitando la cantidad de dinero que los consumidores pueden gastar y aumentando los intereses a largo plazo para reducir gradualmente la inflación y, por ende, el Producto Interno Bruto (PIB). Sin embargo, es importante considerar las consecuencias de esta medida en el mercado laboral y la economía en general.\\
+
+En el caso de nuestro país, contamos con una amplia variedad de productos y una cultura rica que podemos aprovechar para aumentar las exportaciones y expandir el mercado, lo que, sumado a la reducción de la inflación, puede contribuir a la recuperación del PIB. Es fundamental evaluar cuidadosamente los efectos de una política monetaria tan estricta en el empleo y evitar caer en una recesión.\\
+
+En resumen, la implementación de una política monetaria restrictiva puede ser efectiva para mantener la estabilidad financiera y reducir la inflación y el PIB. Sin embargo, es importante tener en cuenta las implicaciones de esta medida en el mercado laboral y evaluar cuidadosamente los efectos a largo plazo antes de tomar decisiones drástica.\\
+
+\section{Referencias}
+
+\begin{itemize}
+  \item El País. (24 de febrero de 2023). La economía de México crece 3,1\% en 2022 a pesar de la presión inflacionaria.\\ 
+  https://elpais.com/mexico/2023-02-24/la-economia-de-mexico-crece-31-en-2022-a-pesar-de-la-presion-inflacionaria.html
+  \item El País. (31 de enero de 2023). La economía de México crece un 3\% en 2022 y supera la caída del crecimiento por la pandemia.\\ 
+  https://elpais.com/mexico/2023-01-31/la-economia-de-mexico-crece-un-3-en-2022-y-supera-la-caida-del-\\
+        crecimiento-por-la-pandemia.html
+  \item Organización para la Cooperación y el Desarrollo Económicos. (2023). Panorama económico: México.\\ 
+  https://www.oecd.org/economy/panorama-economico-mexico/\#:~:text=\%3E\%20Economic\%20\\
+        Snapshot\%20of\%20Mexico\%20Nota\%20de\%20Pa\%C3\%ADs,si\%20bien\%20la\%20elevada\%20inflaci\\
+        \%C3\%B3n\%20le\%20restar\%C3\%A1\%20fuerza.
+  \item Forbes México. (s. f.). ¿Qué podemos esperar de la economía mexicana en 2023?\\ 
+  https://www.forbes.com.mx/que-podemos-esperar-de-la-economia-mexicana-en-2023/
+  \item El Economista. (20 de marzo de 2023). Nivel de financiamiento interno al sector privado en México.\\ 
+  https://www.eleconomista.com.mx/economia/Nivel-de-financiamiento-interno-al-sector-privado-en-Mexico-20230320-0027.html
+  \item Centro de Estudios de las Finanzas Públicas. (2022). Indicadores Económicos y Financieros.\\ 
+  https://www.cefp.gob.mx/indicadores/gaceta/2022/iescefp0342022.pdf
+  \item Comisión Nacional Bancaria y de Valores. (s. f.). Información Estadística.\\ 
+  https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/BANCA-MULTIPLE/Paginas/Informaci\\
+        \%C3\%B3n-Estad\%C3\%ADstica.aspx
+  \item Instituto Nacional de Estadística y Geografía. (s. f.). Tablero de Información Económica.\\ 
+  https://www.inegi.org.mx/app/tablero/
+  \item Banco de México. (s. f.). Consulta de Indicadores Económicos.\\ 
+  https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=\\
+        consultarCuadroAnalitico\&idCuadro=CA126\&sector=12\&locale=es
+  \item Instituto Nacional de Estadística y Geografía. (s. f.). INEGI.\\ 
+  https://www.inegi.org.mx/
+  \item INEGI (s. f.). Encuesta Nacional de Ocupación y Empleo. Recuperado el 31 de marzo de 2023, de\\ 
+  https://www.inegi.org.mx/temas/empleo/
+  \item Banco de México (s. f.). Reportes sobre el sistema financiero. Recuperado el 31 de marzo de 2023, de\\ 
+  https://www.banxico.org.mx/publicaciones-y-prensa/reportes-sobre-el-sistema-financiero/reportes-sistema-financiero-s.html
+  \item Economipedia (s. f.). Política monetaria restrictiva. Recuperado el 31 de marzo de 2023, de\\ 
+  https://economipedia.com/definiciones/politica-monetaria-restrictiva.html
+
+\end{itemize}
+
+\end{document}

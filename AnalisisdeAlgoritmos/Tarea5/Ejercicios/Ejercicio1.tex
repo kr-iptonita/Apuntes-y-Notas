@@ -1,0 +1,42 @@
+\section{\textbf{Problema $\Gamma$:} Sea $S$ un conjunto de $n$ números reales y $x$ un número real. Determinar si existen dos elementos en $S$ cuya suma sea exactamente $x$.}
+
+\subsection{Algoritmo para el problema $Gamma$ sin suponer que $S$ esté ordenado.}
+\begin{lstlisting}[language=python]
+
+def existen_suma_exacta(S, x):
+    n = len(S)
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if S[i] + S[j] == x:
+                return True
+    return False
+
+
+\end{lstlisting}
+
+Este algoritmo recorre todos los pares de elementos distintos de $S$ y verifica si su suma es igual a $x$. Si encuentra un par cuya suma es exactamente $x$, devuelve True. Si termina de recorrer todos los pares y no encuentra ninguno cuya suma sea igual a $x$, devuelve False.
+
+\subsection{Complejidad del algoritmo propuesto:}
+
+Es $O(n^2)$, ya que tiene dos ciclos anidados que recorren todo el conjunto $S$. Por lo tanto, el tiempo de ejecución aumenta cuadráticamente con el tamaño de la entrada.
+
+\subsection{Algoritmo para el problema $Gamma$ suponiendo que $S$ está ordenado.}
+
+\begin{lstlisting}[language=python]  
+def existen_suma_exacta_ordenado(S, x):
+    i = 0
+    j = len(S)-1
+    while i < j:
+        s = S[i] + S[j]
+        if s == x:
+            return True
+        elif s < x:
+            i += 1
+        else:
+            j -= 1
+    return False
+\end{lstlisting}
+
+Este algoritmo mantiene dos punteros, $i$ y $j$, que inicialmente apuntan al primer y último elemento de $S$, respectivamente. En cada iteración, se calcula la suma de los elementos apuntados por los punteros. Si la suma es igual a $x$, el algoritmo devuelve True. Si la suma es menor que $x$, se incrementa el puntero $i$, para buscar una suma mayor. Si la suma es mayor que $x$, se decrementa el puntero $j$, para buscar una suma menor. Si los punteros se cruzan, el algoritmo devuelve False, indicando que no hay dos elementos en $S$ cuya suma sea exactamente $x$.
+
+La complejidad de este algoritmo es $O(n)$, ya que tiene un solo ciclo que recorre todo el conjunto $S$ una única vez. Por lo tanto, el tiempo de ejecución aumenta linealmente con el tamaño de la entrada.

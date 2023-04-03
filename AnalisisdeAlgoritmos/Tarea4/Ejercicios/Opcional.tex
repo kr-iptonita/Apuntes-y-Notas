@@ -1,7 +1,53 @@
 \section{Considerar el siguiente problema}
 
-\textbf{Partición}
+\textbf{Partición: Dada una lista con de n enteros positivos y distintos particionar (dividir) la lista en dos
+sublistas $L_1$ y $L_2$, cada una de tamaño $n/2$ tal que la diferencia entre las sumas de los
+enteros en las dos listas sea mínima; suponer que $n$ es mútiplo de dos.}
 
 \subsection{Diseñar usando Inducción Matematica un algoritmo eficiente que solucione el problema y que use el menor número de comparaciones}
 
+\textbf{Caso Baso:}Si la lista tiene tamaño 1, simplemente devolvemos la lista como una de las sublistas y una lista vacía como la otra.\\
+\textbf{Hipotesis de Inducción} Supongamos que se tiene una lista de longitud $n$, y que se ha encontrado una manera de dividirla en dos sublistas $L_1$ y $L_2$ de longitud $n/2$ de tal manera que la diferencia entre las sumas de los elementos en las dos listas sea mínima.\\
+\textbf{Paso Inductivo} Consideremos ahora una lista de longitud $n+2$. Podemos separar los dos elementos adicionales y dividir la lista restante en dos sublistas de longitud $n/2$ utilizando nuestra hipótesis de inducción. Luego, podemos comparar las sumas de las dos sublistas de longitud $n/2$ con la suma de los dos elementos adicionales, y seleccionar la partición que minimice la diferencia entre las sumas de las dos sublistas.\\
+
+Por lo tanto, podemos utilizar este enfoque recursivo para dividir la lista original en dos sublistas de longitud $n/2$ con la diferencia mínima entre las sumas de los elementos en las dos sublistas. La complejidad de este algoritmo es $O(n\log n)$, ya que se realiza una división recursiva de la lista en cada paso de la inducción y cada división toma $O(\log n)$ tiempo. Además, se realiza una comparación adicional de cada elemento en la lista, lo que resulta en un total de $O(n)$ comparaciones.
+
+De modo que quedamos con el siguiente algoritmo:
+
+\begin{lstlisting}[language=python]
+funcion particion(lista):
+    if longitud(lista) == 2:
+        return [lista[0]], [lista[1]]  # Caso base
+    else:
+        # Dividir la lista en dos sublistas de longitud n/2
+        mitad = longitud(lista) // 2
+        l1, l2 = particion(lista[:mitad]), particion(lista[mitad:])
+        
+        # Calcular la suma de los elementos en cada sublista
+        suma_l1, suma_l2 = sum(l1), sum(l2)
+        
+
+        if suma_l1 > suma_l2:
+            # Si la suma de l1 es mayor, mover un elemento de l1 a l2
+            elemento = l1.pop()
+            l2.append(elemento)
+        else suma_l1 < suma_l2:
+            # Si la suma de l2 es mayor, mover un elemento de l2 a l1
+            elemento = l2.pop(0)
+            l1.append(elemento)
+            
+        # Devolver las dos sublistas
+        return l1, l2
+
+\end{lstlisting}
+
 \subsection{Determinar la complejidad del algoritmo obtenido}
+
+El algoritmo consta de dos partes principales: la división recursiva de la lista en sublistas de tamaño $n/2$ y el cálculo de la diferencia mínima entre las sumas de los elementos de las sublistas.\\
+
+La división recursiva de la lista en sublistas de tamaño $n/2$ se realiza a través de la recursión, y la profundidad de la recursión es $\log_2 n$. En cada nivel de recursión se realiza una operación de partición de la lista original en dos sublistas, que tiene una complejidad de $O(n)$, ya que debe copiar todos los elementos de la lista original. Por lo tanto, la complejidad total de la división recursiva es $O(n\log n)$.\\
+
+El cálculo de la diferencia mínima entre las sumas de los elementos de las sublistas se realiza después de la división recursiva. Para cada par de sublistas, se calcula la diferencia de sus sumas y se compara con la diferencia actual mínima. Esto implica $n/2$ comparaciones, ya que hay $n/2$ pares de sublistas. Por lo tanto, la complejidad total de esta parte del algoritmo es $O(n)$.\\
+
+Por lo tanto, la complejidad total del algoritmo de partición obtenido mediante la inducción matemática es $O(n\log n)$\\
+

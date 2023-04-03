@@ -1,0 +1,17 @@
+\section{Algoritmo de Búsqueda por Interpolación}
+
+\subsection{Construye un ejemplo, con $n$ datos, $n \geq 700$, para el cual BxI requiera de $\Omega(n)$ comparaciones para una secuencia de tamaño $n$}
+
+Podemos construir un ejemplo en el que la distribución de los datos no es uniforme, lo que lleva a un peor caso de complejidad de $\Omega(n)$ para la búsqueda por interpolación.\\
+
+Consideremos una secuencia de $n$ números ordenados en orden ascendente, donde los primeros $\frac{n}{2}$ números son todos iguales y tienen un valor $a$, y los segundos $\frac{n}{2}$ números son todos iguales y tienen un valor $b>a$.\\
+
+Ahora, si buscamos el valor $b$ en esta secuencia utilizando la búsqueda por interpolación, el algoritmo siempre elegirá el punto de interpolación en la mitad de la secuencia, ya que el valor en esa posición es igual a $a + \frac{(b-a)}{2} = \frac{a+b}{2}$. Como los primeros $\frac{n}{2}$ números son todos iguales a $a$, esto significa que la búsqueda por interpolación no hará ningún progreso en la mitad inferior de la secuencia, y requerirá comparar cada elemento en esa mitad antes de moverse a la mitad superior. Por lo tanto, la complejidad en este caso es de $\Omega(n)$.\\
+
+\subsection{Construye un ejemplo, con $n$ datos, $n \geq 700$, para el cual BxI tenga una busqueda exitosa comparaciones para una secuencia de tamaño $n$}
+
+Consideremos una secuencia de $n$ números en orden ascendente, donde los valores están distribuidos uniformemente en el rango $[1,1000]$, es decir, el valor mínimo es $1$ y el valor máximo es $1000$. Además, supongamos que estamos buscando el valor $x$ en la secuencia, donde $x$ es un número aleatorio elegido en el rango $[1,1000]$.\\
+
+En este caso, la búsqueda por interpolación tendrá éxito con un número relativamente pequeño de comparaciones.\\
+
+El algoritmo de búsqueda por interpolación funciona dividiendo la secuencia en partes y eligiendo un punto de interpolación que se acerque a $x$ en función de la distribución de los datos. Si los datos están uniformemente distribuidos, la división de la secuencia y la elección del punto de interpolación se acercarán a $x$ de manera uniforme, lo que lleva a una búsqueda exitosa con pocas comparaciones.
