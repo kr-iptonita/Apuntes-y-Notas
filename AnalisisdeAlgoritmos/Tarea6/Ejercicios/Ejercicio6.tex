@@ -1,0 +1,37 @@
+\section{Suponga que tiene $n$ intevalos cerrados sobre la recta real [a(i), b(i)], con $i \leq i \leq n$. Encontrar la máxima $k$ tal que existe un punto $x$ que es cubierto por los $k$ intervalos.}
+
+\begin{itemize}
+  \item \textbf{Diseño del algoritmo}
+  Podemos utilizar la estrategia de búsqueda binaria. Primero, ordenamos los intervalos de manera creciente por sus puntos finales $b(i)$. Luego, utilizamos una búsqueda binaria para encontrar el valor k máximo para el cual existe un punto $x$ que es cubierto por los $k$ intervalos. En cada iteración de la búsqueda binaria, consideramos el punto medio entre el valor actual de $k$ y el valor máximo posible de $k$ (que es $n$, ya que hay $n$ intervalos). Luego, verificamos si este valor medio es válido, es decir, si hay un punto $x$ que es cubierto por los $k$ intervalos. Si el valor medio es válido, actualizamos el valor de $k$ mínimo encontrado hasta ahora y continuamos buscando en la mitad inferior del rango de búsqueda. Si el valor medio no es válido, buscamos en la mitad superior del rango de búsqueda.
+
+  \item \textbf{Justificación} 
+  Esta estrategia es correcta porque aprovecha el hecho de que los intervalos están ordenados por sus puntos finales $b(i)$, lo que nos permite realizar una búsqueda binaria para encontrar el valor máximo de $k$ en lugar de recorrer todos los posibles subconjuntos de intervalos. Además, si un punto x está cubierto por k intervalos, entonces también estará cubierto por $k-1$ intervalos. Por lo tanto, el valor de $k$ máximo es monótonamente decreciente con respecto al punto $x$. Esto significa que podemos utilizar una búsqueda binaria para encontrar el valor máximo de $k$ de manera eficiente.
+
+  \item \textbf{Complejidad}
+  La complejidad computacional de este algoritmo es $O(n \log n)$, ya que primero se debe ordenar la lista de intervalos (lo que toma $O(n \log n)$ tiempo) y luego se realiza una búsqueda binaria (lo que toma $O(\log n)$ tiempo por iteración). En total, se realizan $O(\log n)$ iteraciones de la búsqueda binaria, por lo que la complejidad total del algoritmo es $O(n log n)$.
+  \item \textbf{Pseudo-código}
+
+  \begin{lstlisting}
+  def max_intervalos_cubren_punto(intervalos):
+    intervalos_ordenados = sorted(intervalos, key=lambda intervalo: intervalo[1])
+    k_min = 0
+    k_max = len(intervalos_ordenados)
+    while k_min < k_max:
+        k_medio = (k_min + k_max + 1) // 2
+            k_min = k_medio
+        else:
+            k_max = k_medio - 1
+    return k_min
+
+  def existe_punto_cubierto_por_k(intervalos, k):
+    contador_puntos = {}
+    for intervalo in intervalos[:k]:
+        for i in range(intervalo[0], intervalo[1]+1):
+            contador_puntos[i] = contador_puntos.get(i, 0) + 1
+    for punto, conteo in contador_puntos.items():
+        if conteo >= k:
+            return True
+    return False
+
+  \end{lstlisting}
+\end{itemize}

@@ -1,0 +1,26 @@
+\section{Problema de Selección}
+
+El Problema de Selección consiste en encontrar el k-ésimo elemento más
+pequeño de un conjunto de $n$ datos, $1 \leq k \leq n$.
+Considere los algoritmos de ordenamiento:
+
+\begin{itemize}
+  \item Bubble Sort
+  \item Insertion Sort
+  \item Shell Sort
+  \item Selection Sort
+  \item Local Insertion Sort
+  \item Heap Sort
+  \item Merge Sort
+\end{itemize}
+
+Suponiendo que $k$ es tal que $1 < k < n$. ¿Cuáles de las
+estrategias usadas por los algoritmos anteriores, nos ayudan a resolver
+el Problema de Selección sin tener que ordenar toda la secuencia?
+Justifica, para cada inciso, tus respuestas.
+
+\begin{itemize}
+  \item \textbf{Selection Sort} Este algoritmo selecciona el elemento más pequeño en cada iteración y lo coloca en la posición correspondiente en el arreglo. Para resolver el Problema de Selección, podemos modificar este algoritmo para que en lugar de ordenar todo el arreglo, pare cuando encuentre el k-ésimo elemento más pequeño. Esto se logra mediante la implementación de una condición adicional que detenga el algoritmo cuando se encuentre el k-ésimo elemento.
+  \item \textbf{Heap Sort} Este algoritmo utiliza una estructura de datos llamada heap para ordenar los elementos del arreglo. Para resolver el Problema de Selección, podemos construir un heap de tamaño k con los primeros k elementos del arreglo. Luego, recorremos los elementos restantes del arreglo y los vamos insertando en el heap si son más pequeños que el elemento más grande del heap. De esta manera, al final del recorrido, el elemento en la raíz del heap es el k-ésimo elemento más pequeño.
+  \item \textbf{Merge Sort} Este algoritmo divide el arreglo en dos mitades, las ordena por separado y luego las combina en un arreglo ordenado. Para resolver el Problema de Selección, podemos modificar este algoritmo para que solo ordene la mitad que contiene el k-ésimo elemento. Si el k-ésimo elemento está en la primera mitad, se aplica el algoritmo de ordenamiento recursivamente a la primera mitad; si está en la segunda mitad, se aplica recursivamente a la segunda mitad. Si el k-ésimo elemento está en la intersección de ambas mitades, se devuelve ese elemento.
+\end{itemize}

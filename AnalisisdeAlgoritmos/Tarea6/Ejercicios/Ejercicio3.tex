@@ -1,0 +1,55 @@
+\section{Realiza la siguiente modificación al algoritmo Insertion Sort:
+Para buscar la posición del nuevo elemento, el que está en revisión,
+usar Búsqueda Binaria, en vez de hacerlo secuencialmente.}
+
+\begin{lstlisting}[language = python]
+
+def Busqueda(arr, val, start, end):
+
+    if start == end:
+        if arr[start] > val:
+            return start
+        else:
+            return start + 1
+    
+    if start > end:
+        return start
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] < val:
+        return Busqueda(arr, val, mid + 1, end)
+    elif arr[mid] > val:
+        return Busqueda(arr, val, start, mid - 1)
+    else:
+        return mid + 1
+
+def insertion_sort_b(arr):
+
+    for i in range(1, len(arr)):
+        val = arr[i]
+        pos = Busqueda(arr, val, 0, i - 1)
+        arr = arr[:pos] + [val] + arr[pos:i] + arr[i+1:]
+    return arr
+
+\end{lstlisting}
+
+La función insertion\_sort\_b toma como entrada un arreglo arr y utiliza el algoritmo de inserción con búsqueda binaria para ordenar el arreglo de manera ascendente.
+
+La función Busqueda toma como entrada el arreglo arr, los índices left y right que delimitan el rango en el que se buscará la posición del elemento key , y el valor key que se está buscando. La función devuelve la posición donde se debería insertar el valor key en el arreglo arr para que este siga ordenado.
+
+En la función insertion\_sort\_b, el bucle principal itera sobre los índices i del arreglo desde el segundo elemento hasta el último. En cada iteración, se almacena el valor del elemento en la posición i en la variable key y se busca su posición adecuada en el arreglo utilizando la función Busqueda. A continuación, se desplazan los elementos
+
+\begin{enumerate}
+    \item \textbf{Complejidad del algoritmo} La operación más costosa en este algoritmo es la búsqueda binaria, que tiene un tiempo de ejecución de $O(log n)$, donde ''$n$'' es el número de elementos en el arreglo. Dentro del bucle principal, la búsqueda binaria se realiza para cada elemento del arreglo, por lo que el tiempo total de ejecución del algoritmo es de $O(n log n)$.
+
+        En el peor de los casos, cuando el arreglo está completamente desordenado, la búsqueda binaria tendrá que buscar la posición adecuada del elemento en todo el arreglo, por lo que su tiempo de ejecución será $\log_2(n)$ iteraciones en la búsqueda binaria. Así, el tiempo total de ejecución del algoritmo sería $O(n log n)$, ya que la búsqueda binaria se realiza para cada uno de los $n$ elementos del arreglo.
+
+        En resumen, el desempeño computacional del algoritmo Insertion Sort modificado con búsqueda binaria es $O(n log n)$, lo que lo hace más eficiente que la versión original del algoritmo de inserción, que tiene un desempeño de $O(n^2)$ en el peor de los casos.
+    \item \textbf{¿Mejora el desempeño computacional del proceso?} Si, La versión original del algoritmo de inserción tiene un tiempo de ejecución de $O(n^2)$, lo que significa que el tiempo de ejecución aumenta cuadráticamente con el número de elementos en el arreglo. Por lo tanto, cuando el tamaño del arreglo aumenta, el tiempo de ejecución se vuelve muy grande y el algoritmo se vuelve menos eficiente.
+
+        Por otro lado, el algoritmo Insertion Sort modificado con búsqueda binaria tiene un tiempo de ejecución de $O(n log n)$, lo que significa que el tiempo de ejecución aumenta linealmente con el tamaño del arreglo, pero no tan rápido como en la versión original del algoritmo de inserción. Por lo tanto, el algoritmo modificado es más eficiente en términos de tiempo de ejecución y se puede manejar fácilmente un mayor número de elementos en el arreglo.
+
+\end{enumerate}
+
+

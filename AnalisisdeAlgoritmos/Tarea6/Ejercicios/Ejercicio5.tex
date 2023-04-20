@@ -1,0 +1,37 @@
+\section{Dados $n$ puntos en el plan, encontrar un poligono que tenga como vértices los $n$ puntos dados}
+
+\begin{enumerate}
+  \item \textbf{Diseño de un algoritmo}
+  Se puede utilizar un enfoque de dividir y conquistar. Primero, se selecciona un punto extremo en el plano como el primer vértice del polígono, por ejemplo, el punto con la coordenada x más baja. A continuación, se ordenan los puntos restantes por su ángulo polar con respecto a este punto extremo. Luego, se construye el polígono agregando puntos en orden, siempre y cuando el ángulo formado por el nuevo punto y los dos puntos más recientes del polígono sea menor que 180 grados. Si no es menor que $180$ grados, se elimina el punto más reciente del polígono y se vuelve a verificar el ángulo con el nuevo punto. Este proceso se repite hasta que se hayan agregado todos los puntos.
+  \item \textbf{Justificación de la propuesta}
+  La estrategia de dividir y conquistar para construir el polígono garantiza que se pueda encontrar un polígono que tenga como vértices los n puntos dados. Al seleccionar un punto extremo como primer vértice, el algoritmo asegura que este punto estará en el polígono resultante y que no habrá puntos adicionales dentro del polígono. El ordenamiento de los puntos restantes por su ángulo polar con respecto al punto extremo también garantiza que los puntos se agreguen al polígono en orden, siguiendo una trayectoria continua alrededor del borde del polígono.
+  \item \textbf{Complejidad}
+  El algoritmo tiene una complejidad de tiempo de $O(n\log n)$ para ordenar los puntos por ángulo polar utilizando, por ejemplo, un algoritmo de ordenamiento quicksort o mergesort. Luego, la construcción del polígono se realiza en tiempo lineal $O(n)$, ya que cada punto se agrega al polígono una vez. Por lo tanto, la complejidad total del algoritmo es $O(n\log n)$.
+  \item \textbf{Pseudo-código}
+  
+  \begin{lstlisting}[language = python]
+
+  def poligono_convexo(puntos):
+    
+    extremo = min(puntos, key=lambda p: p[0])
+    
+    puntos_ordenados = sorted(puntos, 
+                       key=lambda p: math.atan2(p[1]-extremo[1], p[0]-extremo[0]))
+    
+    poligono = [extremo, puntos_ordenados[0]]
+    
+    for i in range(1, len(puntos_ordenados)):
+        while len(poligono) >= 2 and \
+              (poligono[-1][0]-poligono[-2][0])*
+                (puntos_ordenados[i][1]-poligono[-2][1]) - \
+              (poligono[-1][1]-poligono[-2][1])*
+                (puntos_ordenados[i][0]-poligono[-2][0]) < 0:
+            
+            poligono.pop()
+        
+        poligono.append(puntos_ordenados[i])
+    return poligono
+
+
+  \end{lstlisting}
+\end{enumerate}
