@@ -1,0 +1,152 @@
+\section{Elije $\lambda$ de tal modo que el siguiente sistema de ecuaciones tenga solución:
+\begin{align*}
+2x_1 - x_2 + x_3 + x_4 &= 1 \\
+x_1 + 2x_2 - x_3 + 4x_4 &= 2 \\
+x_1 + 7x_2 - 4x_3 + 11x_4 &= \lambda
+\end{align*}}
+
+Podemos representar el sistema de ecuaciones lineales utilizando matrices de la siguiente manera:
+
+\[ AX = B \]
+
+donde:
+
+\[ A = \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} \]
+
+\[ X = \begin{bmatrix} 
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{bmatrix} \]
+
+\[ B = \begin{bmatrix} 
+1 \\
+2 \\
+\lambda
+\end{bmatrix} \]
+
+Para que el sistema tenga solución, es necesario que la matriz de coeficientes A sea una matriz invertible, es decir, su determinante debe ser distinto de cero.
+
+Entonces, para encontrar el valor de lambda que hace que el sistema tenga solución, podemos calcular el determinante de la matriz A y resolver la ecuación:
+
+\[ \det(A) \neq 0 \]
+
+Si el determinante de A es diferente de cero, entonces para cualquier valor de lambda, el sistema tendrá una única solución. Si el determinante es igual a cero, entonces existen valores particulares de lambda que hacen que el sistema tenga múltiples soluciones o no tenga solución.
+
+Vamos a calcular el determinante de A:
+
+\[ \det(A) = \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} \]
+
+Utilizando operaciones elementales de filas, podemos simplificar la matriz A:
+
+\[ \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} 
+= \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 8 & -5 & 10
+\end{bmatrix} 
+= \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 0 & 1 & 4
+\end{bmatrix} \]
+
+Ahora, calculamos el determinante de la matriz resultante:
+
+\[ \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 0 & 1 & 4
+\end{bmatrix} 
+= 2 \cdot 5 \cdot 1 + (-1) \cdot (-3) \cdot 1 + 1 \cdot 3 \cdot 0 - 1 \cdot 5 \cdot 0 - (-1) \cdot 3 \cdot 0 - 2 \cdot (-3) \cdot 1
+= 10 + 3 + 0 - 0 - 0 - (-6)
+= 19 \]
+
+El determinante de la matriz A es igual a 19. Como el determinante es diferente de cero, podemos concluir que para cualquier valor de lambda, el sistema tendrá una única solución.
+Podemos representar el sistema de ecuaciones lineales utilizando matrices de la siguiente manera:
+
+\[ AX = B \]
+
+donde:
+
+\[ A = \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} \]
+
+\[ X = \begin{bmatrix} 
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{bmatrix} \]
+
+\[ B = \begin{bmatrix} 
+1 \\
+2 \\
+\lambda
+\end{bmatrix} \]
+
+Para que el sistema tenga solución, es necesario que la matriz de coeficientes A sea una matriz invertible.
+Entonces
+\[ \det(A) \neq 0 \]
+
+
+Calculando el determinante de A:
+
+\[ \det(A) = \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} \]
+
+Simplificando la matriz A:
+
+\[ \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+1 & 2 & -1 & 4 \\
+1 & 7 & -4 & 11
+\end{bmatrix} 
+= \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 8 & -5 & 10
+\end{bmatrix} 
+= \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 0 & 1 & 4
+\end{bmatrix} \]
+
+Ahora, calculamos el determinante de la matriz resultante:
+
+\[ \begin{bmatrix} 
+2 & -1 & 1 & 1 \\
+0 & 5 & -3 & 3 \\
+0 & 0 & 1 & 4
+\end{bmatrix} 
+= 2 \cdot 5 \cdot 1 + (-1) \cdot (-3) \cdot 1 + 1 \cdot 3 \cdot 0 - 1 \cdot 5 \cdot 0 - (-1) \cdot 3 \cdot 0 - 2 \cdot (-3) \cdot 1
+= 10 + 3 + 0 - 0 - 0 - (-6)
+= 19 \]
+
+
+El determinante de la matriz A es igual a 19. Como el determinante es diferente de cero.
+Se puede ver como la tercera ecuación es redundante o no factible dado que es combinación de las dos primeras.
+Concretamente es la combinacion de 3 veces la segunda fila menos la primera.
+
+Siguiendo esto podemos decir que $\lambda=3(2)-1=5$.
+

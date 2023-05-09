@@ -1,0 +1,28 @@
+\section{Sean A, B matrices de $n \times n$ con entradas en $\mathbb{R}$ demuestre que $AB-BA \neq I_n$}
+
+Para demostrar que $AB - BA \neq I_n$ para matrices $A$ y $B$ de tamaño $n \times n$ con entradas en $\mathbb{R}$, podemos considerar un contraejemplo. 
+
+Supongamos que $A$ y $B$ son matrices que satisfacen $AB - BA = I_n$, es decir, la diferencia entre $AB$ y $BA$ es la matriz identidad $I_n$. Vamos a demostrar que esta suposición lleva a una contradicción.
+
+Multiplicando ambos lados de la ecuación por $A$, obtenemos:
+
+$$A(AB - BA) = AI_n$$
+$$AAB - ABA = A$$
+
+Ahora, multiplicamos por $B$ en ambos lados de la ecuación:
+
+$$(AAB - ABA)B = AB$$
+$$AABB - ABAB = AB$$
+
+En este punto, podemos reescribir la ecuación en términos de trazas:
+
+$$\text{tr}(AABB) - \text{tr}(ABAB) = \text{tr}(AB)$$
+
+Aplicando la propiedad cíclica de la traza, podemos reorganizar el lado izquierdo de la ecuación:
+
+$$\text{tr}(AABB) - \text{tr}(ABAB) = \text{tr}(AB)$$
+$$\text{tr}(ABAB) - \text{tr}(AABB) = -\text{tr}(AB)$$
+
+Sin embargo, esto implica que $-\text{tr}(AB) = \text{tr}(AB)$, lo cual es una contradicción, ya que la traza de una matriz no nula no puede ser igual a su negativo.
+
+Por lo tanto, hemos llegado a una contradicción a partir de nuestra suposición inicial. Por lo tanto, podemos concluir que $AB - BA \neq I_n$ para matrices $A$ y $B$ de tamaño $n \times n$ con entradas en $\mathbb{R}$.

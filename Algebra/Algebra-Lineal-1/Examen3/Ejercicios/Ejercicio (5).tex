@@ -1,0 +1,29 @@
+\section{Sea:  $$A=\begin{bmatrix}\cos \left(\theta \right)&-\sin \left(\theta \right)\\ \sin \left(\theta \right)&\cos \left(\theta \right)\end{bmatrix}$$ Determine la forma de la matriz $A^n$ para $n \geq 1$}
+
+
+
+Primero, como base, encontraremos la forma de $A^2$, y luego demostraremos que la fórmula que encontramos se cumple para cualquier valor de $n \geq 1$.
+
+Para $n = 2$, tenemos:
+
+$$A^2 = \begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta)\end{bmatrix}\begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta)\end{bmatrix} = \begin{bmatrix}\cos^2(\theta) - \sin^2(\theta) & -2\sin(\theta)\cos(\theta) \\ 2\sin(\theta)\cos(\theta) & \cos^2(\theta) - \sin^2(\theta)\end{bmatrix}$$
+
+Ahora, supongamos que para un valor de $n \geq 2$, la forma de $A^n$ es:
+
+$$A^n = \begin{bmatrix}\cos(n\theta) & -\sin(n\theta) \\ \sin(n\theta) & \cos(n\theta)\end{bmatrix}$$
+
+Luego, podemos encontrar la forma de $A^{n+1}$ como:
+
+$$A^{n+1} = A^nA = \begin{bmatrix}\cos(n\theta) & -\sin(n\theta) \\ \sin(n\theta) & \cos(n\theta)\end{bmatrix}\begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta)\end{bmatrix}$$
+
+Multiplicando las matrices, obtenemos:
+
+$$A^{n+1} = \begin{bmatrix}\cos(n\theta)\cos(\theta) - \sin(n\theta)\sin(\theta) & -\cos(n\theta)\sin(\theta) - \sin(n\theta)\cos(\theta) \\ \sin(n\theta)\cos(\theta) + \cos(n\theta)\sin(\theta) & \cos(n\theta)\cos(\theta) - \sin(n\theta)\sin(\theta)\end{bmatrix}$$
+
+Luego, utilizando las identidades trigonométricas $\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$ y $\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$, podemos simplificar la expresión:
+
+$$A^{n+1} = \begin{bmatrix}\cos((n+1)\theta) & -\sin((n+1)\theta) \\ \sin((n+1)\theta) & \cos((n+1)\theta)\end{bmatrix}$$
+
+Hemos demostrado que, si la fórmula se cumple para $n$, entonces también se cumple para $n+1$. Por lo tanto, por inducción, la fórmula se cumple para todos los valores de $n \geq 1$. Por lo tanto, podemos concluir que la forma de la matriz $A^n$ es:
+
+$$A^n = \begin{bmatrix}\cos(n\theta) & -\sin(n\theta) \\ \sin(n\theta) & \cos(n\theta)\end{bmatrix}$$

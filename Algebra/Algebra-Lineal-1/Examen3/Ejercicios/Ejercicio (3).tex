@@ -1,0 +1,26 @@
+\section{Sean $A$, $B$ matrices de $n \times n$ con entradas en un campo $K$. Si $A$ y $B$ son simétricas demuestra que $^t(AB)=BA$}
+
+Si $A$ es una matriz simétrica, esto implica que $A_{ij} = A_{ji}$ para todos los elementos de la matriz. Del mismo modo, para una matriz simétrica $B$, se tiene $B_{ij} = B_{ji}$.
+
+Ahora, consideremos el producto de matrices $AB$. La entrada $(AB)_{ij}$ está dada por el producto punto entre la fila $i$ de $A$ y la columna $j$ de $B$. Es decir,
+
+$$(AB)_{ij} = \sum_{k=1}^{n} A_{ik}B_{kj}$$
+
+Por otro lado, si calculamos la entrada $(^t(AB))_{ij}$, estamos tomando la fila $j$ de $^t(AB)$. Entonces
+
+$$(^t(AB))_{ij} = (AB)_{ji}$$
+
+Usando la definición de entrada del producto de matrices, tenemos:
+
+$$(^t(AB))_{ij} = (AB)_{ji} = \sum_{k=1}^{n} A_{jk}B_{ki}$$
+
+Ahora, comparemos esto con la entrada $(BA)_{ij}$. En este caso, estamos tomando la fila $i$ de $B$ y la columna $j$ de $A$. Por lo tanto,
+
+$$(BA)_{ij} = \sum_{k=1}^{n} B_{ik}A_{kj}$$
+
+Observamos que las expresiones para $(^t(AB))_{ij}$ y $(BA)_{ij}$ son idénticas:
+
+$$(^t(AB))_{ij} = (AB)_{ji} = \sum_{k=1}^{n} A_{jk}B_{ki} = \sum_{k=1}^{n} B_{ik}A_{kj} = (BA)_{ij}$$
+
+$\therefore ^t(AB) = BA $ es verdadero cuando $A$ y $B$ son matrices simétricas de tamaño $n \times n$ con entradas en un campo $K$.
+

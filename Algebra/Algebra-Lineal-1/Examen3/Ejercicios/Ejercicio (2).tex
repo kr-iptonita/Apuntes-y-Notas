@@ -1,0 +1,18 @@
+\section{Sean $A$, $B$ matrices de $n \times n$ con entradas en un campo $K$, demuestra que $\text{tr}(AB)= \text{tr}BA$}
+
+Comencemos demostrando que $\text{tr}(AB) = \text{tr}(BA)$.
+
+Primero, consideremos la matriz $AB$. La traza de $AB$ se calcula como $\text{tr}(AB) = \sum_{i=1}^{n} (AB)_{ii}$, donde $(AB)_{ii}$ es el elemento en la posición $(i, i)$ de la matriz $AB$.
+
+Observemos que $(AB)_{ii} = \sum_{k=1}^{n} A_{ik}B_{ki}$, es decir, el elemento $(i, i)$ de la matriz $AB$ es el resultado de la multiplicación de la fila $i$ de $A$ por la columna $i$ de $B$.
+
+Ahora, podemos reescribir la traza de $AB$ como $\text{tr}(AB) = \sum_{i=1}^{n} \left(\sum_{k=1}^{n} A_{ik}B_{ki}\right)$.
+
+Intercambiemos el orden de las sumas en la expresión anterior:
+   $$\text{tr}(AB) = \sum_{k=1}^{n} \left(\sum_{i=1}^{n} A_{ik}B_{ki}\right).$$
+
+La expresión $\sum_{i=1}^{n} A_{ik}B_{ki}$ corresponde al elemento $(k, k)$ de la matriz $BA$. Por lo tanto, podemos reescribir la traza de $AB$ como $\text{tr}(AB) = \sum_{k=1}^{n} (BA)_{kk}$, donde $(BA)_{kk}$ es el elemento en la posición $(k, k)$ de la matriz $BA$.
+
+Finalmente, la traza de $BA$ se calcula como $\text{tr}(BA) = \sum_{k=1}^{n} (BA)_{kk}$, lo cual es equivalente a la expresión obtenida en el paso anterior.
+
+$\therefore \text{tr}(AB) = \text{tr}(BA)$. 
