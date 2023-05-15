@@ -1,0 +1,55 @@
+
+\section{Utilizar BFS o DFS para determinar las componentes conexas de una gráfica
+no conexa. Dada una gráfica G, su algoritmo debe ser capaz de indicar el
+conjunto de vértices de cada componente conexa.}
+
+Se puede usar el siguiente algoritmo:
+
+\begin{enumerate}
+  \item Inicializar un conjunto vacío para almacenar las componentes conexas.
+  \item Inicializar una lista vacía para almacenar los nodos visitados.
+  \item Para cada nodo no visitado en la gráfica, realizar lo siguiente:
+  \begin{enumerate}
+    \item  Inicializar una lista vacía para almacenar los nodos de la componente conexa actual.
+    \item  Realizar una búsqueda en anchura (BFS) desde el nodo actual,
+    marcando cada nodo visitado y agregándolo a la lista de nodos de la componente conexa actual.
+    \item Agregar la lista de nodos de la componente conexa actual al conjunto de componentes conexas.
+    \item Agregar los nodos visitados a la lista de nodos visitados.
+  \end{enumerate}
+  \item Devolver el conjunto de componentes conexas. 
+\end{enumerate}
+
+\newpage
+
+Pseudocodigo:
+
+\begin{lstlisting}[language=python]
+  BFS_componentes_conexas(G):
+    visitados = set()
+    componentes_conexas = set()
+    nodos_visitados = []
+
+    for cada nodo n en G:
+        if n no esta en visitados:
+            componente_conexa_actual = []
+            visitados.add(n)
+            componente_conexa_actual.agregar(n)
+            nodos_visitados.agregar(n)
+
+            cola = Cola()
+            cola.encolar(n)
+
+            while cola no este vacia:
+                nodo_actual = cola.desencolar()
+
+                for cada vecino v de nodo_actual:
+                    if v no esta en visitados:
+                        visitados.add(v)
+                        componente_conexa_actual.agregar(v)
+                        nodos_visitados.agregar(v)
+                        cola.encolar(v)
+
+            componentes_conexas.agregar(conjunto_congelado(componente_conexa_actual))
+
+    return componentes_conexas
+\end{lstlisting}
