@@ -1,0 +1,54 @@
+\section{Sea $a$ una arista de peso mínimo de una gráfica $G = (V, A)$ con pesos
+en las aristas.}
+
+\subsection{Modificar tanto el Algoritmo Prim como el Kruskal para que
+la arista $a$ siempre aparezca en el árbol generador de peso mínimo.}
+
+\begin{itemize}
+  \item  \textbf{Modificación del algoritmo de Prim:}\\
+  Para garantizar que la arista $a$ siempre aparezca en el árbol generador de peso mínimo, podemos modificar el algoritmo de Prim de la siguiente manera:\\
+  \begin{enumerate}
+    \item Inicializar un conjunto vacío $MST$ para almacenar el árbol generador de peso mínimo.
+    \item Inicializar una cola de prioridad $Q$ para almacenar los vértices y sus costos de conexión.
+    \item Insertar el vértice inicial arbitrario en $Q$ con costo 0.
+    \item Mientras $Q$ no esté vacío:
+    \begin{enumerate}
+      \item Extraer el vértice $v$ con el costo mínimo de $Q$.
+      \item Si el vértice $v$ está en $MST$, ignorarlo y continuar al siguiente vértice en $Q$.
+      \item Agregar la arista que conecta $v$ con su vértice padre en $MST$ al conjunto $MST$.
+      \item Insertar todos los vecinos no visitados de $v$ en $Q$ con el costo correspondiente.
+    \end{enumerate}
+    \item Devolver $MST$.
+  \end{enumerate}
+  La modificación consiste en agregar una condición en el paso 4b para verificar si la arista que conecta el vértice $v$ con su vértice padre en el árbol generador de peso mínimo es la arista $a$. Si es así, se agrega al conjunto $MST$ sin verificar si el vértice $v$ está en $MST$.
+
+  \item \textbf{Modificación del algoritmo de Kruskal:}\\
+  Para asegurar que la arista $a$ siempre esté presente en el árbol generador de peso mínimo, podemos modificar el algoritmo de Kruskal de la siguiente manera:\\
+  \begin{enumerate}
+    \item Ordenar todas las aristas del grafo en orden no decreciente de peso.
+    \item Inicializar un conjunto vacío $MST$ para almacenar el árbol generador de peso mínimo.
+    \item Para cada arista $(u, v)$ en el orden de las aristas ordenadas:
+    \begin{enumerate}
+      \item Si la arista $(u, v)$ es la arista $a$, agregarla al conjunto $MST$.
+      \item Si agregar la arista $(u, v)$ a $MST$ no crea un ciclo, agregarla a $MST$.
+    \end{enumerate}
+    \item Devolver $MST$.
+  \end{enumerate}
+  La modificación consiste en agregar una condición en el paso 3a para verificar si la arista actual es la arista $a$. Si es así, se agrega directamente al conjunto $MST$ sin realizar ninguna verificación adicional.
+\end{itemize}
+
+\subsection{Calcular el desempeño computacional de los algoritmos propuestos}
+
+\begin{enumerate}
+  \item \textbf{Modificación del algoritmo de Prim:}\\
+  La modificación del algoritmo de Prim tiene un bucle principal que se ejecuta hasta que la cola de prioridad $Q$ esté vacía. En cada iteración, se extrae el vértice con el costo mínimo de $Q$ y se realizan operaciones constantes para verificar y agregar aristas al conjunto $MST$.\\
+
+  La cola de prioridad $Q$ puede implementarse con una estructura de datos eficiente, como un montículo binario o un montículo de Fibonacci, lo que permite una inserción y extracción eficiente de elementos en tiempo logarítmico. Suponiendo que el tamaño del grafo es $V$ (número de vértices) y el número total de aristas es $E$, el tiempo de ejecución del algoritmo modificado de Prim es aproximadamente $O((V + E) \log V)$.
+  \item \textbf{Modificación del algoritmo de Kruskal:}\\
+  La modificación del algoritmo de Kruskal también tiene un bucle principal que itera sobre todas las aristas ordenadas. En cada iteración, se realiza una verificación constante para determinar si la arista actual es la arista $a$ y si agregarla crea un ciclo en el árbol generador.\\
+
+  El ordenamiento de las aristas se realiza previamente y tiene un tiempo de ejecución de $O(E \log E)$ si se utiliza un algoritmo de ordenamiento eficiente, como el ordenamiento rápido (quicksort) o el ordenamiento por mezcla (merge sort). Luego, el bucle principal recorre todas las aristas en $O(E)$ y las operaciones constantes de verificación y agregado de aristas al conjunto $MST$ también se ejecutan en tiempo constante. En total, el tiempo de ejecución del algoritmo modificado de Kruskal es aproximadamente $O(E \log E)$.
+
+\end{enumerate}
+
+En términos generales, la complejidad asintótica del algoritmo modificado de Prim es mejor que la del algoritmo modificado de Kruskal, ya que $E$ puede ser mayor o igual que $V$, y en el peor de los casos, $E$ puede ser del orden de $V^2$. Sin embargo, es importante tener en cuenta que la eficiencia real de los algoritmos puede depender de factores adicionales, como la implementación específica, las estructuras de datos utilizadas y las características del grafo en particular.
