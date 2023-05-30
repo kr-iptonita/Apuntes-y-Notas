@@ -1,0 +1,30 @@
+\section{Sea $G = (V, A)$ una gráfica conexa con pesos positovos sobnre las aristas. Supongamos que el costo de un árbol generador se define como el producto de los costos en las aristas.}
+\subsection{Diseñar un algoritmo que determine el árbol generador de peso máximo, usando tal regla}
+
+La modificación consiste en ordenar las aristas en orden decreciente en lugar de creciente.
+
+\begin{enumerate}
+  \item Ordenar todas las aristas del grafo en orden decreciente de peso.
+  \item Inicializar un conjunto vacío $MST$ para almacenar el árbol generador de peso máximo.
+  \item Para cada arista $(u, v)$ en el orden de las aristas ordenadas:
+  \begin{enumerate}
+    \item Si agregar la arista $(u, v)$ a $MST$ no crea un ciclo, agregarla a $MST$.
+  \end{enumerate}
+  \item Devolver $MST$.
+\end{enumerate}
+
+La modificación clave es el paso 1, donde las aristas se ordenan en orden decreciente en lugar de creciente. Esto asegura que se seleccionen primero las aristas más pesadas durante el proceso de construcción del árbol generador.
+
+
+\subsection{Calcular el desempeño computacional del algoritmo propuesto, indicando las estructuras de datos usados para lograr tal desempeño.}
+
+El desempeño computacional del algoritmo propuesto es similar al del algoritmo de Kruskal estándar, ya que implica ordenar las aristas y realizar operaciones de conjuntos disjuntos. A continuación se describen las estructuras de datos utilizadas y el desempeño esperado:
+
+\begin{itemize}
+  \item \textbf{Conjunto de vértices y aristas:} Se pueden utilizar estructuras de datos como matrices, listas de adyacencia o listas de aristas para almacenar los vértices y las aristas.
+  \item \textbf{Estructura de datos de conjuntos disjuntos:} Para verificar si agregar una arista crea un ciclo, se requiere una estructura de datos eficiente para mantener y fusionar conjuntos disjuntos. La estructura de datos de Union-Find es comúnmente utilizada y tiene un desempeño de tiempo casi constante para las operaciones de unión y búsqueda de conjuntos.
+\end{itemize}
+
+El desempeño computacional del algoritmo propuesto es O(|E| log |V|), donde |V| es el número de vértices y |E| es el número de aristas en el grafo. Esto se debe principalmente al tiempo requerido para ordenar las aristas en orden decreciente. La estructura de datos de conjuntos disjuntos (Union-Find) también contribuye a la complejidad del algoritmo, pero su impacto es menor en comparación con el tiempo de ordenación de las aristas.
+
+
