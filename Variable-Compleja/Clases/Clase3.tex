@@ -1,0 +1,66 @@
+\section{Ejercicios Extra:}
+\begin{itemize}
+  \item $|\text{Re}(z)|+|\text{Im}(z)|\leq \sqrt{2}|z|$
+  \item $2|\text{Re}(z)||\text{Im}(z)|\leq |z|^2$
+\end{itemize}
+
+Observación: $\forall z \in \mathbb{C}$ 
+\[
+  z\underline{z}=\text{Re}(z)^2+\text{Im}(z)^2 \geq 0
+\]
+\begin{definition}[El módulo de $z$]
+  Se define como $|z|=\sqrt{z\underline{z}}$
+\end{definition}
+
+\textsc{Nota: } Si $\text{Im}(z)=0$ entonces $|z|$ corresponde al valor absoluto.\\
+
+Observación: $\forall z \in \mathbb{C}$
+\begin{itemize}
+  \item $|\text{Re}(z)|\leq |z|$ y $|\text{Im}(z)|\leq |z|$
+  \item $|z|\leq |\text{Re}(z)|+|\text{Im}(z)|$
+\end{itemize}
+
+\[
+  \therefore \max \{ |\text{Re}(z)|, |\text{Im}(z)| \}\leq |z| \leq |\text{Re}(z)|+|\text{Im}(z)|
+\]
+
+Sea $z=a+ib$:\\
+$|z|^2\leq (|\text{Re}(z)|+|\text{Im}(z)|)^2 \Leftrightarrow a^2+b^2 \leq (|a|+|b|)^2 \Leftrightarrow a^2+b^2 \leq a^2+ 2|a||b|+b^2 \Leftrightarrow 0\leq |a||b|$
+
+Observación: Como $z\underline{z} = |z|^2$ si $z\neq 0$
+\[
+  \Rightarrow z\displaystyle\frac{z}{ |z|^2 }=1 \therefore z^{-1}=\displaystyle\frac{\underline{z}}{|z|^2}
+\]
+
+\textit{Ejemplo:} $i^{-1}=\frac{1}{i}=-i$
+
+De lo anterior: $\forall z,w \in \mathbb{C}$, $w \neq 0$\\
+\[
+  \displaystyle\frac{z}{w}=zw^{-1}=\displaystyle\frac{z\underline{w}}{|w|^2}
+\]
+
+\subsection{Propiedades de:}
+$\operatorname{Re}(z), \operatorname{Im}(z), \bar{z},|z|$
+
+Sea $z=a+i b$
+
+\[
+ \begin{aligned}
+  z+\bar{z}=a+i b+a-i b=2 a \Rightarrow a=\frac{z+\bar{z}}{2} & \therefore \operatorname{Re}(z)=\frac{z+\bar{z}}{2} \\
+  z-\bar{z}=a+i b-a+i b=i 2 b \Rightarrow b=\frac{z-\bar{z}}{2 i} & \therefore \operatorname{Im}(z)=-i \frac{z-\bar{z}}{2}
+ \end{aligned}
+\]
+
+\subsection{Proposición}
+$\forall z, w \in \mathbb{C}$
+\begin{itemize}
+  \item $\operatorname{Re}(z)=\operatorname{Re}(\bar{z})=\frac{z+\bar{z}}{2}$ 
+  \item $\operatorname{Im}(z)=-\operatorname{Im}(\bar{z})=-i \frac{z-\bar{z}}{2}$ 
+  \item $\bar{z}=\operatorname{Re}(z)-i \operatorname{Im}(z)$ 
+  \item La parte real e imaginarias son $\mathbb{R}$-lineales es decir $\operatorname{Re}(z+tw)=\operatorname{Re}(z)+t \operatorname{Re}(w)$\\
+  y $\operatorname{Im}(z+t w)=\operatorname{Im}(z+t w)=\operatorname{Im}(z)+t \operatorname{Im}(w)$, donde  $t \in \mathbb{R}$\\
+  $\begin{aligned}
+       \operatorname{Re}(z w)&=\operatorname{Re}(z) \operatorname{Re}(w)-\operatorname{Im}(z) \operatorname{Im}(w) \\
+       \operatorname{Im}(z w)&=\operatorname{Im}(z)\operatorname{Im}(w)-\operatorname{Re}(z) \operatorname{Re}(w)
+   \end{aligned}$
+\end{itemize}
