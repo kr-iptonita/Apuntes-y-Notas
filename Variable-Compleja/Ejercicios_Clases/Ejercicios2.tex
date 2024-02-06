@@ -1,0 +1,147 @@
+\section{Ejercicios 2}
+\textbf{\textit{Ejercicios elaborados por: Karla Romina Juárez Torres, Nº cuenta : 318013712}}
+
+\subsection{Sea $z \in \mathbb{C}$ Demuestra las siguientes desigualdades.}
+\textbf{$2|\operatorname{Re}(z)||\operatorname{Im}(z)|\leq |z|^2$}
+
+Expresamos $ z $ en términos de su parte real y su parte imaginaria:
+
+\[ z = x + yi \]
+
+donde $ x = \operatorname{Re}(z) $ y $ y = \operatorname{Im}(z) $.
+
+Entonces, la desigualdad se convierte en:
+
+\[ 2|x| \cdot |y| \leq |x + yi|^2 \]
+
+Usando la definición del módulo de un número complejo:
+
+\[ |x + yi|^2 = (x + yi)(x - yi) = x^2 + y^2 \]
+
+Entonces, la desigualdad se convierte en:
+
+\[ 2|x| \cdot |y| \leq x^2 + y^2 \]
+
+Aplicando la desigualdad de la media aritmética-geométrica (AM-GM), tenemos:
+
+\[ \frac{x^2 + y^2}{2} \geq 2|x| \cdot |y| \]
+
+Por lo tanto,
+
+\[ x^2 + y^2 \geq 2|x| \cdot |y| \]
+
+Entonces,
+
+\[ |x + yi|^2 \geq 2|x| \cdot |y| \]
+
+Por lo tanto $ 2|\operatorname{Re}(z)||\operatorname{Im}(z)|\leq |z|^2 $.
+
+\textbf{$ |\operatorname{Re}(z)|+|\operatorname{Im}(z)| \leq \sqrt{2}|z|$}
+
+Expresamos $ z $ en términos de su parte real y su parte imaginaria:
+
+\[ z = x + yi \]
+
+donde $ x = \operatorname{Re}(z) $ y $ y = \operatorname{Im}(z) $.
+
+Entonces, la desigualdad se convierte en:
+
+\[ |\operatorname{Re}(z)| + |\operatorname{Im}(z)| \leq \sqrt{2}|x + yi| \]
+
+Usando la definición del módulo de un número complejo:
+
+\[ |x + yi| = \sqrt{x^2 + y^2} \]
+
+Entonces, la desigualdad se convierte en:
+
+\[ |\operatorname{Re}(z)| + |\operatorname{Im}(z)| \leq \sqrt{2}\sqrt{x^2 + y^2} \]
+
+Ahora, aplicamos la desigualdad triangular para módulos:
+
+\[ |\operatorname{Re}(z)| + |\operatorname{Im}(z)| \leq \sqrt{2}(|\operatorname{Re}(z)| + |\operatorname{Im}(z)|) \]
+
+Definimos $ a = |\operatorname{Re}(z)| $ y $ b = |\operatorname{Im}(z)| $, entonces:
+
+\[ a + b \leq \sqrt{2}(a + b) \]
+
+Dividimos ambos lados de la desigualdad por $ a + b $ (que es positivo porque es la suma de dos valores absolutos):
+
+\[ 1 \leq \sqrt{2} \]
+
+Como $ \sqrt{2} $ es mayor que 1, la desigualdad $ 1 \leq \sqrt{2} $ es verdadera.
+
+Por lo tanto 
+\[ |\operatorname{Re}(z)| + |\operatorname{Im}(z)| \leq \sqrt{2}|z| \].
+
+\subsection{Sean $z_1,z_2,\dots, z_n \in \mathbb{C}$ y $t_1, t_2, \dots, t_n \in \mathbb{R}$ tales que $|z_i|\leq 1$, $t_i \geq 0$, para cada $i=1,2,\dots n$, y $t_1+t_2+,\dots t_n = 1$ Demuestra que: $|t_1 z_1+t_2 z_2+\dots+t_n z_n| < 1$}
+
+
+Sea $ z_i $ en términos de sus partes real e imaginaria:
+
+\[ z_i = x_i + y_i \]
+
+donde $ x_i = \operatorname{Re}(z_i) $ y $ y_i = \operatorname{Im}(z_i) $.
+
+Entonces, tenemos:
+
+\[ |t_1 z_1 + t_2 z_2 + \dots + t_n z_n| = |t_1(x_1 + y_1) + t_2(x_2 + y_2) + \dots + t_n(x_n + y_n)| \]
+
+Por la desigualdad triangular:
+
+\[ |t_1(x_1 + y_1) + t_2(x_2 + y_2) + \dots + t_n(x_n + y_n)| \leq |t_1(x_1) + t_1(y_1)| + |t_2(x_2) + t_2(y_2)| + \dots + |t_n(x_n) + t_n(y_n)| \]
+
+Dado que $ |t_i| = t_i $ para $ t_i \geq 0 $, podemos simplificar esto aún más:
+
+\[ |t_1(x_1) + t_1(y_1)| + |t_2(x_2) + t_2(y_2)| + \dots + |t_n(x_n) + t_n(y_n)| = t_1|x_1 + y_1| + t_2|x_2 + y_2| + \dots + t_n|x_n + y_n| \]
+
+Dado que $ |z_i| \leq 1 $, tenemos que $ |x_i + y_i| \leq 1 $, por lo tanto:
+
+\[ t_1|x_1 + y_1| + t_2|x_2 + y_2| + \dots + t_n|x_n + y_n| \leq t_1 + t_2 + \dots + t_n \]
+
+Dado que $ t_1 + t_2 + \dots + t_n = 1 $
+
+Por lo tanto, $ |t_1 z_1 + t_2 z_2 + \dots + t_n z_n| < 1 $.
+
+, tenemos que:
+
+\[ t_1 + t_2 + \dots + t_n = 1 \]
+
+\subsection{Sean $z,w \in \mathbb{C}$, con $w \neq 0$. Demuestra que  $|z+w|^2 =|z^2|+|w|^2$ si y sólo si, $\operatorname{Re}\frac{z}{w}=0$}
+
+Expresamos $ z $ y $ w $ en términos de sus partes real e imaginaria.
+
+Dado que $ z = a + bi $ y $ w = c + di $, donde $ a $, $ b $, $ c $, $ d $ son números reales, tenemos:
+
+\[ |z+w|^2 = |(a+c) + (b+d)i|^2 \]
+
+Usando la definición del módulo de un número complejo:
+
+\[ |(a+c) + (b+d)i|^2 = (a+c)^2 + (b+d)^2 \]
+
+Ahora, expresamos $ z^2 $ en términos de sus partes real e imaginaria:
+
+\[ z^2 = (a^2 - b^2) + 2abi \]
+
+Usando la definición del módulo de un número complejo:
+
+\[ |z^2| = |(a^2 - b^2) + 2abi| = (a^2 - b^2)^2 + (2ab)^2 \]
+
+Dado que la igualdad $ |z+w|^2 = |z^2|+|w|^2 $ se mantiene si y solo si:
+
+\[ (a+c)^2 + (b+d)^2 = (a^2 - b^2)^2 + (2ab)^2 + c^2 + d^2 \]
+
+Expandiendo esta ecuación y cancelando los términos comunes, obtenemos:
+
+\[ 2ac + 2bd = 0 \]
+
+Dividiendo ambos lados por 2, obtenemos:
+
+\[ ac + bd = 0 \]
+
+Ahora, la parte real de $ \frac{z}{w} $ es:
+
+\[ \operatorname{Re}\left(\frac{z}{w}\right) = \frac{ac + bd}{c^2 + d^2} \]
+
+Entonces, $ \operatorname{Re}\left(\frac{z}{w}\right) = 0 $ si y solo si $ ac + bd = 0 $.
+
+Por lo tanto $ |z+w|^2 = |z^2|+|w|^2 $ si y solo si $ \operatorname{Re}\frac{z}{w} = 0 $.
