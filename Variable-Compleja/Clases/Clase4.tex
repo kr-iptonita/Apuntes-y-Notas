@@ -1,0 +1,80 @@
+\section{Clase 4}
+
+\begin{definition}[Sea $z \in \mathbb{C}$ se define:]
+
+  \begin{itemize}
+    \item $z^0 = 1$
+    \item $z^1=z$
+    \item Si $n \ in \mathbb{N}, n \geq 2 \Rightarrow z^n = z^{n-1}z$ además $z^{-n} = (z^{-1})^n$
+  \end{itemize}
+  
+\end{definition}
+
+\begin{theorem}[Desigualdad del triángulo]
+
+Sea $z, w \in \mathbb{C}$ entonces:\\
+
+  \[
+    |z+w| \leq |z|+|w| \text{ si } w \neq 0
+  \]
+\textsc{Nota: } Dicha igualdad se cumple si y solo si  $\displaystyle\frac{z}{w} \geq 0$, ($\frac{z}{w} \in \mathbb{R}$ y $\frac{z}{w}\geq 0$)
+\end{theorem}
+\begin{proof}[Demostración: ]
+
+Observesé $\operatorname{Re}(z\bar{w}) \leq |z||\bar{w}| = |z \operatorname{z\bar{w}}| $  $(\operatorname{Re}(z) \leq |\operatorname{Re}(z)| \leq |z|)$
+  \[
+    \begin{aligned}
+      \operatorname{Olos} \operatorname{Re}(z \bar{w}) & \leq|z||\bar{w}|=|z \bar{w}| \quad(\operatorname{Re}(z) \leq|\operatorname{Re}(z)| \leq|z|) . \\
+      |z+w|^{2} & =|z|^{2}+2 \operatorname{Re}(\bar{w})+|w|^{2} \\
+      & \leq|z|^{2}+2|z||\omega|+|w|^{2}=(|z|+|w|)^{2}
+    \end{aligned}
+  \]
+Suponiendo que $\exists t \in \mathbb{R}, z \geq 0, z=tw$
+
+Con eso en cuenta:
+  \[
+    \begin{aligned}
+      |z+w| & = |t w+w| = |t(t+1)| = |w|(t+1)=t|w|+|w| \\
+      & = |t w|+|w| = |z|+|w|
+    \end{aligned}
+  \]
+
+\end{proof}
+
+$\Rightarrow$ Suponiendo que $|z+w|^2 = (|z|+|w|)^2$
+ \[
+   \begin{aligned}
+     |z+w| & = |t w+w| = |t(t+1)| = |w|(t+1) = t|w|+|w| \\
+         & = |t w|+|w| = |z|+|w|
+   \end{aligned}
+ \]
+Observación: 
+
+Sea $z \in \mathbb{C}$
+
+\[
+  \begin{aligned}
+   & \operatorname{Re}(z)=|z|, \Delta z \geqslant 0 \\
+   & \left(z \in \mathbb{R}, \operatorname{Re}(z)^{2}+\operatorname{Im}(z)^{2}=|z|^{2}=\operatorname{Re}(z)^{2}, z \geqslant 0\right) \\
+   \Rightarrow & \operatorname{Im}(z)=0 \quad \Rightarrow z \in \mathbb{R} y \quad z \geqslant 0 .
+  \end{aligned}
+\]
+\[
+  \begin{aligned}
+    \operatorname{Re}(z\bar{\omega})=|z \bar{\omega}|    & \Leftrightarrow z \bar{w} \geqslant 0 \\
+    & \Leftrightarrow z\frac{|w|^{2}}{w} \geqslant 0 \\
+    & \Leftrightarrow \frac{z}{w} \geqslant  0
+  \end{aligned}
+\]
+\begin{theorem}[Desigualdad de Cauchy-schwarz]
+   sean $z_{1}, z_{2} \ldots, z_{n}, w_{1}, w_{2}, \ldots, w_{n} \in \mathbb{C}$.
+   Entonces: $\left|\sum_{j=1}^{n} z_{j} \bar{w}_{j}\right| \leqslant \sum_{j=1}^{n}\left|z_{j}\right|^{2} \sum_{j=1}^{n}\left|w_{j}\right|^{2}$
+   y la desigualdad ocurre si y solo si:
+\[
+\exists c \in \mathbb{C} \text { T.Q. } \forall i=1,2,3, \ldots, n . \quad Z_{j}=c w_{j} .
+\]
+\end{theorem}
+
+Observación:
+Para $n=1$ $|zw|^2 = |z|^2 |w|^2 \Rightarrow \exists c \in \mathbb{C}, z=cw \forall z, w \in \mathbb{C}$
+

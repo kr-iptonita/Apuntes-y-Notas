@@ -1,0 +1,62 @@
+\section{Clase 5}
+\begin{definition}[Formula de De Moivre]
+  Sea $z \in \mathbb{C} z \neq 0$. Tomamos $|z|=r$ el módulo de $z y$ $\theta$ el argumento de $z$, entonces:
+  \[
+    z^n=r^n[\cos (n \theta) \text { i }\sin (n \theta)] \quad n \in \mathbb{N}
+  \]
+  \textsc{Convención: } $\forall z \in \mathbb{C} \quad z^{\circ}=1$
+\end{definition}
+
+\begin{proof}[Demostración:]
+Por inducción
+
+Para $n=0$
+\[
+  \begin{aligned}
+    z^{\circ} & =r^{\circ}[\cos (0) \text { i}\sin (0)] \\
+    & =1[1+0] \\
+    & =1
+  \end{aligned}
+\]
+  Si se cumple para $n=k$
+\[
+  z^k=r^k[\cos (k \theta) \operatorname{i \sin}(k \theta)]
+\]
+\textsc{P.D.} $n=k+1$ 
+
+\[
+  \begin{aligned}
+    z^{k+1}= & z^k z=\left[r^k[\cos (k \theta)+i \operatorname{\sin}(k \theta)]\right] \cdot r(\cos (\theta) \operatorname{ti\sin}(\theta)) \\
+    =& r^k \cdot r {[\cos (k \theta)+i \operatorname{\sin}(k \theta)] \cdot[\cos (\theta)+i \operatorname{\sin}(\theta)] } \\
+    =& r^{k+1}[\cos (k \theta) \cos (\theta)+\cos (k \theta) i \operatorname{\sin}(\theta)+i \operatorname{\sin}(k \theta) \cos (\theta) -\operatorname{\sin}(k \theta) \operatorname{\sin}(\theta)]\\
+    =& r^{k+1}[\cos (k \theta) \cos (\theta)-\operatorname{\sin}(k \theta) \operatorname{\sin}(\theta)+i(\operatorname{\sin}(k \theta) \cos (\theta)+\cos (k \theta) \operatorname{\sin}(\theta))] \\
+    =& r^{k+1} [ \cos (k \theta+\theta)+i \operatorname{\sin}(k \theta+\theta)] \\
+    =& r^{k+1}[\cos ((k+1) \theta)+i \operatorname{\sin}((k+1) \theta)]
+  \end{aligned}
+\]
+
+\end{proof}
+\textbf{Corolario: }Sea $z \neq 0 \quad z \in \mathbb{C}$ con $|z|=r$ el módulo de $z$ y $\theta=\arg z$, entonces
+\[
+  \begin{aligned}
+     & m=n(-1) \quad n \in \mathbb{N} \\
+     & z^m=r^m(\cos (m \theta)+i \operatorname{\sin}(m \theta)) \quad \forall m \in \mathbb{Z}
+\end{aligned}
+\]
+
+Ejemplo: 
+
+sea $z=\sqrt{3}+i$. Encuentre: $z^7$
+
+\[
+  \begin{aligned}
+     |z| & =r=\sqrt{(\sqrt{3})^2+(1)^2}=\sqrt{4}=2 \\
+     \arg z & =\pi / 6+2 \pi n \quad \forall n \in \mathbb{Z} \\
+     \arg z & =\pi / 6, \theta=\tan ^{-1}(y / x)=\arctan (1 / \sqrt{3}) \\
+     z^7 & =2^7[\cos (7 \pi / 6)+i \operatorname{\sin}(7 \pi / 6)] \\
+     & =128[-\sqrt{3} / 2-i 1 / 2] \\
+     & =-64[\sqrt{3}+i]
+  \end{aligned}
+\]
+
+

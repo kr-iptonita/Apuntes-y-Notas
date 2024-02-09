@@ -1,4 +1,4 @@
-\section{Ejercicios Extra:}
+\subsection*{Ejercicios Extra:}
 \begin{itemize}
   \item $|\text{Re}(z)|+|\text{Im}(z)|\leq \sqrt{2}|z|$
   \item $2|\text{Re}(z)||\text{Im}(z)|\leq |z|^2$
@@ -64,3 +64,35 @@ $\forall z, w \in \mathbb{C}$
        \operatorname{Im}(z w)&=\operatorname{Im}(z)\operatorname{Im}(w)-\operatorname{Re}(z) \operatorname{Re}(w)
    \end{aligned}$
 \end{itemize}
+
+\subsection{Propopsición}
+$\forall z,w \in \mathbb{C}$
+\begin{itemize}
+  \item $|z|=0 \Leftrightarrow z=0$
+  \item $|z|=|\bar{z}|$
+  \item $|z+w|^2 = |z|^2 +2\operatorname{Re}(z\bar{w})+|w|^2$
+        \begin{proof}[Demostración: ]
+          $|z+w|^2 = (z+w)(\bar{z+w}) = (z+w)(\bar{z}+\bar{w})=z\bar{z}+z\bar{w}+\bar{z}w+w\bar{w}$
+          $=|z|^2+z\bar{w}+ \bar{z\bar{w}}+|w|^2 = |z|^2 + 2\operatorname{Re}(zw)+|w|^2$
+        \end{proof}
+        \begin{definition}[Ley de cosenos: Ecuación cuando el signo es menos]
+          \[
+            |z-w|^2 = |z|^2 - 2|z||w|\cos{\theta} + |w|^2 
+          \]
+          \textbf{Recordando que: }
+          \[
+            \cos{\theta} = \displaystyle\frac{u \cdot v}{\|u\| \|v\|}  
+          \]
+          \[
+            \operatorname(z\bar{w})= \operatorname(Re)[(a+ib)(c-id)]=ac+bd
+          \]
+        \end{definition}
+  \item \begin{definition}[Ley del paralelogramo]
+         $|z+w|^2 + |z-w|^2 = 2(|z|^2 + |w|^2)$
+        \end{definition}
+  \item $|zw| = |z||w|$ además $|zw|^2 = (zw)(\bar{zw}) = (z\bar{z})(w\bar{w}) = |z|^2 |w|^2$
+  \item Si $z \neq 0$, $|z^{-1}| = |z|^{-1}$
+  \item Si $w \neq 0$, $|\displaystyle\frac{z}{w}|=\displaystyle\frac{|z|}{|w|} \Rightarrow |z| = |\frac{z}{w} w| = |\frac{z}{w}||w| \Rightarrow \frac{|z|}{|w|} = |\frac{z}{w}|$
+  \item $|z^n| = |z|^n$ donde $n \in \mathbb{N}$
+\end{itemize}
+
