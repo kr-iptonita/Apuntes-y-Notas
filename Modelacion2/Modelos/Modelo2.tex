@@ -1,0 +1,55 @@
+\section{Masa con resortes en paralelo anclados a un muro inerte.}
+
+La energía cinética $ T $ de la masa sigue siendo $ \frac{1}{2} m \dot{x}^2 $
+
+Para este caso la energía potencial $ U $ del sistema resulta ser la suma de las energías potenciales elásticas de los dos resortes:
+
+\[ U = \frac{1}{2} k_1 x_1^2 + \frac{1}{2} k_2 x_2^2 \]
+
+Donde $ x_1 $ y $ x_2 $ son las extensiones de los resortes $ k_1 $ y $ k_2 $, respectivamente.
+
+Por lo tanto, el Lagrangiano $ L $ está dado por:
+
+\[ L = T - U = \frac{1}{2} m \dot{x}^2 - \left( \frac{1}{2} k_1 x_1^2 + \frac{1}{2} k_2 x_2^2 \right) \]
+
+Dado que los resortes están en paralelo, la extensión total $ x $ de la masa es la suma de las extensiones de los dos resortes:
+
+\[ x = x_1 + x_2 \]
+
+La energía cinética $ T $ sigue siendo la misma, y el Lagrangiano se puede reescribir en términos de $ x $ y $ \dot{x} $.
+
+Euler-Lagrange:
+
+
+\[ \frac{\partial L}{\partial \dot{x}} = m \dot{x} \]
+
+\[ \frac{\partial L}{\partial x_1} = -k_1 x_1 \]
+
+\[ \frac{\partial L}{\partial x_2} = -k_2 x_2 \]
+
+Derivada total con respecto al tiempo de $ \frac{\partial L}{\partial \dot{x}} $:
+
+\[ \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = m \ddot{x} \]
+
+Sustituyendo:
+
+Para $ x_1 $:
+
+\[ \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) - \frac{\partial L}{\partial x_1} = 0 \]
+
+\[ m \ddot{x} + k_1 x_1 = 0 \]
+
+Para $ x_2 $:
+
+\[ \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) - \frac{\partial L}{\partial x_2} = 0 \]
+
+\[ m \ddot{x} + k_2 x_2 = 0 \]
+
+Sumando estas dos ecuaciones, obtenemos la ecuación de movimiento para la masa $ m $:
+
+\[ m \ddot{x} + (k_1 + k_2) x = 0 \]
+
+De este modo tenemos que:
+\[ \Omega_0^2 = \displaystyle\frac{k_1 + k_2}{m} = 0 \]
+
+Como podemos notar lo resultante es exactamente lo mismo al Modelo 1.
